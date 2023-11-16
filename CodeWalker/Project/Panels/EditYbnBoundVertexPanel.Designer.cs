@@ -41,40 +41,44 @@
             // 
             this.PositionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PositionTextBox.Location = new System.Drawing.Point(82, 47);
+            this.PositionTextBox.Location = new System.Drawing.Point(90, 46);
+            this.PositionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PositionTextBox.Name = "PositionTextBox";
-            this.PositionTextBox.Size = new System.Drawing.Size(457, 20);
+            this.PositionTextBox.Size = new System.Drawing.Size(499, 23);
             this.PositionTextBox.TabIndex = 1;
             this.PositionTextBox.TextChanged += new System.EventHandler(this.PositionTextBox_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 50);
+            this.label5.Location = new System.Drawing.Point(38, 49);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Position:";
+            this.label5.Text = "位置：";
             // 
             // DeleteButton
             // 
             this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteButton.Location = new System.Drawing.Point(458, 7);
+            this.DeleteButton.Location = new System.Drawing.Point(478, 8);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(95, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(111, 30);
             this.DeleteButton.TabIndex = 40;
-            this.DeleteButton.Text = "Delete Vertex";
+            this.DeleteButton.Text = "删除顶点";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddToProjectButton
             // 
             this.AddToProjectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddToProjectButton.Location = new System.Drawing.Point(357, 7);
+            this.AddToProjectButton.Location = new System.Drawing.Point(360, 8);
+            this.AddToProjectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddToProjectButton.Name = "AddToProjectButton";
-            this.AddToProjectButton.Size = new System.Drawing.Size(95, 23);
+            this.AddToProjectButton.Size = new System.Drawing.Size(111, 30);
             this.AddToProjectButton.TabIndex = 39;
-            this.AddToProjectButton.Text = "Add to Project";
+            this.AddToProjectButton.Text = "添加到项目";
             this.AddToProjectButton.UseVisualStyleBackColor = true;
             this.AddToProjectButton.Click += new System.EventHandler(this.AddToProjectButton_Click);
             // 
@@ -82,33 +86,37 @@
             // 
             this.ColourTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ColourTextBox.Location = new System.Drawing.Point(82, 73);
+            this.ColourTextBox.Location = new System.Drawing.Point(90, 77);
+            this.ColourTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ColourTextBox.Name = "ColourTextBox";
-            this.ColourTextBox.Size = new System.Drawing.Size(457, 20);
+            this.ColourTextBox.Size = new System.Drawing.Size(499, 23);
             this.ColourTextBox.TabIndex = 3;
             this.ColourTextBox.TextChanged += new System.EventHandler(this.ColourTextBox_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 76);
+            this.label1.Location = new System.Drawing.Point(38, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Colour:";
+            this.label1.Text = "颜色：";
             // 
             // EditYbnBoundVertexPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 505);
+            this.ClientSize = new System.Drawing.Size(633, 372);
             this.Controls.Add(this.ColourTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddToProjectButton);
             this.Controls.Add(this.PositionTextBox);
             this.Controls.Add(this.label5);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditYbnBoundVertexPanel";
             this.Text = "EditYbnBoundVertexPanel";
             this.ResumeLayout(false);

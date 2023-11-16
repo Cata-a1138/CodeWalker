@@ -35,7 +35,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "Nav Portal " + YnvPortal.Index.ToString();
+            Text = "寻路门户 " + YnvPortal.Index.ToString();
         }
 
 
@@ -305,7 +305,7 @@ namespace CodeWalker.Project.Panels
 
         private void DeletePortalButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Delete Portal TODO!");
+            MessageBox.Show("删除门户功能目前暂未完成！");
         }
     }
 }

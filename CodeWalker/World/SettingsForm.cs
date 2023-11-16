@@ -47,21 +47,21 @@ namespace CodeWalker.World
         private void LoadKeyBindings()
         {
             KeyBindingsListView.Items.Clear();
-            AddKeyBinding("Move Forwards", keyBindings.MoveForward);
-            AddKeyBinding("Move Backwards", keyBindings.MoveBackward);
-            AddKeyBinding("Move Left", keyBindings.MoveLeft);
-            AddKeyBinding("Move Right", keyBindings.MoveRight);
-            AddKeyBinding("Move Up", keyBindings.MoveUp);
-            AddKeyBinding("Move Down", keyBindings.MoveDown);
-            AddKeyBinding("Move Slower / Zoom In", keyBindings.MoveSlowerZoomIn);
-            AddKeyBinding("Move Faster / Zoom Out", keyBindings.MoveFasterZoomOut);
-            AddKeyBinding("Toggle Mouse Select", keyBindings.ToggleMouseSelect);
-            AddKeyBinding("Toggle Toolbar", keyBindings.ToggleToolbar);
-            AddKeyBinding("Exit Edit Mode", keyBindings.ExitEditMode);
-            AddKeyBinding("Edit Position", keyBindings.EditPosition);
-            AddKeyBinding("Edit Rotation", keyBindings.EditRotation);
-            AddKeyBinding("Edit Scale", keyBindings.EditScale);
-            AddKeyBinding("First Person Mode", keyBindings.FirstPerson);
+            AddKeyBinding("向前移动", keyBindings.MoveForward);
+            AddKeyBinding("向后移动", keyBindings.MoveBackward);
+            AddKeyBinding("向左移动", keyBindings.MoveLeft);
+            AddKeyBinding("向右移动", keyBindings.MoveRight);
+            AddKeyBinding("向上移动", keyBindings.MoveUp);
+            AddKeyBinding("向下移动", keyBindings.MoveDown);
+            AddKeyBinding("降低移动速度 / 放大", keyBindings.MoveSlowerZoomIn);
+            AddKeyBinding("增加移动速度 / 缩小", keyBindings.MoveFasterZoomOut);
+            AddKeyBinding("切换鼠标选择", keyBindings.ToggleMouseSelect);
+            AddKeyBinding("切换工具栏", keyBindings.ToggleToolbar);
+            AddKeyBinding("退出编辑模式", keyBindings.ExitEditMode);
+            AddKeyBinding("编辑位置", keyBindings.EditPosition);
+            AddKeyBinding("编辑旋转", keyBindings.EditRotation);
+            AddKeyBinding("编辑缩放", keyBindings.EditScale);
+            AddKeyBinding("第一人称模式", keyBindings.FirstPerson);
 
         }
         private void LoadMouseSettings()
@@ -138,7 +138,7 @@ namespace CodeWalker.World
             {
                 selKeyBinding = string.Empty;
                 selKeyBindingVal = Keys.None;
-                KeyBindingNameLabel.Text = "(No binding selected)";
+                KeyBindingNameLabel.Text = "(未选择绑定)";
                 KeyBindingComboBox.SelectedItem = null;
                 KeyBindingComboBox.Enabled = false;
                 KeyBindButton.Enabled = false;
@@ -224,7 +224,7 @@ namespace CodeWalker.World
             Settings.Default.CameraSmoothing = camSmoothing;
             Settings.Default.Save();
 
-            DoneButton.Text = "Done";
+            DoneButton.Text = "完成";
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
@@ -234,7 +234,7 @@ namespace CodeWalker.World
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to reset all CodeWalker settings to their default values?", "Confirm reset settings to defaults", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("您确定要将所有设置恢复为默认吗？", "确认恢复默认设置", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 var k = Settings.Default.Key;
                 Settings.Default.Reset();

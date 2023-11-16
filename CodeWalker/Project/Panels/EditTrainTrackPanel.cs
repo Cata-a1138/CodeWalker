@@ -51,7 +51,7 @@ namespace CodeWalker.Project.Panels
         private void UpdateFormTitle()
         {
             string fn = Track.RpfFileEntry?.Name ?? Track.Name;
-            if (string.IsNullOrEmpty(fn)) fn = "Edit Train Track";
+            if (string.IsNullOrEmpty(fn)) fn = "编辑火车轨道";
             Text = fn + (Track.HasChanged ? "*" : "");
         }
 
@@ -87,7 +87,7 @@ namespace CodeWalker.Project.Panels
                 TrainTrackRpfPathTextBox.Text = Track.RpfFileEntry?.Path ?? string.Empty;
                 TrainTrackFilePathTextBox.Text = Track.FilePath;
                 TrainTrackProjectPathTextBox.Text = string.Empty; //todo
-                TrainTrackInfoLabel.Text = Track.StationCount.ToString() + " stations";
+                TrainTrackInfoLabel.Text = Track.StationCount.ToString() + " 个车站";
                 //populatingui = false;
             }
         }

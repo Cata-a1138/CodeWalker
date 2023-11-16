@@ -255,22 +255,22 @@ namespace CodeWalker.GameFiles
             BaseRpfs = allRpfs;
             DlcRpfs = new List<RpfFile>();
 
-            UpdateStatus("Building global dictionaries...");
+            UpdateStatus("正在构建全局字典...");
             InitGlobalDicts();
 
-            UpdateStatus("Loading manifests...");
+            UpdateStatus("正在加载清单文件...");
             InitManifestDicts();
 
-            UpdateStatus("Loading global texture list...");
+            UpdateStatus("正在加载全局纹理列表...");
             InitGtxds();
 
-            UpdateStatus("Loading archetypes...");
+            UpdateStatus("正在加载定义类型...");
             InitArchetypeDicts();
 
-            UpdateStatus("Loading strings...");
+            UpdateStatus("正在加载字符串...");
             InitStringDicts();
 
-            UpdateStatus("Loading audio...");
+            UpdateStatus("正在加载音频...");
             InitAudio();
 
             IsInited = true;
@@ -282,44 +282,44 @@ namespace CodeWalker.GameFiles
             AllRpfs = GetModdedRpfList(RpfMan.AllRpfs);
             DlcRpfs = GetModdedRpfList(RpfMan.DlcRpfs);
 
-            UpdateStatus("Building global dictionaries...");
+            UpdateStatus("正在构建全局字典...");
             InitGlobalDicts();
         }
 
         private void InitDlc()
         {
 
-            UpdateStatus("Building DLC List...");
+            UpdateStatus("正在构建 DLC 列表...");
             InitDlcList();
 
-            UpdateStatus("Building active RPF dictionary...");
+            UpdateStatus("正在构建激活的 RPF 字典...");
             InitActiveMapRpfFiles();
 
-            UpdateStatus("Building map dictionaries...");
+            UpdateStatus("正在构建地图字典...");
             InitMapDicts();
 
-            UpdateStatus("Loading manifests...");
+            UpdateStatus("正在加载清单文件...");
             InitManifestDicts();
 
-            UpdateStatus("Loading global texture list...");
+            UpdateStatus("正在加载全局纹理列表...");
             InitGtxds();
 
-            UpdateStatus("Loading cache...");
+            UpdateStatus("正在加载缓存...");
             InitMapCaches();
 
-            UpdateStatus("Loading archetypes...");
+            UpdateStatus("正在加载定义类型...");
             InitArchetypeDicts();
 
-            UpdateStatus("Loading strings...");
+            UpdateStatus("正在加载字符串...");
             InitStringDicts();
 
-            UpdateStatus("Loading vehicles...");
+            UpdateStatus("正在加载载具...");
             InitVehicles();
 
-            UpdateStatus("Loading peds...");
+            UpdateStatus("正在加载人物角色...");
             InitPeds();
 
-            UpdateStatus("Loading audio...");
+            UpdateStatus("正在加载音频...");
             InitAudio();
 
         }
@@ -338,7 +338,7 @@ namespace CodeWalker.GameFiles
             DlcPaths.Clear();
             if ((dlclistxml == null) || (dlclistxml.DocumentElement == null))
             {
-                ErrorLog("InitDlcList: Couldn't load " + dlclistpath + ".");
+                ErrorLog("InitDlcList: 无法加载 " + dlclistpath + ".");
             }
             else
             {
@@ -421,7 +421,7 @@ namespace CodeWalker.GameFiles
             }
             else
             {
-                ErrorLog("InitDlcList: update.rpf not found!");
+                ErrorLog("InitDlcList: update.rpf 未找到！");
             }
 
 
@@ -462,7 +462,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        ErrorLog("InitDlcList: Error processing DLC " + path + "\n" + ex.ToString());
+                        ErrorLog("InitDlcList: 处理 DLC 时发生错误 " + path + "\n" + ex.ToString());
                     }
                 }
             }
@@ -1226,7 +1226,7 @@ namespace CodeWalker.GameFiles
                     }
                     else if (finalAttempt)
                     {
-                        ErrorLog(path + ": main cachefile not loaded! Possibly an unsupported GTAV installation version.");
+                        ErrorLog(path + ": 主缓存文件未加载！可能是安装了不支持的 GTAV 版本！");
                     }
                     else //update\x64\dlcpacks\mpspecialraces\dlc.rpf\x64\data\cacheloaderdata_dlc\mpspecialraces_3336915258_cache_y.dat (hash of: mpspecialraces_interior_additions)
                     { }
@@ -1314,11 +1314,11 @@ namespace CodeWalker.GameFiles
             YtypFile ytypfile = RpfMan.GetFile<YtypFile>(entry);
             if (ytypfile == null)
             {
-                throw new Exception("Couldn't load ytyp file."); //couldn't load the file for some reason... shouldn't happen..
+                throw new Exception("无法加载 ytyp 文件"); //couldn't load the file for some reason... shouldn't happen..
             }
             if (ytypfile.Meta == null)
             {
-                throw new Exception("ytyp file was not in meta format.");
+                throw new Exception("ytyp 文件不是元数据格式");
             }
             if (YtypDict.ContainsKey(ytypfile.NameHash))
             {
@@ -1335,7 +1335,7 @@ namespace CodeWalker.GameFiles
 
             if ((ytypfile.AllArchetypes == null) || (ytypfile.AllArchetypes.Length == 0))
             {
-                ErrorLog(entry.Path + ": no archetypes found");
+                ErrorLog(entry.Path + ": 未找到定义类型");
             }
             else
             {
@@ -2557,14 +2557,14 @@ namespace CodeWalker.GameFiles
                         break;
                 }
 
-                string str = (req.Loaded ? "Loaded " : "Error loading ") + req.ToString();
+                string str = (req.Loaded ? "已加载 " : "无法加载 ") + req.ToString();
                 //string str = string.Format("{0}: {1}: {2}", requestQueue.Count, (req.Loaded ? "Loaded" : "Error loading"), req);
 
                 UpdateStatus(str);
                 //ErrorLog(str);
                 if (!req.Loaded)
                 {
-                    ErrorLog("Error loading " + req.ToString());
+                    ErrorLog("无法加载 " + req.ToString());
                 }
 
 
@@ -2837,7 +2837,7 @@ namespace CodeWalker.GameFiles
 
         public void TestAudioRels()
         {
-            UpdateStatus("Testing Audio REL files");
+            UpdateStatus("正在测试音频 REL 文件");
 
 
             bool savetest = true;
@@ -3053,7 +3053,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
                 }
             }
@@ -3100,7 +3100,7 @@ namespace CodeWalker.GameFiles
                     //}
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -3173,7 +3173,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -3267,7 +3267,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -3392,7 +3392,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -3432,7 +3432,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -3479,7 +3479,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -3749,7 +3749,7 @@ namespace CodeWalker.GameFiles
                     //}
                 //catch (Exception ex)
                 //{
-                //    UpdateStatus("Error! " + ex.ToString());
+                //    UpdateStatus("错误！" + ex.ToString());
                 //}
                 }
             }
@@ -3779,7 +3779,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch(Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (ddstest && (ytdfile != null) && (ytdfile.TextureDict != null))
@@ -3845,7 +3845,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -3874,7 +3874,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (xmltest && (ybn != null) && (ybn.Bounds != null))
@@ -4016,7 +4016,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4044,7 +4044,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (savetest && (ydr != null) && (ydr.Drawable != null))
@@ -4074,7 +4074,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4101,7 +4101,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (savetest && (ydd != null) && (ydd.DrawableDict != null))
@@ -4139,7 +4139,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4168,7 +4168,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (savetest && (yft != null) && (yft.Fragment != null))
@@ -4214,7 +4214,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4243,7 +4243,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (savetest && (ypt != null) && (ypt.PtfxList != null))
@@ -4271,7 +4271,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4299,7 +4299,7 @@ namespace CodeWalker.GameFiles
                             }
                             catch (Exception ex)
                             {
-                                UpdateStatus("Error! " + ex.ToString());
+                                UpdateStatus("错误！" + ex.ToString());
                                 errorfiles.Add(entry);
                             }
                             if (xmltest && (ynv != null) && (ynv.Nav != null))
@@ -4345,7 +4345,7 @@ namespace CodeWalker.GameFiles
                     }
                     //catch (Exception ex)
                     //{
-                    //    UpdateStatus("Error! " + ex.ToString());
+                    //    UpdateStatus("错误！" + ex.ToString());
                     //}
                 }
             }
@@ -4391,7 +4391,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -4438,7 +4438,7 @@ namespace CodeWalker.GameFiles
 #if !DEBUG
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                         exceptions.Add(ex);
                     }
 #endif
@@ -4466,7 +4466,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
                 }
             }
@@ -4512,7 +4512,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
 
                 }
@@ -4560,7 +4560,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
 
                 }
@@ -4632,7 +4632,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
                 }
             }
@@ -4795,7 +4795,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
                 }
             }
@@ -4960,12 +4960,12 @@ namespace CodeWalker.GameFiles
 
                             if (ydr == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read file");
+                                errs.Add(entry.Path + ": 无法读取文件");
                                 continue;
                             }
                             if (ydr.Drawable == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read drawable data");
+                                errs.Add(entry.Path + ": 无法读取可绘制数据");
                                 continue;
                             }
                             drawablecount++;
@@ -4989,12 +4989,12 @@ namespace CodeWalker.GameFiles
 
                             if (ydd == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read file");
+                                errs.Add(entry.Path + ": 无法读取文件");
                                 continue;
                             }
                             if (ydd.Dict == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read drawable dictionary data");
+                                errs.Add(entry.Path + ": 无法读取可绘制字典文件");
                                 continue;
                             }
                             foreach (var drawable in ydd.Dict.Values)
@@ -5021,12 +5021,12 @@ namespace CodeWalker.GameFiles
 
                             if (yft == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read file");
+                                errs.Add(entry.Path + ": 无法读取文件");
                                 continue;
                             }
                             if (yft.Fragment == null)
                             {
-                                errs.Add(entry.Path + ": Couldn't read fragment data");
+                                errs.Add(entry.Path + ": 无法读取分段数据");
                                 continue;
                             }
                             if (yft.Fragment.Drawable != null)
@@ -5185,7 +5185,7 @@ namespace CodeWalker.GameFiles
                     }
                     catch (Exception ex)
                     {
-                        UpdateStatus("Error! " + ex.ToString());
+                        UpdateStatus("错误！" + ex.ToString());
                     }
                 }
             }

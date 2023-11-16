@@ -33,11 +33,11 @@ namespace CodeWalker.Tools
             {
                 GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
                 KeysLoaded = true;
-                UpdateExtractStatus("Ready to extract.");
+                UpdateExtractStatus("已准备好导出。");
             }
             catch
             {
-                UpdateExtractStatus("Keys not found! This shouldn't happen.");
+                UpdateExtractStatus("秘钥未找到！这不应该发生！");
             }
         }
 
@@ -70,17 +70,17 @@ namespace CodeWalker.Tools
 
             if (!KeysLoaded)
             {
-                MessageBox.Show("Please scan a GTA 5 exe dump for keys first, or include key files in this app's folder!");
+                MessageBox.Show("请选择 GTA5 EXE 来进行扫描，或者将秘钥放在程序目录下！");
                 return;
             }
             if (!Directory.Exists(FolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + FolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + FolderTextBox.Text);
                 return;
             }
             if (!Directory.Exists(OutputFolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + OutputFolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + OutputFolderTextBox.Text);
                 return;
             }
             //if (Directory.GetFiles(OutputFolderTextBox.Text, "*.ysc", SearchOption.AllDirectories).Length > 0)
@@ -105,7 +105,7 @@ namespace CodeWalker.Tools
             Task.Run(() =>
             {
 
-                UpdateExtractStatus("Keys loaded.");
+                UpdateExtractStatus("秘钥已加载。");
 
 
 
@@ -113,7 +113,7 @@ namespace CodeWalker.Tools
                 rpfman.Init(searchpath, UpdateExtractStatus, UpdateExtractStatus);
 
 
-                UpdateExtractStatus("Beginning shader extraction...");
+                UpdateExtractStatus("开始导出着色器...");
                 StringBuilder errsb = new StringBuilder();
                 foreach (RpfFile rpf in rpfman.AllRpfs)
                 {
@@ -121,7 +121,7 @@ namespace CodeWalker.Tools
                     {
                         if (AbortOperation)
                         {
-                            UpdateExtractStatus("Operation aborted");
+                            UpdateExtractStatus("操作已取消");
                             InProgress = false;
                             return;
                         }
@@ -131,7 +131,7 @@ namespace CodeWalker.Tools
                             {
                                 UpdateExtractStatus(entry.Path);
                                 FxcFile fxc = rpfman.GetFile<FxcFile>(entry);
-                                if (fxc == null) throw new Exception("Couldn't load file.");
+                                if (fxc == null) throw new Exception("无法加载文件。");
 
                                 string basepath = outputpath + "\\" + rpf.Name.Replace(".rpf", "");
 
@@ -189,7 +189,7 @@ namespace CodeWalker.Tools
 
                 File.WriteAllText(outputpath + "\\_errors.txt", errsb.ToString());
 
-                UpdateExtractStatus("Complete.");
+                UpdateExtractStatus("完成。");
                 InProgress = false;
             });
         }

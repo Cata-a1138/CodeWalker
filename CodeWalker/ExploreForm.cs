@@ -3,6 +3,7 @@ using CodeWalker.GameFiles;
 using CodeWalker.Properties;
 using CodeWalker.Tools;
 using CodeWalker.World;
+using CodeWalker.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,9 +55,43 @@ namespace CodeWalker
 
         public ThemeBase Theme { get; private set; }
 
+        public enum DWMWINDOWATTRIBUTE : uint {
+            DWMWA_NCRENDERING_ENABLED,
+            DWMWA_NCRENDERING_POLICY,
+            DWMWA_TRANSITIONS_FORCEDISABLED,
+            DWMWA_ALLOW_NCPAINT,
+            DWMWA_CAPTION_BUTTON_BOUNDS,
+            DWMWA_NONCLIENT_RTL_LAYOUT,
+            DWMWA_FORCE_ICONIC_REPRESENTATION,
+            DWMWA_FLIP3D_POLICY,
+            DWMWA_EXTENDED_FRAME_BOUNDS,
+            DWMWA_HAS_ICONIC_BITMAP,
+            DWMWA_DISALLOW_PEEK,
+            DWMWA_EXCLUDED_FROM_PEEK,
+            DWMWA_CLOAK,
+            DWMWA_CLOAKED,
+            DWMWA_FREEZE_REPRESENTATION,
+            DWMWA_PASSIVE_UPDATE_MODE,
+            DWMWA_USE_HOSTBACKDROPBRUSH,
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20,
+            DWMWA_WINDOW_CORNER_PREFERENCE = 33,
+            DWMWA_BORDER_COLOR,
+            DWMWA_CAPTION_COLOR,
+            DWMWA_TEXT_COLOR,
+            DWMWA_VISIBLE_FRAME_BORDER_THICKNESS,
+            DWMWA_SYSTEMBACKDROP_TYPE,
+            DWMWA_LAST
+        }
+
+        [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
+        public static extern void DwmSetWindowAttribute(IntPtr hwnd,
+                                                DWMWINDOWATTRIBUTE attribute,
+                                                ref int pvAttribute,
+                                                uint cbAttribute);
 
         public ExploreForm()
         {
+
             InitializeComponent();
 
             SetTheme(Settings.Default.ExplorerWindowTheme, false);
@@ -63,6 +99,25 @@ namespace CodeWalker
             ShowMainListViewPathColumn(false);
 
             LoadSettings();
+
+            SubSplitContainer.Panel2Collapsed = true;
+        }
+
+        private void SetDarkMode(IntPtr Handle, bool dark) {
+            int attribute = dark ? 1 : 0;
+            DwmSetWindowAttribute(Handle, DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE, ref attribute, sizeof(int));
+            ListViewColor.ListBackColor = Color.FromArgb(45, 45, 48);
+            ListViewColor.ListForeColor = Color.White;
+            if (dark) {
+                MainListView.BackColor = Color.FromArgb(45, 45, 48);
+                MainListView.ForeColor = Color.White;
+            } else {
+                MainListView.BackColor = Color.White;
+                MainListView.ForeColor = Color.Black;
+                ListViewColor.ListBackColor = Color.White;
+                ListViewColor.ListForeColor = Color.Black;
+            }
+            ListViewColor.ColorListViewHeader(ref MainListView);
         }
 
         private void SetTheme(string themestr, bool changing = true)
@@ -88,20 +143,23 @@ namespace CodeWalker
                     version = VisualStudioToolStripExtender.VsVersion.Unknown;
                     if (changing)
                     {
-                        MessageBox.Show("Please reopen RPF Explorer to change back to Windows theme.");
+                        MessageBox.Show("请重新启动 RPF 浏览器以设置为跟随系统模式");
                     }
                     break;
                 case "Blue":
                     Theme = new VS2015BlueTheme();
                     ViewThemeBlueMenu.Checked = true;
+                    SetDarkMode(Handle, false);
                     break;
                 case "Light":
                     Theme = new VS2015LightTheme();
                     ViewThemeLightMenu.Checked = true;
+                    SetDarkMode(Handle, false);
                     break;
                 case "Dark":
                     Theme = new VS2015DarkTheme();
                     ViewThemeDarkMenu.Checked = true;
+                    SetDarkMode(Handle, true);
                     break;
             }
 
@@ -192,13 +250,13 @@ namespace CodeWalker
                 }
                 catch
                 {
-                    UpdateStatus("Unable to load gta5.exe!");
+                    UpdateStatus("无法加载 gta5.exe!");
                     return;
                 }
 
                 RefreshMainTreeView();
 
-                UpdateStatus("Scan complete.");
+                UpdateStatus("扫描已完成。");
 
                 InitFileCache();
 
@@ -231,17 +289,17 @@ namespace CodeWalker
                 {
                     if (!FileCache.IsInited)
                     {
-                        UpdateStatus("Loading file cache...");
+                        UpdateStatus("正在加载文件缓存...");
                         var allRpfs = AllRpfs;
                         FileCache.Init(UpdateStatus, UpdateErrorLog, allRpfs); //inits main dicts and archetypes only...
 
-                        UpdateStatus("Loading materials...");
+                        UpdateStatus("正在加载材质...");
                         BoundsMaterialTypes.Init(FileCache);
 
-                        UpdateStatus("Loading scenario types...");
+                        UpdateStatus("正在加载场景类型...");
                         Scenarios.EnsureScenarioTypes(FileCache);
 
-                        UpdateStatus("File cache loaded.");
+                        UpdateStatus("文件缓存已加载。");
                     }
                 }
             });
@@ -259,64 +317,64 @@ namespace CodeWalker
         private void InitFileTypes()
         {
             FileTypes = new Dictionary<string, FileTypeInfo>();
-            InitFileType(".rpf", "Rage Package File", 3);
-            InitFileType("", "File", 4);
-            InitFileType(".dat", "Data File", 4);
-            InitFileType(".cab", "CAB File", 4);
-            InitFileType(".txt", "Text File", 5, FileTypeAction.ViewText);
-            InitFileType(".gxt2", "Global Text Table", 5, FileTypeAction.ViewGxt);
-            InitFileType(".log", "LOG File", 5, FileTypeAction.ViewText);
-            InitFileType(".ini", "Config Text", 5, FileTypeAction.ViewText);
-            InitFileType(".vdf", "Steam Script File", 5, FileTypeAction.ViewText);
-            InitFileType(".sps", "Shader Preset", 5, FileTypeAction.ViewText);
-            InitFileType(".ugc", "User-Generated Content", 5, FileTypeAction.ViewText);
-            InitFileType(".xml", "XML File", 6, FileTypeAction.ViewXml);
-            InitFileType(".meta", "Metadata (XML)", 6, FileTypeAction.ViewXml);
-            InitFileType(".ymt", "Metadata (Binary)", 6, FileTypeAction.ViewYmt, true);
-            InitFileType(".pso", "Metadata (PSO)", 6, FileTypeAction.ViewJPso, true);
-            InitFileType(".gfx", "Scaleform Flash", 7);
-            InitFileType(".ynd", "Path Nodes", 8, FileTypeAction.ViewYnd, true);
-            InitFileType(".ynv", "Nav Mesh", 9, FileTypeAction.ViewModel, true);
-            InitFileType(".yvr", "Vehicle Record", 9, FileTypeAction.ViewYvr, true);
-            InitFileType(".ywr", "Waypoint Record", 9, FileTypeAction.ViewYwr, true);
-            InitFileType(".fxc", "Compiled Shaders", 9, FileTypeAction.ViewFxc, true);
-            InitFileType(".yed", "Expression Dictionary", 9, FileTypeAction.ViewYed, true);
-            InitFileType(".yld", "Cloth Dictionary", 9, FileTypeAction.ViewYld, true);
-            InitFileType(".yfd", "Frame Filter Dictionary", 9, FileTypeAction.ViewYfd, true);
-            InitFileType(".asi", "ASI Plugin", 9);
-            InitFileType(".dll", "Dynamic Link Library", 9);
-            InitFileType(".exe", "Executable", 10);
-            InitFileType(".yft", "Fragment", 11, FileTypeAction.ViewModel, true);
-            InitFileType(".ydr", "Drawable", 11, FileTypeAction.ViewModel, true);
-            InitFileType(".ydd", "Drawable Dictionary", 12, FileTypeAction.ViewModel, true);
-            InitFileType(".cut", "Cutscene", 12, FileTypeAction.ViewCut, true);
-            InitFileType(".ysc", "Script", 13);
-            InitFileType(".ymf", "Manifest", 14, FileTypeAction.ViewYmf, true);
-            InitFileType(".bik", "Bink Video", 15);
-            InitFileType(".jpg", "JPEG Image", 16);
-            InitFileType(".jpeg", "JPEG Image", 16);
-            InitFileType(".gif", "GIF Image", 16);
-            InitFileType(".png", "Portable Network Graphics", 16);
-            InitFileType(".dds", "DirectDraw Surface", 16);
-            InitFileType(".ytd", "Texture Dictionary", 16, FileTypeAction.ViewYtd, true);
-            InitFileType(".mrf", "Move Network File", 18, FileTypeAction.ViewMrf, true);
-            InitFileType(".ycd", "Clip Dictionary", 18, FileTypeAction.ViewYcd, true);
-            InitFileType(".ypt", "Particle Effect", 18, FileTypeAction.ViewModel, true);
-            InitFileType(".ybn", "Static Collisions", 19, FileTypeAction.ViewModel, true);
-            InitFileType(".ide", "Item Definitions", 20, FileTypeAction.ViewText);
-            InitFileType(".ytyp", "Archetype Definitions", 20, FileTypeAction.ViewYtyp, true);
-            InitFileType(".ymap", "Map Data", 21, FileTypeAction.ViewYmap, true);
-            InitFileType(".ipl", "Item Placements", 21, FileTypeAction.ViewText);
-            InitFileType(".awc", "Audio Wave Container", 22, FileTypeAction.ViewAwc, true);
-            InitFileType(".rel", "Audio Data (REL)", 23, FileTypeAction.ViewRel, true);
-            InitFileType(".nametable", "Name Table", 5, FileTypeAction.ViewNametable);
-            InitFileType(".ypdb", "Pose Matcher Database", 9, FileTypeAction.ViewYpdb, true);
+            InitFileType(".rpf", "RPF 包文件", 3);
+            InitFileType("", "文件", 4);
+            InitFileType(".dat", "数据文件", 4);
+            InitFileType(".cab", "CAB 文件", 4);
+            InitFileType(".txt", "文本文件", 5, FileTypeAction.ViewText);
+            InitFileType(".gxt2", "全局文本数据表", 5, FileTypeAction.ViewGxt);
+            InitFileType(".log", "日志文件", 5, FileTypeAction.ViewText);
+            InitFileType(".ini", "配置文件", 5, FileTypeAction.ViewText);
+            InitFileType(".vdf", "Steam 脚本文件", 5, FileTypeAction.ViewText);
+            InitFileType(".sps", "着色器预设", 5, FileTypeAction.ViewText);
+            InitFileType(".ugc", "用户生成文件", 5, FileTypeAction.ViewText);
+            InitFileType(".xml", "XML 文件", 6, FileTypeAction.ViewXml);
+            InitFileType(".meta", "元数据 (XML)", 6, FileTypeAction.ViewXml);
+            InitFileType(".ymt", "元数据 (二进制)", 6, FileTypeAction.ViewYmt, true);
+            InitFileType(".pso", "元数据 (PSO)", 6, FileTypeAction.ViewJPso, true);
+            InitFileType(".gfx", "可缩放动画", 7);
+            InitFileType(".ynd", "路径节点", 8, FileTypeAction.ViewYnd, true);
+            InitFileType(".ynv", "寻路网格", 9, FileTypeAction.ViewModel, true);
+            InitFileType(".yvr", "载具记录", 9, FileTypeAction.ViewYvr, true);
+            InitFileType(".ywr", "导航点记录", 9, FileTypeAction.ViewYwr, true);
+            InitFileType(".fxc", "已编译着色器", 9, FileTypeAction.ViewFxc, true);
+            InitFileType(".yed", "表达式字典", 9, FileTypeAction.ViewYed, true);
+            InitFileType(".yld", "布料字典", 9, FileTypeAction.ViewYld, true);
+            InitFileType(".yfd", "帧过滤器字典", 9, FileTypeAction.ViewYfd, true);
+            InitFileType(".asi", "ASI 插件", 9);
+            InitFileType(".dll", "动态链接库", 9);
+            InitFileType(".exe", "可执行文件", 10);
+            InitFileType(".yft", "分段模型", 11, FileTypeAction.ViewModel, true);
+            InitFileType(".ydr", "可绘制模型", 11, FileTypeAction.ViewModel, true);
+            InitFileType(".ydd", "可绘制字典", 12, FileTypeAction.ViewModel, true);
+            InitFileType(".cut", "剧情场景", 12, FileTypeAction.ViewCut, true);
+            InitFileType(".ysc", "脚本", 13);
+            InitFileType(".ymf", "清单文件", 14, FileTypeAction.ViewYmf, true);
+            InitFileType(".bik", "Bink 视频", 15);
+            InitFileType(".jpg", "JPEG 图片", 16);
+            InitFileType(".jpeg", "JPEG 图片", 16);
+            InitFileType(".gif", "GIF 图片", 16);
+            InitFileType(".png", "PNG 图片", 16);
+            InitFileType(".dds", "贴图文件", 16);
+            InitFileType(".ytd", "贴图字典", 16, FileTypeAction.ViewYtd, true);
+            InitFileType(".mrf", "移动网络文件", 18, FileTypeAction.ViewMrf, true);
+            InitFileType(".ycd", "动画字典", 18, FileTypeAction.ViewYcd, true);
+            InitFileType(".ypt", "粒子效果", 18, FileTypeAction.ViewModel, true);
+            InitFileType(".ybn", "静态碰撞体", 19, FileTypeAction.ViewModel, true);
+            InitFileType(".ide", "项目定义文件", 20, FileTypeAction.ViewText);
+            InitFileType(".ytyp", "物体定义文件", 20, FileTypeAction.ViewYtyp, true);
+            InitFileType(".ymap", "地图文件", 21, FileTypeAction.ViewYmap, true);
+            InitFileType(".ipl", "物品放置", 21, FileTypeAction.ViewText);
+            InitFileType(".awc", "音频容器", 22, FileTypeAction.ViewAwc, true);
+            InitFileType(".rel", "音频数据 (REL)", 23, FileTypeAction.ViewRel, true);
+            InitFileType(".nametable", "名称表", 5, FileTypeAction.ViewNametable);
+            InitFileType(".ypdb", "姿势匹配数据库", 9, FileTypeAction.ViewYpdb, true);
 
-            InitSubFileType(".dat", "cache_y.dat", "Cache File", 6, FileTypeAction.ViewCacheDat, true);
-            InitSubFileType(".dat", "heightmap.dat", "Heightmap", 6, FileTypeAction.ViewHeightmap, true);
-            InitSubFileType(".dat", "heightmapheistisland.dat", "Heightmap", 6, FileTypeAction.ViewHeightmap, true);
-            InitSubFileType(".dat", "distantlights.dat", "Distant Lights", 6, FileTypeAction.ViewDistantLights);
-            InitSubFileType(".dat", "distantlights_hd.dat", "Distant Lights", 6, FileTypeAction.ViewDistantLights);
+            InitSubFileType(".dat", "cache_y.dat", "缓存文件", 6, FileTypeAction.ViewCacheDat, true);
+            InitSubFileType(".dat", "heightmap.dat", "高度图", 6, FileTypeAction.ViewHeightmap, true);
+            InitSubFileType(".dat", "heightmapheistisland.dat", "高度图", 6, FileTypeAction.ViewHeightmap, true);
+            InitSubFileType(".dat", "distantlights.dat", "远景光照", 6, FileTypeAction.ViewDistantLights);
+            InitSubFileType(".dat", "distantlights_hd.dat", "远景光照", 6, FileTypeAction.ViewDistantLights);
         }
         private void InitFileType(string ext, string name, int imgidx, FileTypeAction defaultAction = FileTypeAction.ViewHex, bool xmlConvertible = false)
         {
@@ -360,7 +418,7 @@ namespace CodeWalker
                 }
                 else
                 {
-                    ft = new FileTypeInfo(ext, ext.Substring(1).ToUpperInvariant() + " File", 4, FileTypeAction.ViewHex, false);
+                    ft = new FileTypeInfo(ext, ext.Substring(1).ToUpperInvariant() + " 文件", 4, FileTypeAction.ViewHex, false);
                     FileTypes[ft.Extension] = ft; //save it for later!
                     return ft;
                 }
@@ -399,6 +457,10 @@ namespace CodeWalker
                 else
                 {
                     //StatusLabel.Text = text;
+                    // this.ConsoleTextBox.AppendText(text + "\r\n");
+                    var now = System.DateTime.Now;
+                    var timestamp = now.ToString("HH:mm:ss");
+                    this.ConsoleTextBox.AppendText($"[{timestamp}] {text}\r\n");
                 }
             }
             catch { }
@@ -484,7 +546,7 @@ namespace CodeWalker
         }
         private void NavigateFailed(string path)
         {
-            MessageBox.Show("Unable to navigate to \"" + path + "\".");
+            MessageBox.Show("无法导航到 \"" + path + "\"。");
         }
         private void NavigateComplete(MainTreeFolder prevFolder)
         {
@@ -590,13 +652,14 @@ namespace CodeWalker
         {
             var ic = MainListView.VirtualListSize;
             var sc = MainListView.SelectedIndices.Count;
-            var str = ic.ToString() + " item" + ((ic != 1) ? "s" : "") + " shown";
+            var str = ic.ToString() + " 个项目";
             bool isitem = false;
             bool isfile = false;
             bool issearch = CurrentFolder?.IsSearchResults ?? false;
             bool canview = false;
             bool canedit = false;
             bool canexportxml = false;
+            bool canunlockfile = false;
             bool canimport = EditMode && !issearch;// && (CurrentFolder?.RpfFolder != null);
             bool canpaste = EditMode && (CopiedFiles.Count > 0);
 
@@ -618,14 +681,16 @@ namespace CodeWalker
                         isfile = isfile || (file.Folder == null);
                         canview = canview || CanViewFile(file);
                         canexportxml = canexportxml || CanExportXml(file);
+                        canunlockfile = canunlockfile || CanUnlockFile(file);
                         canedit = EditMode && !issearch;
                     }
                 }
-                str += ", " + sc.ToString() + " selected";
+                str += " | 已选中 " + sc.ToString() + " 个项目";
                 if (bc > 0)
                 {
-                    str += ", " + TextUtil.GetBytesReadable(bc);
+                    str += " " + TextUtil.GetBytesReadable(bc);
                 }
+                str += " |";
             }
             UpdateStatus(str);
 
@@ -635,6 +700,7 @@ namespace CodeWalker
             EditViewHexMenu.Enabled = isfile;
 
             EditExportXmlMenu.Enabled = canexportxml;
+            EditUnlockModelMenu.Enabled = canunlockfile;
             EditExtractRawMenu.Enabled = isfile;
 
             EditImportRawMenu.Visible = canimport;
@@ -687,7 +753,7 @@ namespace CodeWalker
 
             ClearMainTreeView();
 
-            UpdateStatus("Scanning...");
+            UpdateStatus("扫描中...");
 
             var root = new MainTreeFolder();
             root.FullPath = GTAFolder.GetCurrentGTAFolderWithTrailingSlash();
@@ -739,7 +805,7 @@ namespace CodeWalker
 
                 var isFile = File.Exists(path); //could be a folder
 
-                UpdateStatus("Scanning " + relpath + "...");
+                UpdateStatus("正在扫描 " + relpath + "...");
 
                 MainTreeFolder parentnode = null, prevnode = null, node = null;
                 var prevnodepath = "";
@@ -1222,7 +1288,7 @@ namespace CodeWalker
 
         private void ShowMainListViewPathColumn(bool show)
         {
-            bool visible = (MainPathColumnHeader.Width > 0);
+            /* bool visible = (MainPathColumnHeader.Width > 0);
             if (show && !visible)
             {
                 MainPathColumnHeader.Width = PreviousPathColumnWidth;
@@ -1235,6 +1301,18 @@ namespace CodeWalker
                 {
                     SortMainListView(0, SortDirection);//switch sort to name col
                 }
+            } */
+            if (!show) {
+                // Replace all the path columns to empty strings
+                if (CurrentFiles != null) {
+                    foreach (var item in CurrentFiles) {
+                        item.Path = "";
+                    }
+                }
+                // Set the column header to empty string
+                MainPathColumnHeader.Text = "";
+            } else {
+                MainPathColumnHeader.Text = "路径";
             }
         }
 
@@ -1252,7 +1330,7 @@ namespace CodeWalker
             SearchFilterButton.Checked = false;
 
             SearchResults = new MainTreeFolder();
-            SearchResults.Name = "Search Results: " + text;
+            SearchResults.Name = "搜索结果: " + text;
             SearchResults.Path = SearchResults.Name;
             SearchResults.IsSearchResults = true;
             SearchResults.SearchTerm = text;
@@ -1265,7 +1343,7 @@ namespace CodeWalker
 
             CurrentFiles.Clear();
 
-            UpdateStatus("Searching...");
+            UpdateStatus("搜索中...");
 
             var term = text.ToLowerInvariant();
 
@@ -1280,11 +1358,11 @@ namespace CodeWalker
                 if (Searching)
                 {
                     Searching = false;
-                    UpdateStatus("Search complete. " + resultcount.ToString() + " items found.");
+                    UpdateStatus("搜索已完成，共找到 " + resultcount.ToString() + " 个项目。");
                 }
                 else
                 {
-                    UpdateStatus("Search aborted. " + resultcount.ToString() + " items found.");
+                    UpdateStatus("搜索已取消，共找到 " + resultcount.ToString() + " 个项目。");
                 }
 
             Cursor = Cursors.Default;
@@ -1301,7 +1379,7 @@ namespace CodeWalker
             SearchFilterButton.Checked = true;
 
             //TODO!
-            MessageBox.Show("Filter TODO!");
+            MessageBox.Show("过滤器还在开发中……");
         }
 
 
@@ -1369,6 +1447,7 @@ namespace CodeWalker
             { }
             return data;
         }
+
         private byte[] GetFileDataCompressResources(MainListItem file)
         {
             byte[] data = GetFileData(file);
@@ -1426,6 +1505,13 @@ namespace CodeWalker
             if (item == null) return false;
             if (item.FileType == null) return false;
             return item.FileType.XmlConvertible;
+        }
+
+        private bool CanUnlockFile(MainListItem item) {
+            if (item == null) return false;
+            if (item.FileType == null) return false;
+            var allowExtensions = new string[] { ".ydr", ".ydd", ".yft" };
+            return allowExtensions.Contains(item.FileType.Extension);
         }
 
 
@@ -1903,6 +1989,7 @@ namespace CodeWalker
             bool issearch = CurrentFolder?.IsSearchResults ?? false;
             bool canview = false;
             bool canexportxml = false;
+            bool canunlockfile = false;
             bool canextract = false;
             bool canimport = EditMode && !issearch;// && isrpffolder;
             bool cancreate = EditMode && !issearch;
@@ -1920,6 +2007,7 @@ namespace CodeWalker
                 isfile = !isfolder;
                 canview = CanViewFile(item);
                 canexportxml = CanExportXml(item);
+                canunlockfile = CanUnlockFile(item);
                 canedit = EditMode && !issearch;
                 canextract = isfile || (isarchive && !isfilesys);
                 candefrag = isarchive && canedit;
@@ -1931,6 +2019,7 @@ namespace CodeWalker
 
             ListContextExportXmlMenu.Enabled = canexportxml;
             ListContextExtractRawMenu.Enabled = canextract;
+            ListContextUnlockModelMenu.Enabled = canunlockfile;
             ListContextExtractUncompressedMenu.Enabled = isfile;
 
             ListContextNewMenu.Visible = cancreate;
@@ -1970,7 +2059,7 @@ namespace CodeWalker
 
             if (enable && warn)
             {
-                if (MessageBox.Show(this, "While in edit mode, all changes are automatically saved.\nDo you want to continue?", "Warning - Entering edit mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                if (MessageBox.Show(this, "在编辑模式下，所有的修改都会自动保存。\n您确定要继续吗？", "警告 - 进入编辑模式", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -2031,8 +2120,8 @@ namespace CodeWalker
 
             var confirm = new Func<RpfFile, bool>((f) => 
             {
-                var msg = "Archive " + f.Name + " is currently set to " + f.Encryption.ToString() + " encryption.\nAre you sure you want to change this archive to OPEN encryption?\nLoading by the game will require OpenIV.asi.";
-                return (MessageBox.Show(msg, "Change RPF encryption type", MessageBoxButtons.YesNo) == DialogResult.Yes);
+                var msg = "存档文件 " + f.Name + " 当前的加密状态已被设置为 " + f.Encryption.ToString() + "。\n您确定要将存档的加密设置为 OPEN？\n游戏必须安装了 OpenIV.asi 才能加载存档文件。";
+                return (MessageBox.Show(msg, "修改 RPF 加密类型", MessageBoxButtons.YesNo) == DialogResult.Yes);
             });
 
             return RpfFile.EnsureValidEncryption(rpf, confirm);
@@ -2047,7 +2136,7 @@ namespace CodeWalker
             var parentfullpath = CurrentFolder.FullPath;
             if ((parentrpffldr == null) && (string.IsNullOrEmpty(parentfullpath)))
             {
-                MessageBox.Show("No parent folder selected! This shouldn't happen. Refresh the view and try again.");
+                MessageBox.Show("未选择父文件夹！这不应该发生，请尝试刷新文件列表。");
                 return false;
             }
 
@@ -2128,7 +2217,7 @@ namespace CodeWalker
                         byte[] data = GetFileData(file);
                         if (data == null)
                         {
-                            MessageBox.Show("Unable to extract file: " + file.Path);
+                            MessageBox.Show("无法导出文件：" + file.Path);
                             return;
                         }
 
@@ -2144,7 +2233,7 @@ namespace CodeWalker
                         string xml = MetaXml.GetXml(fentry, data, out newfn);
                         if (string.IsNullOrEmpty(xml))
                         {
-                            MessageBox.Show("Unable to convert file to XML: " + file.Path);
+                            MessageBox.Show("无法转换文件为 XML: " + file.Path);
                             return;
                         }
 
@@ -2158,7 +2247,7 @@ namespace CodeWalker
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("Error saving file " + path + ":\n" + ex.ToString());
+                                MessageBox.Show("尝试保存文件 " + path + " 时失败：\n" + ex.ToString());
                             }
                         }
                     }
@@ -2183,7 +2272,7 @@ namespace CodeWalker
                         var data = GetFileData(file);
                         if (data == null)
                         {
-                            errors.AppendLine("Unable to extract file: " + file.Path);
+                            errors.AppendLine("无法导出文件：" + file.Path);
                             continue;
                         }
 
@@ -2199,7 +2288,7 @@ namespace CodeWalker
                         string xml = MetaXml.GetXml(fentry, data, out newfn, folderpath);
                         if (string.IsNullOrEmpty(xml))
                         {
-                            errors.AppendLine("Unable to convert file to XML: " + file.Path);
+                            errors.AppendLine("无法将文件转换为 XML: " + file.Path);
                             continue;
                         }
 
@@ -2210,7 +2299,7 @@ namespace CodeWalker
                         }
                         catch (Exception ex)
                         {
-                            errors.AppendLine("Error saving file " + path + ":\n" + ex.ToString());
+                            errors.AppendLine("保存文件 " + path + " 时失败：\n" + ex.ToString());
                         }
                     }
                 }
@@ -2218,10 +2307,102 @@ namespace CodeWalker
                 string errstr = errors.ToString();
                 if (!string.IsNullOrEmpty(errstr))
                 {
-                    MessageBox.Show("Errors were encountered:\n" + errstr);
+                    MessageBox.Show("发生错误：\n" + errstr);
                 }
             }
         }
+
+        private void UnlockModel() {
+            if (MainListView.SelectedIndices.Count > 0) {
+                var idx = MainListView.SelectedIndices[0];
+                if ((idx < 0) || (idx >= CurrentFiles.Count)) return;
+            }
+
+            if (MainListView.SelectedIndices.Count > 0) {
+                int successCount = 0;
+                int failedCount = 0;
+                foreach (int idx in MainListView.SelectedIndices) {
+                    try {
+                        if ((idx < 0) || (idx >= CurrentFiles.Count)) {
+                            throw new Exception("文件索引错误，无法解锁文件：" + idx);
+                        }
+                        var file = CurrentFiles[idx];
+                        if (file.Folder == null) {
+                            if (CanUnlockFile(file)) {
+                                byte[] data = GetFileData(file);
+                                if (data == null) {
+                                    throw new Exception("读取文件数据失败，无法解锁文件：" + file.Path);
+                                }
+
+                                string newfn;
+                                var fentry = file?.File;
+                                if (fentry == null) {
+                                    //this should only happen when opening a file from filesystem...
+                                    var name = new FileInfo(file.FullPath).Name;
+                                    fentry = CreateFileEntry(name, file.FullPath, ref data);
+                                }
+
+                                string xml = MetaXml.GetXml(fentry, data, out newfn);
+                                if (string.IsNullOrEmpty(xml)) {
+                                    throw new Exception("转换文件失败，无法解锁文件：" + file.Path);
+                                }
+
+                                XmlDocument xmlDocument = new XmlDocument();
+                                xmlDocument.LoadXml(xml);
+
+                                var nl = file?.File?.NameLower ?? file?.Name?.ToLowerInvariant();
+                                if (!string.IsNullOrEmpty(nl)) {
+                                    byte[] unlockedFile = null;
+                                    if (nl.EndsWith(".yft")) {
+                                        YftFile yft = XmlYft.GetYft(xmlDocument);
+                                        if (yft.Fragment == null) {
+                                            throw new Exception("转换回 Yft 失败，无法解锁文件：" + file.Path);
+                                        }
+                                        unlockedFile = yft.Save();
+                                    } else if (nl.EndsWith(".ydr")) {
+                                        YdrFile ydr = XmlYdr.GetYdr(xmlDocument);
+                                        if (ydr.Drawable == null) {
+                                            throw new Exception("转换回 Ydr 失败，无法解锁文件：" + file.Path);
+                                        }
+                                        unlockedFile = ydr.Save();
+                                    } else if (nl.EndsWith(".ydd")) {
+                                        YddFile ydd = XmlYdd.GetYdd(xmlDocument);
+                                        if (ydd.Dict == null) {
+                                            throw new Exception("转换回 Ydd 失败，无法解锁文件：" + file.Path);
+                                        }
+                                        unlockedFile = ydd.Save();
+                                    } else {
+                                        throw new Exception("不支持的文件类型，无法解锁文件：" + file.Path);
+                                    }
+                                    if (unlockedFile == null) {
+                                        throw new Exception("解锁后的文件为空，无法解锁文件：" + file.Path);
+                                    }
+                                    if (CurrentFolder.RpfFolder != null) {
+                                        RpfFile.CreateFile(CurrentFolder.RpfFolder, file.Name, unlockedFile);
+                                        successCount++;
+                                    } else if (!string.IsNullOrEmpty(CurrentFolder.FullPath)) {
+                                        var outfpath = Path.Combine(CurrentFolder.FullPath, file.Name);
+                                        File.WriteAllBytes(outfpath, unlockedFile);
+                                        CurrentFolder.EnsureFile(file.Name);
+                                        successCount++;
+                                    } else {
+                                        throw new Exception("路径错误，无法解锁文件：" + file.Path);
+                                    }
+                                } else {
+                                    throw new Exception("文件名错误，无法解锁文件：" + file.Path);
+                                }
+                            }
+                        }
+                    } catch {
+                        MessageBox.Show("解锁文件失败：" + CurrentFiles[idx].Path);
+                        failedCount++;
+                    }
+                }
+                MessageBox.Show(string.Format("解锁已完成，成功解锁 {0} 个文件，失败 {1} 个文件。", successCount, failedCount));
+                RefreshMainListView();
+            }
+        }
+
         private void ExtractRaw()
         {
             if (MainListView.SelectedIndices.Count == 1)
@@ -2235,7 +2416,7 @@ namespace CodeWalker
                     byte[] data = GetFileDataCompressResources(file);
                     if (data == null)
                     {
-                        MessageBox.Show("Unable to extract file: " + file.Path);
+                        MessageBox.Show("无法导出文件：" + file.Path);
                         return;
                     }
 
@@ -2249,7 +2430,7 @@ namespace CodeWalker
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error saving file " + path + ":\n" + ex.ToString());
+                            MessageBox.Show("保存文件 " + path + " 时失败：\n" + ex.ToString());
                         }
                     }
                 }
@@ -2274,7 +2455,7 @@ namespace CodeWalker
                             var data = GetFileDataCompressResources(file);
                             if (data == null)
                             {
-                                errors.AppendLine("Unable to extract file: " + file.Path);
+                                errors.AppendLine("无法导出文件：" + file.Path);
                                 continue;
                             }
 
@@ -2282,7 +2463,7 @@ namespace CodeWalker
                         }
                         catch (Exception ex)
                         {
-                            errors.AppendLine("Error saving file " + path + ":\n" + ex.ToString());
+                            errors.AppendLine("导出文件 " + path + " 时失败：\n" + ex.ToString());
                         }
                     }
                 }
@@ -2290,10 +2471,11 @@ namespace CodeWalker
                 string errstr = errors.ToString();
                 if (!string.IsNullOrEmpty(errstr))
                 {
-                    MessageBox.Show("Errors were encountered:\n" + errstr);
+                    MessageBox.Show("发生错误：\n" + errstr);
                 }
             }
         }
+
         private void ExtractUncompressed()
         {
             if (MainListView.SelectedIndices.Count == 1)
@@ -2306,7 +2488,7 @@ namespace CodeWalker
                     byte[] data = GetFileData(file);
                     if (data == null)
                     {
-                        MessageBox.Show("Unable to extract file: " + file.Path);
+                        MessageBox.Show("无法导出文件：" + file.Path);
                         return;
                     }
 
@@ -2320,7 +2502,7 @@ namespace CodeWalker
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error saving file " + path + ":\n" + ex.ToString());
+                            MessageBox.Show("保存文件 " + path + " 时失败：\n" + ex.ToString());
                         }
                     }
                 }
@@ -2343,7 +2525,7 @@ namespace CodeWalker
                         var data = GetFileData(file);
                         if (data == null)
                         {
-                            errors.AppendLine("Unable to extract file: " + file.Path);
+                            errors.AppendLine("无法导出文件：" + file.Path);
                             continue;
                         }
                         try
@@ -2352,7 +2534,7 @@ namespace CodeWalker
                         }
                         catch (Exception ex)
                         {
-                            errors.AppendLine("Error saving file " + path + ":\n" + ex.ToString());
+                            errors.AppendLine("保存文件 " + path + " 时失败：\n" + ex.ToString());
                         }
                     }
                 }
@@ -2360,7 +2542,7 @@ namespace CodeWalker
                 string errstr = errors.ToString();
                 if (!string.IsNullOrEmpty(errstr))
                 {
-                    MessageBox.Show("Errors were encountered:\n" + errstr);
+                    MessageBox.Show("发生错误：\n" + errstr);
                 }
             }
         }
@@ -2383,7 +2565,7 @@ namespace CodeWalker
                         var data = GetFileDataCompressResources(file);
                         if (data == null)
                         {
-                            errors.AppendLine("Unable to extract file: " + file.Path);
+                            errors.AppendLine("无法导出文件：" + file.Path);
                             continue;
                         }
 
@@ -2391,7 +2573,7 @@ namespace CodeWalker
                     }
                     catch (Exception ex)
                     {
-                        errors.AppendLine("Error saving file " + path + ":\n" + ex.ToString());
+                        errors.AppendLine("保存文件 " + path + " 时失败：\n" + ex.ToString());
                     }
                 }
             }
@@ -2399,7 +2581,7 @@ namespace CodeWalker
             string errstr = errors.ToString();
             if (!string.IsNullOrEmpty(errstr))
             {
-                MessageBox.Show("Errors were encountered:\n" + errstr);
+                MessageBox.Show("发生错误：\n" + errstr);
             }
         }
         private void NewFolder()
@@ -2407,7 +2589,7 @@ namespace CodeWalker
             if (CurrentFolder == null) return;//shouldn't happen
             if (CurrentFolder?.IsSearchResults ?? false) return;
 
-            string fname = Prompt.ShowDialog(this, "Enter a name for the new folder:", "Create folder", "folder");
+            string fname = Prompt.ShowDialog(this, "请输入文件夹名称：", "创建文件夹", "folder");
             if (string.IsNullOrEmpty(fname))
             {
                 return;//no name was provided.
@@ -2459,7 +2641,7 @@ namespace CodeWalker
                         //create a folder in the filesystem.
                         if (Directory.Exists(fullpath))
                         {
-                            throw new Exception("Folder " + fullpath + " already exists!");
+                            throw new Exception("文件夹 " + fullpath + " 已经存在！");
                         }
                         Directory.CreateDirectory(fullpath);
 
@@ -2478,7 +2660,7 @@ namespace CodeWalker
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error creating new folder: " + ex.Message, "Unable to create new folder");
+                    MessageBox.Show("创建文件夹失败：" + ex.Message, "无法创建文件夹");
                     return;
                 }
 
@@ -2497,7 +2679,7 @@ namespace CodeWalker
             if (CurrentFolder == null) return;//shouldn't happen
             if (CurrentFolder?.IsSearchResults ?? false) return;
 
-            string fname = Prompt.ShowDialog(this, "Enter a name for the new archive:", "Create RPF7 archive", "new");
+            string fname = Prompt.ShowDialog(this, "输入新的存档文件名称：", "创建 RPF7 存档文件", "new");
             if (string.IsNullOrEmpty(fname))
             {
                 return;//no name was provided.
@@ -2533,7 +2715,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error creating archive: " + ex.Message, "Unable to create new archive");
+                MessageBox.Show("创建存档文件失败：" + ex.Message, "无法创建存档文件");
                 return;
             }
 
@@ -2551,7 +2733,7 @@ namespace CodeWalker
             if (CurrentFolder == null) return;//shouldn't happen
             if (CurrentFolder?.IsSearchResults ?? false) return;
 
-            string fname = Prompt.ShowDialog(this, "Enter a name for the new YTD file:", "Create YTD (Texture Dictionary)", "new");
+            string fname = Prompt.ShowDialog(this, "输入新的 YTD 文件名：", "创建 YTD 文件（贴图字典）", "new");
             if (string.IsNullOrEmpty(fname))
             {
                 return;//no name was provided.
@@ -2592,7 +2774,7 @@ namespace CodeWalker
             if (!EnsureRpfValidEncryption() && (CurrentFolder.RpfFolder != null)) return;
 
 
-            OpenFileDialog.Filter = "FBX Files|*.fbx";
+            OpenFileDialog.Filter = "FBX 文件|*.fbx";
             if (OpenFileDialog.ShowDialog(this) != DialogResult.OK)
             {
                 return;//canceled
@@ -2619,7 +2801,7 @@ namespace CodeWalker
 
                     if (!fnamel.EndsWith(".fbx"))
                     {
-                        MessageBox.Show(fname + ": Not an FBX file!", "Cannot import FBX");
+                        MessageBox.Show(fname + ": 不是一个 FBX 文件！", "无法导入 FBX");
                         continue;
                     }
 
@@ -2687,7 +2869,7 @@ namespace CodeWalker
 
             if (!EnsureRpfValidEncryption() && (CurrentFolder.RpfFolder != null)) return;
 
-            OpenFileDialog.Filter = "XML Files|*.xml";
+            OpenFileDialog.Filter = "XML 文件|*.xml";
             if (OpenFileDialog.ShowDialog(this) != DialogResult.OK) return;
             ImportXml(OpenFileDialog.FileNames);
         }
@@ -2711,7 +2893,7 @@ namespace CodeWalker
 
                     if (!fnamel.EndsWith(".xml"))
                     {
-                        MessageBox.Show(fname + ": Not an XML file!", "Cannot import XML");
+                        MessageBox.Show(fname + ": 不是 XML 文件！", "无法导入 XML");
                         continue;
                     }
 
@@ -2747,7 +2929,7 @@ namespace CodeWalker
                     }
                     else
                     {
-                        MessageBox.Show(fname + ": Schema not supported.", "Cannot import " + XmlMeta.GetXMLFormatName(mformat));
+                        MessageBox.Show(fname + ": 不支持的结构。", "无法导入 " + XmlMeta.GetXMLFormatName(mformat));
                     }
 
                 }
@@ -2850,7 +3032,7 @@ namespace CodeWalker
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Unable to import folder");
+                    MessageBox.Show(ex.Message, "无法导入文件夹");
                 }
             }
 
@@ -2869,7 +3051,7 @@ namespace CodeWalker
 
                     if (fi.Length > 0x3FFFFFFF)
                     {
-                        MessageBox.Show("File " + fname + " is too big! Max 1GB supported.", "Unable to import file");
+                        MessageBox.Show("文件 " + fname + " 过大！最大仅支持 1GB 的文件。", "无法导入文件");
                         continue;
                     }
 
@@ -2903,7 +3085,7 @@ namespace CodeWalker
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Unable to import file");
+                    MessageBox.Show(ex.Message, "无法导入文件");
                 }
             }
 
@@ -2926,7 +3108,7 @@ namespace CodeWalker
             {
                 Clipboard.SetText(fnames.ToString());
             }
-            UpdateStatus(CopiedFiles.Count.ToString() + " item" + ((CopiedFiles.Count != 1) ? "s" : "") + " copied");
+            UpdateStatus("已复制 " + CopiedFiles.Count.ToString() + " 个项目");
         }
         private void CopyPath()
         {
@@ -2984,7 +3166,7 @@ namespace CodeWalker
             if ((CurrentFiles != null) && (CurrentFiles.Count > idx))
             {
                 var item = CurrentFiles[idx];
-                string newname = Prompt.ShowDialog(this, "Enter the new name for this item:", "Rename item", item.Name);
+                string newname = Prompt.ShowDialog(this, "输入新的文件名：", "重命名文件", item.Name);
                 if (!string.IsNullOrEmpty(newname))
                 {
                     RenameItem(item, newname);
@@ -3047,7 +3229,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error renaming " + item.Path + ": " + ex.Message, "Unable to rename item");
+                MessageBox.Show("重命名 " + item.Path + " 失败：" + ex.Message, "无法重命名文件");
                 return;
             }
 
@@ -3091,7 +3273,7 @@ namespace CodeWalker
                 if (item.Folder?.RpfFile != null)
                 {
                     //confirm deletion of RPF archives, just to be friendly.
-                    if (MessageBox.Show("Are you sure you want to delete this archive?\n" + item.Path, "Confirm delete archive", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    if (MessageBox.Show("您确定要删除此存档文件吗？\n" + item.Path, "确认删除存档", MessageBoxButtons.YesNo) != DialogResult.Yes)
                     {
                         return;
                     }
@@ -3099,7 +3281,7 @@ namespace CodeWalker
                 else if ((item.Folder?.GetItemCount() ?? 0) > 0)
                 {
                     //confirm deletion of non-empty folders, just to be friendly.
-                    if (MessageBox.Show("Are you sure you want to delete this folder and all its contents?\n" + item.Path, "Confirm delete folder", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    if (MessageBox.Show("您确定要删除此文件夹及其所有子文件吗？\n" + item.Path, "确认删除文件夹", MessageBoxButtons.YesNo) != DialogResult.Yes)
                     {
                         return;
                     }
@@ -3141,7 +3323,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error deleting " + item.Path + ": " + ex.Message, "Unable to delete " + item.Name);
+                MessageBox.Show("删除文件 " + item.Path + " 失败：" + ex.Message, "无法删除 " + item.Name);
                 return;
             }
         }
@@ -3151,7 +3333,7 @@ namespace CodeWalker
             if (CurrentFolder?.IsSearchResults ?? false) return;
             if (MainListView.SelectedIndices.Count != 1)
             {
-                MessageBox.Show("Can only defragment one item at a time. Please have only one item selected.");
+                MessageBox.Show("一次只能整理一个文件的碎片，请选择单个文件。");
                 return;
             }
             var idx = MainListView.SelectedIndices[0];
@@ -3164,7 +3346,7 @@ namespace CodeWalker
             var rpf = item.Folder?.RpfFile;
             if (rpf == null)
             {
-                MessageBox.Show("Can only defragment RPF archives!");
+                MessageBox.Show("只能整理 RPF 文件的碎片！");
                 return;
             }
 
@@ -3172,7 +3354,7 @@ namespace CodeWalker
                 Width = 450,
                 Height = 250,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
-                Text = "Defragment RPF Archive - CodeWalker by dexyfex",
+                Text = "RPF 碎片整理 - CodeWalker by dexyfex",
                 StartPosition = FormStartPosition.CenterParent,
                 MaximizeBox = false,
                 MinimizeBox = false
@@ -3181,14 +3363,14 @@ namespace CodeWalker
             var addLabel = new Func<int, string, Control>((y, t) => {
                 return addCtrl(new Label() { Left = 30, Top = y, Width = 370, Height = 20, Text = t });
             });
-            var rpfNameLabel = addLabel(20, "Archive: " + rpf.Path);
+            var rpfNameLabel = addLabel(20, "存档：" + rpf.Path);
             var curSizeLabel = addLabel(40, string.Empty);
             var newSizeLabel = addLabel(60, string.Empty);
             var redSizeLabel = addLabel(80, string.Empty);
             var statusLabel = addLabel(110, string.Empty);
             var progressBar = addCtrl(new ProgressBar() { Left = 30, Top = 130, Width = 370, Height = 20, Minimum = 0, Maximum = 1000, MarqueeAnimationSpeed = 50 }) as ProgressBar;
-            var beginButton = addCtrl(new Button() { Text = "Begin Defragment", Left = 30, Top = 170, Width = 120 }) as Button;
-            var closeButton = addCtrl(new Button() { Text = "Close", Left = 320, Top = 170, Width = 80 }) as Button;
+            var beginButton = addCtrl(new Button() { Text = "开始整理", Left = 30, Top = 170, Width = 120 }) as Button;
+            var closeButton = addCtrl(new Button() { Text = "关闭", Left = 320, Top = 170, Width = 80 }) as Button;
             var inProgress = false;
             var updateProgress = new Action<string, float>((s, p) => { form.Invoke(new Action(() => {
                 statusLabel.Text = s;
@@ -3198,10 +3380,10 @@ namespace CodeWalker
                 var curSize = rpf.FileSize;
                 var newSize = rpf.GetDefragmentedFileSize();
                 var redSize = curSize - newSize;
-                curSizeLabel.Text = "Archive current size: " + TextUtil.GetBytesReadable(curSize);
-                newSizeLabel.Text = "Defragmented size: " + TextUtil.GetBytesReadable(newSize);
-                redSizeLabel.Text = "Size reduction: " + TextUtil.GetBytesReadable(redSize);
-                if (init) statusLabel.Text = (redSize <= 0) ? "Defragmentation not required." : "Ready to defragment.";
+                curSizeLabel.Text = "存档当前大小：" + TextUtil.GetBytesReadable(curSize);
+                newSizeLabel.Text = "整理之后大小：" + TextUtil.GetBytesReadable(newSize);
+                redSizeLabel.Text = "优化空间大小：" + TextUtil.GetBytesReadable(redSize);
+                if (init) statusLabel.Text = (redSize <= 0) ? "无需进行碎片整理" : "已准备好整理碎片";
             });
             var enableUi = new Action<bool>(enable => { form.Invoke(new Action(() => {
                 beginButton.Enabled = enable;
@@ -3213,7 +3395,7 @@ namespace CodeWalker
                 inProgress = true;
                 enableUi(false);
                 RpfFile.Defragment(rpf, updateProgress);
-                updateProgress("Defragment complete.", 1.0f);
+                updateProgress("碎片整理完毕。", 1.0f);
                 enableUi(true);
                 form.Invoke(new Action(() => { updateSizeLabels(false); }));
                 inProgress = false;
@@ -3623,7 +3805,7 @@ namespace CodeWalker
             {
                 if (file.FileSize > 0x6400000) //100MB
                 {
-                    errors.Add(file.Name + " is greater than 100MB, drag-drop for large files is disabled.");
+                    errors.Add(file.Name + " 大于 100MB，大文件的拖放功能支持已禁用。");
                     return;
                 }
                 try
@@ -3695,7 +3877,7 @@ namespace CodeWalker
             {
                 if (errors.Count > 0)
                 {
-                    MessageBox.Show("Errors encountered while dragging:\n" + string.Join("\n", errors.ToArray()));
+                    MessageBox.Show("拖放文件时错误：\n" + string.Join("\n", errors.ToArray()));
                 }
             }
 
@@ -3804,7 +3986,7 @@ namespace CodeWalker
             {
                 RefreshMainTreeView();
 
-                UpdateStatus("Scan complete.");
+                UpdateStatus("扫描完成。");
             });
         }
 
@@ -4173,14 +4355,39 @@ namespace CodeWalker
         private void OptionsStartInFolderDefaultMenu_Click(object sender, EventArgs e)
         {
             Settings.Default.RPFExplorerStartFolder = string.Empty;
-            OptionsStartInFolderValueMenu.Text = "(Default)";
+            OptionsStartInFolderValueMenu.Text = "(默认)";
         }
 
         private void OptionsStartInFolderCurrentMenu_Click(object sender, EventArgs e)
         {
             if (CurrentFolder == null) return;
             Settings.Default.RPFExplorerStartFolder = CurrentFolder.Path;
-            OptionsStartInFolderValueMenu.Text = string.IsNullOrEmpty(CurrentFolder.Path) ? "(Default)" : CurrentFolder.Path;
+            OptionsStartInFolderValueMenu.Text = string.IsNullOrEmpty(CurrentFolder.Path) ? "(默认)" : CurrentFolder.Path;
+        }
+
+        private void ConsoleTextBox_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void EnableConsole_Click(object sender, EventArgs e) {
+            if (EnableConsole.Checked) {
+                SubSplitContainer.Panel2Collapsed = false;
+            } else {
+                SubSplitContainer.Panel2Collapsed = true;
+            }
+        }
+
+        private void EditUnlockModelMenu_Click(object sender, EventArgs e) {
+            UnlockModel();
+        }
+
+        private void ListContextUnlockModelMenu_Click(object sender, EventArgs e) {
+            UnlockModel();
+        }
+
+        private void AboutMenu_Click(object sender, EventArgs e) {
+            AboutForm f = new AboutForm();
+            f.Show(this);
         }
     }
 
@@ -4313,7 +4520,7 @@ namespace CodeWalker
             int resultcount = 0;
             //if (!form.Searching) return resultcount;
 
-            form.UpdateStatus("Searching " + Path + "...");
+            form.UpdateStatus("正在搜索 " + Path + "...");
 
             if (Name.ToLowerInvariant().Contains(term))
             {
@@ -4442,12 +4649,12 @@ namespace CodeWalker
                 if (File is RpfResourceFileEntry)
                 {
                     var resf = File as RpfResourceFileEntry;
-                    Attributes += "Resource [V." + resf.Version.ToString() + "]";
+                    Attributes += "资源版本 [V." + resf.Version.ToString() + "]";
                 }
                 if (File.IsEncrypted)
                 {
                     if (Attributes.Length > 0) Attributes += ", ";
-                    Attributes += "Encrypted";
+                    Attributes += "已加密";
                 }
             }
             else if (fld != null)
@@ -4456,15 +4663,15 @@ namespace CodeWalker
                 {
                     FileSize = fld.RpfFile.FileSize;
                     FileSizeText = TextUtil.GetBytesReadable(FileSize);
-                    Attributes += fld.RpfFile.Encryption.ToString() + " encryption";
+                    Attributes += fld.RpfFile.Encryption.ToString() + " 加密模式";
                 }
                 else
                 {
-                    FileTypeText = "Folder";
+                    FileTypeText = "文件夹";
                     ImageIndex = 1; //FOLDER imageIndex
                     var ic = fld.GetItemCount();
                     FileSize = ic;
-                    FileSizeText = ic.ToString() + " item" + ((ic != 1) ? "s" : "");
+                    FileSizeText = ic.ToString() + " 个文件";
                 }
             }
             else

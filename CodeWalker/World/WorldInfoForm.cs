@@ -65,7 +65,7 @@ namespace CodeWalker.World
         {
             Selection = item;
 
-            SelectionNameTextBox.Text = item.GetNameString("Nothing selected");
+            SelectionNameTextBox.Text = item.GetNameString("未选择对象");
             //SelEntityPropertyGrid.SelectedObject = item.EntityDef;
             SelArchetypePropertyGrid.SelectedObject = item.Archetype;
             SelDrawablePropertyGrid.SelectedObject = item.Drawable;
@@ -77,10 +77,10 @@ namespace CodeWalker.World
             HierarchyTreeView.Nodes.Clear();
             if (item.Drawable != null)
             {
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.High, "High Detail", true);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Med, "Medium Detail", false);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Low, "Low Detail", false);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.VLow, "Very Low Detail", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.High, "高细节", true);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Med, "中等细节", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Low, "低细节", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.VLow, "极低细节", false);
                 //AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Extra, "X Detail", false);
             }
 
@@ -91,77 +91,77 @@ namespace CodeWalker.World
 
             if (item.MultipleSelectionItems != null)
             {
-                SelectionEntityTabPage.Text = "Multiple items";
+                SelectionEntityTabPage.Text = "多个对象";
                 SelEntityPropertyGrid.SelectedObject = item.MultipleSelectionItems;
             }
             else if (item.TimeCycleModifier != null)
             {
-                SelectionEntityTabPage.Text = "Time Cycle Modifier";
+                SelectionEntityTabPage.Text = "Time Cycle 修改器";
                 SelEntityPropertyGrid.SelectedObject = item.TimeCycleModifier;
             }
             else if (item.CarGenerator != null)
             {
-                SelectionEntityTabPage.Text = "Car Generator";
+                SelectionEntityTabPage.Text = "车辆生成器";
                 SelEntityPropertyGrid.SelectedObject = item.CarGenerator;
             }
             else if (item.LodLight!= null)
             {
-                SelectionEntityTabPage.Text = "LOD Light";
+                SelectionEntityTabPage.Text = "远景灯光";
                 SelEntityPropertyGrid.SelectedObject = item.LodLight;
             }
             else if (item.GrassBatch != null)
             {
-                SelectionEntityTabPage.Text = "Grass";
+                SelectionEntityTabPage.Text = "实例草";
                 SelEntityPropertyGrid.SelectedObject = item.GrassBatch;
             }
             else if (item.BoxOccluder != null)
             {
-                SelectionEntityTabPage.Text = "Box Occluder";
+                SelectionEntityTabPage.Text = "遮挡盒";
                 SelEntityPropertyGrid.SelectedObject = item.BoxOccluder;
             }
             else if (item.OccludeModelTri != null)
             {
-                SelectionEntityTabPage.Text = "Occlude Model Triangle";
+                SelectionEntityTabPage.Text = "遮挡模型三角";
                 SelEntityPropertyGrid.SelectedObject = item.OccludeModelTri;
             }
             else if (item.WaterQuad != null)
             {
-                SelectionEntityTabPage.Text = "Water Quad";
+                SelectionEntityTabPage.Text = "块状水";
                 SelEntityPropertyGrid.SelectedObject = item.WaterQuad;
             }
             else if (item.CalmingQuad != null)
             {
-                SelectionEntityTabPage.Text = "Water Calming Quad";
+                SelectionEntityTabPage.Text = "静止的块状水";
                 SelEntityPropertyGrid.SelectedObject = item.CalmingQuad;
             }
             else if (item.WaveQuad != null)
             {
-                SelectionEntityTabPage.Text = "Water Wave Quad";
+                SelectionEntityTabPage.Text = "波浪的块状水";
                 SelEntityPropertyGrid.SelectedObject = item.WaveQuad;
             }
             else if (item.NavPoly != null)
             {
-                SelectionEntityTabPage.Text = "Nav Poly";
+                SelectionEntityTabPage.Text = "寻路网格";
                 SelEntityPropertyGrid.SelectedObject = item.NavPoly;
             }
             else if (item.NavPoint != null)
             {
-                SelectionEntityTabPage.Text = "Nav Point";
+                SelectionEntityTabPage.Text = "寻路点";
                 SelEntityPropertyGrid.SelectedObject = item.NavPoint;
             }
             else if (item.NavPortal != null)
             {
-                SelectionEntityTabPage.Text = "Nav Portal";
+                SelectionEntityTabPage.Text = "寻路门户";
                 SelEntityPropertyGrid.SelectedObject = item.NavPortal;
             }
             else if (item.PathNode != null)
             {
-                SelectionEntityTabPage.Text = "Path Node";
+                SelectionEntityTabPage.Text = "路线节点";
                 SelEntityPropertyGrid.SelectedObject = item.PathNode;
             }
             else if (item.TrainTrackNode != null)
             {
-                SelectionEntityTabPage.Text = "Train Track Node";
+                SelectionEntityTabPage.Text = "火车轨道节点";
                 SelEntityPropertyGrid.SelectedObject = item.TrainTrackNode;
             }
             else if (item.ScenarioNode != null)
@@ -176,39 +176,39 @@ namespace CodeWalker.World
             }
             else
             {
-                SelectionEntityTabPage.Text = "Entity";
+                SelectionEntityTabPage.Text = "实体";
                 SelEntityPropertyGrid.SelectedObject = item.EntityDef;
             }
 
 
             if (item.EntityExtension != null)
             {
-                SelectionExtensionTabPage.Text = "Entity Extension";
+                SelectionExtensionTabPage.Text = "实体扩展";
                 SelExtensionPropertyGrid.SelectedObject = item.EntityExtension;
             }
             else if (item.ArchetypeExtension != null)
             {
-                SelectionExtensionTabPage.Text = "Archetype Extension";
+                SelectionExtensionTabPage.Text = "定义扩展";
                 SelExtensionPropertyGrid.SelectedObject = item.ArchetypeExtension;
             }
             else if (item.CollisionVertex != null)
             {
-                SelectionExtensionTabPage.Text = "Collision Vertex";
+                SelectionExtensionTabPage.Text = "碰撞顶点";
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionVertex;
             }
             else if (item.CollisionPoly != null)
             {
-                SelectionExtensionTabPage.Text = "Collision Polygon";
+                SelectionExtensionTabPage.Text = "碰撞多边形";
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionPoly;
             }
             else if (item.CollisionBounds != null)
             {
-                SelectionExtensionTabPage.Text = "Collision Bounds";
+                SelectionExtensionTabPage.Text = "碰撞边界";
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionBounds;
             }
             else
             {
-                SelectionExtensionTabPage.Text = "Extension";
+                SelectionExtensionTabPage.Text = "扩展";
                 SelExtensionPropertyGrid.SelectedObject = null;
             }
 
@@ -256,7 +256,7 @@ namespace CodeWalker.World
                                 var tstr = tex.Name.Trim();
                                 if (t != null)
                                 {
-                                    tstr = string.Format("{0} ({1}x{2}, embedded)", tex.Name, t.Width, t.Height);
+                                    tstr = string.Format("{0} ({1}x{2}, 嵌入)", tex.Name, t.Width, t.Height);
                                 }
                                 var tnode = tgnode.Nodes.Add(hash.ToString().Trim() + ": " + tstr);
                                 tnode.Tag = tex;
@@ -345,7 +345,7 @@ namespace CodeWalker.World
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error reading texture mip:\n" + ex.ToString());
+                MessageBox.Show("无法读取纹理 mip：\n" + ex.ToString());
                 SelDrawableTexturePictureBox.Image = null;
             }
         }
@@ -441,7 +441,7 @@ namespace CodeWalker.World
                     if (tex == null)
                     {
                         ytd = null;
-                        errstr = "<Couldn't find texture!>";
+                        errstr = "<无法找到纹理！>";
                     }
                 }
             }

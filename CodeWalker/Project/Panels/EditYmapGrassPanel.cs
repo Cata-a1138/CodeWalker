@@ -73,7 +73,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = CurrentBatch?.Batch.archetypeName.ToString() ?? "Grass Batch";
+            Text = CurrentBatch?.Batch.archetypeName.ToString() ?? "实例草批处理";
         }
 
         #endregion
@@ -132,7 +132,7 @@ namespace CodeWalker.Project.Panels
             var archetype = ProjectForm.GameFileCache.GetArchetype(archetypeHash);
             if (archetype == null)
             {
-                HashLabel.Text = $@"Hash: {archetypeHash} (invalid)";
+                HashLabel.Text = $@"哈希：{archetypeHash} (无效)";
                 return;
             }
             CurrentBatch.Archetype = archetype;
@@ -140,7 +140,7 @@ namespace CodeWalker.Project.Panels
             b.archetypeName = archetypeHash;
             CurrentBatch.Batch = b;
             ProjectForm.WorldForm.UpdateGrassBatchGraphics(CurrentBatch);
-            HashLabel.Text = $@"Hash: {archetypeHash}";
+            HashLabel.Text = $@"哈希：{archetypeHash}";
             UpdateFormTitle();
             CurrentBatch.HasChanged = true;
             ProjectForm.SetGrassBatchHasChanged(false);
@@ -197,8 +197,8 @@ namespace CodeWalker.Project.Panels
         {
             if (CurrentBatch.Instances == null || CurrentBatch.Instances.Length <= 0) return;
             var d = MessageBox.Show(
-                @"You are about to split the selected batch into multiple parts. Are you sure you want to do this?",
-                @"Instance Optimizer", MessageBoxButtons.YesNo);
+                @"您正在将选定的批次拆分为多个部分。您确定要这样做吗？",
+                @"实例优化器", MessageBoxButtons.YesNo);
 
             if (d == DialogResult.No)
                 return;

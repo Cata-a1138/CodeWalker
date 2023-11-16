@@ -36,7 +36,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "Train Node " + TrainNode.Index.ToString();
+            Text = "轨道节点 " + TrainNode.Index.ToString();
         }
 
         public void UpdateTrainTrackNodeUI()

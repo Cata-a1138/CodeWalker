@@ -43,7 +43,7 @@
             this.ProjectTreeView.Name = "ProjectTreeView";
             this.ProjectTreeView.ShowLines = false;
             this.ProjectTreeView.ShowRootLines = false;
-            this.ProjectTreeView.Size = new System.Drawing.Size(270, 559);
+            this.ProjectTreeView.Size = new System.Drawing.Size(270, 516);
             this.ProjectTreeView.TabIndex = 0;
             this.ProjectTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.ProjectTreeView_BeforeCollapse);
             this.ProjectTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.ProjectTreeView_BeforeExpand);
@@ -55,14 +55,14 @@
             // 
             // ProjectExplorerPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 559);
+            this.ClientSize = new System.Drawing.Size(270, 516);
             this.Controls.Add(this.ProjectTreeView);
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProjectExplorerPanel";
-            this.Text = "Project Explorer";
+            this.Text = "项目浏览器";
             this.ResumeLayout(false);
 
         }

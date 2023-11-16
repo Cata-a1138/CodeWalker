@@ -84,13 +84,13 @@ namespace CodeWalker.GameFiles
 
             if(rel_parent_path.StartsWith(@"mods\"))
             {
-                status = "already in mods folder";
+                status = "已经在 mods 文件夹中";
                 return null;
             }
 
             if(!full_parent_path.EndsWith(rel_parent_path))
             {
-                throw new DirectoryNotFoundException("Expected full parent path to end with relative path");
+                throw new DirectoryNotFoundException("需要完整的父路径以相对路径结尾");
             }
 
             string mods_base_path = full_parent_path.Replace(rel_parent_path, @"mods\");
@@ -99,11 +99,11 @@ namespace CodeWalker.GameFiles
             try
             {
                 File.Copy(full_parent_path, dest_path);
-                status = $"copied \"{parentFile.Name}\" from \"{full_parent_path}\" to \"{dest_path}\"";
+                status = $"已复制 \"{parentFile.Name}\" 从 \"{full_parent_path}\" 到 \"{dest_path}\"";
                 return dest_path;
             } catch (IOException e)
             {
-                status = $"unable to copy \"{parentFile.Name}\" from \"{full_parent_path}\" to \"{dest_path}\": {e.Message}";
+                status = $"无法复制 \"{parentFile.Name}\" 从 \"{full_parent_path}\" 到 \"{dest_path}\": {e.Message}";
                 return null;
             } 
         }
@@ -144,7 +144,7 @@ namespace CodeWalker.GameFiles
 
             if (Version != 0x52504637)
             {
-                throw new Exception("Invalid Resource - not GTAV!");
+                throw new Exception("无效的资源 - 不是 GTAV 资源！");
             }
 
             byte[] entriesdata = br.ReadBytes((int)EntryCount * 16); //4x uints each
@@ -171,6 +171,20 @@ namespace CodeWalker.GameFiles
                     break;
             }
 
+            // 修复读取问题
+            if (entriesdata.Length > 0) {
+                var checkRdr = new DataReader(new MemoryStream(entriesdata));
+                // 跳过前面的 4 个字节
+                checkRdr.Position += 4;
+                var check = checkRdr.ReadBytes(4);
+                // 如果 check 结尾是 FF 7F，但 check 开头不是 00 FF 那么就是有问题的
+                if (check[3] == 0x7F && check[2] == 0xFF && (check[1] != 0xFF || check[0] != 0x00)) {
+                    // 修改 entriesdata
+                    var newHeader = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x7F };
+                    // 替换掉 entriesdata 的前 8 个字节
+                    Buffer.BlockCopy(newHeader, 0, entriesdata, 0, 8);
+                }
+            }
 
             var entriesrdr = new DataReader(new MemoryStream(entriesdata));
             var namesrdr = new DataReader(new MemoryStream(namesdata));
@@ -211,7 +225,12 @@ namespace CodeWalker.GameFiles
                 e.H1 = y;
                 e.H2 = x;
 
-                e.Read(entriesrdr);
+                try {
+                    e.Read(entriesrdr);
+                } catch (Exception ex) {
+                    var entriesDataHex = BitConverter.ToString(entriesdata).Replace("-", " ");
+                    throw new Exception("无法读取 RPF 文件 " + i.ToString() + "，位于 " + Name + "，entriesData: \n" + entriesDataHex, ex);
+                }
 
                 namesrdr.Position = e.NameOffset;
                 e.Name = namesrdr.ReadString();
@@ -234,9 +253,11 @@ namespace CodeWalker.GameFiles
                 AllEntries.Add(e);
             }
 
-
-
-            Root = (RpfDirectoryEntry)AllEntries[0];
+            try {
+                Root = (RpfDirectoryEntry)AllEntries[0];
+            } catch (Exception ex) {
+                throw new Exception("无效的资源 - 不是根目录资源：" + ex.ToString());
+            }
             Root.Path = Path.ToLowerInvariant();// + "\\" + Root.Name;
             var stack = new Stack<RpfDirectoryEntry>();
             stack.Push(Root);
@@ -305,7 +326,7 @@ namespace CodeWalker.GameFiles
 
             Children = new List<RpfFile>();
 
-            updateStatus?.Invoke("Scanning " + Path + "...");
+            updateStatus?.Invoke("正在扫描 " + Path + "...");
 
             foreach (RpfEntry entry in AllEntries)
             {
@@ -319,23 +340,27 @@ namespace CodeWalker.GameFiles
                         string lname = binentry.NameLower;
                         if (lname.EndsWith(".rpf") && binentry.Path.Length < 5000) // a long path is most likely an attempt to crash CW, so skip it
                         {
-                            br.BaseStream.Position = StartPos + ((long)binentry.FileOffset * 512);
+                            try {
+                                br.BaseStream.Position = StartPos + ((long)binentry.FileOffset * 512);
 
-                            long l = binentry.GetFileSize();
+                                long l = binentry.GetFileSize();
 
-                            RpfFile subfile = new RpfFile(binentry.Name, binentry.Path, l);
-                            subfile.Parent = this;
-                            subfile.ParentFileEntry = binentry;
+                                RpfFile subfile = new RpfFile(binentry.Name, binentry.Path, l);
+                                subfile.Parent = this;
+                                subfile.ParentFileEntry = binentry;
 
-                            subfile.ScanStructure(br, updateStatus, errorLog);
+                                subfile.ScanStructure(br, updateStatus, errorLog);
 
-                            GrandTotalRpfCount += subfile.GrandTotalRpfCount;
-                            GrandTotalFileCount += subfile.GrandTotalFileCount;
-                            GrandTotalFolderCount += subfile.GrandTotalFolderCount;
-                            GrandTotalResourceCount += subfile.GrandTotalResourceCount;
-                            GrandTotalBinaryFileCount += subfile.GrandTotalBinaryFileCount;
+                                GrandTotalRpfCount += subfile.GrandTotalRpfCount;
+                                GrandTotalFileCount += subfile.GrandTotalFileCount;
+                                GrandTotalFolderCount += subfile.GrandTotalFolderCount;
+                                GrandTotalResourceCount += subfile.GrandTotalResourceCount;
+                                GrandTotalBinaryFileCount += subfile.GrandTotalBinaryFileCount;
 
-                            Children.Add(subfile);
+                                Children.Add(subfile);
+                            } catch (Exception ex) {
+                                errorLog?.Invoke("无法扫描 [" + entry.Path + "\\" + lname + "]，错误：" + ex.ToString());
+                            }
                         }
                         else
                         {
@@ -384,7 +409,7 @@ namespace CodeWalker.GameFiles
         }
         private void ExtractScripts(BinaryReader br, string outputfolder, Action<string> updateStatus)
         {
-            updateStatus?.Invoke("Searching " + Name + "...");
+            updateStatus?.Invoke("正在搜索 " + Name + "...");
 
             ReadHeader(br);
 
@@ -419,7 +444,7 @@ namespace CodeWalker.GameFiles
 
                     if (lname.EndsWith(".ysc"))
                     {
-                        updateStatus?.Invoke("Extracting " + resentry.Name + "...");
+                        updateStatus?.Invoke("正在导出 " + resentry.Name + "...");
 
                         //found a YSC file. extract it!
                         string ofpath = outputfolder + "\\" + resentry.Name;
@@ -468,7 +493,7 @@ namespace CodeWalker.GameFiles
                                     ofpath = outputfolder + "\\" + Name + "_" + resentry.Name;
                                     if (File.Exists(ofpath))
                                     {
-                                        LastError = "Output file " + ofpath + " already exists!";
+                                        LastError = "输出文件 " + ofpath + " 已经存在！";
                                         pathok = false;
                                     }
                                 }
@@ -773,7 +798,7 @@ namespace CodeWalker.GameFiles
                                     {
                                         if (binentry.FileSize == 0)
                                         {
-                                            sb.AppendFormat("{0} : Binary FileSize is 0.", entry.Path);
+                                            sb.AppendFormat("{0} : 二进制文件大小为 0。", entry.Path);
                                             sb.AppendLine();
                                         }
                                         else
@@ -784,7 +809,7 @@ namespace CodeWalker.GameFiles
                                     }
                                     else if (data.Length == 0)
                                     {
-                                        sb.AppendFormat("{0} : Decompressed output was empty.", entry.Path);
+                                        sb.AppendFormat("{0} : 解压缩后的大小为 0。", entry.Path);
                                         sb.AppendLine();
                                     }
                                     else
@@ -800,7 +825,7 @@ namespace CodeWalker.GameFiles
                                     {
                                         if (resentry.FileSize == 0)
                                         {
-                                            sb.AppendFormat("{0} : Resource FileSize is 0.", entry.Path);
+                                            sb.AppendFormat("{0} : 资源文件的大小为 0。", entry.Path);
                                             sb.AppendLine();
                                         }
                                         else
@@ -811,7 +836,7 @@ namespace CodeWalker.GameFiles
                                     }
                                     else if (data.Length == 0)
                                     {
-                                        sb.AppendFormat("{0} : Decompressed output was empty.", entry.Path);
+                                        sb.AppendFormat("{0} : 解压缩后的大小为 0.", entry.Path);
                                         sb.AppendLine();
                                     }
                                     else
@@ -912,7 +937,7 @@ namespace CodeWalker.GameFiles
 
                         if (outbuf.Length <= bytes.Length)
                         {
-                            LastError = "Warning: Decompressed data was smaller than compressed data...";
+                            LastError = "警告：解压缩后的数据小于压缩前的数据...";
                             //return null; //could still be OK for tiny things!
                         }
 
@@ -922,7 +947,7 @@ namespace CodeWalker.GameFiles
             }
             catch (Exception ex)
             {
-                LastError = "Could not decompress.";// ex.ToString();
+                LastError = "无法解压缩。";// ex.ToString();
                 LastException = ex;
                 return null;
             }
@@ -1244,7 +1269,7 @@ namespace CodeWalker.GameFiles
             {
                 if (ParentFileEntry == null)
                 {
-                    throw new Exception("Can't grow archive " + Path + ": ParentFileEntry was null!");
+                    throw new Exception("无法扩大 " + Path + ": ParentFileEntry 为 null！");
                 }
 
 
@@ -1266,7 +1291,7 @@ namespace CodeWalker.GameFiles
             uint nend = newblock + flen;
             if ((nend > fbeg) && (newblock < fend))//can't move to somewhere within itself!
             {
-                throw new Exception("Unable to relocate file " + f.Path + ": new position was inside the original!");
+                throw new Exception("无法重定位文件 " + f.Path + ": 新的位置在原始目录内！");
             }
 
             var stream = bw.BaseStream;
@@ -1484,7 +1509,7 @@ namespace CodeWalker.GameFiles
 
             if (File.Exists(fpath))
             {
-                throw new Exception("File " + fpath + " already exists!");
+                throw new Exception("文件 " + fpath + " 已经存在！");
             }
 
             File.Create(fpath).Dispose(); //just write a placeholder, will fill it out later
@@ -1513,7 +1538,7 @@ namespace CodeWalker.GameFiles
 
             if (!File.Exists(fpath))
             {
-                throw new Exception("Root RPF file " + fpath + " does not exist!");
+                throw new Exception("根 RPF 文件 " + fpath + " 不存在！");
             }
 
 
@@ -1566,7 +1591,7 @@ namespace CodeWalker.GameFiles
 
             if (!File.Exists(fpath))
             {
-                throw new Exception("Root RPF file " + fpath + " does not exist!");
+                throw new Exception("根 RPF 文件 " + fpath + " 不存在！");
             }
 
             RpfDirectoryEntry entry = new RpfDirectoryEntry();
@@ -1582,7 +1607,7 @@ namespace CodeWalker.GameFiles
             {
                 if (exdir.NameLower == entry.NameLower)
                 {
-                    throw new Exception("RPF Directory \"" + entry.Name + "\" already exists!");
+                    throw new Exception("RPF 目录 \"" + entry.Name + "\" 已经存在！");
                 }
             }
 
@@ -1624,7 +1649,7 @@ namespace CodeWalker.GameFiles
             string rpath = dir.Path + "\\" + namel;
             if (!File.Exists(fpath))
             {
-                throw new Exception("Root RPF file " + fpath + " does not exist!");
+                throw new Exception("根 RPF 文件 " + fpath + " 不存在！");
             }
 
 
@@ -1704,7 +1729,7 @@ namespace CodeWalker.GameFiles
             {
                 if (exfile.NameLower == entry.NameLower)
                 {
-                    throw new Exception("File \"" + entry.Name + "\" already exists!");
+                    throw new Exception("文件 \"" + entry.Name + "\" 已经存在！");
                 }
             }
 
@@ -1811,7 +1836,7 @@ namespace CodeWalker.GameFiles
             string fpath = parent.GetPhysicalFilePath();
             if (!File.Exists(fpath))
             {
-                throw new Exception("Root RPF file " + fpath + " does not exist!");
+                throw new Exception("根 RPF 文件 " + fpath + " 不存在！");
             }
 
             RpfDirectoryEntry entryasdir = entry as RpfDirectoryEntry;
@@ -1833,7 +1858,7 @@ namespace CodeWalker.GameFiles
 
             if (entry.Parent == null)
             {
-                throw new Exception("Parent directory is null! This shouldn't happen - please refresh the folder!");
+                throw new Exception("父文件夹为空！这不应该发生 - 请尝试刷新文件管理器！");
             }
 
             if (entryasdir != null)
@@ -1941,7 +1966,7 @@ namespace CodeWalker.GameFiles
                     {
                         var entry = allfiles[i];
                         float prog = (float)i / allfiles.Count;
-                        string txt = "Relocating " + entry.Name + "...";
+                        string txt = "正在移动文件 " + entry.Name + "...";
                         progress?.Invoke(txt, prog);
 
                         var sourceblock = entry.FileOffset;
@@ -2095,7 +2120,7 @@ namespace CodeWalker.GameFiles
             uint ident = reader.ReadUInt32();
             if (ident != 0x7FFFFF00u)
             {
-                throw new Exception("Error in RPF7 directory entry.");
+                throw new Exception("RPF7 文件夹条目存在错误");
             }
             EntriesIndex = reader.ReadUInt32();
             EntriesCount = reader.ReadUInt32();
@@ -2109,7 +2134,7 @@ namespace CodeWalker.GameFiles
         }
         public override string ToString()
         {
-            return "Directory: " + Path;
+            return "文件夹：" + Path;
         }
     }
 
@@ -2144,7 +2169,7 @@ namespace CodeWalker.GameFiles
                 case 0: IsEncrypted = false; break;
                 case 1: IsEncrypted = true; break;
                 default:
-                    throw new Exception("Error in RPF7 file entry.");
+                    throw new Exception("RPF7 文件条目错误，加密类型为：" + EncryptionType.ToString());
             }
 
         }
@@ -2175,7 +2200,7 @@ namespace CodeWalker.GameFiles
         }
         public override string ToString()
         {
-            return "Binary file: " + Path;
+            return "二进制文件：" + Path;
         }
 
         public override long GetFileSize()
@@ -2566,7 +2591,7 @@ namespace CodeWalker.GameFiles
         }
         public override string ToString()
         {
-            return "Resource file: " + Path;
+            return "资源文件：" + Path;
         }
 
         public override long GetFileSize()
@@ -2731,7 +2756,7 @@ namespace CodeWalker.GameFiles
 
         public override string ToString()
         {
-            return "Size: " + Size.ToString() + ", Pages: " + Count.ToString();
+            return "大小：" + Size.ToString() + "，页面：" + Count.ToString();
         }
     }
 

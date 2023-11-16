@@ -40,7 +40,7 @@ namespace CodeWalker.Forms
             InitializeComponent();
 
             MainListView.ContextMenuStrip = new ContextMenuStrip();
-            MainListView.ContextMenuStrip.Items.Add(new ToolStripMenuItem("Export to openFormats (.onim)...", null, ExportOnim_Click));
+            MainListView.ContextMenuStrip.Items.Add(new ToolStripMenuItem("导出到 openFormats (.onim)...", null, ExportOnim_Click));
         }
 
         private void ExportOnim_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace CodeWalker.Forms
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error saving file " + path + ":\n" + ex.ToString());
+                        MessageBox.Show("无法保存文件 " + path + "：\n" + ex.ToString());
                     }
                 }
             }
@@ -73,7 +73,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - Clip Dictionary Inspector - CodeWalker by dexyfex";
+            Text = fileName + " - 动画字典查看器 - CodeWalker by dexyfex";
         }
 
         private void UpdateXmlTextBox(string xml)

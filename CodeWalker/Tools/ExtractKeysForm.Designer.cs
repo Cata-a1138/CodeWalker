@@ -42,29 +42,32 @@
             // 
             // BeginButton
             // 
-            this.BeginButton.Location = new System.Drawing.Point(98, 89);
+            this.BeginButton.Location = new System.Drawing.Point(114, 98);
+            this.BeginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BeginButton.Name = "BeginButton";
-            this.BeginButton.Size = new System.Drawing.Size(75, 23);
+            this.BeginButton.Size = new System.Drawing.Size(88, 30);
             this.BeginButton.TabIndex = 60;
-            this.BeginButton.Text = "Begin";
+            this.BeginButton.Text = "开始";
             this.BeginButton.UseVisualStyleBackColor = true;
             this.BeginButton.Click += new System.EventHandler(this.BeginButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 28);
+            this.label1.Location = new System.Drawing.Point(23, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 59;
-            this.label1.Text = "GTAV folder:";
+            this.label1.Text = "GTAV 目录：";
             // 
             // FolderBrowseButton
             // 
             this.FolderBrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FolderBrowseButton.Location = new System.Drawing.Point(449, 23);
+            this.FolderBrowseButton.Location = new System.Drawing.Point(521, 30);
+            this.FolderBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderBrowseButton.Name = "FolderBrowseButton";
-            this.FolderBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.FolderBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.FolderBrowseButton.TabIndex = 58;
             this.FolderBrowseButton.Text = "...";
             this.FolderBrowseButton.UseVisualStyleBackColor = true;
@@ -74,10 +77,11 @@
             // 
             this.FolderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FolderTextBox.Location = new System.Drawing.Point(98, 25);
+            this.FolderTextBox.Location = new System.Drawing.Point(114, 33);
+            this.FolderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderTextBox.Name = "FolderTextBox";
             this.FolderTextBox.ReadOnly = true;
-            this.FolderTextBox.Size = new System.Drawing.Size(345, 20);
+            this.FolderTextBox.Size = new System.Drawing.Size(399, 23);
             this.FolderTextBox.TabIndex = 57;
             // 
             // StatusLabel
@@ -86,27 +90,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusLabel.AutoEllipsis = true;
-            this.StatusLabel.Location = new System.Drawing.Point(20, 139);
+            this.StatusLabel.Location = new System.Drawing.Point(23, 141);
+            this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(474, 125);
+            this.StatusLabel.Size = new System.Drawing.Size(554, 85);
             this.StatusLabel.TabIndex = 61;
-            this.StatusLabel.Text = "Keys not loaded - Browse for the main GTAV folder and click Begin...";
+            this.StatusLabel.Text = "秘钥未加载 - 选择 GTAV 安装目录然后点击开始按钮";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 54);
+            this.label2.Location = new System.Drawing.Point(23, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 64;
             this.label2.Text = "GTAV exe:";
             // 
             // ExeBrowseButton
             // 
             this.ExeBrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExeBrowseButton.Location = new System.Drawing.Point(449, 49);
+            this.ExeBrowseButton.Location = new System.Drawing.Point(521, 64);
+            this.ExeBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExeBrowseButton.Name = "ExeBrowseButton";
-            this.ExeBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.ExeBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.ExeBrowseButton.TabIndex = 63;
             this.ExeBrowseButton.Text = "...";
             this.ExeBrowseButton.UseVisualStyleBackColor = true;
@@ -116,16 +123,17 @@
             // 
             this.ExeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExeTextBox.Location = new System.Drawing.Point(98, 51);
+            this.ExeTextBox.Location = new System.Drawing.Point(114, 67);
+            this.ExeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExeTextBox.Name = "ExeTextBox";
-            this.ExeTextBox.Size = new System.Drawing.Size(345, 20);
+            this.ExeTextBox.Size = new System.Drawing.Size(399, 23);
             this.ExeTextBox.TabIndex = 62;
             // 
             // ExtractKeysForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 273);
+            this.ClientSize = new System.Drawing.Size(601, 235);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ExeBrowseButton);
             this.Controls.Add(this.ExeTextBox);
@@ -134,7 +142,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FolderBrowseButton);
             this.Controls.Add(this.FolderTextBox);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExtractKeysForm";
             this.Text = "ExtractKeysForm";
             this.Load += new System.EventHandler(this.ExtractKeysForm_Load);

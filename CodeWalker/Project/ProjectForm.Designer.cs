@@ -239,7 +239,8 @@
             this.OptionsMenu});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(813, 24);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.MainMenu.Size = new System.Drawing.Size(951, 27);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "Main Menu";
             // 
@@ -258,8 +259,8 @@
             this.FileSaveItemMenu,
             this.FileSaveItemAsMenu});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
-            this.FileMenu.Text = "File";
+            this.FileMenu.Size = new System.Drawing.Size(44, 21);
+            this.FileMenu.Text = "文件";
             // 
             // FileNewMenu
             // 
@@ -275,138 +276,138 @@
             this.FileNewScenarioMenu,
             this.FileNewAudioDatMenu});
             this.FileNewMenu.Name = "FileNewMenu";
-            this.FileNewMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileNewMenu.Text = "New";
+            this.FileNewMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileNewMenu.Text = "新建";
             // 
             // FileNewProjectMenu
             // 
             this.FileNewProjectMenu.Name = "FileNewProjectMenu";
-            this.FileNewProjectMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewProjectMenu.Text = "Project";
+            this.FileNewProjectMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewProjectMenu.Text = "项目";
             this.FileNewProjectMenu.Click += new System.EventHandler(this.FileNewProjectMenu_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(158, 6);
             // 
             // FileNewYmapMenu
             // 
             this.FileNewYmapMenu.Name = "FileNewYmapMenu";
-            this.FileNewYmapMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewYmapMenu.Text = "Ymap File";
+            this.FileNewYmapMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewYmapMenu.Text = "Ymap 地图文件";
             this.FileNewYmapMenu.Click += new System.EventHandler(this.FileNewYmapMenu_Click);
             // 
             // FileNewYtypMenu
             // 
             this.FileNewYtypMenu.Name = "FileNewYtypMenu";
-            this.FileNewYtypMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewYtypMenu.Text = "Ytyp File";
+            this.FileNewYtypMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewYtypMenu.Text = "Ytyp 定义类型";
             this.FileNewYtypMenu.Click += new System.EventHandler(this.FileNewYtypMenu_Click);
             // 
             // FileNewYbnMenu
             // 
             this.FileNewYbnMenu.Name = "FileNewYbnMenu";
-            this.FileNewYbnMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewYbnMenu.Text = "Ybn File";
+            this.FileNewYbnMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewYbnMenu.Text = "Ybn 碰撞网格";
             this.FileNewYbnMenu.Click += new System.EventHandler(this.FileNewYbnMenu_Click);
             // 
             // FileNewYndMenu
             // 
             this.FileNewYndMenu.Name = "FileNewYndMenu";
-            this.FileNewYndMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewYndMenu.Text = "Ynd File";
+            this.FileNewYndMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewYndMenu.Text = "Ynd 路线节点";
             this.FileNewYndMenu.Click += new System.EventHandler(this.FileNewYndMenu_Click);
             // 
             // FileNewYnvMenu
             // 
             this.FileNewYnvMenu.Name = "FileNewYnvMenu";
-            this.FileNewYnvMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewYnvMenu.Text = "Ynv File";
+            this.FileNewYnvMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewYnvMenu.Text = "Ynv 寻路网格";
             this.FileNewYnvMenu.Click += new System.EventHandler(this.FileNewYnvMenu_Click);
             // 
             // FileNewTrainsMenu
             // 
             this.FileNewTrainsMenu.Name = "FileNewTrainsMenu";
-            this.FileNewTrainsMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewTrainsMenu.Text = "Trains File";
+            this.FileNewTrainsMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewTrainsMenu.Text = "火车路线";
             this.FileNewTrainsMenu.Click += new System.EventHandler(this.FileNewTrainsMenu_Click);
             // 
             // FileNewScenarioMenu
             // 
             this.FileNewScenarioMenu.Name = "FileNewScenarioMenu";
-            this.FileNewScenarioMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewScenarioMenu.Text = "Scenario File";
+            this.FileNewScenarioMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewScenarioMenu.Text = "场景文件";
             this.FileNewScenarioMenu.Click += new System.EventHandler(this.FileNewScenarioMenu_Click);
             // 
             // FileNewAudioDatMenu
             // 
             this.FileNewAudioDatMenu.Name = "FileNewAudioDatMenu";
-            this.FileNewAudioDatMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileNewAudioDatMenu.Text = "Audio Dat File";
+            this.FileNewAudioDatMenu.Size = new System.Drawing.Size(161, 22);
+            this.FileNewAudioDatMenu.Text = "音频 Dat 文件";
             this.FileNewAudioDatMenu.Click += new System.EventHandler(this.FileNewAudioDatMenu_Click);
             // 
             // FileOpenProjectMenu
             // 
             this.FileOpenProjectMenu.Name = "FileOpenProjectMenu";
-            this.FileOpenProjectMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileOpenProjectMenu.Text = "Open Project...";
+            this.FileOpenProjectMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileOpenProjectMenu.Text = "打开项目...";
             this.FileOpenProjectMenu.Click += new System.EventHandler(this.FileOpenProjectMenu_Click);
             // 
             // FileOpenFilesMenu
             // 
             this.FileOpenFilesMenu.Name = "FileOpenFilesMenu";
-            this.FileOpenFilesMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileOpenFilesMenu.Text = "Open Files...";
+            this.FileOpenFilesMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileOpenFilesMenu.Text = "打开文件...";
             this.FileOpenFilesMenu.Click += new System.EventHandler(this.FileOpenFilesMenu_Click);
             // 
             // FileOpenFolderMenu
             // 
             this.FileOpenFolderMenu.Name = "FileOpenFolderMenu";
-            this.FileOpenFolderMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileOpenFolderMenu.Text = "Open Folder...";
+            this.FileOpenFolderMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileOpenFolderMenu.Text = "打开文件夹...";
             this.FileOpenFolderMenu.Click += new System.EventHandler(this.FileOpenFolderMenu_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(160, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(142, 6);
             // 
             // FileCloseProjectMenu
             // 
             this.FileCloseProjectMenu.Enabled = false;
             this.FileCloseProjectMenu.Name = "FileCloseProjectMenu";
-            this.FileCloseProjectMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileCloseProjectMenu.Text = "Close Project";
+            this.FileCloseProjectMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileCloseProjectMenu.Text = "关闭项目";
             this.FileCloseProjectMenu.Click += new System.EventHandler(this.FileCloseProjectMenu_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(160, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(142, 6);
             // 
             // FileSaveProjectMenu
             // 
             this.FileSaveProjectMenu.Enabled = false;
             this.FileSaveProjectMenu.Name = "FileSaveProjectMenu";
-            this.FileSaveProjectMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileSaveProjectMenu.Text = "Save Project";
+            this.FileSaveProjectMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileSaveProjectMenu.Text = "保存项目";
             this.FileSaveProjectMenu.Click += new System.EventHandler(this.FileSaveProjectMenu_Click);
             // 
             // FileSaveProjectAsMenu
             // 
             this.FileSaveProjectAsMenu.Enabled = false;
             this.FileSaveProjectAsMenu.Name = "FileSaveProjectAsMenu";
-            this.FileSaveProjectAsMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileSaveProjectAsMenu.Text = "Save Project As...";
+            this.FileSaveProjectAsMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileSaveProjectAsMenu.Text = "另存为项目...";
             this.FileSaveProjectAsMenu.Click += new System.EventHandler(this.FileSaveProjectAsMenu_Click);
             // 
             // FileSaveItemMenu
             // 
             this.FileSaveItemMenu.Enabled = false;
             this.FileSaveItemMenu.Name = "FileSaveItemMenu";
-            this.FileSaveItemMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileSaveItemMenu.Text = "Save Item";
+            this.FileSaveItemMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileSaveItemMenu.Text = "保存对象";
             this.FileSaveItemMenu.Visible = false;
             this.FileSaveItemMenu.Click += new System.EventHandler(this.FileSaveItemMenu_Click);
             // 
@@ -414,8 +415,8 @@
             // 
             this.FileSaveItemAsMenu.Enabled = false;
             this.FileSaveItemAsMenu.Name = "FileSaveItemAsMenu";
-            this.FileSaveItemAsMenu.Size = new System.Drawing.Size(163, 22);
-            this.FileSaveItemAsMenu.Text = "Save Item As...";
+            this.FileSaveItemAsMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileSaveItemAsMenu.Text = "另存为对象...";
             this.FileSaveItemAsMenu.Visible = false;
             this.FileSaveItemAsMenu.Click += new System.EventHandler(this.FileSaveItemAsMenu_Click);
             // 
@@ -431,68 +432,68 @@
             this.EditCloneMenu,
             this.EditDeleteMenu});
             this.EditMenu.Name = "EditMenu";
-            this.EditMenu.Size = new System.Drawing.Size(39, 20);
-            this.EditMenu.Text = "Edit";
+            this.EditMenu.Size = new System.Drawing.Size(44, 21);
+            this.EditMenu.Text = "编辑";
             // 
             // EditUndoMenu
             // 
             this.EditUndoMenu.Enabled = false;
             this.EditUndoMenu.Name = "EditUndoMenu";
             this.EditUndoMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.EditUndoMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditUndoMenu.Text = "Undo";
+            this.EditUndoMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditUndoMenu.Text = "撤销";
             // 
             // EditRedoMenu
             // 
             this.EditRedoMenu.Enabled = false;
             this.EditRedoMenu.Name = "EditRedoMenu";
             this.EditRedoMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.EditRedoMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditRedoMenu.Text = "Redo";
+            this.EditRedoMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditRedoMenu.Text = "重做";
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(200, 6);
             // 
             // EditCutMenu
             // 
             this.EditCutMenu.Enabled = false;
             this.EditCutMenu.Name = "EditCutMenu";
             this.EditCutMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.EditCutMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditCutMenu.Text = "Cut Item";
+            this.EditCutMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditCutMenu.Text = "剪切对象";
             // 
             // EditCopyMenu
             // 
             this.EditCopyMenu.Enabled = false;
             this.EditCopyMenu.Name = "EditCopyMenu";
             this.EditCopyMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.EditCopyMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditCopyMenu.Text = "Copy Item";
+            this.EditCopyMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditCopyMenu.Text = "复制对象";
             // 
             // EditPasteMenu
             // 
             this.EditPasteMenu.Enabled = false;
             this.EditPasteMenu.Name = "EditPasteMenu";
             this.EditPasteMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.EditPasteMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditPasteMenu.Text = "Paste Item";
+            this.EditPasteMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditPasteMenu.Text = "粘贴对象";
             // 
             // EditCloneMenu
             // 
             this.EditCloneMenu.Enabled = false;
             this.EditCloneMenu.Name = "EditCloneMenu";
-            this.EditCloneMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditCloneMenu.Text = "Clone Item";
+            this.EditCloneMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditCloneMenu.Text = "克隆对象";
             // 
             // EditDeleteMenu
             // 
             this.EditDeleteMenu.Enabled = false;
             this.EditDeleteMenu.Name = "EditDeleteMenu";
             this.EditDeleteMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Delete)));
-            this.EditDeleteMenu.Size = new System.Drawing.Size(190, 22);
-            this.EditDeleteMenu.Text = "Delete Item";
+            this.EditDeleteMenu.Size = new System.Drawing.Size(203, 22);
+            this.EditDeleteMenu.Text = "删除对象";
             // 
             // ViewMenu
             // 
@@ -501,20 +502,20 @@
             this.toolStripSeparator1,
             this.ViewThemeMenu});
             this.ViewMenu.Name = "ViewMenu";
-            this.ViewMenu.Size = new System.Drawing.Size(44, 20);
-            this.ViewMenu.Text = "View";
+            this.ViewMenu.Size = new System.Drawing.Size(44, 21);
+            this.ViewMenu.Text = "查看";
             // 
             // ViewProjectExplorerMenu
             // 
             this.ViewProjectExplorerMenu.Name = "ViewProjectExplorerMenu";
-            this.ViewProjectExplorerMenu.Size = new System.Drawing.Size(157, 22);
-            this.ViewProjectExplorerMenu.Text = "Project Explorer";
+            this.ViewProjectExplorerMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewProjectExplorerMenu.Text = "项目浏览器";
             this.ViewProjectExplorerMenu.Click += new System.EventHandler(this.ViewProjectExplorerMenu_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(154, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // ViewThemeMenu
             // 
@@ -523,30 +524,30 @@
             this.ViewThemeLightMenu,
             this.ViewThemeDarkMenu});
             this.ViewThemeMenu.Name = "ViewThemeMenu";
-            this.ViewThemeMenu.Size = new System.Drawing.Size(157, 22);
-            this.ViewThemeMenu.Text = "Theme";
+            this.ViewThemeMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewThemeMenu.Text = "主题";
             // 
             // ViewThemeBlueMenu
             // 
             this.ViewThemeBlueMenu.Checked = true;
             this.ViewThemeBlueMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewThemeBlueMenu.Name = "ViewThemeBlueMenu";
-            this.ViewThemeBlueMenu.Size = new System.Drawing.Size(101, 22);
-            this.ViewThemeBlueMenu.Text = "Blue";
+            this.ViewThemeBlueMenu.Size = new System.Drawing.Size(112, 22);
+            this.ViewThemeBlueMenu.Text = "蓝色";
             this.ViewThemeBlueMenu.Click += new System.EventHandler(this.ViewThemeBlueMenu_Click);
             // 
             // ViewThemeLightMenu
             // 
             this.ViewThemeLightMenu.Name = "ViewThemeLightMenu";
-            this.ViewThemeLightMenu.Size = new System.Drawing.Size(101, 22);
-            this.ViewThemeLightMenu.Text = "Light";
+            this.ViewThemeLightMenu.Size = new System.Drawing.Size(112, 22);
+            this.ViewThemeLightMenu.Text = "亮色调";
             this.ViewThemeLightMenu.Click += new System.EventHandler(this.ViewThemeLightMenu_Click);
             // 
             // ViewThemeDarkMenu
             // 
             this.ViewThemeDarkMenu.Name = "ViewThemeDarkMenu";
-            this.ViewThemeDarkMenu.Size = new System.Drawing.Size(101, 22);
-            this.ViewThemeDarkMenu.Text = "Dark";
+            this.ViewThemeDarkMenu.Size = new System.Drawing.Size(112, 22);
+            this.ViewThemeDarkMenu.Text = "暗色调";
             this.ViewThemeDarkMenu.Click += new System.EventHandler(this.ViewThemeDarkMenu_Click);
             // 
             // ToolsMenu
@@ -560,52 +561,52 @@
             this.toolStripSeparator31,
             this.deleteGrassToolStripMenuItem});
             this.ToolsMenu.Name = "ToolsMenu";
-            this.ToolsMenu.Size = new System.Drawing.Size(46, 20);
-            this.ToolsMenu.Text = "Tools";
+            this.ToolsMenu.Size = new System.Drawing.Size(44, 21);
+            this.ToolsMenu.Text = "工具";
             // 
             // ToolsManifestGeneratorMenu
             // 
             this.ToolsManifestGeneratorMenu.Name = "ToolsManifestGeneratorMenu";
-            this.ToolsManifestGeneratorMenu.Size = new System.Drawing.Size(196, 22);
-            this.ToolsManifestGeneratorMenu.Text = "Manifest Generator...";
+            this.ToolsManifestGeneratorMenu.Size = new System.Drawing.Size(191, 22);
+            this.ToolsManifestGeneratorMenu.Text = "清单生成器...";
             this.ToolsManifestGeneratorMenu.Click += new System.EventHandler(this.ToolsManifestGeneratorMenu_Click);
             // 
             // ToolsLODLightsGeneratorMenu
             // 
             this.ToolsLODLightsGeneratorMenu.Name = "ToolsLODLightsGeneratorMenu";
-            this.ToolsLODLightsGeneratorMenu.Size = new System.Drawing.Size(196, 22);
-            this.ToolsLODLightsGeneratorMenu.Text = "LOD Lights Generator...";
+            this.ToolsLODLightsGeneratorMenu.Size = new System.Drawing.Size(191, 22);
+            this.ToolsLODLightsGeneratorMenu.Text = "远景灯光生成器...";
             this.ToolsLODLightsGeneratorMenu.Click += new System.EventHandler(this.ToolsLODLightsGeneratorMenu_Click);
             // 
             // ToolsNavMeshGeneratorMenu
             // 
             this.ToolsNavMeshGeneratorMenu.Name = "ToolsNavMeshGeneratorMenu";
-            this.ToolsNavMeshGeneratorMenu.Size = new System.Drawing.Size(196, 22);
-            this.ToolsNavMeshGeneratorMenu.Text = "Nav Mesh Generator...";
+            this.ToolsNavMeshGeneratorMenu.Size = new System.Drawing.Size(191, 22);
+            this.ToolsNavMeshGeneratorMenu.Text = "寻路网格生成器...";
             this.ToolsNavMeshGeneratorMenu.Click += new System.EventHandler(this.ToolsNavMeshGeneratorMenu_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
             // 
             // ToolsImportMenyooXmlMenu
             // 
             this.ToolsImportMenyooXmlMenu.Name = "ToolsImportMenyooXmlMenu";
-            this.ToolsImportMenyooXmlMenu.Size = new System.Drawing.Size(196, 22);
-            this.ToolsImportMenyooXmlMenu.Text = "Import Menyoo XML...";
+            this.ToolsImportMenyooXmlMenu.Size = new System.Drawing.Size(191, 22);
+            this.ToolsImportMenyooXmlMenu.Text = "导入 Menyoo XML...";
             this.ToolsImportMenyooXmlMenu.Click += new System.EventHandler(this.ToolsImportMenyooXmlMenu_Click);
             // 
             // toolStripSeparator31
             // 
             this.toolStripSeparator31.Name = "toolStripSeparator31";
-            this.toolStripSeparator31.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator31.Size = new System.Drawing.Size(188, 6);
             // 
             // deleteGrassToolStripMenuItem
             // 
             this.deleteGrassToolStripMenuItem.Name = "deleteGrassToolStripMenuItem";
-            this.deleteGrassToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.deleteGrassToolStripMenuItem.Text = "Delete Grass...";
+            this.deleteGrassToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.deleteGrassToolStripMenuItem.Text = "删除实例草...";
             this.deleteGrassToolStripMenuItem.Click += new System.EventHandler(this.ToolsDeleteGrassMenu_Click);
             // 
             // YmapMenu
@@ -620,7 +621,7 @@
             this.YmapAddToProjectMenu,
             this.YmapRemoveFromProjectMenu});
             this.YmapMenu.Name = "YmapMenu";
-            this.YmapMenu.Size = new System.Drawing.Size(49, 20);
+            this.YmapMenu.Size = new System.Drawing.Size(53, 21);
             this.YmapMenu.Text = "Ymap";
             this.YmapMenu.Visible = false;
             // 
@@ -628,57 +629,57 @@
             // 
             this.YmapNameMenu.Enabled = false;
             this.YmapNameMenu.Name = "YmapNameMenu";
-            this.YmapNameMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapNameMenu.Text = "(No .ymap file selected)";
+            this.YmapNameMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapNameMenu.Text = "(未选择 .ymap 文件)";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(196, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(184, 6);
             // 
             // YmapNewEntityMenu
             // 
             this.YmapNewEntityMenu.Enabled = false;
             this.YmapNewEntityMenu.Name = "YmapNewEntityMenu";
-            this.YmapNewEntityMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapNewEntityMenu.Text = "New Entity";
+            this.YmapNewEntityMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapNewEntityMenu.Text = "创建实体";
             this.YmapNewEntityMenu.Click += new System.EventHandler(this.YmapNewEntityMenu_Click);
             // 
             // YmapNewCarGenMenu
             // 
             this.YmapNewCarGenMenu.Enabled = false;
             this.YmapNewCarGenMenu.Name = "YmapNewCarGenMenu";
-            this.YmapNewCarGenMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapNewCarGenMenu.Text = "New Car Generator";
+            this.YmapNewCarGenMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapNewCarGenMenu.Text = "创建车辆生成器";
             this.YmapNewCarGenMenu.Click += new System.EventHandler(this.YmapNewCarGenMenu_Click);
             // 
             // YmapNewGrassBatchMenu
             // 
             this.YmapNewGrassBatchMenu.Enabled = false;
             this.YmapNewGrassBatchMenu.Name = "YmapNewGrassBatchMenu";
-            this.YmapNewGrassBatchMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapNewGrassBatchMenu.Text = "New Grass Batch";
+            this.YmapNewGrassBatchMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapNewGrassBatchMenu.Text = "创建实例草";
             this.YmapNewGrassBatchMenu.Click += new System.EventHandler(this.YmapNewGrassBatchMenu_Click);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(196, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(184, 6);
             // 
             // YmapAddToProjectMenu
             // 
             this.YmapAddToProjectMenu.Enabled = false;
             this.YmapAddToProjectMenu.Name = "YmapAddToProjectMenu";
-            this.YmapAddToProjectMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapAddToProjectMenu.Text = "Add to Project";
+            this.YmapAddToProjectMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapAddToProjectMenu.Text = "添加到项目";
             this.YmapAddToProjectMenu.Click += new System.EventHandler(this.YmapAddToProjectMenu_Click);
             // 
             // YmapRemoveFromProjectMenu
             // 
             this.YmapRemoveFromProjectMenu.Enabled = false;
             this.YmapRemoveFromProjectMenu.Name = "YmapRemoveFromProjectMenu";
-            this.YmapRemoveFromProjectMenu.Size = new System.Drawing.Size(199, 22);
-            this.YmapRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YmapRemoveFromProjectMenu.Size = new System.Drawing.Size(187, 22);
+            this.YmapRemoveFromProjectMenu.Text = "从项目中移除";
             this.YmapRemoveFromProjectMenu.Click += new System.EventHandler(this.YmapRemoveFromProjectMenu_Click);
             // 
             // YtypMenu
@@ -693,7 +694,7 @@
             this.YtypAddToProjectMenu,
             this.YtypRemoveFromProjectMenu});
             this.YtypMenu.Name = "YtypMenu";
-            this.YtypMenu.Size = new System.Drawing.Size(43, 20);
+            this.YtypMenu.Size = new System.Drawing.Size(45, 21);
             this.YtypMenu.Text = "Ytyp";
             this.YtypMenu.Visible = false;
             // 
@@ -701,28 +702,28 @@
             // 
             this.YtypNameMenu.Enabled = false;
             this.YtypNameMenu.Name = "YtypNameMenu";
-            this.YtypNameMenu.Size = new System.Drawing.Size(218, 22);
-            this.YtypNameMenu.Text = "(No .ytyp file selected)";
+            this.YtypNameMenu.Size = new System.Drawing.Size(201, 22);
+            this.YtypNameMenu.Text = "(未选择 .ytyp 文件)";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(215, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(198, 6);
             // 
             // YtypNewArchetypeMenu
             // 
             this.YtypNewArchetypeMenu.Enabled = false;
             this.YtypNewArchetypeMenu.Name = "YtypNewArchetypeMenu";
-            this.YtypNewArchetypeMenu.Size = new System.Drawing.Size(218, 22);
-            this.YtypNewArchetypeMenu.Text = "New Archetype";
+            this.YtypNewArchetypeMenu.Size = new System.Drawing.Size(201, 22);
+            this.YtypNewArchetypeMenu.Text = "新的定义类型";
             this.YtypNewArchetypeMenu.Click += new System.EventHandler(this.YtypNewArchetypeMenu_Click);
             // 
             // YtypNewArchetypeFromYdrMenu
             // 
             this.YtypNewArchetypeFromYdrMenu.Enabled = false;
             this.YtypNewArchetypeFromYdrMenu.Name = "YtypNewArchetypeFromYdrMenu";
-            this.YtypNewArchetypeFromYdrMenu.Size = new System.Drawing.Size(218, 22);
-            this.YtypNewArchetypeFromYdrMenu.Text = "New Archetype from YDR...";
+            this.YtypNewArchetypeFromYdrMenu.Size = new System.Drawing.Size(201, 22);
+            this.YtypNewArchetypeFromYdrMenu.Text = "从 YDR 创建定义类型...";
             this.YtypNewArchetypeFromYdrMenu.Click += new System.EventHandler(this.YtypNewArchetypeFromYdrMenu_Click);
             // 
             // YtypMloToolStripMenuItem
@@ -734,56 +735,56 @@
             this.YtypMloNewEntitySetToolStripMenuItem});
             this.YtypMloToolStripMenuItem.Enabled = false;
             this.YtypMloToolStripMenuItem.Name = "YtypMloToolStripMenuItem";
-            this.YtypMloToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.YtypMloToolStripMenuItem.Text = "Mlo";
+            this.YtypMloToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.YtypMloToolStripMenuItem.Text = "Mlo 内饰";
             // 
             // YtypMloNewEntityToolStripMenuItem
             // 
             this.YtypMloNewEntityToolStripMenuItem.Name = "YtypMloNewEntityToolStripMenuItem";
-            this.YtypMloNewEntityToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.YtypMloNewEntityToolStripMenuItem.Text = "New Entity";
+            this.YtypMloNewEntityToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.YtypMloNewEntityToolStripMenuItem.Text = "创建实体";
             this.YtypMloNewEntityToolStripMenuItem.Click += new System.EventHandler(this.YtypMloNewEntityToolStripMenuItem_Click);
             // 
             // YtypMloNewRoomToolStripMenuItem
             // 
             this.YtypMloNewRoomToolStripMenuItem.Name = "YtypMloNewRoomToolStripMenuItem";
-            this.YtypMloNewRoomToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.YtypMloNewRoomToolStripMenuItem.Text = "New Room";
+            this.YtypMloNewRoomToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.YtypMloNewRoomToolStripMenuItem.Text = "创建房间";
             this.YtypMloNewRoomToolStripMenuItem.Click += new System.EventHandler(this.YtypMloNewRoomToolStripMenuItem_Click);
             // 
             // YtypMloNewPortalToolStripMenuItem
             // 
             this.YtypMloNewPortalToolStripMenuItem.Name = "YtypMloNewPortalToolStripMenuItem";
-            this.YtypMloNewPortalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.YtypMloNewPortalToolStripMenuItem.Text = "New Portal";
+            this.YtypMloNewPortalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.YtypMloNewPortalToolStripMenuItem.Text = "创建门户";
             this.YtypMloNewPortalToolStripMenuItem.Click += new System.EventHandler(this.YtypMloNewPortalToolStripMenuItem_Click);
             // 
             // YtypMloNewEntitySetToolStripMenuItem
             // 
             this.YtypMloNewEntitySetToolStripMenuItem.Name = "YtypMloNewEntitySetToolStripMenuItem";
-            this.YtypMloNewEntitySetToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.YtypMloNewEntitySetToolStripMenuItem.Text = "New Entity Set";
+            this.YtypMloNewEntitySetToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.YtypMloNewEntitySetToolStripMenuItem.Text = "创建实体预设";
             this.YtypMloNewEntitySetToolStripMenuItem.Click += new System.EventHandler(this.YtypMloNewEntitySetToolStripMenuItem_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(215, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(198, 6);
             // 
             // YtypAddToProjectMenu
             // 
             this.YtypAddToProjectMenu.Enabled = false;
             this.YtypAddToProjectMenu.Name = "YtypAddToProjectMenu";
-            this.YtypAddToProjectMenu.Size = new System.Drawing.Size(218, 22);
-            this.YtypAddToProjectMenu.Text = "Add to Project";
+            this.YtypAddToProjectMenu.Size = new System.Drawing.Size(201, 22);
+            this.YtypAddToProjectMenu.Text = "添加到项目";
             this.YtypAddToProjectMenu.Click += new System.EventHandler(this.YtypAddToProjectMenu_Click);
             // 
             // YtypRemoveFromProjectMenu
             // 
             this.YtypRemoveFromProjectMenu.Enabled = false;
             this.YtypRemoveFromProjectMenu.Name = "YtypRemoveFromProjectMenu";
-            this.YtypRemoveFromProjectMenu.Size = new System.Drawing.Size(218, 22);
-            this.YtypRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YtypRemoveFromProjectMenu.Size = new System.Drawing.Size(201, 22);
+            this.YtypRemoveFromProjectMenu.Text = "从项目中删除";
             this.YtypRemoveFromProjectMenu.Click += new System.EventHandler(this.YtypRemoveFromProjectMenu_Click);
             // 
             // YbnMenu
@@ -797,7 +798,7 @@
             this.YbnAddToProjectMenu,
             this.YbnRemoveFromProjectMenu});
             this.YbnMenu.Name = "YbnMenu";
-            this.YbnMenu.Size = new System.Drawing.Size(40, 20);
+            this.YbnMenu.Size = new System.Drawing.Size(42, 21);
             this.YbnMenu.Text = "Ybn";
             this.YbnMenu.Visible = false;
             // 
@@ -805,13 +806,13 @@
             // 
             this.YbnNameMenu.Enabled = false;
             this.YbnNameMenu.Name = "YbnNameMenu";
-            this.YbnNameMenu.Size = new System.Drawing.Size(189, 22);
-            this.YbnNameMenu.Text = "(No .ybn file selected)";
+            this.YbnNameMenu.Size = new System.Drawing.Size(176, 22);
+            this.YbnNameMenu.Text = "(未选择 .ybn 文件)";
             // 
             // toolStripSeparator25
             // 
             this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator25.Size = new System.Drawing.Size(173, 6);
             // 
             // YbnNewBoundsMenu
             // 
@@ -827,70 +828,70 @@
             this.YbnNewBoundCompositeMenu});
             this.YbnNewBoundsMenu.Enabled = false;
             this.YbnNewBoundsMenu.Name = "YbnNewBoundsMenu";
-            this.YbnNewBoundsMenu.Size = new System.Drawing.Size(189, 22);
-            this.YbnNewBoundsMenu.Text = "New Bounds";
+            this.YbnNewBoundsMenu.Size = new System.Drawing.Size(176, 22);
+            this.YbnNewBoundsMenu.Text = "创建碰撞体";
             // 
             // YbnNewBoundBoxMenu
             // 
             this.YbnNewBoundBoxMenu.Name = "YbnNewBoundBoxMenu";
-            this.YbnNewBoundBoxMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundBoxMenu.Text = "Box";
+            this.YbnNewBoundBoxMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundBoxMenu.Text = "正方体";
             this.YbnNewBoundBoxMenu.Click += new System.EventHandler(this.YbnNewBoundBoxMenu_Click);
             // 
             // YbnNewBoundSphereMenu
             // 
             this.YbnNewBoundSphereMenu.Name = "YbnNewBoundSphereMenu";
-            this.YbnNewBoundSphereMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundSphereMenu.Text = "Sphere";
+            this.YbnNewBoundSphereMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundSphereMenu.Text = "球体";
             this.YbnNewBoundSphereMenu.Click += new System.EventHandler(this.YbnNewBoundSphereMenu_Click);
             // 
             // YbnNewBoundCapsuleMenu
             // 
             this.YbnNewBoundCapsuleMenu.Name = "YbnNewBoundCapsuleMenu";
-            this.YbnNewBoundCapsuleMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundCapsuleMenu.Text = "Capsule";
+            this.YbnNewBoundCapsuleMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundCapsuleMenu.Text = "胶囊体";
             this.YbnNewBoundCapsuleMenu.Click += new System.EventHandler(this.YbnNewBoundCapsuleMenu_Click);
             // 
             // YbnNewBoundCylinderMenu
             // 
             this.YbnNewBoundCylinderMenu.Name = "YbnNewBoundCylinderMenu";
-            this.YbnNewBoundCylinderMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundCylinderMenu.Text = "Cylinder";
+            this.YbnNewBoundCylinderMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundCylinderMenu.Text = "圆柱体";
             this.YbnNewBoundCylinderMenu.Click += new System.EventHandler(this.YbnNewBoundCylinderMenu_Click);
             // 
             // YbnNewBoundDiscMenu
             // 
             this.YbnNewBoundDiscMenu.Name = "YbnNewBoundDiscMenu";
-            this.YbnNewBoundDiscMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundDiscMenu.Text = "Disc";
+            this.YbnNewBoundDiscMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundDiscMenu.Text = "碟片";
             this.YbnNewBoundDiscMenu.Click += new System.EventHandler(this.YbnNewBoundDiscMenu_Click);
             // 
             // YbnNewBoundClothMenu
             // 
             this.YbnNewBoundClothMenu.Name = "YbnNewBoundClothMenu";
-            this.YbnNewBoundClothMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundClothMenu.Text = "Cloth";
+            this.YbnNewBoundClothMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundClothMenu.Text = "服装";
             this.YbnNewBoundClothMenu.Click += new System.EventHandler(this.YbnNewBoundClothMenu_Click);
             // 
             // YbnNewBoundGeometryMenu
             // 
             this.YbnNewBoundGeometryMenu.Name = "YbnNewBoundGeometryMenu";
-            this.YbnNewBoundGeometryMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundGeometryMenu.Text = "Geometry";
+            this.YbnNewBoundGeometryMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundGeometryMenu.Text = "几何体";
             this.YbnNewBoundGeometryMenu.Click += new System.EventHandler(this.YbnNewBoundGeometryMenu_Click);
             // 
             // YbnNewBoundGeometryBVHMenu
             // 
             this.YbnNewBoundGeometryBVHMenu.Name = "YbnNewBoundGeometryBVHMenu";
-            this.YbnNewBoundGeometryBVHMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundGeometryBVHMenu.Text = "Geometry BVH";
+            this.YbnNewBoundGeometryBVHMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundGeometryBVHMenu.Text = "几何体 BVH";
             this.YbnNewBoundGeometryBVHMenu.Click += new System.EventHandler(this.YbnNewBoundGeometryBVHMenu_Click);
             // 
             // YbnNewBoundCompositeMenu
             // 
             this.YbnNewBoundCompositeMenu.Name = "YbnNewBoundCompositeMenu";
-            this.YbnNewBoundCompositeMenu.Size = new System.Drawing.Size(152, 22);
-            this.YbnNewBoundCompositeMenu.Text = "Composite";
+            this.YbnNewBoundCompositeMenu.Size = new System.Drawing.Size(141, 22);
+            this.YbnNewBoundCompositeMenu.Text = "复合体";
             this.YbnNewBoundCompositeMenu.Click += new System.EventHandler(this.YbnNewBoundCompositeMenu_Click);
             // 
             // YbnNewPolygonMenu
@@ -903,63 +904,63 @@
             this.YbnNewPolygonCylinderMenu});
             this.YbnNewPolygonMenu.Enabled = false;
             this.YbnNewPolygonMenu.Name = "YbnNewPolygonMenu";
-            this.YbnNewPolygonMenu.Size = new System.Drawing.Size(189, 22);
-            this.YbnNewPolygonMenu.Text = "New Polygon";
+            this.YbnNewPolygonMenu.Size = new System.Drawing.Size(176, 22);
+            this.YbnNewPolygonMenu.Text = "创建多边形";
             // 
             // YbnNewPolygonTriangleMenu
             // 
             this.YbnNewPolygonTriangleMenu.Name = "YbnNewPolygonTriangleMenu";
-            this.YbnNewPolygonTriangleMenu.Size = new System.Drawing.Size(118, 22);
-            this.YbnNewPolygonTriangleMenu.Text = "Triangle";
+            this.YbnNewPolygonTriangleMenu.Size = new System.Drawing.Size(112, 22);
+            this.YbnNewPolygonTriangleMenu.Text = "三角形";
             this.YbnNewPolygonTriangleMenu.Click += new System.EventHandler(this.YbnNewPolygonTriangleMenu_Click);
             // 
             // YbnNewPolygonSphereMenu
             // 
             this.YbnNewPolygonSphereMenu.Name = "YbnNewPolygonSphereMenu";
-            this.YbnNewPolygonSphereMenu.Size = new System.Drawing.Size(118, 22);
-            this.YbnNewPolygonSphereMenu.Text = "Sphere";
+            this.YbnNewPolygonSphereMenu.Size = new System.Drawing.Size(112, 22);
+            this.YbnNewPolygonSphereMenu.Text = "球体";
             this.YbnNewPolygonSphereMenu.Click += new System.EventHandler(this.YbnNewPolygonSphereMenu_Click);
             // 
             // YbnNewPolygonCapsuleMenu
             // 
             this.YbnNewPolygonCapsuleMenu.Name = "YbnNewPolygonCapsuleMenu";
-            this.YbnNewPolygonCapsuleMenu.Size = new System.Drawing.Size(118, 22);
-            this.YbnNewPolygonCapsuleMenu.Text = "Capsule";
+            this.YbnNewPolygonCapsuleMenu.Size = new System.Drawing.Size(112, 22);
+            this.YbnNewPolygonCapsuleMenu.Text = "胶囊体";
             this.YbnNewPolygonCapsuleMenu.Click += new System.EventHandler(this.YbnNewPolygonCapsuleMenu_Click);
             // 
             // YbnNewPolygonBoxMenu
             // 
             this.YbnNewPolygonBoxMenu.Name = "YbnNewPolygonBoxMenu";
-            this.YbnNewPolygonBoxMenu.Size = new System.Drawing.Size(118, 22);
-            this.YbnNewPolygonBoxMenu.Text = "Box";
+            this.YbnNewPolygonBoxMenu.Size = new System.Drawing.Size(112, 22);
+            this.YbnNewPolygonBoxMenu.Text = "正方体";
             this.YbnNewPolygonBoxMenu.Click += new System.EventHandler(this.YbnNewPolygonBoxMenu_Click);
             // 
             // YbnNewPolygonCylinderMenu
             // 
             this.YbnNewPolygonCylinderMenu.Name = "YbnNewPolygonCylinderMenu";
-            this.YbnNewPolygonCylinderMenu.Size = new System.Drawing.Size(118, 22);
-            this.YbnNewPolygonCylinderMenu.Text = "Cylinder";
+            this.YbnNewPolygonCylinderMenu.Size = new System.Drawing.Size(112, 22);
+            this.YbnNewPolygonCylinderMenu.Text = "圆柱体";
             this.YbnNewPolygonCylinderMenu.Click += new System.EventHandler(this.YbnNewPolygonCylinderMenu_Click);
             // 
             // toolStripSeparator26
             // 
             this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator26.Size = new System.Drawing.Size(173, 6);
             // 
             // YbnAddToProjectMenu
             // 
             this.YbnAddToProjectMenu.Enabled = false;
             this.YbnAddToProjectMenu.Name = "YbnAddToProjectMenu";
-            this.YbnAddToProjectMenu.Size = new System.Drawing.Size(189, 22);
-            this.YbnAddToProjectMenu.Text = "Add to Project";
+            this.YbnAddToProjectMenu.Size = new System.Drawing.Size(176, 22);
+            this.YbnAddToProjectMenu.Text = "添加到项目";
             this.YbnAddToProjectMenu.Click += new System.EventHandler(this.YbnAddToProjectMenu_Click);
             // 
             // YbnRemoveFromProjectMenu
             // 
             this.YbnRemoveFromProjectMenu.Enabled = false;
             this.YbnRemoveFromProjectMenu.Name = "YbnRemoveFromProjectMenu";
-            this.YbnRemoveFromProjectMenu.Size = new System.Drawing.Size(189, 22);
-            this.YbnRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YbnRemoveFromProjectMenu.Size = new System.Drawing.Size(176, 22);
+            this.YbnRemoveFromProjectMenu.Text = "从项目中移除";
             this.YbnRemoveFromProjectMenu.Click += new System.EventHandler(this.YbnRemoveFromProjectMenu_Click);
             // 
             // YdrMenu
@@ -969,7 +970,7 @@
             this.toolStripSeparator6,
             this.YdrRemoveFromProjectMenu});
             this.YdrMenu.Name = "YdrMenu";
-            this.YdrMenu.Size = new System.Drawing.Size(36, 20);
+            this.YdrMenu.Size = new System.Drawing.Size(40, 21);
             this.YdrMenu.Text = "Ydr";
             this.YdrMenu.Visible = false;
             // 
@@ -977,20 +978,20 @@
             // 
             this.YdrNameMenu.Enabled = false;
             this.YdrNameMenu.Name = "YdrNameMenu";
-            this.YdrNameMenu.Size = new System.Drawing.Size(186, 22);
-            this.YdrNameMenu.Text = "(No .ydr file selected)";
+            this.YdrNameMenu.Size = new System.Drawing.Size(174, 22);
+            this.YdrNameMenu.Text = "(未选择 .ydr 文件)";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(171, 6);
             // 
             // YdrRemoveFromProjectMenu
             // 
             this.YdrRemoveFromProjectMenu.Enabled = false;
             this.YdrRemoveFromProjectMenu.Name = "YdrRemoveFromProjectMenu";
-            this.YdrRemoveFromProjectMenu.Size = new System.Drawing.Size(186, 22);
-            this.YdrRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YdrRemoveFromProjectMenu.Size = new System.Drawing.Size(174, 22);
+            this.YdrRemoveFromProjectMenu.Text = "从项目中移除";
             this.YdrRemoveFromProjectMenu.Click += new System.EventHandler(this.YdrRemoveFromProjectMenu_Click);
             // 
             // YddMenu
@@ -1000,7 +1001,7 @@
             this.toolStripSeparator9,
             this.YddRemoveFromProjectMenu});
             this.YddMenu.Name = "YddMenu";
-            this.YddMenu.Size = new System.Drawing.Size(39, 20);
+            this.YddMenu.Size = new System.Drawing.Size(43, 21);
             this.YddMenu.Text = "Ydd";
             this.YddMenu.Visible = false;
             // 
@@ -1008,20 +1009,20 @@
             // 
             this.YddNameMenu.Enabled = false;
             this.YddNameMenu.Name = "YddNameMenu";
-            this.YddNameMenu.Size = new System.Drawing.Size(189, 22);
-            this.YddNameMenu.Text = "(No .ydd file selected)";
+            this.YddNameMenu.Size = new System.Drawing.Size(177, 22);
+            this.YddNameMenu.Text = "(未选择 .ydd 文件)";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(174, 6);
             // 
             // YddRemoveFromProjectMenu
             // 
             this.YddRemoveFromProjectMenu.Enabled = false;
             this.YddRemoveFromProjectMenu.Name = "YddRemoveFromProjectMenu";
-            this.YddRemoveFromProjectMenu.Size = new System.Drawing.Size(189, 22);
-            this.YddRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YddRemoveFromProjectMenu.Size = new System.Drawing.Size(177, 22);
+            this.YddRemoveFromProjectMenu.Text = "从项目中移除";
             this.YddRemoveFromProjectMenu.Click += new System.EventHandler(this.YddRemoveFromProjectMenu_Click);
             // 
             // YftMenu
@@ -1031,7 +1032,7 @@
             this.toolStripSeparator30,
             this.YftRemoveFromProjectMenu});
             this.YftMenu.Name = "YftMenu";
-            this.YftMenu.Size = new System.Drawing.Size(34, 20);
+            this.YftMenu.Size = new System.Drawing.Size(35, 21);
             this.YftMenu.Text = "Yft";
             this.YftMenu.Visible = false;
             // 
@@ -1039,20 +1040,20 @@
             // 
             this.YftNameMenu.Enabled = false;
             this.YftNameMenu.Name = "YftNameMenu";
-            this.YftNameMenu.Size = new System.Drawing.Size(186, 22);
-            this.YftNameMenu.Text = "(No .yft file selected)";
+            this.YftNameMenu.Size = new System.Drawing.Size(169, 22);
+            this.YftNameMenu.Text = "(未选择 .yft 文件)";
             // 
             // toolStripSeparator30
             // 
             this.toolStripSeparator30.Name = "toolStripSeparator30";
-            this.toolStripSeparator30.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator30.Size = new System.Drawing.Size(166, 6);
             // 
             // YftRemoveFromProjectMenu
             // 
             this.YftRemoveFromProjectMenu.Enabled = false;
             this.YftRemoveFromProjectMenu.Name = "YftRemoveFromProjectMenu";
-            this.YftRemoveFromProjectMenu.Size = new System.Drawing.Size(186, 22);
-            this.YftRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YftRemoveFromProjectMenu.Size = new System.Drawing.Size(169, 22);
+            this.YftRemoveFromProjectMenu.Text = "从项目中移除";
             this.YftRemoveFromProjectMenu.Click += new System.EventHandler(this.YftRemoveFromProjectMenu_Click);
             // 
             // YtdMenu
@@ -1062,7 +1063,7 @@
             this.toolStripSeparator29,
             this.YtdRemoveFromProjectMenu});
             this.YtdMenu.Name = "YtdMenu";
-            this.YtdMenu.Size = new System.Drawing.Size(37, 20);
+            this.YtdMenu.Size = new System.Drawing.Size(39, 21);
             this.YtdMenu.Text = "Ytd";
             this.YtdMenu.Visible = false;
             // 
@@ -1070,20 +1071,20 @@
             // 
             this.YtdNameMenu.Enabled = false;
             this.YtdNameMenu.Name = "YtdNameMenu";
-            this.YtdNameMenu.Size = new System.Drawing.Size(186, 22);
-            this.YtdNameMenu.Text = "(No .ytd file selected)";
+            this.YtdNameMenu.Size = new System.Drawing.Size(173, 22);
+            this.YtdNameMenu.Text = "(未选择 .ytd 文件)";
             // 
             // toolStripSeparator29
             // 
             this.toolStripSeparator29.Name = "toolStripSeparator29";
-            this.toolStripSeparator29.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator29.Size = new System.Drawing.Size(170, 6);
             // 
             // YtdRemoveFromProjectMenu
             // 
             this.YtdRemoveFromProjectMenu.Enabled = false;
             this.YtdRemoveFromProjectMenu.Name = "YtdRemoveFromProjectMenu";
-            this.YtdRemoveFromProjectMenu.Size = new System.Drawing.Size(186, 22);
-            this.YtdRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YtdRemoveFromProjectMenu.Size = new System.Drawing.Size(173, 22);
+            this.YtdRemoveFromProjectMenu.Text = "从项目中移除";
             this.YtdRemoveFromProjectMenu.Click += new System.EventHandler(this.YtdRemoveFromProjectMenu_Click);
             // 
             // YndMenu
@@ -1096,7 +1097,7 @@
             this.YndAddToProjectMenu,
             this.YndRemoveFromProjectMenu});
             this.YndMenu.Name = "YndMenu";
-            this.YndMenu.Size = new System.Drawing.Size(39, 20);
+            this.YndMenu.Size = new System.Drawing.Size(42, 21);
             this.YndMenu.Text = "Ynd";
             this.YndMenu.Visible = false;
             // 
@@ -1104,41 +1105,41 @@
             // 
             this.YndNameMenu.Enabled = false;
             this.YndNameMenu.Name = "YndNameMenu";
-            this.YndNameMenu.Size = new System.Drawing.Size(189, 22);
-            this.YndNameMenu.Text = "(No .ynd file selected)";
+            this.YndNameMenu.Size = new System.Drawing.Size(176, 22);
+            this.YndNameMenu.Text = "(未选择 .ynd 文件)";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(173, 6);
             // 
             // YndNewNodeMenu
             // 
             this.YndNewNodeMenu.Enabled = false;
             this.YndNewNodeMenu.Name = "YndNewNodeMenu";
-            this.YndNewNodeMenu.Size = new System.Drawing.Size(189, 22);
-            this.YndNewNodeMenu.Text = "New Node";
+            this.YndNewNodeMenu.Size = new System.Drawing.Size(176, 22);
+            this.YndNewNodeMenu.Text = "创建节点";
             this.YndNewNodeMenu.Click += new System.EventHandler(this.YndNewNodeMenu_Click);
             // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(173, 6);
             // 
             // YndAddToProjectMenu
             // 
             this.YndAddToProjectMenu.Enabled = false;
             this.YndAddToProjectMenu.Name = "YndAddToProjectMenu";
-            this.YndAddToProjectMenu.Size = new System.Drawing.Size(189, 22);
-            this.YndAddToProjectMenu.Text = "Add to Project";
+            this.YndAddToProjectMenu.Size = new System.Drawing.Size(176, 22);
+            this.YndAddToProjectMenu.Text = "添加到项目";
             this.YndAddToProjectMenu.Click += new System.EventHandler(this.YndAddToProjectMenu_Click);
             // 
             // YndRemoveFromProjectMenu
             // 
             this.YndRemoveFromProjectMenu.Enabled = false;
             this.YndRemoveFromProjectMenu.Name = "YndRemoveFromProjectMenu";
-            this.YndRemoveFromProjectMenu.Size = new System.Drawing.Size(189, 22);
-            this.YndRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YndRemoveFromProjectMenu.Size = new System.Drawing.Size(176, 22);
+            this.YndRemoveFromProjectMenu.Text = "从项目中移除";
             this.YndRemoveFromProjectMenu.Click += new System.EventHandler(this.YndRemoveFromProjectMenu_Click);
             // 
             // YnvMenu
@@ -1151,7 +1152,7 @@
             this.YnvAddToProjectMenu,
             this.YnvRemoveFromProjectMenu});
             this.YnvMenu.Name = "YnvMenu";
-            this.YnvMenu.Size = new System.Drawing.Size(38, 20);
+            this.YnvMenu.Size = new System.Drawing.Size(40, 21);
             this.YnvMenu.Text = "Ynv";
             this.YnvMenu.Visible = false;
             // 
@@ -1159,41 +1160,41 @@
             // 
             this.YnvNameMenu.Enabled = false;
             this.YnvNameMenu.Name = "YnvNameMenu";
-            this.YnvNameMenu.Size = new System.Drawing.Size(188, 22);
-            this.YnvNameMenu.Text = "(No .ynv file selected)";
+            this.YnvNameMenu.Size = new System.Drawing.Size(174, 22);
+            this.YnvNameMenu.Text = "(未选择 .ynv 文件)";
             // 
             // toolStripSeparator17
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator17.Size = new System.Drawing.Size(171, 6);
             // 
             // YnvNewPolygonMenu
             // 
             this.YnvNewPolygonMenu.Enabled = false;
             this.YnvNewPolygonMenu.Name = "YnvNewPolygonMenu";
-            this.YnvNewPolygonMenu.Size = new System.Drawing.Size(188, 22);
-            this.YnvNewPolygonMenu.Text = "New Polygon";
+            this.YnvNewPolygonMenu.Size = new System.Drawing.Size(174, 22);
+            this.YnvNewPolygonMenu.Text = "创建多边形";
             this.YnvNewPolygonMenu.Click += new System.EventHandler(this.YnvNewPolygonMenu_Click);
             // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator18.Size = new System.Drawing.Size(171, 6);
             // 
             // YnvAddToProjectMenu
             // 
             this.YnvAddToProjectMenu.Enabled = false;
             this.YnvAddToProjectMenu.Name = "YnvAddToProjectMenu";
-            this.YnvAddToProjectMenu.Size = new System.Drawing.Size(188, 22);
-            this.YnvAddToProjectMenu.Text = "Add to Project";
+            this.YnvAddToProjectMenu.Size = new System.Drawing.Size(174, 22);
+            this.YnvAddToProjectMenu.Text = "添加到项目";
             this.YnvAddToProjectMenu.Click += new System.EventHandler(this.YnvAddToProjectMenu_Click);
             // 
             // YnvRemoveFromProjectMenu
             // 
             this.YnvRemoveFromProjectMenu.Enabled = false;
             this.YnvRemoveFromProjectMenu.Name = "YnvRemoveFromProjectMenu";
-            this.YnvRemoveFromProjectMenu.Size = new System.Drawing.Size(188, 22);
-            this.YnvRemoveFromProjectMenu.Text = "Remove from Project";
+            this.YnvRemoveFromProjectMenu.Size = new System.Drawing.Size(174, 22);
+            this.YnvRemoveFromProjectMenu.Text = "从项目中移除";
             this.YnvRemoveFromProjectMenu.Click += new System.EventHandler(this.YnvRemoveFromProjectMenu_Click);
             // 
             // TrainsMenu
@@ -1206,49 +1207,49 @@
             this.TrainsAddToProjectMenu,
             this.TrainsRemoveFromProjectMenu});
             this.TrainsMenu.Name = "TrainsMenu";
-            this.TrainsMenu.Size = new System.Drawing.Size(49, 20);
-            this.TrainsMenu.Text = "Trains";
+            this.TrainsMenu.Size = new System.Drawing.Size(44, 21);
+            this.TrainsMenu.Text = "火车";
             this.TrainsMenu.Visible = false;
             // 
             // TrainsNameMenu
             // 
             this.TrainsNameMenu.Enabled = false;
             this.TrainsNameMenu.Name = "TrainsNameMenu";
-            this.TrainsNameMenu.Size = new System.Drawing.Size(200, 22);
-            this.TrainsNameMenu.Text = "(No train track selected)";
+            this.TrainsNameMenu.Size = new System.Drawing.Size(168, 22);
+            this.TrainsNameMenu.Text = "(未选择火车轨道)";
             // 
             // toolStripSeparator19
             // 
             this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(197, 6);
+            this.toolStripSeparator19.Size = new System.Drawing.Size(165, 6);
             // 
             // TrainsNewNodeMenu
             // 
             this.TrainsNewNodeMenu.Enabled = false;
             this.TrainsNewNodeMenu.Name = "TrainsNewNodeMenu";
-            this.TrainsNewNodeMenu.Size = new System.Drawing.Size(200, 22);
-            this.TrainsNewNodeMenu.Text = "New Node";
+            this.TrainsNewNodeMenu.Size = new System.Drawing.Size(168, 22);
+            this.TrainsNewNodeMenu.Text = "创建节点";
             this.TrainsNewNodeMenu.Click += new System.EventHandler(this.TrainsNewNodeMenu_Click);
             // 
             // toolStripSeparator20
             // 
             this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(197, 6);
+            this.toolStripSeparator20.Size = new System.Drawing.Size(165, 6);
             // 
             // TrainsAddToProjectMenu
             // 
             this.TrainsAddToProjectMenu.Enabled = false;
             this.TrainsAddToProjectMenu.Name = "TrainsAddToProjectMenu";
-            this.TrainsAddToProjectMenu.Size = new System.Drawing.Size(200, 22);
-            this.TrainsAddToProjectMenu.Text = "Add to Project";
+            this.TrainsAddToProjectMenu.Size = new System.Drawing.Size(168, 22);
+            this.TrainsAddToProjectMenu.Text = "添加到项目";
             this.TrainsAddToProjectMenu.Click += new System.EventHandler(this.TrainsAddToProjectMenu_Click);
             // 
             // TrainsRemoveFromProjectMenu
             // 
             this.TrainsRemoveFromProjectMenu.Enabled = false;
             this.TrainsRemoveFromProjectMenu.Name = "TrainsRemoveFromProjectMenu";
-            this.TrainsRemoveFromProjectMenu.Size = new System.Drawing.Size(200, 22);
-            this.TrainsRemoveFromProjectMenu.Text = "Remove from Project";
+            this.TrainsRemoveFromProjectMenu.Size = new System.Drawing.Size(168, 22);
+            this.TrainsRemoveFromProjectMenu.Text = "从项目中移除";
             this.TrainsRemoveFromProjectMenu.Click += new System.EventHandler(this.TrainsRemoveFromProjectMenu_Click);
             // 
             // ScenarioMenu
@@ -1266,89 +1267,89 @@
             this.ScenarioAddToProjectMenu,
             this.ScenarioRemoveFromProjectMenu});
             this.ScenarioMenu.Name = "ScenarioMenu";
-            this.ScenarioMenu.Size = new System.Drawing.Size(64, 20);
-            this.ScenarioMenu.Text = "Scenario";
+            this.ScenarioMenu.Size = new System.Drawing.Size(44, 21);
+            this.ScenarioMenu.Text = "场景";
             this.ScenarioMenu.Visible = false;
             // 
             // ScenarioNameMenu
             // 
             this.ScenarioNameMenu.Enabled = false;
             this.ScenarioNameMenu.Name = "ScenarioNameMenu";
-            this.ScenarioNameMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNameMenu.Text = "(No scenario region selected)";
+            this.ScenarioNameMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNameMenu.Text = "(未选择场景区域)";
             // 
             // toolStripSeparator21
             // 
             this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator21.Size = new System.Drawing.Size(181, 6);
             // 
             // ScenarioNewPointMenu
             // 
             this.ScenarioNewPointMenu.Enabled = false;
             this.ScenarioNewPointMenu.Name = "ScenarioNewPointMenu";
-            this.ScenarioNewPointMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNewPointMenu.Text = "New Point (Blank)";
+            this.ScenarioNewPointMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNewPointMenu.Text = "创建点 (空白)";
             this.ScenarioNewPointMenu.Click += new System.EventHandler(this.ScenarioNewPointMenu_Click);
             // 
             // ScenarioNewPointFromSelectedMenu
             // 
             this.ScenarioNewPointFromSelectedMenu.Enabled = false;
             this.ScenarioNewPointFromSelectedMenu.Name = "ScenarioNewPointFromSelectedMenu";
-            this.ScenarioNewPointFromSelectedMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNewPointFromSelectedMenu.Text = "New Point (from Selected)";
+            this.ScenarioNewPointFromSelectedMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNewPointFromSelectedMenu.Text = "创建点 (从所选对象)";
             this.ScenarioNewPointFromSelectedMenu.Click += new System.EventHandler(this.ScenarioNewPointFromSelectedMenu_Click);
             // 
             // ScenarioNewEntityOverrideMenu
             // 
             this.ScenarioNewEntityOverrideMenu.Enabled = false;
             this.ScenarioNewEntityOverrideMenu.Name = "ScenarioNewEntityOverrideMenu";
-            this.ScenarioNewEntityOverrideMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNewEntityOverrideMenu.Text = "New Entity Override";
+            this.ScenarioNewEntityOverrideMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNewEntityOverrideMenu.Text = "创建实体覆盖";
             this.ScenarioNewEntityOverrideMenu.Click += new System.EventHandler(this.ScenarioNewEntityOverrideMenu_Click);
             // 
             // ScenarioNewChainMenu
             // 
             this.ScenarioNewChainMenu.Enabled = false;
             this.ScenarioNewChainMenu.Name = "ScenarioNewChainMenu";
-            this.ScenarioNewChainMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNewChainMenu.Text = "New Chain";
+            this.ScenarioNewChainMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNewChainMenu.Text = "创建链接";
             this.ScenarioNewChainMenu.Click += new System.EventHandler(this.ScenarioNewChainMenu_Click);
             // 
             // ScenarioNewClusterMenu
             // 
             this.ScenarioNewClusterMenu.Enabled = false;
             this.ScenarioNewClusterMenu.Name = "ScenarioNewClusterMenu";
-            this.ScenarioNewClusterMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioNewClusterMenu.Text = "New Cluster";
+            this.ScenarioNewClusterMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioNewClusterMenu.Text = "创建集群";
             this.ScenarioNewClusterMenu.Click += new System.EventHandler(this.ScenarioNewClusterMenu_Click);
             // 
             // ScenarioImportChainMenu
             // 
             this.ScenarioImportChainMenu.Enabled = false;
             this.ScenarioImportChainMenu.Name = "ScenarioImportChainMenu";
-            this.ScenarioImportChainMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioImportChainMenu.Text = "Import Chain...";
+            this.ScenarioImportChainMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioImportChainMenu.Text = "导入链接...";
             this.ScenarioImportChainMenu.Click += new System.EventHandler(this.ScenarioImportChainMenu_Click);
             // 
             // toolStripSeparator22
             // 
             this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator22.Size = new System.Drawing.Size(181, 6);
             // 
             // ScenarioAddToProjectMenu
             // 
             this.ScenarioAddToProjectMenu.Enabled = false;
             this.ScenarioAddToProjectMenu.Name = "ScenarioAddToProjectMenu";
-            this.ScenarioAddToProjectMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioAddToProjectMenu.Text = "Add to Project";
+            this.ScenarioAddToProjectMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioAddToProjectMenu.Text = "添加到项目";
             this.ScenarioAddToProjectMenu.Click += new System.EventHandler(this.ScenarioAddToProjectMenu_Click);
             // 
             // ScenarioRemoveFromProjectMenu
             // 
             this.ScenarioRemoveFromProjectMenu.Enabled = false;
             this.ScenarioRemoveFromProjectMenu.Name = "ScenarioRemoveFromProjectMenu";
-            this.ScenarioRemoveFromProjectMenu.Size = new System.Drawing.Size(228, 22);
-            this.ScenarioRemoveFromProjectMenu.Text = "Remove from Project";
+            this.ScenarioRemoveFromProjectMenu.Size = new System.Drawing.Size(184, 22);
+            this.ScenarioRemoveFromProjectMenu.Text = "从项目中移除";
             this.ScenarioRemoveFromProjectMenu.Click += new System.EventHandler(this.ScenarioRemoveFromProjectMenu_Click);
             // 
             // AudioMenu
@@ -1366,89 +1367,89 @@
             this.AudioAddToProjectMenu,
             this.AudioRemoveFromProjectMenu});
             this.AudioMenu.Name = "AudioMenu";
-            this.AudioMenu.Size = new System.Drawing.Size(51, 20);
-            this.AudioMenu.Text = "Audio";
+            this.AudioMenu.Size = new System.Drawing.Size(44, 21);
+            this.AudioMenu.Text = "音频";
             this.AudioMenu.Visible = false;
             // 
             // AudioNameMenu
             // 
             this.AudioNameMenu.Enabled = false;
             this.AudioNameMenu.Name = "AudioNameMenu";
-            this.AudioNameMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNameMenu.Text = "(No audio dat file selected)";
+            this.AudioNameMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNameMenu.Text = "(未选择音频 dat 文件)";
             // 
             // toolStripSeparator23
             // 
             this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(213, 6);
+            this.toolStripSeparator23.Size = new System.Drawing.Size(193, 6);
             // 
             // AudioNewAmbientEmitterMenu
             // 
             this.AudioNewAmbientEmitterMenu.Enabled = false;
             this.AudioNewAmbientEmitterMenu.Name = "AudioNewAmbientEmitterMenu";
-            this.AudioNewAmbientEmitterMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewAmbientEmitterMenu.Text = "New Ambient Emitter";
+            this.AudioNewAmbientEmitterMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewAmbientEmitterMenu.Text = "创建环境音发生器";
             this.AudioNewAmbientEmitterMenu.Click += new System.EventHandler(this.AudioNewAmbientEmitterMenu_Click);
             // 
             // AudioNewAmbientEmitterListMenu
             // 
             this.AudioNewAmbientEmitterListMenu.Enabled = false;
             this.AudioNewAmbientEmitterListMenu.Name = "AudioNewAmbientEmitterListMenu";
-            this.AudioNewAmbientEmitterListMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewAmbientEmitterListMenu.Text = "New Ambient Emitter List";
+            this.AudioNewAmbientEmitterListMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewAmbientEmitterListMenu.Text = "创建环境音发生器列表";
             this.AudioNewAmbientEmitterListMenu.Click += new System.EventHandler(this.AudioNewAmbientEmitterListMenu_Click);
             // 
             // AudioNewAmbientZoneMenu
             // 
             this.AudioNewAmbientZoneMenu.Enabled = false;
             this.AudioNewAmbientZoneMenu.Name = "AudioNewAmbientZoneMenu";
-            this.AudioNewAmbientZoneMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewAmbientZoneMenu.Text = "New Ambient Zone";
+            this.AudioNewAmbientZoneMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewAmbientZoneMenu.Text = "创建环境音区域";
             this.AudioNewAmbientZoneMenu.Click += new System.EventHandler(this.AudioNewAmbientZoneMenu_Click);
             // 
             // AudioNewAmbientZoneListMenu
             // 
             this.AudioNewAmbientZoneListMenu.Enabled = false;
             this.AudioNewAmbientZoneListMenu.Name = "AudioNewAmbientZoneListMenu";
-            this.AudioNewAmbientZoneListMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewAmbientZoneListMenu.Text = "New Ambient Zone List";
+            this.AudioNewAmbientZoneListMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewAmbientZoneListMenu.Text = "创建环境音区域列表";
             this.AudioNewAmbientZoneListMenu.Click += new System.EventHandler(this.AudioNewAmbientZoneListMenu_Click);
             // 
             // AudioNewInteriorMenu
             // 
             this.AudioNewInteriorMenu.Enabled = false;
             this.AudioNewInteriorMenu.Name = "AudioNewInteriorMenu";
-            this.AudioNewInteriorMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewInteriorMenu.Text = "New Interior";
+            this.AudioNewInteriorMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewInteriorMenu.Text = "创建室内";
             this.AudioNewInteriorMenu.Click += new System.EventHandler(this.AudioNewInteriorMenu_Click);
             // 
             // AudioNewInteriorRoomMenu
             // 
             this.AudioNewInteriorRoomMenu.Enabled = false;
             this.AudioNewInteriorRoomMenu.Name = "AudioNewInteriorRoomMenu";
-            this.AudioNewInteriorRoomMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioNewInteriorRoomMenu.Text = "New Interior Room";
+            this.AudioNewInteriorRoomMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioNewInteriorRoomMenu.Text = "创建室内房间";
             this.AudioNewInteriorRoomMenu.Click += new System.EventHandler(this.AudioNewInteriorRoomMenu_Click);
             // 
             // toolStripSeparator24
             // 
             this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(213, 6);
+            this.toolStripSeparator24.Size = new System.Drawing.Size(193, 6);
             // 
             // AudioAddToProjectMenu
             // 
             this.AudioAddToProjectMenu.Enabled = false;
             this.AudioAddToProjectMenu.Name = "AudioAddToProjectMenu";
-            this.AudioAddToProjectMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioAddToProjectMenu.Text = "Add to Project";
+            this.AudioAddToProjectMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioAddToProjectMenu.Text = "添加到项目";
             this.AudioAddToProjectMenu.Click += new System.EventHandler(this.AudioAddToProjectMenu_Click);
             // 
             // AudioRemoveFromProjectMenu
             // 
             this.AudioRemoveFromProjectMenu.Enabled = false;
             this.AudioRemoveFromProjectMenu.Name = "AudioRemoveFromProjectMenu";
-            this.AudioRemoveFromProjectMenu.Size = new System.Drawing.Size(216, 22);
-            this.AudioRemoveFromProjectMenu.Text = "Remove from Project";
+            this.AudioRemoveFromProjectMenu.Size = new System.Drawing.Size(196, 22);
+            this.AudioRemoveFromProjectMenu.Text = "从项目中移除";
             this.AudioRemoveFromProjectMenu.Click += new System.EventHandler(this.AudioRemoveFromProjectMenu_Click);
             // 
             // OptionsMenu
@@ -1462,16 +1463,16 @@
             this.toolStripSeparator28,
             this.OptionsDisplayEntityIndexesMenu});
             this.OptionsMenu.Name = "OptionsMenu";
-            this.OptionsMenu.Size = new System.Drawing.Size(61, 20);
-            this.OptionsMenu.Text = "Options";
+            this.OptionsMenu.Size = new System.Drawing.Size(44, 21);
+            this.OptionsMenu.Text = "选项";
             // 
             // OptionsRenderGtavMapMenu
             // 
             this.OptionsRenderGtavMapMenu.Checked = true;
             this.OptionsRenderGtavMapMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsRenderGtavMapMenu.Name = "OptionsRenderGtavMapMenu";
-            this.OptionsRenderGtavMapMenu.Size = new System.Drawing.Size(226, 22);
-            this.OptionsRenderGtavMapMenu.Text = "Render GTAV Map";
+            this.OptionsRenderGtavMapMenu.Size = new System.Drawing.Size(195, 22);
+            this.OptionsRenderGtavMapMenu.Text = "渲染 GTAV 地图";
             this.OptionsRenderGtavMapMenu.Click += new System.EventHandler(this.OptionsRenderGtavMapMenu_Click);
             // 
             // OptionsRenderProjectItemsMenu
@@ -1479,22 +1480,22 @@
             this.OptionsRenderProjectItemsMenu.Checked = true;
             this.OptionsRenderProjectItemsMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsRenderProjectItemsMenu.Name = "OptionsRenderProjectItemsMenu";
-            this.OptionsRenderProjectItemsMenu.Size = new System.Drawing.Size(226, 22);
-            this.OptionsRenderProjectItemsMenu.Text = "Render Project Items";
+            this.OptionsRenderProjectItemsMenu.Size = new System.Drawing.Size(195, 22);
+            this.OptionsRenderProjectItemsMenu.Text = "渲染项目对象";
             this.OptionsRenderProjectItemsMenu.Click += new System.EventHandler(this.OptionsRenderProjectItemsMenu_Click);
             // 
             // toolStripSeparator27
             // 
             this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(223, 6);
+            this.toolStripSeparator27.Size = new System.Drawing.Size(192, 6);
             // 
             // OptionsAutoCalcYmapFlagsMenu
             // 
             this.OptionsAutoCalcYmapFlagsMenu.Checked = true;
             this.OptionsAutoCalcYmapFlagsMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsAutoCalcYmapFlagsMenu.Name = "OptionsAutoCalcYmapFlagsMenu";
-            this.OptionsAutoCalcYmapFlagsMenu.Size = new System.Drawing.Size(226, 22);
-            this.OptionsAutoCalcYmapFlagsMenu.Text = "Auto Calculate Ymap Flags";
+            this.OptionsAutoCalcYmapFlagsMenu.Size = new System.Drawing.Size(195, 22);
+            this.OptionsAutoCalcYmapFlagsMenu.Text = "自动计算 Ymap Flags";
             this.OptionsAutoCalcYmapFlagsMenu.Click += new System.EventHandler(this.OptionsAutoCalcYmapFlagsMenu_Click);
             // 
             // OptionsAutoCalcYmapExtentsMenu
@@ -1502,20 +1503,20 @@
             this.OptionsAutoCalcYmapExtentsMenu.Checked = true;
             this.OptionsAutoCalcYmapExtentsMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsAutoCalcYmapExtentsMenu.Name = "OptionsAutoCalcYmapExtentsMenu";
-            this.OptionsAutoCalcYmapExtentsMenu.Size = new System.Drawing.Size(226, 22);
-            this.OptionsAutoCalcYmapExtentsMenu.Text = "Auto Calculate Ymap Extents";
+            this.OptionsAutoCalcYmapExtentsMenu.Size = new System.Drawing.Size(195, 22);
+            this.OptionsAutoCalcYmapExtentsMenu.Text = "自动计算 Ymap 范围";
             this.OptionsAutoCalcYmapExtentsMenu.Click += new System.EventHandler(this.OptionsAutoCalcYmapExtentsMenu_Click);
             // 
             // toolStripSeparator28
             // 
             this.toolStripSeparator28.Name = "toolStripSeparator28";
-            this.toolStripSeparator28.Size = new System.Drawing.Size(223, 6);
+            this.toolStripSeparator28.Size = new System.Drawing.Size(192, 6);
             // 
             // OptionsDisplayEntityIndexesMenu
             // 
             this.OptionsDisplayEntityIndexesMenu.Name = "OptionsDisplayEntityIndexesMenu";
-            this.OptionsDisplayEntityIndexesMenu.Size = new System.Drawing.Size(226, 22);
-            this.OptionsDisplayEntityIndexesMenu.Text = "Display Entity Indexes";
+            this.OptionsDisplayEntityIndexesMenu.Size = new System.Drawing.Size(195, 22);
+            this.OptionsDisplayEntityIndexesMenu.Text = "显示实体索引";
             this.OptionsDisplayEntityIndexesMenu.Click += new System.EventHandler(this.OptionsDisplayEntityIndexesMenu_Click);
             // 
             // MainDockPanel
@@ -1524,9 +1525,10 @@
             this.MainDockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainDockPanel.DockLeftPortion = 0.3D;
             this.MainDockPanel.DockRightPortion = 0.3D;
-            this.MainDockPanel.Location = new System.Drawing.Point(0, 49);
+            this.MainDockPanel.Location = new System.Drawing.Point(0, 52);
+            this.MainDockPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainDockPanel.Name = "MainDockPanel";
-            this.MainDockPanel.Size = new System.Drawing.Size(813, 481);
+            this.MainDockPanel.Size = new System.Drawing.Size(951, 540);
             this.MainDockPanel.TabIndex = 1;
             this.MainDockPanel.ActiveContentChanged += new System.EventHandler(this.MainDockPanel_ActiveContentChanged);
             this.MainDockPanel.DocumentDragged += new System.EventHandler(this.MainDockPanel_DocumentDragged);
@@ -1551,9 +1553,9 @@
             this.ToolbarSaveButton,
             this.ToolbarSaveAllButton,
             this.toolStripSeparator5});
-            this.MainToolbar.Location = new System.Drawing.Point(0, 24);
+            this.MainToolbar.Location = new System.Drawing.Point(0, 27);
             this.MainToolbar.Name = "MainToolbar";
-            this.MainToolbar.Size = new System.Drawing.Size(813, 25);
+            this.MainToolbar.Size = new System.Drawing.Size(951, 25);
             this.MainToolbar.TabIndex = 4;
             // 
             // ToolbarNewButton
@@ -1573,68 +1575,68 @@
             this.ToolbarNewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolbarNewButton.Name = "ToolbarNewButton";
             this.ToolbarNewButton.Size = new System.Drawing.Size(32, 22);
-            this.ToolbarNewButton.Text = "New";
+            this.ToolbarNewButton.Text = "新建";
             this.ToolbarNewButton.ButtonClick += new System.EventHandler(this.ToolbarNewButton_ButtonClick);
             // 
             // ToolbarNewProjectMenu
             // 
             this.ToolbarNewProjectMenu.Name = "ToolbarNewProjectMenu";
-            this.ToolbarNewProjectMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewProjectMenu.Text = "New Project";
+            this.ToolbarNewProjectMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewProjectMenu.Text = "新建项目";
             this.ToolbarNewProjectMenu.Click += new System.EventHandler(this.ToolbarNewProjectMenu_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(162, 6);
             // 
             // ToolbarNewYmapMenu
             // 
             this.ToolbarNewYmapMenu.Name = "ToolbarNewYmapMenu";
-            this.ToolbarNewYmapMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewYmapMenu.Text = "New Ymap File";
+            this.ToolbarNewYmapMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewYmapMenu.Text = "新建 Ymap 文件";
             this.ToolbarNewYmapMenu.Click += new System.EventHandler(this.ToolbarNewYmapMenu_Click);
             // 
             // ToolbarNewYtypMenu
             // 
             this.ToolbarNewYtypMenu.Name = "ToolbarNewYtypMenu";
-            this.ToolbarNewYtypMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewYtypMenu.Text = "New Ytyp File";
+            this.ToolbarNewYtypMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewYtypMenu.Text = "新建 Ytyp 文件";
             this.ToolbarNewYtypMenu.Click += new System.EventHandler(this.ToolbarNewYtypMenu_Click);
             // 
             // ToolbarNewYbnMenu
             // 
             this.ToolbarNewYbnMenu.Name = "ToolbarNewYbnMenu";
-            this.ToolbarNewYbnMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewYbnMenu.Text = "New Ybn File";
+            this.ToolbarNewYbnMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewYbnMenu.Text = "新建 Ybn 文件";
             this.ToolbarNewYbnMenu.Click += new System.EventHandler(this.ToolbarNewYbnMenu_Click);
             // 
             // ToolbarNewYndMenu
             // 
             this.ToolbarNewYndMenu.Name = "ToolbarNewYndMenu";
-            this.ToolbarNewYndMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewYndMenu.Text = "New Ynd File";
+            this.ToolbarNewYndMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewYndMenu.Text = "新建 Ynd 文件";
             this.ToolbarNewYndMenu.Click += new System.EventHandler(this.ToolbarNewYndMenu_Click);
             // 
             // ToolbarNewYnvMenu
             // 
             this.ToolbarNewYnvMenu.Name = "ToolbarNewYnvMenu";
-            this.ToolbarNewYnvMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewYnvMenu.Text = "New Ynv File";
+            this.ToolbarNewYnvMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewYnvMenu.Text = "新建 Ynv 文件";
             this.ToolbarNewYnvMenu.Click += new System.EventHandler(this.ToolbarNewYnvMenu_Click);
             // 
             // ToolbarNewTrainsMenu
             // 
             this.ToolbarNewTrainsMenu.Name = "ToolbarNewTrainsMenu";
-            this.ToolbarNewTrainsMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewTrainsMenu.Text = "New Trains File";
+            this.ToolbarNewTrainsMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewTrainsMenu.Text = "新建火车轨道";
             this.ToolbarNewTrainsMenu.Click += new System.EventHandler(this.ToolbarNewTrainsMenu_Click);
             // 
             // ToolbarNewScenarioMenu
             // 
             this.ToolbarNewScenarioMenu.Name = "ToolbarNewScenarioMenu";
-            this.ToolbarNewScenarioMenu.Size = new System.Drawing.Size(167, 22);
-            this.ToolbarNewScenarioMenu.Text = "New Scenario File";
+            this.ToolbarNewScenarioMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolbarNewScenarioMenu.Text = "新建场景文件";
             this.ToolbarNewScenarioMenu.Click += new System.EventHandler(this.ToolbarNewScenarioMenu_Click);
             // 
             // ToolbarOpenButton
@@ -1648,28 +1650,28 @@
             this.ToolbarOpenButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolbarOpenButton.Name = "ToolbarOpenButton";
             this.ToolbarOpenButton.Size = new System.Drawing.Size(32, 22);
-            this.ToolbarOpenButton.Text = "Open...";
+            this.ToolbarOpenButton.Text = "打开...";
             this.ToolbarOpenButton.ButtonClick += new System.EventHandler(this.ToolbarOpenButton_ButtonClick);
             // 
             // ToolbarOpenProjectMenu
             // 
             this.ToolbarOpenProjectMenu.Name = "ToolbarOpenProjectMenu";
-            this.ToolbarOpenProjectMenu.Size = new System.Drawing.Size(152, 22);
-            this.ToolbarOpenProjectMenu.Text = "Open Project...";
+            this.ToolbarOpenProjectMenu.Size = new System.Drawing.Size(145, 22);
+            this.ToolbarOpenProjectMenu.Text = "打开项目...";
             this.ToolbarOpenProjectMenu.Click += new System.EventHandler(this.ToolbarOpenProjectMenu_Click);
             // 
             // ToolbarOpenFilesMenu
             // 
             this.ToolbarOpenFilesMenu.Name = "ToolbarOpenFilesMenu";
-            this.ToolbarOpenFilesMenu.Size = new System.Drawing.Size(152, 22);
-            this.ToolbarOpenFilesMenu.Text = "Open Files...";
+            this.ToolbarOpenFilesMenu.Size = new System.Drawing.Size(145, 22);
+            this.ToolbarOpenFilesMenu.Text = "打开文件...";
             this.ToolbarOpenFilesMenu.Click += new System.EventHandler(this.ToolbarOpenFilesMenu_Click);
             // 
             // ToolbarOpenFolderMenu
             // 
             this.ToolbarOpenFolderMenu.Name = "ToolbarOpenFolderMenu";
-            this.ToolbarOpenFolderMenu.Size = new System.Drawing.Size(152, 22);
-            this.ToolbarOpenFolderMenu.Text = "Open Folder...";
+            this.ToolbarOpenFolderMenu.Size = new System.Drawing.Size(145, 22);
+            this.ToolbarOpenFolderMenu.Text = "打开文件夹...";
             this.ToolbarOpenFolderMenu.Click += new System.EventHandler(this.ToolbarOpenFolderMenu_Click);
             // 
             // ToolbarSaveButton
@@ -1680,7 +1682,7 @@
             this.ToolbarSaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolbarSaveButton.Name = "ToolbarSaveButton";
             this.ToolbarSaveButton.Size = new System.Drawing.Size(23, 22);
-            this.ToolbarSaveButton.Text = "Save";
+            this.ToolbarSaveButton.Text = "保存";
             this.ToolbarSaveButton.Click += new System.EventHandler(this.ToolbarSaveButton_Click);
             // 
             // ToolbarSaveAllButton
@@ -1690,7 +1692,7 @@
             this.ToolbarSaveAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolbarSaveAllButton.Name = "ToolbarSaveAllButton";
             this.ToolbarSaveAllButton.Size = new System.Drawing.Size(23, 22);
-            this.ToolbarSaveAllButton.Text = "Save All";
+            this.ToolbarSaveAllButton.Text = "全部保存";
             this.ToolbarSaveAllButton.Click += new System.EventHandler(this.ToolbarSaveAllButton_Click);
             // 
             // toolStripSeparator5
@@ -1700,17 +1702,19 @@
             // 
             // ProjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 530);
+            this.ClientSize = new System.Drawing.Size(951, 592);
             this.Controls.Add(this.MainDockPanel);
             this.Controls.Add(this.MainToolbar);
             this.Controls.Add(this.MainMenu);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProjectForm";
-            this.Text = "Project - CodeWalker by dexyfex";
+            this.Text = "项目 - CodeWalker by dexyfex";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProjectForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProjectForm_FormClosed);
             this.MainMenu.ResumeLayout(false);

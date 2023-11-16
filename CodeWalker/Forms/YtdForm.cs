@@ -94,7 +94,7 @@ namespace CodeWalker.Forms
         {
             var texs = TexDict?.Textures?.data_items;
             if (texs == null) return "";
-            return texs.Length.ToString() + " texture" + ((texs.Length != 1) ? "s" : "");
+            return texs.Length.ToString() + " 纹理";
         }
 
 
@@ -185,7 +185,7 @@ namespace CodeWalker.Forms
             }
             catch (Exception ex)
             {
-                UpdateStatus("Error reading texture mip: " + ex.ToString());
+                UpdateStatus("无法读取纹理 mip: " + ex.ToString());
                 SelTexturePictureBox.Image = null;
             }
 
@@ -329,7 +329,7 @@ namespace CodeWalker.Forms
             }
             catch
             {
-                MessageBox.Show("Unable to load " + fn + ".\nAre you sure it's a valid .dds file?");
+                MessageBox.Show("无法加载 " + fn + ".\n您确定选择了一个正确的 .dds 文件吗？");
             }
 
             return null;
@@ -345,7 +345,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = FileName + (Modified ? "*" : "") + " - Texture Dictionary - CodeWalker by dexyfex";
+            Text = FileName + (Modified ? "*" : "") + " - 纹理字典 - CodeWalker by dexyfex";
         }
 
         private void UpdateStatus(string text)
@@ -388,10 +388,10 @@ namespace CodeWalker.Forms
         {
             if (Ytd == null)
             {
-                FileSaveMenu.Text = "Save YTD";
-                FileSaveAsMenu.Text = "Save YTD As...";
-                ToolbarSaveMenu.Text = "Save YTD";
-                ToolbarSaveAsMenu.Text = "Save YTD As...";
+                FileSaveMenu.Text = "保存 YTD";
+                FileSaveAsMenu.Text = "另存为 YTD 到...";
+                ToolbarSaveMenu.Text = "保存 YTD";
+                ToolbarSaveAsMenu.Text = "另存为 YTD 到...";
                 FileSaveMenu.Enabled = false;
                 FileSaveAsMenu.Enabled = false;
                 ToolbarSaveMenu.Enabled = false;
@@ -400,8 +400,8 @@ namespace CodeWalker.Forms
             else
             {
                 var cansave = (ExploreForm?.EditMode ?? false);
-                var s = "Save " + FileName;
-                var sas = "Save " + FileName + " As...";
+                var s = "保存 " + FileName;
+                var sas = "保存 " + FileName + " 到...";
                 FileSaveMenu.Text = s;
                 FileSaveAsMenu.Text = sas;
                 ToolbarSaveMenu.Text = s;
@@ -417,15 +417,15 @@ namespace CodeWalker.Forms
         {
             if (CurrentTexture == null)
             {
-                FileSaveTextureAsMenu.Text = "Save Texture As...";
-                ToolbarSaveTextureAsMenu.Text = "Save Texture As...";
+                FileSaveTextureAsMenu.Text = "另存为纹理...";
+                ToolbarSaveTextureAsMenu.Text = "另存为纹理...";
                 FileSaveTextureAsMenu.Enabled = false;
                 ToolbarSaveTextureAsMenu.Enabled = false;
             }
             else
             {
                 string fname = CurrentTexture.Name + ".dds";
-                string sas = "Save " + fname + " As...";
+                string sas = "另存为 " + fname + " 到...";
                 FileSaveTextureAsMenu.Text = sas;
                 ToolbarSaveTextureAsMenu.Text = sas;
                 FileSaveTextureAsMenu.Enabled = true;
@@ -458,7 +458,7 @@ namespace CodeWalker.Forms
                         isinrpf = true;
                         if (!rpfFileEntry.Path.ToLowerInvariant().StartsWith("mods"))
                         {
-                            if (MessageBox.Show("This file is NOT located in the mods folder - Are you SURE you want to save this file?\r\nWARNING: This could cause permanent damage to your game!!!", "WARNING: Are you sure about this?", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                            if (MessageBox.Show("该文件不在 mods 目录内，您确定要保存该文件吗？\r\n警告：请谨慎操作，这可能会导致你的游戏损坏！！！", "警告：直接编辑游戏文件", MessageBoxButtons.YesNo) != DialogResult.Yes)
                             {
                                 saveas = true;//that was a close one
                                 isinrpf = false;
@@ -494,7 +494,7 @@ namespace CodeWalker.Forms
             {
                 if (!(ExploreForm?.EnsureRpfValidEncryption(rpfFileEntry.File) ?? false))
                 {
-                    MessageBox.Show("Unable to save file, RPF encryption needs to be OPEN for this operation!");
+                    MessageBox.Show("无法保存文件，RPF 加密模式必须为 OPEN 才能完成此操作。");
                     return;
                 }
 
@@ -503,7 +503,7 @@ namespace CodeWalker.Forms
             }
 
             Modified = false;
-            UpdateStatus("YTD file saved successfully at " + DateTime.Now.ToString());
+            UpdateStatus("YTD 文件成功保存于 " + DateTime.Now.ToString());
             UpdateFormTitle();
         }
 

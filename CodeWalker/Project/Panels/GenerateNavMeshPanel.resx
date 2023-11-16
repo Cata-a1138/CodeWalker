@@ -118,13 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>This tool allows for generating GTAV nav meshes (.ynv) for a specified area.
+    <value>该工具允许为指定区域生成 GTAV 寻路网格 (.ynv)。
 
-Generation requires static collision meshes for the area to be loadable by CodeWalker World View. The usual approach to this is to add the collision meshes into a DLC, and then enable mods and DLC.
-The collision material and flags will be used in generating the new nav mesh. Polygons with the "Ped" flag set will be marked as footpaths in the nav meshes, to spawn ambient peds.
-Generated .ynv files will be saved into the project folder and added to the project.
-Note: existing .ynv files in the project folder will be overwritten!
-</value>
+● 生成寻路网格需要静态碰撞体，以便 CodeWalker 世界视图可以加载该区域。
+● 导入碰撞体通常的方法是将碰撞体添加到一个 DLC 包中，然后在主界面上勾选加载模组和 DLC。
+● 碰撞体的材质和 Flags 将用于生成寻路网格，带有 “Ped” 标记的多边形将被设置为人行道，以生成环境人物。
+● 生成的 .ynv 文件将保存到项目文件夹中并添加到项目中。
+
+注意：项目文件夹中现有的 .ynv 文件将被覆盖！</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

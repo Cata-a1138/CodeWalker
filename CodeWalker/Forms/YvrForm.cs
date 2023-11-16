@@ -40,7 +40,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - Vehicle Records Viewer - CodeWalker by dexyfex";
+            Text = fileName + " - 载具记录查看器 - CodeWalker by dexyfex";
         }
 
         public void LoadYvr(YvrFile yvr)

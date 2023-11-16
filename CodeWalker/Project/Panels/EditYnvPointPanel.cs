@@ -146,5 +146,9 @@ namespace CodeWalker.Project.Panels
         {
             MessageBox.Show("Delete Point TODO!");
         }
+
+        private void label49_Click(object sender, EventArgs e) {
+
+        }
     }
 }

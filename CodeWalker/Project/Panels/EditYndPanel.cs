@@ -66,8 +66,8 @@ namespace CodeWalker.Project.Panels
                 YndProjectPathTextBox.Text = string.Empty;
                 YndAreaIDXUpDown.Value = 0;
                 YndAreaIDYUpDown.Value = 0;
-                YndAreaIDInfoLabel.Text = "ID: 0";
-                YndTotalNodesLabel.Text = "Total Nodes: 0";
+                YndAreaIDInfoLabel.Text = "ID：0";
+                YndTotalNodesLabel.Text = "总计节点：0";
                 YndVehicleNodesUpDown.Value = 0;
                 YndVehicleNodesUpDown.Maximum = 0;
                 YndPedNodesUpDown.Value = 0;
@@ -83,8 +83,8 @@ namespace CodeWalker.Project.Panels
                 YndProjectPathTextBox.Text = (Ynd != null) ? ProjectForm.CurrentProjectFile.GetRelativePath(Ynd.FilePath) : Ynd.FilePath;
                 YndAreaIDXUpDown.Value = Ynd.CellX;
                 YndAreaIDYUpDown.Value = Ynd.CellY;
-                YndAreaIDInfoLabel.Text = "ID: " + Ynd.AreaID.ToString();
-                YndTotalNodesLabel.Text = "Total Nodes: " + (nd?.NodesCount.ToString() ?? "0");
+                YndAreaIDInfoLabel.Text = "ID：" + Ynd.AreaID.ToString();
+                YndTotalNodesLabel.Text = "总计节点：" + (nd?.NodesCount.ToString() ?? "0");
                 YndVehicleNodesUpDown.Maximum = nd?.NodesCount ?? 0;
                 YndVehicleNodesUpDown.Value = Math.Min(nd?.NodesCountVehicle ?? 0, YndVehicleNodesUpDown.Maximum);
                 YndPedNodesUpDown.Maximum = nd?.NodesCount ?? 0;
@@ -103,7 +103,7 @@ namespace CodeWalker.Project.Panels
             {
                 if (ProjectForm.WorldForm == null)
                 {
-                    MessageBox.Show("You can only do this while in full CodeWalker", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("您只能在完整的 CodeWalker 编辑器中使用此功能", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

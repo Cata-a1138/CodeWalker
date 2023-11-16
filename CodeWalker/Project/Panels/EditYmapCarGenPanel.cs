@@ -37,11 +37,11 @@ namespace CodeWalker.Project.Panels
         {
             if (CurrentCarGen._CCarGen.carModel == 0)
             {
-                Text = "Car Generator";
+                Text = "车辆生成器";
             }
             else
             {
-                Text = CurrentCarGen?.NameString() ?? "Car Generator";
+                Text = CurrentCarGen?.NameString() ?? "车辆生成器";
             }
         }
 
@@ -55,9 +55,9 @@ namespace CodeWalker.Project.Panels
                 CarAddToProjectButton.Enabled = false;
                 CarDeleteButton.Enabled = false;
                 CarModelTextBox.Text = string.Empty;
-                CarModelHashLabel.Text = "Hash: 0";
+                CarModelHashLabel.Text = "哈希：0";
                 CarPopGroupTextBox.Text = string.Empty;
-                CarPopGroupHashLabel.Text = "Hash: 0";
+                CarPopGroupHashLabel.Text = "哈希：0";
                 CarFlagsTextBox.Text = string.Empty;
                 CarPositionTextBox.Text = string.Empty;
                 CarOrientXTextBox.Text = string.Empty;
@@ -81,9 +81,9 @@ namespace CodeWalker.Project.Panels
                 CarAddToProjectButton.Enabled = !ProjectForm.YmapExistsInProject(CurrentCarGen.Ymap);
                 CarDeleteButton.Enabled = !CarAddToProjectButton.Enabled;
                 CarModelTextBox.Text = c.carModel.ToString();
-                CarModelHashLabel.Text = "Hash: " + c.carModel.Hash.ToString();
+                CarModelHashLabel.Text = "哈希：" + c.carModel.Hash.ToString();
                 CarPopGroupTextBox.Text = c.popGroup.ToString();
-                CarPopGroupHashLabel.Text = "Hash: " + c.popGroup.Hash.ToString();
+                CarPopGroupHashLabel.Text = "哈希：" + c.popGroup.Hash.ToString();
                 CarFlagsTextBox.Text = c.flags.ToString();
                 CarPositionTextBox.Text = FloatUtil.GetVector3String(c.position);
                 CarOrientXTextBox.Text = FloatUtil.ToString(c.orientX);
@@ -111,13 +111,13 @@ namespace CodeWalker.Project.Panels
                 //float orientX { get; set; } //32   32: Float: 0: orientX=735213009
                 //float orientY { get; set; } //36   36: Float: 0: orientY=979440342
                 //float perpendicularLength { get; set; } //40   40: Float: 0: perpendicularLength=124715667
-                //MetaHash carModel { get; set; } //44   44: Hash: 0: carModel
+                //MetaHash carModel { get; set; } //44   44: 哈希：0: carModel
                 //uint flags { get; set; } //48   48: UnsignedInt: 0: flags
                 //int bodyColorRemap1 { get; set; } //52   52: SignedInt: 0: bodyColorRemap1=1429703670
                 //int bodyColorRemap2 { get; set; } //56   56: SignedInt: 0: bodyColorRemap2=1254848286
                 //int bodyColorRemap3 { get; set; } //60   60: SignedInt: 0: bodyColorRemap3=1880965569
                 //int bodyColorRemap4 { get; set; } //64   64: SignedInt: 0: bodyColorRemap4=1719152247
-                //MetaHash popGroup { get; set; } //68   68: Hash: 0: popGroup=911358791
+                //MetaHash popGroup { get; set; } //68   68: 哈希：0: popGroup=911358791
                 //sbyte livery { get; set; } //72   72: SignedByte: 0: livery
             }
         }
@@ -133,7 +133,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            CarModelHashLabel.Text = "Hash: " + hash.ToString();
+            CarModelHashLabel.Text = "哈希：" + hash.ToString();
 
             //var model = GameFileCache.GetCarInfo(hash); //todo: something like this for car info?
             //if (model == null)
@@ -169,7 +169,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            CarPopGroupHashLabel.Text = "Hash: " + hash.ToString();
+            CarPopGroupHashLabel.Text = "哈希：" + hash.ToString();
 
             //var grp = GameFileCache.GetCarPopGroup(hash); //todo: something like this for popgroup info?
             //if (grp == null)

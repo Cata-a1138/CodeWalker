@@ -21,5 +21,10 @@ namespace CodeWalker.Tools
         {
             Close();
         }
+
+        private void GithubButton_Click(object sender, EventArgs e) {
+            // Open the link to the GitHub repository
+            System.Diagnostics.Process.Start("https://github.com/dexyfex/CodeWalker");
+        }
     }
 }

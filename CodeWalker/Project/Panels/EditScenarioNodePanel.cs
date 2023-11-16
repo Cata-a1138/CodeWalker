@@ -218,11 +218,11 @@ namespace CodeWalker.Project.Panels
                 ScenarioPointTypeComboBox.SelectedItem = null;
                 ScenarioPointModelSetComboBox.SelectedItem = null;
                 ScenarioPointInteriorTextBox.Text = "";
-                ScenarioPointInteriorHashLabel.Text = "Hash: 0";
+                ScenarioPointInteriorHashLabel.Text = "哈希：0";
                 ScenarioPointGroupTextBox.Text = "";
-                ScenarioPointGroupHashLabel.Text = "Hash: 0";
+                ScenarioPointGroupHashLabel.Text = "哈希：0";
                 ScenarioPointImapTextBox.Text = "";
-                ScenarioPointImapHashLabel.Text = "Hash: 0";
+                ScenarioPointImapHashLabel.Text = "哈希：0";
                 ScenarioPointTimeStartUpDown.Value = 0;
                 ScenarioPointTimeEndUpDown.Value = 0;
                 ScenarioPointProbabilityUpDown.Value = 0;
@@ -246,11 +246,11 @@ namespace CodeWalker.Project.Panels
                 ScenarioPointTypeComboBox.SelectedItem = ((object)p.Type) ?? "";
                 ScenarioPointModelSetComboBox.SelectedItem = ((object)p.ModelSet) ?? "";
                 ScenarioPointInteriorTextBox.Text = p.InteriorName.ToString();
-                ScenarioPointInteriorHashLabel.Text = "Hash: " + p.InteriorName.Hash.ToString();
+                ScenarioPointInteriorHashLabel.Text = "哈希：" + p.InteriorName.Hash.ToString();
                 ScenarioPointGroupTextBox.Text = p.GroupName.ToString();
-                ScenarioPointGroupHashLabel.Text = "Hash: " + p.GroupName.Hash.ToString();
+                ScenarioPointGroupHashLabel.Text = "哈希：" + p.GroupName.Hash.ToString();
                 ScenarioPointImapTextBox.Text = p.IMapName.ToString();
-                ScenarioPointImapHashLabel.Text = "Hash: " + p.IMapName.Hash.ToString();
+                ScenarioPointImapHashLabel.Text = "哈希：" + p.IMapName.Hash.ToString();
                 ScenarioPointTimeStartUpDown.Value = p.TimeStart;
                 ScenarioPointTimeEndUpDown.Value = p.TimeEnd;
                 ScenarioPointProbabilityUpDown.Value = p.Probability;
@@ -278,10 +278,10 @@ namespace CodeWalker.Project.Panels
                 ScenarioEntityDeleteButton.Enabled = false;
                 ScenarioEntityPositionTextBox.Text = "";
                 ScenarioEntityTypeTextBox.Text = "";
-                ScenarioEntityTypeHashLabel.Text = "Hash: 0";
+                ScenarioEntityTypeHashLabel.Text = "哈希：0";
                 ScenarioEntityMayNotAlwaysExistCheckBox.Checked = false;
                 ScenarioEntitySpecificallyPreventArtPointsCheckBox.Checked = false;
-                ScenarioEntityInfoLabel.Text = "0 override points";
+                ScenarioEntityInfoLabel.Text = "0 个已覆盖的点";
                 ScenarioEntityPointsListBox.Items.Clear();
                 ScenarioEntityAddPointButton.Enabled = false;
             }
@@ -293,11 +293,11 @@ namespace CodeWalker.Project.Panels
                 ScenarioEntityAddToProjectButton.Enabled = !ScenarioEntityDeleteButton.Enabled;
                 ScenarioEntityPositionTextBox.Text = FloatUtil.GetVector3String(e.Position);
                 ScenarioEntityTypeTextBox.Text = e.TypeName.ToString();
-                ScenarioEntityTypeHashLabel.Text = "Hash: " + e.TypeName.Hash.ToString();
+                ScenarioEntityTypeHashLabel.Text = "哈希：" + e.TypeName.Hash.ToString();
                 ScenarioEntityMayNotAlwaysExistCheckBox.Checked = e.EntityMayNotAlwaysExist;
                 ScenarioEntitySpecificallyPreventArtPointsCheckBox.Checked = e.SpecificallyPreventArtPoints;
                 var pc = e.ScenarioPoints?.Length ?? 0;
-                ScenarioEntityInfoLabel.Text = pc.ToString() + " override point" + ((pc != 1) ? "s" : "");
+                ScenarioEntityInfoLabel.Text = pc.ToString() + " 个已覆盖的点";
                 ScenarioEntityPointsListBox.Items.Clear();
                 ScenarioEntityAddPointButton.Enabled = true;
 
@@ -325,19 +325,19 @@ namespace CodeWalker.Project.Panels
                 ScenarioEntityPointAddToProjectButton.Enabled = false;
                 ScenarioEntityPointDeleteButton.Enabled = false;
                 ScenarioEntityPointNameTextBox.Text = "";
-                ScenarioEntityPointNameHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointNameHashLabel.Text = "哈希：0";
                 ScenarioEntityPointPositionTextBox.Text = "";
                 ScenarioEntityPointRotationQuatBox.Value = Quaternion.Identity;
                 ScenarioEntityPointSpawnTypeTextBox.Text = "";
-                ScenarioEntityPointSpawnTypeHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointSpawnTypeHashLabel.Text = "哈希：0";
                 ScenarioEntityPointPedTypeTextBox.Text = "";
-                ScenarioEntityPointPedTypeHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointPedTypeHashLabel.Text = "哈希：0";
                 ScenarioEntityPointGroupTextBox.Text = "";
-                ScenarioEntityPointGroupHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointGroupHashLabel.Text = "哈希：0";
                 ScenarioEntityPointInteriorTextBox.Text = "";
-                ScenarioEntityPointInteriorHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointInteriorHashLabel.Text = "哈希：0";
                 ScenarioEntityPointRequiredImapTextBox.Text = "";
-                ScenarioEntityPointRequiredImapHashLabel.Text = "Hash: 0";
+                ScenarioEntityPointRequiredImapHashLabel.Text = "哈希：0";
                 ScenarioEntityPointAvailableInMpSpComboBox.SelectedItem = null;
                 ScenarioEntityPointProbabilityTextBox.Text = "";
                 ScenarioEntityPointTimeTillPedLeavesTextBox.Text = "";
@@ -360,19 +360,19 @@ namespace CodeWalker.Project.Panels
                 ScenarioEntityPointDeleteButton.Enabled = ProjectForm.ScenarioExistsInProject(CurrentScenario);
                 ScenarioEntityPointAddToProjectButton.Enabled = !ScenarioEntityPointDeleteButton.Enabled;
                 ScenarioEntityPointNameTextBox.Text = p.NameHash.ToString();
-                ScenarioEntityPointNameHashLabel.Text = "Hash: " + p.NameHash.Hash.ToString();
+                ScenarioEntityPointNameHashLabel.Text = "哈希：" + p.NameHash.Hash.ToString();
                 ScenarioEntityPointPositionTextBox.Text = FloatUtil.GetVector3String(p.OffsetPosition);
                 ScenarioEntityPointRotationQuatBox.Value = p.OffsetRotation.ToQuaternion();
                 ScenarioEntityPointSpawnTypeTextBox.Text = p.SpawnType.ToString();
-                ScenarioEntityPointSpawnTypeHashLabel.Text = "Hash: " + p.SpawnType.Hash.ToString();
+                ScenarioEntityPointSpawnTypeHashLabel.Text = "哈希：" + p.SpawnType.Hash.ToString();
                 ScenarioEntityPointPedTypeTextBox.Text = p.PedType.ToString();
-                ScenarioEntityPointPedTypeHashLabel.Text = "Hash: " + p.PedType.Hash.ToString();
+                ScenarioEntityPointPedTypeHashLabel.Text = "哈希：" + p.PedType.Hash.ToString();
                 ScenarioEntityPointGroupTextBox.Text = p.Group.ToString();
-                ScenarioEntityPointGroupHashLabel.Text = "Hash: " + p.Group.Hash.ToString();
+                ScenarioEntityPointGroupHashLabel.Text = "哈希：" + p.Group.Hash.ToString();
                 ScenarioEntityPointInteriorTextBox.Text = p.Interior.ToString();
-                ScenarioEntityPointInteriorHashLabel.Text = "Hash: " + p.Interior.Hash.ToString();
+                ScenarioEntityPointInteriorHashLabel.Text = "哈希：" + p.Interior.Hash.ToString();
                 ScenarioEntityPointRequiredImapTextBox.Text = p.RequiredImap.ToString();
-                ScenarioEntityPointRequiredImapHashLabel.Text = "Hash: " + p.RequiredImap.Hash.ToString();
+                ScenarioEntityPointRequiredImapHashLabel.Text = "哈希：" + p.RequiredImap.Hash.ToString();
                 ScenarioEntityPointAvailableInMpSpComboBox.SelectedItem = p.AvailableInMpSp;
                 ScenarioEntityPointProbabilityTextBox.Text = FloatUtil.ToString(p.Probability);
                 ScenarioEntityPointTimeTillPedLeavesTextBox.Text = FloatUtil.ToString(p.TimeTillPedLeaves);
@@ -404,7 +404,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioChainAddToProjectButton.Enabled = false;
                 ScenarioChainDeleteButton.Enabled = false;
                 ScenarioChainEdgesListBox.Items.Clear();
-                ScenarioChainEdgeCountLabel.Text = "Edge Count: 0";
+                ScenarioChainEdgeCountLabel.Text = "边缘数量：0";
                 ScenarioChainUnk1UpDown.Value = 0;
             }
             else
@@ -412,7 +412,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioChainDeleteButton.Enabled = ScenarioChainNodeDeleteButton.Enabled;// ScenarioExistsInProject(CurrentScenario);
                 ScenarioChainAddToProjectButton.Enabled = !ScenarioChainDeleteButton.Enabled;
                 ScenarioChainEdgesListBox.Items.Clear();
-                ScenarioChainEdgeCountLabel.Text = "Edge Count: " + (n.Chain?.EdgeIds?.Length ?? 0).ToString();
+                ScenarioChainEdgeCountLabel.Text = "边缘数量：" + (n.Chain?.EdgeIds?.Length ?? 0).ToString();
                 ScenarioChainUnk1UpDown.Value = n.Chain?.Unk1 ?? 0;
 
                 if ((n.Chain != null) && (n.Chain.Edges != null))
@@ -470,7 +470,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioChainNodeDeleteButton.Enabled = false;
                 ScenarioChainNodePositionTextBox.Text = "";
                 ScenarioChainNodePropTextBox.Text = "";
-                ScenarioChainNodePropHashLabel.Text = "Hash: 0";
+                ScenarioChainNodePropHashLabel.Text = "哈希：0";
                 ScenarioChainNodeTypeComboBox.SelectedItem = null;
                 ScenarioChainNodeHasIncomingCheckBox.Checked = false;
                 ScenarioChainNodeHasOutgoingCheckBox.Checked = false;
@@ -484,7 +484,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioChainNodeAddToProjectButton.Enabled = !ScenarioChainNodeDeleteButton.Enabled;
                 ScenarioChainNodePositionTextBox.Text = FloatUtil.GetVector3String(n.Position);
                 ScenarioChainNodePropTextBox.Text = n.PropHash.ToString();
-                ScenarioChainNodePropHashLabel.Text = "Hash: " + n.PropHash.Hash.ToString();
+                ScenarioChainNodePropHashLabel.Text = "哈希：" + n.PropHash.Hash.ToString();
                 ScenarioChainNodeTypeComboBox.SelectedItem = ((object)n.Type) ?? "";
                 ScenarioChainNodeHasIncomingCheckBox.Checked = n.HasIncomingEdges;
                 ScenarioChainNodeHasOutgoingCheckBox.Checked = n.HasOutgoingEdges;
@@ -564,11 +564,11 @@ namespace CodeWalker.Project.Panels
                 ScenarioClusterPointTypeComboBox.SelectedItem = null;
                 ScenarioClusterPointModelSetComboBox.SelectedItem = null;
                 ScenarioClusterPointInteriorTextBox.Text = "";
-                ScenarioClusterPointInteriorHashLabel.Text = "Hash: 0";
+                ScenarioClusterPointInteriorHashLabel.Text = "哈希：0";
                 ScenarioClusterPointGroupTextBox.Text = "";
-                ScenarioClusterPointGroupHashLabel.Text = "Hash: 0";
+                ScenarioClusterPointGroupHashLabel.Text = "哈希：0";
                 ScenarioClusterPointImapTextBox.Text = "";
-                ScenarioClusterPointImapHashLabel.Text = "Hash: 0";
+                ScenarioClusterPointImapHashLabel.Text = "哈希：0";
                 ScenarioClusterPointTimeStartUpDown.Value = 0;
                 ScenarioClusterPointTimeEndUpDown.Value = 0;
                 ScenarioClusterPointProbabilityUpDown.Value = 0;
@@ -592,11 +592,11 @@ namespace CodeWalker.Project.Panels
                 ScenarioClusterPointTypeComboBox.SelectedItem = ((object)p.Type) ?? "";
                 ScenarioClusterPointModelSetComboBox.SelectedItem = ((object)p.ModelSet) ?? "";
                 ScenarioClusterPointInteriorTextBox.Text = p.InteriorName.ToString();
-                ScenarioClusterPointInteriorHashLabel.Text = "Hash: " + p.InteriorName.Hash.ToString();
+                ScenarioClusterPointInteriorHashLabel.Text = "哈希：" + p.InteriorName.Hash.ToString();
                 ScenarioClusterPointGroupTextBox.Text = p.GroupName.ToString();
-                ScenarioClusterPointGroupHashLabel.Text = "Hash: " + p.GroupName.Hash.ToString();
+                ScenarioClusterPointGroupHashLabel.Text = "哈希：" + p.GroupName.Hash.ToString();
                 ScenarioClusterPointImapTextBox.Text = p.IMapName.ToString();
-                ScenarioClusterPointImapHashLabel.Text = "Hash: " + p.IMapName.Hash.ToString();
+                ScenarioClusterPointImapHashLabel.Text = "哈希：" + p.IMapName.Hash.ToString();
                 ScenarioClusterPointTimeStartUpDown.Value = p.TimeStart;
                 ScenarioClusterPointTimeEndUpDown.Value = p.TimeEnd;
                 ScenarioClusterPointProbabilityUpDown.Value = p.Probability;
@@ -657,7 +657,7 @@ namespace CodeWalker.Project.Panels
             var paths = CurrentScenario?.CScenarioPointRegion?.Paths;
             if (paths == null) return;
 
-            if (MessageBox.Show("Are you sure you want to delete this scenario chain edge?\n" + CurrentScenarioChainEdge.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该场景链接边缘吗？\n" + CurrentScenarioChainEdge.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return;
             }
@@ -872,7 +872,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioPointInteriorHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioPointInteriorHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.MyPoint.InteriorName != hash)
@@ -895,7 +895,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioPointGroupHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioPointGroupHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.MyPoint.GroupName != hash)
@@ -918,7 +918,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioPointImapHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioPointImapHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.MyPoint.IMapName != hash)
@@ -1145,7 +1145,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityTypeHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityTypeHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.Entity.TypeName != hash)
@@ -1304,7 +1304,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointNameHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointNameHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.NameHash != hash)
@@ -1328,7 +1328,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointSpawnTypeHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointSpawnTypeHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.SpawnType != hash)
@@ -1352,7 +1352,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointPedTypeHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointPedTypeHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.PedType != hash)
@@ -1376,7 +1376,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointGroupHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointGroupHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.Group != hash)
@@ -1399,7 +1399,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointInteriorHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointInteriorHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.Interior != hash)
@@ -1422,7 +1422,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioEntityPointRequiredImapHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioEntityPointRequiredImapHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.EntityPoint.RequiredImap != hash)
@@ -1695,7 +1695,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioChainNodePropHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioChainNodePropHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.ChainingNode.PropHash != hash)
@@ -2179,7 +2179,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioClusterPointInteriorHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioClusterPointInteriorHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.ClusterMyPoint.InteriorName != hash)
@@ -2202,7 +2202,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioClusterPointGroupHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioClusterPointGroupHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.ClusterMyPoint.GroupName != hash)
@@ -2225,7 +2225,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            ScenarioClusterPointImapHashLabel.Text = "Hash: " + hash.ToString();
+            ScenarioClusterPointImapHashLabel.Text = "哈希：" + hash.ToString();
             lock (ProjectForm.ProjectSyncRoot)
             {
                 if (CurrentScenarioNode.ClusterMyPoint.IMapName != hash)
@@ -2395,5 +2395,32 @@ namespace CodeWalker.Project.Panels
             }
         }
 
+        private void ScenarioEntityPointRotationQuatBox_Load(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointNameHashLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointSpawnTypeHashLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointPedTypeHashLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointGroupHashLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointInteriorHashLabel_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ScenarioEntityPointRequiredImapHashLabel_Click(object sender, EventArgs e) {
+
+        }
     }
 }

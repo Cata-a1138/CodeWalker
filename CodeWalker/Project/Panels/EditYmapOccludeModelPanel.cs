@@ -59,7 +59,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "OccludeModel: " + (CurrentOccludeModel?.Index.ToString() ?? "(none)");
+            Text = "遮挡模型：" + (CurrentOccludeModel?.Index.ToString() ?? "(无)");
         }
 
 

@@ -99,9 +99,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RelPropertyGrid.HelpVisible = false;
-            this.RelPropertyGrid.Location = new System.Drawing.Point(6, 6);
+            this.RelPropertyGrid.Location = new System.Drawing.Point(7, 8);
+            this.RelPropertyGrid.Margin = new System.Windows.Forms.Padding(4);
             this.RelPropertyGrid.Name = "RelPropertyGrid";
-            this.RelPropertyGrid.Size = new System.Drawing.Size(819, 448);
+            this.RelPropertyGrid.Size = new System.Drawing.Size(806, 431);
             this.RelPropertyGrid.TabIndex = 0;
             // 
             // MainTabControl
@@ -112,20 +113,21 @@
             this.MainTabControl.Controls.Add(this.SearchTabPage);
             this.MainTabControl.Controls.Add(this.SynthsTabPage);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTabControl.Location = new System.Drawing.Point(0, 49);
+            this.MainTabControl.Location = new System.Drawing.Point(0, 52);
             this.MainTabControl.Margin = new System.Windows.Forms.Padding(0);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(839, 486);
+            this.MainTabControl.Size = new System.Drawing.Size(830, 475);
             this.MainTabControl.TabIndex = 1;
             // 
             // XmlTabPage
             // 
             this.XmlTabPage.Controls.Add(this.XmlTextBox);
-            this.XmlTabPage.Location = new System.Drawing.Point(4, 22);
+            this.XmlTabPage.Location = new System.Drawing.Point(4, 26);
+            this.XmlTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.XmlTabPage.Name = "XmlTabPage";
-            this.XmlTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.XmlTabPage.Size = new System.Drawing.Size(831, 460);
+            this.XmlTabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.XmlTabPage.Size = new System.Drawing.Size(822, 445);
             this.XmlTabPage.TabIndex = 3;
             this.XmlTabPage.Text = "XML";
             this.XmlTabPage.UseVisualStyleBackColor = true;
@@ -160,14 +162,15 @@
             this.XmlTextBox.Language = FastColoredTextBoxNS.Language.XML;
             this.XmlTextBox.LeftBracket = '<';
             this.XmlTextBox.LeftBracket2 = '(';
-            this.XmlTextBox.Location = new System.Drawing.Point(3, 3);
+            this.XmlTextBox.Location = new System.Drawing.Point(4, 4);
+            this.XmlTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.XmlTextBox.Name = "XmlTextBox";
             this.XmlTextBox.Paddings = new System.Windows.Forms.Padding(0);
             this.XmlTextBox.RightBracket = '>';
             this.XmlTextBox.RightBracket2 = ')';
             this.XmlTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.XmlTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("XmlTextBox.ServiceColors")));
-            this.XmlTextBox.Size = new System.Drawing.Size(825, 454);
+            this.XmlTextBox.Size = new System.Drawing.Size(814, 437);
             this.XmlTextBox.TabIndex = 2;
             this.XmlTextBox.Zoom = 100;
             this.XmlTextBox.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.XmlTextBox_TextChanged);
@@ -176,23 +179,25 @@
             // DetailsTabPage
             // 
             this.DetailsTabPage.Controls.Add(this.RelPropertyGrid);
-            this.DetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.DetailsTabPage.Location = new System.Drawing.Point(4, 26);
+            this.DetailsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.DetailsTabPage.Name = "DetailsTabPage";
-            this.DetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.DetailsTabPage.Size = new System.Drawing.Size(831, 460);
+            this.DetailsTabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.DetailsTabPage.Size = new System.Drawing.Size(822, 445);
             this.DetailsTabPage.TabIndex = 1;
-            this.DetailsTabPage.Text = "Details";
+            this.DetailsTabPage.Text = "详情";
             this.DetailsTabPage.UseVisualStyleBackColor = true;
             // 
             // NameTableTabPage
             // 
             this.NameTableTabPage.Controls.Add(this.MainTextBox);
-            this.NameTableTabPage.Location = new System.Drawing.Point(4, 22);
+            this.NameTableTabPage.Location = new System.Drawing.Point(4, 26);
+            this.NameTableTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.NameTableTabPage.Name = "NameTableTabPage";
-            this.NameTableTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.NameTableTabPage.Size = new System.Drawing.Size(831, 460);
+            this.NameTableTabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.NameTableTabPage.Size = new System.Drawing.Size(822, 445);
             this.NameTableTabPage.TabIndex = 0;
-            this.NameTableTabPage.Text = "Names";
+            this.NameTableTabPage.Text = "名称";
             this.NameTableTabPage.UseVisualStyleBackColor = true;
             // 
             // MainTextBox
@@ -202,11 +207,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainTextBox.HideSelection = false;
-            this.MainTextBox.Location = new System.Drawing.Point(6, 6);
+            this.MainTextBox.Location = new System.Drawing.Point(7, 8);
+            this.MainTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MainTextBox.Multiline = true;
             this.MainTextBox.Name = "MainTextBox";
             this.MainTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.MainTextBox.Size = new System.Drawing.Size(819, 448);
+            this.MainTextBox.Size = new System.Drawing.Size(806, 430);
             this.MainTextBox.TabIndex = 1;
             this.MainTextBox.WordWrap = false;
             // 
@@ -218,22 +224,24 @@
             this.SearchTabPage.Controls.Add(this.SearchTextBox);
             this.SearchTabPage.Controls.Add(this.SearchButton);
             this.SearchTabPage.Controls.Add(this.SearchResultsGrid);
-            this.SearchTabPage.Location = new System.Drawing.Point(4, 22);
+            this.SearchTabPage.Location = new System.Drawing.Point(4, 26);
+            this.SearchTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTabPage.Name = "SearchTabPage";
-            this.SearchTabPage.Size = new System.Drawing.Size(831, 460);
+            this.SearchTabPage.Size = new System.Drawing.Size(822, 445);
             this.SearchTabPage.TabIndex = 2;
-            this.SearchTabPage.Text = "Search";
+            this.SearchTabPage.Text = "搜索";
             this.SearchTabPage.UseVisualStyleBackColor = true;
             // 
             // SearchTextRadio
             // 
             this.SearchTextRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchTextRadio.AutoSize = true;
-            this.SearchTextRadio.Location = new System.Drawing.Point(518, 4);
+            this.SearchTextRadio.Location = new System.Drawing.Point(459, 6);
+            this.SearchTextRadio.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTextRadio.Name = "SearchTextRadio";
-            this.SearchTextRadio.Size = new System.Drawing.Size(46, 17);
+            this.SearchTextRadio.Size = new System.Drawing.Size(50, 21);
             this.SearchTextRadio.TabIndex = 36;
-            this.SearchTextRadio.Text = "Text";
+            this.SearchTextRadio.Text = "文本";
             this.SearchTextRadio.UseVisualStyleBackColor = true;
             // 
             // SearchHashRadio
@@ -241,41 +249,45 @@
             this.SearchHashRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchHashRadio.AutoSize = true;
             this.SearchHashRadio.Checked = true;
-            this.SearchHashRadio.Location = new System.Drawing.Point(462, 4);
+            this.SearchHashRadio.Location = new System.Drawing.Point(398, 6);
+            this.SearchHashRadio.Margin = new System.Windows.Forms.Padding(4);
             this.SearchHashRadio.Name = "SearchHashRadio";
-            this.SearchHashRadio.Size = new System.Drawing.Size(50, 17);
+            this.SearchHashRadio.Size = new System.Drawing.Size(50, 21);
             this.SearchHashRadio.TabIndex = 35;
             this.SearchHashRadio.TabStop = true;
-            this.SearchHashRadio.Text = "Hash";
+            this.SearchHashRadio.Text = "哈希";
             this.SearchHashRadio.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 6);
+            this.label12.Location = new System.Drawing.Point(9, 8);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.Size = new System.Drawing.Size(44, 17);
             this.label12.TabIndex = 32;
-            this.label12.Text = "Find:";
+            this.label12.Text = "查找：";
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchTextBox.Location = new System.Drawing.Point(44, 3);
+            this.SearchTextBox.Location = new System.Drawing.Point(51, 4);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(412, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(331, 23);
             this.SearchTextBox.TabIndex = 33;
             this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
             // SearchButton
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchButton.Location = new System.Drawing.Point(570, 2);
+            this.SearchButton.Location = new System.Drawing.Point(516, 3);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(68, 23);
+            this.SearchButton.Size = new System.Drawing.Size(79, 30);
             this.SearchButton.TabIndex = 34;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "搜索";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -285,9 +297,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchResultsGrid.HelpVisible = false;
-            this.SearchResultsGrid.Location = new System.Drawing.Point(3, 31);
+            this.SearchResultsGrid.Location = new System.Drawing.Point(4, 41);
+            this.SearchResultsGrid.Margin = new System.Windows.Forms.Padding(4);
             this.SearchResultsGrid.Name = "SearchResultsGrid";
-            this.SearchResultsGrid.Size = new System.Drawing.Size(822, 423);
+            this.SearchResultsGrid.Size = new System.Drawing.Size(810, 397);
             this.SearchResultsGrid.TabIndex = 1;
             // 
             // SynthsTabPage
@@ -303,58 +316,64 @@
             this.SynthsTabPage.Controls.Add(this.label1);
             this.SynthsTabPage.Controls.Add(this.SynthsComboBox);
             this.SynthsTabPage.Controls.Add(this.SynthTextBox);
-            this.SynthsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.SynthsTabPage.Location = new System.Drawing.Point(4, 26);
+            this.SynthsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.SynthsTabPage.Name = "SynthsTabPage";
-            this.SynthsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.SynthsTabPage.Size = new System.Drawing.Size(831, 460);
+            this.SynthsTabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.SynthsTabPage.Size = new System.Drawing.Size(822, 445);
             this.SynthsTabPage.TabIndex = 4;
-            this.SynthsTabPage.Text = "Synths";
+            this.SynthsTabPage.Text = "合成器";
             this.SynthsTabPage.UseVisualStyleBackColor = true;
             // 
             // SynthStopButton
             // 
             this.SynthStopButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SynthStopButton.Enabled = false;
-            this.SynthStopButton.Location = new System.Drawing.Point(724, 2);
+            this.SynthStopButton.Location = new System.Drawing.Point(696, 3);
+            this.SynthStopButton.Margin = new System.Windows.Forms.Padding(4);
             this.SynthStopButton.Name = "SynthStopButton";
-            this.SynthStopButton.Size = new System.Drawing.Size(104, 23);
+            this.SynthStopButton.Size = new System.Drawing.Size(121, 30);
             this.SynthStopButton.TabIndex = 43;
-            this.SynthStopButton.Text = "Stop";
+            this.SynthStopButton.Text = "停止";
             this.SynthStopButton.UseVisualStyleBackColor = true;
             this.SynthStopButton.Click += new System.EventHandler(this.SynthStopButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 59);
+            this.label3.Location = new System.Drawing.Point(9, 76);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 42;
-            this.label3.Text = "Variables:";
+            this.label3.Text = "变量：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 33);
+            this.label2.Location = new System.Drawing.Point(9, 42);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 41;
-            this.label2.Text = "Outputs:";
+            this.label2.Text = "输出：";
             // 
             // SynthVariablesTextBox
             // 
-            this.SynthVariablesTextBox.Location = new System.Drawing.Point(64, 56);
+            this.SynthVariablesTextBox.Location = new System.Drawing.Point(75, 74);
+            this.SynthVariablesTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SynthVariablesTextBox.Multiline = true;
             this.SynthVariablesTextBox.Name = "SynthVariablesTextBox";
-            this.SynthVariablesTextBox.Size = new System.Drawing.Size(293, 87);
+            this.SynthVariablesTextBox.Size = new System.Drawing.Size(341, 113);
             this.SynthVariablesTextBox.TabIndex = 40;
             this.SynthVariablesTextBox.TextChanged += new System.EventHandler(this.SynthVariablesTextBox_TextChanged);
             // 
             // SynthOutputsTextBox
             // 
-            this.SynthOutputsTextBox.Location = new System.Drawing.Point(64, 30);
+            this.SynthOutputsTextBox.Location = new System.Drawing.Point(75, 40);
+            this.SynthOutputsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SynthOutputsTextBox.Name = "SynthOutputsTextBox";
-            this.SynthOutputsTextBox.Size = new System.Drawing.Size(293, 20);
+            this.SynthOutputsTextBox.Size = new System.Drawing.Size(341, 23);
             this.SynthOutputsTextBox.TabIndex = 39;
             this.SynthOutputsTextBox.TextChanged += new System.EventHandler(this.SynthOutputsTextBox_TextChanged);
             // 
@@ -366,7 +385,8 @@
             this.SynthBufferChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.SynthBufferChart.Legends.Add(legend1);
-            this.SynthBufferChart.Location = new System.Drawing.Point(363, 31);
+            this.SynthBufferChart.Location = new System.Drawing.Point(424, 41);
+            this.SynthBufferChart.Margin = new System.Windows.Forms.Padding(4);
             this.SynthBufferChart.Name = "SynthBufferChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -374,49 +394,53 @@
             series1.Legend = "Legend1";
             series1.Name = "Buffer";
             this.SynthBufferChart.Series.Add(series1);
-            this.SynthBufferChart.Size = new System.Drawing.Size(460, 112);
+            this.SynthBufferChart.Size = new System.Drawing.Size(388, 146);
             this.SynthBufferChart.TabIndex = 38;
             this.SynthBufferChart.Text = "chart1";
             // 
             // SynthPlayButton
             // 
             this.SynthPlayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SynthPlayButton.Location = new System.Drawing.Point(615, 2);
+            this.SynthPlayButton.Location = new System.Drawing.Point(569, 3);
+            this.SynthPlayButton.Margin = new System.Windows.Forms.Padding(4);
             this.SynthPlayButton.Name = "SynthPlayButton";
-            this.SynthPlayButton.Size = new System.Drawing.Size(104, 23);
+            this.SynthPlayButton.Size = new System.Drawing.Size(121, 30);
             this.SynthPlayButton.TabIndex = 37;
-            this.SynthPlayButton.Text = "Play";
+            this.SynthPlayButton.Text = "播放";
             this.SynthPlayButton.UseVisualStyleBackColor = true;
             this.SynthPlayButton.Click += new System.EventHandler(this.SynthPlayButton_Click);
             // 
             // SynthCopyXMLButton
             // 
             this.SynthCopyXMLButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SynthCopyXMLButton.Location = new System.Drawing.Point(463, 2);
+            this.SynthCopyXMLButton.Location = new System.Drawing.Point(391, 3);
+            this.SynthCopyXMLButton.Margin = new System.Windows.Forms.Padding(4);
             this.SynthCopyXMLButton.Name = "SynthCopyXMLButton";
-            this.SynthCopyXMLButton.Size = new System.Drawing.Size(146, 23);
+            this.SynthCopyXMLButton.Size = new System.Drawing.Size(170, 30);
             this.SynthCopyXMLButton.TabIndex = 35;
-            this.SynthCopyXMLButton.Text = "Copy XML to clipboard";
+            this.SynthCopyXMLButton.Text = "复制 XML 到剪切板";
             this.SynthCopyXMLButton.UseVisualStyleBackColor = true;
             this.SynthCopyXMLButton.Click += new System.EventHandler(this.SynthCopyXMLButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Location = new System.Drawing.Point(9, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Synth:";
+            this.label1.Text = "合成器";
             // 
             // SynthsComboBox
             // 
             this.SynthsComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SynthsComboBox.FormattingEnabled = true;
-            this.SynthsComboBox.Location = new System.Drawing.Point(64, 3);
+            this.SynthsComboBox.Location = new System.Drawing.Point(75, 4);
+            this.SynthsComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.SynthsComboBox.Name = "SynthsComboBox";
-            this.SynthsComboBox.Size = new System.Drawing.Size(393, 21);
+            this.SynthsComboBox.Size = new System.Drawing.Size(309, 25);
             this.SynthsComboBox.TabIndex = 4;
             this.SynthsComboBox.SelectedIndexChanged += new System.EventHandler(this.SynthsComboBox_SelectedIndexChanged);
             // 
@@ -439,7 +463,7 @@
             this.SynthTextBox.AutoIndentChars = false;
             this.SynthTextBox.AutoIndentCharsPatterns = "";
             this.SynthTextBox.AutoIndentExistingLines = false;
-            this.SynthTextBox.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.SynthTextBox.AutoScrollMinSize = new System.Drawing.Size(2, 14);
             this.SynthTextBox.BackBrush = null;
             this.SynthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SynthTextBox.CharHeight = 14;
@@ -452,14 +476,15 @@
             this.SynthTextBox.Language = FastColoredTextBoxNS.Language.XML;
             this.SynthTextBox.LeftBracket = '<';
             this.SynthTextBox.LeftBracket2 = '(';
-            this.SynthTextBox.Location = new System.Drawing.Point(3, 149);
+            this.SynthTextBox.Location = new System.Drawing.Point(4, 196);
+            this.SynthTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SynthTextBox.Name = "SynthTextBox";
             this.SynthTextBox.Paddings = new System.Windows.Forms.Padding(0);
             this.SynthTextBox.RightBracket = '>';
             this.SynthTextBox.RightBracket2 = ')';
             this.SynthTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.SynthTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("SynthTextBox.ServiceColors")));
-            this.SynthTextBox.Size = new System.Drawing.Size(825, 308);
+            this.SynthTextBox.Size = new System.Drawing.Size(813, 247);
             this.SynthTextBox.TabIndex = 3;
             this.SynthTextBox.Zoom = 100;
             this.SynthTextBox.TextChangedDelayed += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.SynthTextBox_TextChangedDelayed);
@@ -470,9 +495,9 @@
             this.NewButton,
             this.OpenButton,
             this.SaveButton});
-            this.MainToolbar.Location = new System.Drawing.Point(0, 24);
+            this.MainToolbar.Location = new System.Drawing.Point(0, 27);
             this.MainToolbar.Name = "MainToolbar";
-            this.MainToolbar.Size = new System.Drawing.Size(839, 25);
+            this.MainToolbar.Size = new System.Drawing.Size(830, 25);
             this.MainToolbar.TabIndex = 9;
             this.MainToolbar.Text = "Main Toolbar";
             // 
@@ -483,7 +508,7 @@
             this.NewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(32, 22);
-            this.NewButton.Text = "New...";
+            this.NewButton.Text = "新建...";
             this.NewButton.ButtonClick += new System.EventHandler(this.NewButton_ButtonClick);
             // 
             // OpenButton
@@ -493,7 +518,7 @@
             this.OpenButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(32, 22);
-            this.OpenButton.Text = "Open...";
+            this.OpenButton.Text = "打开...";
             this.OpenButton.ButtonClick += new System.EventHandler(this.OpenButton_ButtonClick);
             // 
             // SaveButton
@@ -503,23 +528,24 @@
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(32, 22);
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "保存";
             this.SaveButton.ButtonClick += new System.EventHandler(this.SaveButton_ButtonClick);
             // 
             // MainStatusStrip
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 535);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 527);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(839, 22);
+            this.MainStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.MainStatusStrip.Size = new System.Drawing.Size(830, 22);
             this.MainStatusStrip.TabIndex = 7;
             this.MainStatusStrip.Text = "Main Status Strip";
             // 
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(824, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(813, 17);
             this.StatusLabel.Spring = true;
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -531,7 +557,8 @@
             this.ViewMenu});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(839, 24);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.MainMenu.Size = new System.Drawing.Size(830, 27);
             this.MainMenu.TabIndex = 8;
             this.MainMenu.Text = "Main Menu";
             // 
@@ -545,35 +572,35 @@
             this.toolStripSeparator1,
             this.FileCloseMenu});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
-            this.FileMenu.Text = "File";
+            this.FileMenu.Size = new System.Drawing.Size(44, 21);
+            this.FileMenu.Text = "文件";
             // 
             // FileNewMenu
             // 
             this.FileNewMenu.Name = "FileNewMenu";
             this.FileNewMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileNewMenu.Text = "New";
+            this.FileNewMenu.Text = "新建";
             this.FileNewMenu.Click += new System.EventHandler(this.FileNewMenu_Click);
             // 
             // FileOpenMenu
             // 
             this.FileOpenMenu.Name = "FileOpenMenu";
             this.FileOpenMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileOpenMenu.Text = "Open...";
+            this.FileOpenMenu.Text = "打开...";
             this.FileOpenMenu.Click += new System.EventHandler(this.FileOpenMenu_Click);
             // 
             // FileSaveMenu
             // 
             this.FileSaveMenu.Name = "FileSaveMenu";
             this.FileSaveMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileSaveMenu.Text = "Save";
+            this.FileSaveMenu.Text = "保存";
             this.FileSaveMenu.Click += new System.EventHandler(this.FileSaveMenu_Click);
             // 
             // FileSaveAsMenu
             // 
             this.FileSaveAsMenu.Name = "FileSaveAsMenu";
             this.FileSaveAsMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileSaveAsMenu.Text = "Save As...";
+            this.FileSaveAsMenu.Text = "另存为...";
             this.FileSaveAsMenu.Click += new System.EventHandler(this.FileSaveAsMenu_Click);
             // 
             // toolStripSeparator1
@@ -586,7 +613,7 @@
             this.FileCloseMenu.Name = "FileCloseMenu";
             this.FileCloseMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.FileCloseMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileCloseMenu.Text = "Close";
+            this.FileCloseMenu.Text = "关闭";
             this.FileCloseMenu.Click += new System.EventHandler(this.FileCloseMenu_Click);
             // 
             // EditMenu
@@ -595,13 +622,13 @@
             this.wIPToolStripMenuItem});
             this.EditMenu.Enabled = false;
             this.EditMenu.Name = "EditMenu";
-            this.EditMenu.Size = new System.Drawing.Size(39, 20);
-            this.EditMenu.Text = "Edit";
+            this.EditMenu.Size = new System.Drawing.Size(44, 21);
+            this.EditMenu.Text = "编辑";
             // 
             // wIPToolStripMenuItem
             // 
             this.wIPToolStripMenuItem.Name = "wIPToolStripMenuItem";
-            this.wIPToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.wIPToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.wIPToolStripMenuItem.Text = "[WIP!]";
             // 
             // ViewMenu
@@ -610,13 +637,13 @@
             this.wIPToolStripMenuItem1});
             this.ViewMenu.Enabled = false;
             this.ViewMenu.Name = "ViewMenu";
-            this.ViewMenu.Size = new System.Drawing.Size(44, 20);
-            this.ViewMenu.Text = "View";
+            this.ViewMenu.Size = new System.Drawing.Size(44, 21);
+            this.ViewMenu.Text = "查看";
             // 
             // wIPToolStripMenuItem1
             // 
             this.wIPToolStripMenuItem1.Name = "wIPToolStripMenuItem1";
-            this.wIPToolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
+            this.wIPToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
             this.wIPToolStripMenuItem1.Text = "[WIP!]";
             // 
             // OpenFileDialog
@@ -629,16 +656,18 @@
             // 
             // RelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 557);
+            this.ClientSize = new System.Drawing.Size(830, 549);
             this.Controls.Add(this.MainTabControl);
             this.Controls.Add(this.MainToolbar);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainMenu);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RelForm";
-            this.Text = "Audio dat.rel Editor - CodeWalker by dexyfex";
+            this.Text = "音频 dat.rel 编辑器 - CodeWalker by dexyfex";
             this.MainTabControl.ResumeLayout(false);
             this.XmlTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.XmlTextBox)).EndInit();

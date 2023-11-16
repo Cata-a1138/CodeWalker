@@ -164,7 +164,7 @@ namespace CodeWalker
         bool MouseRayCollisionVisible = false;
         SpaceRayIntersectResult MouseRayCollision = new SpaceRayIntersectResult();
 
-        string SelectionModeStr = "Entity";
+        string SelectionModeStr = "实体";
         MapSelectionMode SelectionMode = MapSelectionMode.Entity;
         MapSelection SelectedItem;
         MapSelection CopiedItem;
@@ -268,9 +268,9 @@ namespace CodeWalker
 
 
             Icons = new List<MapIcon>();
-            AddIcon("Google Marker", "icon_google_marker_64x64.png", 64, 64, 11.0f, 40.0f, 1.0f);
-            AddIcon("Glokon Marker", "icon_glokon_normal_32x32.png", 32, 32, 11.0f, 32.0f, 1.0f);
-            AddIcon("Glokon Debug", "icon_glokon_debug_32x32.png", 32, 32, 11.5f, 32.0f, 1.0f);
+            AddIcon("Google 标记", "icon_google_marker_64x64.png", 64, 64, 11.0f, 40.0f, 1.0f);
+            AddIcon("Glokon 标记", "icon_glokon_normal_32x32.png", 32, 32, 11.0f, 32.0f, 1.0f);
+            AddIcon("Glokon 调试", "icon_glokon_debug_32x32.png", 32, 32, 11.5f, 32.0f, 1.0f);
             MarkerIcon = Icons[1];
             LocatorIcon = Icons[2];
             foreach (MapIcon icon in Icons)
@@ -323,7 +323,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Could not load map icon " + filepath + " for " + name + "!\n\n" + ex.ToString());
+                MessageBox.Show("无法加载地图图标 " + filepath + "，在 " + name + "！\n\n" + ex.ToString());
             }
             return null;
         }
@@ -342,7 +342,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading shaders!\n" + ex.ToString());
+                MessageBox.Show("加载着色器错误！\n" + ex.ToString());
                 return;
             }
 
@@ -473,7 +473,7 @@ namespace CodeWalker
         {
             if ((ProjectForm != null) && (ProjectForm.CurrentProjectFile != null))
             {
-                if (MessageBox.Show("Are you sure you want to quit CodeWalker?", "Confirm quit", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("您确定要退出 CodeWalker 吗？", "确认退出", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return false;
                 }
@@ -2098,11 +2098,11 @@ namespace CodeWalker
         private void UpdateToolbarShortcutsText()
         {
             var kb = Input.keyBindings;
-            ToolbarSelectButton.ToolTipText = string.Format("Select objects / Exit edit mode ({0}, {1})", kb.ToggleMouseSelect, kb.ExitEditMode);
-            ToolbarMoveButton.ToolTipText = string.Format("Move ({0})", kb.EditPosition);
-            ToolbarRotateButton.ToolTipText = string.Format("Rotate ({0})", kb.EditRotation);
-            ToolbarScaleButton.ToolTipText = string.Format("Scale ({0})", kb.EditScale);
-            ShowToolbarCheckBox.Text = string.Format("Show Toolbar ({0})", kb.ToggleToolbar);
+            ToolbarSelectButton.ToolTipText = string.Format("选择对象 / 退出编辑模式 ({0}, {1})", kb.ToggleMouseSelect, kb.ExitEditMode);
+            ToolbarMoveButton.ToolTipText = string.Format("移动 ({0})", kb.EditPosition);
+            ToolbarRotateButton.ToolTipText = string.Format("旋转 ({0})", kb.EditRotation);
+            ToolbarScaleButton.ToolTipText = string.Format("缩放 ({0})", kb.EditScale);
+            ShowToolbarCheckBox.Text = string.Format("显示工具栏 ({0})", kb.ToggleToolbar);
         }
 
 
@@ -3679,7 +3679,7 @@ namespace CodeWalker
         }
         private void SetSelectionUI(MapSelection item)
         {
-            SelectionNameTextBox.Text = item.GetNameString("Nothing selected");
+            SelectionNameTextBox.Text = item.GetNameString("未选择对象");
             //SelEntityPropertyGrid.SelectedObject = item.EntityDef;
             SelArchetypePropertyGrid.SelectedObject = item.Archetype;
             SelDrawablePropertyGrid.SelectedObject = item.Drawable;
@@ -3690,10 +3690,10 @@ namespace CodeWalker
             SelDrawableTexturesTreeView.Nodes.Clear();
             if (item.Drawable != null)
             {
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.High, "High Detail", true);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Med, "Medium Detail", false);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Low, "Low Detail", false);
-                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.VLow, "Very Low Detail", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.High, "高细节", true);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Med, "中等细节", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Low, "低细节", false);
+                AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.VLow, "极低细节", false);
                 //AddSelectionDrawableModelsTreeNodes(item.Drawable.DrawableModels?.Extra, "X Detail", false);
             }
 
@@ -3706,93 +3706,93 @@ namespace CodeWalker
             RelFile audiofile = null;
             ToolbarCopyButton.Enabled = false;
             ToolbarDeleteItemButton.Enabled = false;
-            ToolbarDeleteItemButton.Text = "Delete";
-            ToolbarAddItemButton.ToolTipText = "Add";
+            ToolbarDeleteItemButton.Text = "删除";
+            ToolbarAddItemButton.ToolTipText = "添加";
             ToolbarAddItemButton.Enabled = false;
             ToolbarPasteButton.Enabled = CopiedItem.CanCopyPaste;
 
 
             if (item.MultipleSelectionItems != null)
             {
-                SelectionEntityTabPage.Text = "Multiple items";
+                SelectionEntityTabPage.Text = "多个对象";
                 SelEntityPropertyGrid.SelectedObject = item.MultipleSelectionItems;
                 ToolbarCopyButton.Enabled = item.CanCopyPaste;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete multiple items";
+                ToolbarDeleteItemButton.Text = "删除多个对象";
             }
             else if (item.TimeCycleModifier != null)
             {
-                SelectionEntityTabPage.Text = "TCMod";
+                SelectionEntityTabPage.Text = "TC 修改器";
                 SelEntityPropertyGrid.SelectedObject = item.TimeCycleModifier;
             }
             else if (item.CarGenerator != null)
             {
-                SelectionEntityTabPage.Text = "CarGen";
+                SelectionEntityTabPage.Text = "车辆生成器";
                 SelEntityPropertyGrid.SelectedObject = item.CarGenerator;
                 ymap = item.CarGenerator.Ymap;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete car generator";
+                ToolbarDeleteItemButton.Text = "删除车辆生成器";
             }
             else if (item.LodLight != null)
             {
-                SelectionEntityTabPage.Text = "LodLight";
+                SelectionEntityTabPage.Text = "远景灯光";
                 SelEntityPropertyGrid.SelectedObject = item.LodLight;
                 ymap = item.LodLight.Ymap;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete LOD light";
+                ToolbarDeleteItemButton.Text = "删除远景灯光";
             }
             else if (item.GrassBatch != null)
             {
-                SelectionEntityTabPage.Text = "Grass";
+                SelectionEntityTabPage.Text = "实例草";
                 SelEntityPropertyGrid.SelectedObject = item.GrassBatch;
             }
             else if (item.BoxOccluder != null)
             {
-                SelectionEntityTabPage.Text = "BoxOccluder";
+                SelectionEntityTabPage.Text = "遮挡盒";
                 SelEntityPropertyGrid.SelectedObject = item.BoxOccluder;
                 ymap = item.BoxOccluder.Ymap;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete Box Occluder";
+                ToolbarDeleteItemButton.Text = "删除遮挡盒";
             }
             else if (item.OccludeModelTri != null)
             {
-                SelectionEntityTabPage.Text = "OccludeTriangle";
+                SelectionEntityTabPage.Text = "遮挡三角";
                 SelEntityPropertyGrid.SelectedObject = item.OccludeModelTri;
                 ymap = item.OccludeModelTri.Ymap;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete Occlude Model Triangle";
+                ToolbarDeleteItemButton.Text = "删除遮挡模型三角";
             }
             else if (item.WaterQuad != null)
             {
-                SelectionEntityTabPage.Text = "WaterQuad";
+                SelectionEntityTabPage.Text = "块状水";
                 SelEntityPropertyGrid.SelectedObject = item.WaterQuad;
             }
             else if (item.CalmingQuad != null)
             {
-                SelectionEntityTabPage.Text = "CalmingQuad";
+                SelectionEntityTabPage.Text = "静止块状水";
                 SelEntityPropertyGrid.SelectedObject = item.CalmingQuad;
             }
             else if (item.WaveQuad != null)
             {
-                SelectionEntityTabPage.Text = "WaveQuad";
+                SelectionEntityTabPage.Text = "波浪块状水";
                 SelEntityPropertyGrid.SelectedObject = item.WaveQuad;
             }
             else if (item.PathNode != null)
             {
-                SelectionEntityTabPage.Text = "PathNode";
+                SelectionEntityTabPage.Text = "道路节点";
                 SelEntityPropertyGrid.SelectedObject = item.PathNode;
                 ynd = item.PathNode.Ynd;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete path node";
+                ToolbarDeleteItemButton.Text = "删除道路节点";
             }
             else if (item.NavPoly != null)
             {
-                SelectionEntityTabPage.Text = "NavPoly";
+                SelectionEntityTabPage.Text = "寻路网格";
                 SelEntityPropertyGrid.SelectedObject = item.NavPoly;
                 ynv = item.NavPoly.Ynv;
                 //ToolbarCopyButton.Enabled = true;
@@ -3801,7 +3801,7 @@ namespace CodeWalker
             }
             else if (item.NavPoint != null)
             {
-                SelectionEntityTabPage.Text = "NavPoint";
+                SelectionEntityTabPage.Text = "寻路点";
                 SelEntityPropertyGrid.SelectedObject = item.NavPoint;
                 ynv = item.NavPoint.Ynv;
                 //ToolbarCopyButton.Enabled = true;
@@ -3810,7 +3810,7 @@ namespace CodeWalker
             }
             else if (item.NavPortal != null)
             {
-                SelectionEntityTabPage.Text = "NavPortal";
+                SelectionEntityTabPage.Text = "寻路门户";
                 SelEntityPropertyGrid.SelectedObject = item.NavPortal;
                 ynv = item.NavPortal.Ynv;
                 //ToolbarCopyButton.Enabled = true;
@@ -3819,12 +3819,12 @@ namespace CodeWalker
             }
             else if (item.TrainTrackNode != null)
             {
-                SelectionEntityTabPage.Text = "TrainNode";
+                SelectionEntityTabPage.Text = "火车节点";
                 SelEntityPropertyGrid.SelectedObject = item.TrainTrackNode;
                 traintr = item.TrainTrackNode.Track;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete train track node";
+                ToolbarDeleteItemButton.Text = "删除火车轨道节点";
             }
             else if (item.ScenarioNode != null)
             {
@@ -3833,7 +3833,7 @@ namespace CodeWalker
                 scenario = item.ScenarioNode.Ymt;
                 ToolbarCopyButton.Enabled = true;
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete scenario point";
+                ToolbarDeleteItemButton.Text = "删除场景点";
             }
             else if (item.Audio != null)
             {
@@ -3843,14 +3843,14 @@ namespace CodeWalker
             }
             else
             {
-                SelectionEntityTabPage.Text = "Entity";
+                SelectionEntityTabPage.Text = "实体";
                 SelEntityPropertyGrid.SelectedObject = item.EntityDef;
                 if (item.EntityDef != null)
                 {
                     ymap = item.EntityDef?.Ymap;
                     ToolbarCopyButton.Enabled = true;
                     ToolbarDeleteItemButton.Enabled = true;
-                    ToolbarDeleteItemButton.Text = "Delete entity";
+                    ToolbarDeleteItemButton.Text = "删除实体";
                 }
             }
 
@@ -3868,23 +3868,23 @@ namespace CodeWalker
             else if (item.CollisionVertex != null)
             {
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionVertex;
-                ShowSelectedExtensionTab(true, "Coll");
+                ShowSelectedExtensionTab(true, "碰撞体");
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete collision vertex";
+                ToolbarDeleteItemButton.Text = "删除碰撞顶点";
             }
             else if (item.CollisionPoly != null)
             {
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionPoly;
-                ShowSelectedExtensionTab(true, "Coll");
+                ShowSelectedExtensionTab(true, "碰撞体");
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete collision poly";
+                ToolbarDeleteItemButton.Text = "删除碰撞多边形";
             }
             else if (item.CollisionBounds != null)
             {
                 SelExtensionPropertyGrid.SelectedObject = item.CollisionBounds;
-                ShowSelectedExtensionTab(true, "Coll");
+                ShowSelectedExtensionTab(true, "碰撞体");
                 ToolbarDeleteItemButton.Enabled = true;
-                ToolbarDeleteItemButton.Text = "Delete collision bounds";
+                ToolbarDeleteItemButton.Text = "删除碰撞边界";
             }
             else
             {
@@ -3920,7 +3920,7 @@ namespace CodeWalker
             }
 
         }
-        private void ShowSelectedExtensionTab(bool show, string text = "Ext")
+        private void ShowSelectedExtensionTab(bool show, string text = "扩展")
         {
             SelectionExtensionTabPage.Text = text;
             if (show)
@@ -3987,7 +3987,7 @@ namespace CodeWalker
                                 var tstr = tex.Name.Trim();
                                 if (t != null)
                                 {
-                                    tstr = string.Format("{0} ({1}x{2}, embedded)", tex.Name, t.Width, t.Height);
+                                    tstr = string.Format("{0} ({1}x{2}, 嵌入)", tex.Name, t.Width, t.Height);
                                 }
                                 var tnode = tgnode.Nodes.Add(hash.ToString().Trim() + ": " + tstr);
                                 tnode.Tag = tex;
@@ -4141,14 +4141,14 @@ namespace CodeWalker
 
         public void ShowModel(string name)
         {
-            ViewModeComboBox.Text = "Model view";
+            ViewModeComboBox.Text = "模型视图";
             ModelComboBox.Text = name;
             modelname = name;
         }
         public void GoToEntity(YmapEntityDef entity)
         {
             if (entity == null) return;
-            ViewModeComboBox.Text = "World view";
+            ViewModeComboBox.Text = "世界视图";
             GoToPosition(entity.Position);
             SelectObject(entity);
         }
@@ -4157,46 +4157,46 @@ namespace CodeWalker
         private void LoadWorld()
         {
 
-            UpdateStatus("Loading timecycles...");
+            UpdateStatus("正在加载 timecycles...");
             timecycle.Init(gameFileCache, UpdateStatus);
             timecycle.SetTime(Renderer.timeofday);
 
-            UpdateStatus("Loading materials...");
+            UpdateStatus("正在加载材质...");
             BoundsMaterialTypes.Init(gameFileCache);
 
-            UpdateStatus("Loading weather...");
+            UpdateStatus("正在加载天气...");
             weather.Init(gameFileCache, UpdateStatus, timecycle);
             UpdateWeatherTypesComboBox(weather);
 
-            UpdateStatus("Loading clouds...");
+            UpdateStatus("正在加载云层...");
             clouds.Init(gameFileCache, UpdateStatus, weather);
             UpdateCloudTypesComboBox(clouds);
 
-            UpdateStatus("Loading water...");
+            UpdateStatus("正在加载水体...");
             water.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading trains...");
+            UpdateStatus("正在加载火车...");
             trains.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading scenarios...");
+            UpdateStatus("正在加载场景...");
             scenarios.Init(gameFileCache, UpdateStatus, timecycle);
 
-            UpdateStatus("Loading popzones...");
+            UpdateStatus("正在加载生成区域...");
             popzones.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading heightmaps...");
+            UpdateStatus("正在加载高度图...");
             heightmaps.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading watermaps...");
+            UpdateStatus("正在加载水映射...");
             watermaps.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading audio zones...");
+            UpdateStatus("正在加载声音区域...");
             audiozones.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("Loading world...");
+            UpdateStatus("正在加载世界...");
             space.Init(gameFileCache, UpdateStatus);
 
-            UpdateStatus("World loaded");
+            UpdateStatus("世界已加载");
 
         }
 
@@ -4248,7 +4248,7 @@ namespace CodeWalker
             //main content loading thread.
             running = true;
 
-            UpdateStatus("Scanning...");
+            UpdateStatus("扫描中...");
 
             try
             {
@@ -4263,7 +4263,7 @@ namespace CodeWalker
             }
             catch
             {
-                MessageBox.Show("Keys not found! This shouldn't happen.");
+                MessageBox.Show("未找到秘钥！这不应该发生");
                 Close();
                 return;
             }
@@ -4897,7 +4897,7 @@ namespace CodeWalker
         public void SetCurrentSaveItem(string filename)
         {
             bool enable = !string.IsNullOrEmpty(filename);
-            ToolbarSaveButton.ToolTipText = enable ? ("Save " + filename) : "Save";
+            ToolbarSaveButton.ToolTipText = enable ? ("保存 " + filename) : "保存";
             ToolbarSaveButton.Enabled = enable;
             ToolbarSaveAllButton.Enabled = enable;
         }
@@ -4909,7 +4909,7 @@ namespace CodeWalker
                 case MapSelectionMode.CarGenerator: type = "car generator"; break;
             }
 
-            ToolbarAddItemButton.ToolTipText = "Add " + type + (enable ? (" to " + filename) : "");
+            ToolbarAddItemButton.ToolTipText = "添加 " + type + (enable ? (" 到 " + filename) : "");
             ToolbarAddItemButton.Enabled = enable;
         }
         public void EnableYbnUI(bool enable, string filename)
@@ -4931,7 +4931,7 @@ namespace CodeWalker
 
             if (enable) //only do something if a ynd is selected - EnableYmapUI will handle the no selection case.. 
             {
-                ToolbarAddItemButton.ToolTipText = "Add " + type + (enable ? (" to " + filename) : "");
+                ToolbarAddItemButton.ToolTipText = "添加 " + type + (enable ? (" 到 " + filename) : "");
                 ToolbarAddItemButton.Enabled = enable;
             }
         }
@@ -4945,7 +4945,7 @@ namespace CodeWalker
 
             if (enable) //only do something if a ynv is selected - EnableYmapUI will handle the no selection case.. 
             {
-                ToolbarAddItemButton.ToolTipText = "Add " + type + (enable ? (" to " + filename) : "");
+                ToolbarAddItemButton.ToolTipText = "添加 " + type + (enable ? (" 到 " + filename) : "");
                 ToolbarAddItemButton.Enabled = enable;
             }
         }
@@ -4959,7 +4959,7 @@ namespace CodeWalker
 
             if (enable) //only do something if a track is selected - EnableYmapUI will handle the no selection case.. 
             {
-                ToolbarAddItemButton.ToolTipText = "Add " + type + (enable ? (" to " + filename) : "");
+                ToolbarAddItemButton.ToolTipText = "添加 " + type + (enable ? (" 到 " + filename) : "");
                 ToolbarAddItemButton.Enabled = enable;
             }
         }
@@ -4973,7 +4973,7 @@ namespace CodeWalker
 
             if (enable) //only do something if a scenario is selected - EnableYmapUI will handle the no selection case.. 
             {
-                ToolbarAddItemButton.ToolTipText = "Add " + type + (enable ? (" to " + filename) : "");
+                ToolbarAddItemButton.ToolTipText = "添加 " + type + (enable ? (" 到 " + filename) : "");
                 ToolbarAddItemButton.Enabled = enable;
             }
         }
@@ -5163,13 +5163,13 @@ namespace CodeWalker
                     }
                     catch (Exception e) // various failures can happen here.
                     {
-                        MessageBox.Show("Unable to remove entity..." + Environment.NewLine + e.Message);
+                        MessageBox.Show("无法删除实体..." + Environment.NewLine + e.Message);
                     }
                 }
             }
             else if (!ymap.RemoveEntity(ent))
             {
-                MessageBox.Show("Unable to remove entity.");
+                MessageBox.Show("无法删除实体。");
             }
             else
             {
@@ -5184,7 +5184,7 @@ namespace CodeWalker
             var ymap = cargen.Ymap;
             if (!ymap.RemoveCarGen(cargen))
             {
-                MessageBox.Show("Unable to remove car generator.");
+                MessageBox.Show("无法删除车辆生成器。");
             }
             else
             {
@@ -5199,7 +5199,7 @@ namespace CodeWalker
             var ymap = lodlight.Ymap;
             if (!ymap.RemoveLodLight(lodlight))
             {
-                MessageBox.Show("Unable to remove LOD light.");
+                MessageBox.Show("无法删除远景灯光。");
             }
             else
             {
@@ -5214,7 +5214,7 @@ namespace CodeWalker
             var ymap = box.Ymap;
             if (!ymap.RemoveBoxOccluder(box))
             {
-                MessageBox.Show("Unable to remove box occluder.");
+                MessageBox.Show("无法删除遮挡盒。");
             }
             else
             {
@@ -5229,7 +5229,7 @@ namespace CodeWalker
             var ymap = tri.Ymap;
             if (!ymap.RemoveOccludeModelTriangle(tri))
             {
-                MessageBox.Show("Unable to remove occlude model triangle.");
+                MessageBox.Show("无法删除遮挡模型三角。");
             }
             else
             {
@@ -5246,7 +5246,7 @@ namespace CodeWalker
             var ynd = pathnode.Ynd;
             if (!ynd.RemoveYndNode(Space, pathnode, true, out var affectedFiles))
             {
-                MessageBox.Show("Unable to remove path node.");
+                MessageBox.Show("无法删除路径节点。");
             }
             else
             {
@@ -5272,7 +5272,7 @@ namespace CodeWalker
             var ynv = navpoly.Ynv;
             if (!ynv.RemovePoly(navpoly))
             {
-                MessageBox.Show("Unable to remove nav poly. NavMesh editing TODO!");
+                MessageBox.Show("无法删除寻路网格。寻路网格编辑功能当前未完工！");
             }
             else
             {
@@ -5288,7 +5288,7 @@ namespace CodeWalker
             var ynv = navpoint.Ynv;
             if (!ynv.RemovePoint(navpoint))
             {
-                MessageBox.Show("Unable to remove nav point. NavMesh editing TODO!");
+                MessageBox.Show("无法删除寻路节点。寻路网格编辑功能当前未完工！");
             }
             else
             {
@@ -5304,7 +5304,7 @@ namespace CodeWalker
             var ynv = navportal.Ynv;
             if (!ynv.RemovePortal(navportal))
             {
-                MessageBox.Show("Unable to remove nav portal. NavMesh editing TODO!");
+                MessageBox.Show("无法删除寻路门户。寻路网格编辑功能当前未完工！");
             }
             else
             {
@@ -5320,7 +5320,7 @@ namespace CodeWalker
             var track = trainnode.Track;
             if (!track.RemoveNode(trainnode))
             {
-                MessageBox.Show("Unable to remove train track node.");
+                MessageBox.Show("无法删除火车轨道节点。");
             }
             else
             {
@@ -5336,7 +5336,7 @@ namespace CodeWalker
             var region = scenariopt.Region.Ymt.ScenarioRegion;
             if (!region.RemoveNode(scenariopt))
             {
-                MessageBox.Show("Unable to remove scenario point.");
+                MessageBox.Show("无法删除场景点。");
             }
             else
             {
@@ -5352,7 +5352,7 @@ namespace CodeWalker
             var rel = audio.RelFile;
             if (!rel.RemoveRelData(audio.AudioZone))
             {
-                MessageBox.Show("Unable to remove audio zone. Audio zone editing TODO!");
+                MessageBox.Show("无法删除声音区域。声音区域编辑功能当前未完工！");
             }
             else
             {
@@ -5367,7 +5367,7 @@ namespace CodeWalker
             var rel = audio.RelFile;
             if (!rel.RemoveRelData(audio.AudioEmitter))
             {
-                MessageBox.Show("Unable to remove audio emitter. Audio zone editing TODO!");
+                MessageBox.Show("无法删除声音发射器。声音区域编辑功能当前未完工！");
             }
             else
             {
@@ -5382,7 +5382,7 @@ namespace CodeWalker
             var bgeom = vertex.Owner;
             if ((bgeom == null) || (!bgeom.DeleteVertex(vertex.Index)))
             {
-                MessageBox.Show("Unable to remove vertex.");
+                MessageBox.Show("无法删除顶点。");
             }
             else
             {
@@ -5398,7 +5398,7 @@ namespace CodeWalker
             var bgeom = poly.Owner;
             if ((bgeom == null) || (!bgeom.DeletePolygon(poly)))
             {
-                MessageBox.Show("Unable to remove polygon.");
+                MessageBox.Show("无法删除多边形。");
             }
             else
             {
@@ -5486,12 +5486,12 @@ namespace CodeWalker
             {
                 switch (space)
                 {
-                    case "World space":
+                    case "全局空间":
                         Widget.ObjectSpace = false;
                         ToolbarTransformSpaceButton.Image = ToolbarWorldSpaceButton.Image;
                         ToolbarWorldSpaceButton.Checked = true;
                         break;
-                    case "Object space":
+                    case "本地空间":
                         Widget.ObjectSpace = true;
                         ToolbarTransformSpaceButton.Image = ToolbarObjectSpaceButton.Image;
                         ToolbarObjectSpaceButton.Checked = true;
@@ -5502,7 +5502,7 @@ namespace CodeWalker
 
         private void ToggleWidgetSpace()
         {
-            SetWidgetSpace(Widget.ObjectSpace ? "World space" : "Object space");
+            SetWidgetSpace(Widget.ObjectSpace ? "全局空间" : "本地空间");
         }
 
 
@@ -5554,75 +5554,75 @@ namespace CodeWalker
             switch (modestr)
             {
                 default:
-                case "Entity":
+                case "实体":
                     mode = MapSelectionMode.Entity;
                     ToolbarSelectEntityButton.Checked = true;
                     break;
-                case "Entity Extension":
+                case "实体扩展":
                     mode = MapSelectionMode.EntityExtension;
                     ToolbarSelectEntityExtensionButton.Checked = true;
                     break;
-                case "Archetype Extension":
+                case "定义扩展":
                     mode = MapSelectionMode.ArchetypeExtension;
                     ToolbarSelectArchetypeExtensionButton.Checked = true;
                     break;
-                case "Time Cycle Modifier":
+                case "Time Cycle 修改器":
                     mode = MapSelectionMode.TimeCycleModifier;
                     ToolbarSelectTimeCycleModifierButton.Checked = true;
                     break;
-                case "Car Generator":
+                case "车辆生成器":
                     mode = MapSelectionMode.CarGenerator;
                     ToolbarSelectCarGeneratorButton.Checked = true;
                     break;
-                case "Grass":
+                case "实例草":
                     mode = MapSelectionMode.Grass;
                     ToolbarSelectGrassButton.Checked = true;
                     break;
-                case "Water Quad":
+                case "块状水":
                     mode = MapSelectionMode.WaterQuad;
                     ToolbarSelectWaterQuadButton.Checked = true;
                     break;
-                case "Water Calming Quad":
+                case "静止的块状水":
                     mode = MapSelectionMode.CalmingQuad;
                     ToolbarSelectCalmingQuadButton.Checked = true;
                     break;
-                case "Water Wave Quad":
+                case "波浪的块状水":
                     mode = MapSelectionMode.WaveQuad;
                     ToolbarSelectWaveQuadButton.Checked = true;
                     break;
-                case "Collision":
+                case "碰撞体":
                     mode = MapSelectionMode.Collision;
                     ToolbarSelectCollisionButton.Checked = true;
                     break;
-                case "Nav Mesh":
+                case "寻路网格":
                     mode = MapSelectionMode.NavMesh;
                     ToolbarSelectNavMeshButton.Checked = true;
                     break;
-                case "Path":
+                case "路线":
                     mode = MapSelectionMode.Path;
                     ToolbarSelectPathButton.Checked = true;
                     break;
-                case "Train Track":
+                case "火车轨道":
                     mode = MapSelectionMode.TrainTrack;
                     ToolbarSelectTrainTrackButton.Checked = true;
                     break;
-                case "Lod Lights":
+                case "远景灯光":
                     mode = MapSelectionMode.LodLights;
                     ToolbarSelectLodLightsButton.Checked = true;
                     break;
-                case "Mlo Instance":
+                case "室内实例":
                     mode = MapSelectionMode.MloInstance;
                     ToolbarSelectMloInstanceButton.Checked = true;
                     break;
-                case "Scenario":
+                case "场景":
                     mode = MapSelectionMode.Scenario;
                     ToolbarSelectScenarioButton.Checked = true;
                     break;
-                case "Audio":
+                case "音频":
                     mode = MapSelectionMode.Audio;
                     ToolbarSelectAudioButton.Checked = true;
                     break;
-                case "Occlusion":
+                case "遮挡":
                     mode = MapSelectionMode.Occlusion;
                     ToolbarSelectOcclusionButton.Checked = true;
                     break;
@@ -5757,17 +5757,17 @@ namespace CodeWalker
 
             switch (modestr)
             {
-                case "Perspective":
+                case "透视视图":
                     MapViewEnabled = false;
                     ToolbarCameraModeButton.Image = ToolbarCameraPerspectiveButton.Image;
                     ToolbarCameraPerspectiveButton.Checked = true;
                     break;
-                case "Orthographic":
+                case "正交视图":
                     MapViewEnabled = false;
                     ToolbarCameraModeButton.Image = ToolbarCameraOrthographicButton.Image;
                     ToolbarCameraOrthographicButton.Checked = true;
                     break;
-                case "2D Map":
+                case "2D 地图":
                     MapViewEnabled = true;
                     ToolbarCameraModeButton.Image = ToolbarCameraMapViewButton.Image;
                     ToolbarCameraMapViewButton.Checked = true;
@@ -5788,7 +5788,7 @@ namespace CodeWalker
 
         private void ToggleCameraMode()
         {
-            SetCameraMode(MapViewEnabled ? "Perspective" : "2D Map");
+            SetCameraMode(MapViewEnabled ? "透视视图" : "2D 地图");
         }
 
 
@@ -5846,8 +5846,8 @@ namespace CodeWalker
             var selection = SelectedItem.MultipleSelectionItems;
             if (selection?.Length != 2)
             {
-                MessageBox.Show("Please select 2 nodes to perform this action",
-                    "Join Failed.",
+                MessageBox.Show("请选择两个节点以进行此操作",
+                    "加入失败。",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -5859,7 +5859,7 @@ namespace CodeWalker
                 var link = n1.AddLink(n2);
                 if (link == null)
                 {
-                    MessageBox.Show("Failed to join nodes. The nodes are likely too far away!", "Join Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("无法加入节点，节点可能距离过远！", "加入失败。", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -5882,8 +5882,8 @@ namespace CodeWalker
             var selection = SelectedItem.MultipleSelectionItems;
             if (selection?.Length != 2)
             {
-                MessageBox.Show("Please select 2 nodes to perform this action",
-                    "Join Failed.",
+                MessageBox.Show("请选择两个节点以进行此操作",
+                    "加入失败。",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -5895,7 +5895,7 @@ namespace CodeWalker
                 var link = n1.AddLink(n2);
                 if (link == null)
                 {
-                    MessageBox.Show("Failed to join nodes. The nodes are likely too far away!", "Join Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("无法加入节点，节点可能距离过远！", "加入失败。", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -5989,7 +5989,7 @@ namespace CodeWalker
                                 var ms = CurrentMapSelection.MultipleSelectionItems;
                                 if (ms?.Length > 0 && ms[0].PathNode != null)
                                 {
-                                    MessageBox.Show("You cannot clone multiple path nodes at once", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("您不能一次性复制多个节点。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     GrabbedWidget.IsDragging = false;
                                     GrabbedWidget = null;
                                 } else
@@ -6412,21 +6412,21 @@ namespace CodeWalker
             string mode = (string)ViewModeComboBox.SelectedItem;
             switch (mode)
             {
-                case "World view":
+                case "世界":
                     rendermaps = false;
                     renderworld = true;
                     ViewTabControl.SelectedTab = ViewWorldTabPage;
                     break;
-                case "Ymap view":
+                case "Ymap":
                     rendermaps = true;
                     renderworld = false;
                     ViewTabControl.SelectedTab = ViewYmapsTabPage;
                     break;
-                case "Model view":
+                case "模型":
                     rendermaps = false;
                     renderworld = false;
                     ViewTabControl.SelectedTab = ViewModelTabPage;
-                    if (SelectionNameTextBox.Text != "" && SelectionNameTextBox.Text != "Nothing selected")
+                    if (SelectionNameTextBox.Text != "" && SelectionNameTextBox.Text != "未选择对象")
                     {
                         modelname = SelectionNameTextBox.Text;
                     }
@@ -6593,7 +6593,7 @@ namespace CodeWalker
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading shaders!\n" + ex.ToString());
+                    MessageBox.Show("加载着色器错误！\n" + ex.ToString());
                     return;
                 }
             }
@@ -6668,7 +6668,7 @@ namespace CodeWalker
 
         private void AddCurrentPositonMarkerButton_Click(object sender, EventArgs e)
         {
-            AddMarker(camera.Position, "Marker", true);
+            AddMarker(camera.Position, "标记点", true);
         }
 
         private void AddSelectionMarkerButton_Click(object sender, EventArgs e)
@@ -6796,12 +6796,12 @@ namespace CodeWalker
 
         private void ControlSettingsButton_Click(object sender, EventArgs e)
         {
-            ShowSettingsForm("Controls");
+            ShowSettingsForm("控制");
         }
 
         private void AdvancedSettingsButton_Click(object sender, EventArgs e)
         {
-            ShowSettingsForm("Advanced");
+            ShowSettingsForm("高级");
         }
 
         private void ReloadSettingsButton_Click(object sender, EventArgs e)
@@ -6816,7 +6816,7 @@ namespace CodeWalker
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Really quit?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("确定要退出吗？", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Close();
             }
@@ -7135,7 +7135,7 @@ namespace CodeWalker
             if (!initialised) return;
             if (ProjectForm != null)
             {
-                MessageBox.Show("Please close the Project Window before enabling or disabling mods.");
+                MessageBox.Show("请在切换模组资源加载之前关闭项目窗口！");
                 return;
             }
             
@@ -7147,7 +7147,7 @@ namespace CodeWalker
             if (!initialised) return;
             if (ProjectForm != null)
             {
-                MessageBox.Show("Please close the Project Window before enabling or disabling DLC.");
+                MessageBox.Show("请在切换 DLC 加载之前关闭项目窗口！");
                 return;
             }
 
@@ -7159,7 +7159,7 @@ namespace CodeWalker
             if (!initialised) return;
             if (ProjectForm != null)
             {
-                MessageBox.Show("Please close the Project Window before changing the DLC level.");
+                MessageBox.Show("请在切换 DLC 版本之前关闭项目窗口！");
                 return;
             }
 
@@ -7213,7 +7213,7 @@ namespace CodeWalker
         private void TimeStartStopButton_Click(object sender, EventArgs e)
         {
             Renderer.timerunning = !Renderer.timerunning;
-            TimeStartStopButton.Text = Renderer.timerunning ? "Stop" : "Start";
+            TimeStartStopButton.Text = Renderer.timerunning ? "停止" : "开始";
         }
 
         private void TimeSpeedTrackBar_Scroll(object sender, EventArgs e)
@@ -7225,7 +7225,7 @@ namespace CodeWalker
 
             Renderer.timespeed = 128.0f * tv * tv * tv * tv * tv * tv * tv * tv;
 
-            TimeSpeedLabel.Text = Renderer.timespeed.ToString("0.###") + " min/sec";
+            TimeSpeedLabel.Text = Renderer.timespeed.ToString("0.###") + " 分钟/秒";
         }
 
         private void CameraModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -7389,114 +7389,114 @@ namespace CodeWalker
         private void ToolbarSelectButton_ButtonClick(object sender, EventArgs e)
         {
             SetMouseSelect(!ToolbarSelectButton.Checked);
-            SetWidgetMode("Default");
+            SetWidgetMode("默认");
         }
 
         private void ToolbarSelectEntityButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Entity");
+            SetSelectionMode("实体");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectEntityExtensionButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Entity Extension");
+            SetSelectionMode("实体扩展");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectArchetypeExtensionButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Archetype Extension");
+            SetSelectionMode("定义扩展");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectTimeCycleModifierButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Time Cycle Modifier");
+            SetSelectionMode("Time Cycle 修改器");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectCarGeneratorButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Car Generator");
+            SetSelectionMode("车辆生成器");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectGrassButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Grass");
+            SetSelectionMode("实例草");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectWaterQuadButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Water Quad");
+            SetSelectionMode("块状水");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectCalmingQuadButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Water Calming Quad");
+            SetSelectionMode("静止的块状水");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectWaveQuadButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Water Wave Quad");
+            SetSelectionMode("波浪的块状水");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectCollisionButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Collision");
+            SetSelectionMode("碰撞体");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectNavMeshButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Nav Mesh");
+            SetSelectionMode("寻路网格");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectPathButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Path");
+            SetSelectionMode("路线");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectTrainTrackButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Train Track");
+            SetSelectionMode("火车轨道");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectLodLightsButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Lod Lights");
+            SetSelectionMode("远景灯光");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectMloInstanceButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Mlo Instance");
+            SetSelectionMode("室内实例");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectScenarioButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Scenario");
+            SetSelectionMode("场景");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectAudioButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Audio");
+            SetSelectionMode("音频");
             SetMouseSelect(true);
         }
 
         private void ToolbarSelectOcclusionButton_Click(object sender, EventArgs e)
         {
-            SetSelectionMode("Occlusion");
+            SetSelectionMode("遮挡");
             SetMouseSelect(true);
         }
 
@@ -7517,17 +7517,17 @@ namespace CodeWalker
 
         private void ToolbarTransformSpaceButton_ButtonClick(object sender, EventArgs e)
         {
-            SetWidgetSpace(Widget.ObjectSpace ? "World space" : "Object space");
+            SetWidgetSpace(Widget.ObjectSpace ? "全局空间" : "本地空间");
         }
 
         private void ToolbarObjectSpaceButton_Click(object sender, EventArgs e)
         {
-            SetWidgetSpace("Object space");
+            SetWidgetSpace("本地空间");
         }
 
         private void ToolbarWorldSpaceButton_Click(object sender, EventArgs e)
         {
-            SetWidgetSpace("World space");
+            SetWidgetSpace("全局空间");
         }
 
         private void ToolbarSnapButton_ButtonClick(object sender, EventArgs e)
@@ -7689,17 +7689,17 @@ namespace CodeWalker
 
         private void ToolbarCameraPerspectiveButton_Click(object sender, EventArgs e)
         {
-            SetCameraMode("Perspective");
+            SetCameraMode("透视视图");
         }
 
         private void ToolbarCameraMapViewButton_Click(object sender, EventArgs e)
         {
-            SetCameraMode("2D Map");
+            SetCameraMode("2D 地图");
         }
 
         private void ToolbarCameraOrthographicButton_Click(object sender, EventArgs e)
         {
-            SetCameraMode("Orthographic");
+            SetCameraMode("正交视图");
         }
 
         private void SelectionModeComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -39,7 +39,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "LodLight: " + (CurrentLodLight?.Index.ToString() ?? "(none)");
+            Text = "远景灯光：" + (CurrentLodLight?.Index.ToString() ?? "(无)");
         }
 
 
@@ -516,6 +516,10 @@ namespace CodeWalker.Project.Panels
             populatingui = true;
             TimeStateFlagsTextBox.Text = CurrentLodLight.TimeAndStateFlags.ToString();
             populatingui = false;
+        }
+
+        private void label10_Click(object sender, EventArgs e) {
+
         }
     }
 }

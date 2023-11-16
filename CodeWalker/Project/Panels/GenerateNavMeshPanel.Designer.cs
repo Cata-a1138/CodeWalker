@@ -41,81 +41,89 @@
             // 
             // MinTextBox
             // 
-            this.MinTextBox.Location = new System.Drawing.Point(87, 131);
+            this.MinTextBox.Location = new System.Drawing.Point(90, 163);
+            this.MinTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinTextBox.Name = "MinTextBox";
-            this.MinTextBox.Size = new System.Drawing.Size(177, 20);
+            this.MinTextBox.Size = new System.Drawing.Size(206, 23);
             this.MinTextBox.TabIndex = 46;
             this.MinTextBox.Text = "0, 0";
             // 
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(22, 134);
+            this.label81.Location = new System.Drawing.Point(14, 166);
+            this.label81.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(56, 13);
+            this.label81.Size = new System.Drawing.Size(74, 17);
             this.label81.TabIndex = 47;
-            this.label81.Text = "Min: (X, Y)";
+            this.label81.Text = "最小：(X, Y)";
             // 
             // MaxTextBox
             // 
-            this.MaxTextBox.Location = new System.Drawing.Point(87, 157);
+            this.MaxTextBox.Location = new System.Drawing.Point(90, 197);
+            this.MaxTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaxTextBox.Name = "MaxTextBox";
-            this.MaxTextBox.Size = new System.Drawing.Size(177, 20);
+            this.MaxTextBox.Size = new System.Drawing.Size(206, 23);
             this.MaxTextBox.TabIndex = 48;
             this.MaxTextBox.Text = "50, 50";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 160);
+            this.label1.Location = new System.Drawing.Point(14, 200);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 49;
-            this.label1.Text = "Max: (X, Y)";
+            this.label1.Text = "最大：(X, Y)";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(14, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(598, 119);
+            this.label2.Size = new System.Drawing.Size(630, 148);
             this.label2.TabIndex = 50;
             this.label2.Text = resources.GetString("label2.Text");
             // 
             // GenerateButton
             // 
-            this.GenerateButton.Location = new System.Drawing.Point(87, 196);
+            this.GenerateButton.Location = new System.Drawing.Point(307, 193);
+            this.GenerateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GenerateButton.Name = "GenerateButton";
-            this.GenerateButton.Size = new System.Drawing.Size(75, 23);
+            this.GenerateButton.Size = new System.Drawing.Size(115, 30);
             this.GenerateButton.TabIndex = 51;
-            this.GenerateButton.Text = "Generate";
+            this.GenerateButton.Text = "生成";
             this.GenerateButton.UseVisualStyleBackColor = true;
             this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(279, 146);
+            this.label3.Location = new System.Drawing.Point(304, 166);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 13);
+            this.label3.Size = new System.Drawing.Size(172, 17);
             this.label3.TabIndex = 52;
-            this.label3.Text = "(Nav meshes will only be generated for this area)";
+            this.label3.Text = "(寻路网格只会在该区域内生成)";
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(84, 247);
+            this.StatusLabel.Location = new System.Drawing.Point(14, 235);
+            this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(95, 13);
+            this.StatusLabel.Size = new System.Drawing.Size(104, 17);
             this.StatusLabel.TabIndex = 53;
-            this.StatusLabel.Text = "Ready to generate";
+            this.StatusLabel.Text = "已准备好开始生成";
             // 
             // GenerateNavMeshPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 340);
+            this.ClientSize = new System.Drawing.Size(657, 336);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GenerateButton);
@@ -124,9 +132,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MinTextBox);
             this.Controls.Add(this.label81);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GenerateNavMeshPanel";
-            this.Text = "Generate Nav Meshes";
+            this.Text = "生成寻路网格";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -60,7 +60,7 @@ namespace CodeWalker
             }
             else
             {
-                return i.ToString("0 bytes"); // Byte
+                return i.ToString("0 字节"); // Byte
             }
             // Divide by 1024 to get fractional value
             readable = (readable / 1024);

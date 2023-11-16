@@ -28,11 +28,24 @@ namespace CodeWalker.Tools
             JenkHashInputEncoding encoding = JenkHashInputEncoding.UTF8;
             if (ASCIIRadioButton.Checked) encoding = JenkHashInputEncoding.ASCII;
 
-            JenkHash h = new JenkHash(InputTextBox.Text, encoding);
+            /* JenkHash h = new JenkHash(InputTextBox.Text, encoding);
 
             HashHexTextBox.Text = h.HashHex;
             HashSignedTextBox.Text = h.HashInt.ToString();
-            HashUnsignedTextBox.Text = h.HashUint.ToString();
+            HashUnsignedTextBox.Text = h.HashUint.ToString(); */
+
+            HashHexTextBox.Text = "";
+            HashSignedTextBox.Text = "";
+            HashUnsignedTextBox.Text = "";
+
+            // explode the input into lines
+            string[] lines = InputTextBox.Text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+            foreach (string line in lines) {
+                JenkHash h = new JenkHash(line, encoding);
+                HashHexTextBox.Text += h.HashHex + "\r\n";
+                HashSignedTextBox.Text += h.HashInt.ToString() + "\r\n";
+                HashUnsignedTextBox.Text += h.HashUint.ToString() + "\r\n";
+            }
         }
 
     }

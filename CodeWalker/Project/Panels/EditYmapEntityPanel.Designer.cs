@@ -108,10 +108,11 @@
             this.EntityTabControl.Controls.Add(this.EntityExtensionsTabPage);
             this.EntityTabControl.Controls.Add(this.EntityPivotTabPage);
             this.EntityTabControl.Controls.Add(this.EntityMiloTabPage);
-            this.EntityTabControl.Location = new System.Drawing.Point(2, 3);
+            this.EntityTabControl.Location = new System.Drawing.Point(2, 4);
+            this.EntityTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityTabControl.Name = "EntityTabControl";
             this.EntityTabControl.SelectedIndex = 0;
-            this.EntityTabControl.Size = new System.Drawing.Size(563, 502);
+            this.EntityTabControl.Size = new System.Drawing.Size(642, 493);
             this.EntityTabControl.TabIndex = 45;
             // 
             // EntityGeneralTabPage
@@ -150,33 +151,35 @@
             this.EntityGeneralTabPage.Controls.Add(this.EntityPositionTextBox);
             this.EntityGeneralTabPage.Controls.Add(this.EntityGoToButton);
             this.EntityGeneralTabPage.Controls.Add(this.label17);
-            this.EntityGeneralTabPage.Location = new System.Drawing.Point(4, 22);
+            this.EntityGeneralTabPage.Location = new System.Drawing.Point(4, 26);
+            this.EntityGeneralTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityGeneralTabPage.Name = "EntityGeneralTabPage";
-            this.EntityGeneralTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EntityGeneralTabPage.Size = new System.Drawing.Size(555, 476);
+            this.EntityGeneralTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EntityGeneralTabPage.Size = new System.Drawing.Size(634, 463);
             this.EntityGeneralTabPage.TabIndex = 0;
-            this.EntityGeneralTabPage.Text = "General";
+            this.EntityGeneralTabPage.Text = "通用";
             this.EntityGeneralTabPage.UseVisualStyleBackColor = true;
             // 
             // EntityRotationQuatBox
             // 
             this.EntityRotationQuatBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityRotationQuatBox.Location = new System.Drawing.Point(93, 33);
+            this.EntityRotationQuatBox.Location = new System.Drawing.Point(108, 38);
             this.EntityRotationQuatBox.Margin = new System.Windows.Forms.Padding(0);
             this.EntityRotationQuatBox.Name = "EntityRotationQuatBox";
-            this.EntityRotationQuatBox.Size = new System.Drawing.Size(456, 24);
+            this.EntityRotationQuatBox.Size = new System.Drawing.Size(517, 31);
             this.EntityRotationQuatBox.TabIndex = 5;
             this.EntityRotationQuatBox.ValueChanged += new System.EventHandler(this.EntityRotationQuatBox_ValueChanged);
             // 
             // EntityEditArchetypeButton
             // 
             this.EntityEditArchetypeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityEditArchetypeButton.Location = new System.Drawing.Point(454, 59);
+            this.EntityEditArchetypeButton.Location = new System.Drawing.Point(515, 71);
+            this.EntityEditArchetypeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityEditArchetypeButton.Name = "EntityEditArchetypeButton";
-            this.EntityEditArchetypeButton.Size = new System.Drawing.Size(95, 23);
+            this.EntityEditArchetypeButton.Size = new System.Drawing.Size(111, 30);
             this.EntityEditArchetypeButton.TabIndex = 35;
-            this.EntityEditArchetypeButton.Text = "Edit Archetype...";
+            this.EntityEditArchetypeButton.Text = "编辑定义类型...";
             this.EntityEditArchetypeButton.UseVisualStyleBackColor = true;
             this.EntityEditArchetypeButton.Click += new System.EventHandler(this.EntityEditArchetypeButton_Click);
             // 
@@ -187,16 +190,16 @@
             this.EntityFlagsCheckedListBox.CheckOnClick = true;
             this.EntityFlagsCheckedListBox.FormattingEnabled = true;
             this.EntityFlagsCheckedListBox.Items.AddRange(new object[] {
-            "1 - Allow full rotation",
+            "1 - 允许完全旋转",
             "2 - Unk02",
-            "4 - Disable embedded collisions",
-            "8 - LOD in parent ymap",
+            "4 - 禁用嵌入式碰撞体",
+            "8 - LOD 在父级 ymap 中",
             "16 - Unk05",
-            "32 - Static entity",
-            "64 - Object isn\'t dark at night",
+            "32 - 静态实体",
+            "64 - 对象在夜间不会变暗",
             "128 - Unk08",
             "256 - Unk09",
-            "512 - Disable YDR lights",
+            "512 - 禁用 YDR 灯光",
             "1024 - Unk11",
             "2048 - Unk12",
             "4096 - Unk13",
@@ -205,51 +208,56 @@
             "32768 - Unk16",
             "65536 - Unk17",
             "131072 - Unk18",
-            "262144 - Disable archetype extensions",
+            "262144 - 禁用定义类型扩展",
             "524288 - Unk20",
             "1048576 - Unk21",
             "2097152 - Unk22",
-            "4194304 - Don\'t cast shadows",
-            "8388608 - Only cast shadows",
-            "16777216 - Disable reflections",
-            "33554432 - Interior proxy",
-            "67108864 - Disable water reflections",
-            "134217728 - Reflection proxy",
+            "4194304 - 不会产生阴影",
+            "8388608 - 仅产生阴影",
+            "16777216 - 禁用反射",
+            "33554432 - 室内代理",
+            "67108864 - 禁用水面反射",
+            "134217728 - 反射代理",
             "268435456 - Unk29",
-            "536870912 - Mirror proxy",
+            "536870912 - 镜面代理",
             "1073741824 - Unk31",
             "2147483648 - Unk32"});
-            this.EntityFlagsCheckedListBox.Location = new System.Drawing.Point(348, 113);
+            this.EntityFlagsCheckedListBox.Location = new System.Drawing.Point(375, 135);
+            this.EntityFlagsCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityFlagsCheckedListBox.Name = "EntityFlagsCheckedListBox";
-            this.EntityFlagsCheckedListBox.Size = new System.Drawing.Size(201, 349);
+            this.EntityFlagsCheckedListBox.Size = new System.Drawing.Size(250, 310);
             this.EntityFlagsCheckedListBox.TabIndex = 32;
             this.EntityFlagsCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EntityFlagsCheckedListBox_ItemCheck);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 64);
+            this.label13.Location = new System.Drawing.Point(36, 76);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.Size = new System.Drawing.Size(68, 17);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Archetype:";
+            this.label13.Text = "定义类型：";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 326);
+            this.label28.Location = new System.Drawing.Point(48, 390);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(55, 13);
+            this.label28.Size = new System.Drawing.Size(56, 17);
             this.label28.TabIndex = 28;
-            this.label28.Text = "TintValue:";
+            this.label28.Text = "色调值：";
             // 
             // EntityDeleteButton
             // 
-            this.EntityDeleteButton.Location = new System.Drawing.Point(175, 376);
+            this.EntityDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EntityDeleteButton.Location = new System.Drawing.Point(253, 418);
+            this.EntityDeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityDeleteButton.Name = "EntityDeleteButton";
-            this.EntityDeleteButton.Size = new System.Drawing.Size(95, 23);
+            this.EntityDeleteButton.Size = new System.Drawing.Size(111, 30);
             this.EntityDeleteButton.TabIndex = 34;
-            this.EntityDeleteButton.Text = "Delete Entity";
+            this.EntityDeleteButton.Text = "删除该实体";
             this.EntityDeleteButton.UseVisualStyleBackColor = true;
             this.EntityDeleteButton.Click += new System.EventHandler(this.EntityDeleteButton_Click);
             // 
@@ -257,57 +265,64 @@
             // 
             this.EntityTintValueTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityTintValueTextBox.Location = new System.Drawing.Point(93, 323);
+            this.EntityTintValueTextBox.Location = new System.Drawing.Point(108, 387);
+            this.EntityTintValueTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityTintValueTextBox.Name = "EntityTintValueTextBox";
-            this.EntityTintValueTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityTintValueTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityTintValueTextBox.TabIndex = 29;
             this.EntityTintValueTextBox.TextChanged += new System.EventHandler(this.EntityTintValueTextBox_TextChanged);
             // 
             // EntityAddToProjectButton
             // 
-            this.EntityAddToProjectButton.Location = new System.Drawing.Point(74, 376);
+            this.EntityAddToProjectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EntityAddToProjectButton.Location = new System.Drawing.Point(135, 418);
+            this.EntityAddToProjectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityAddToProjectButton.Name = "EntityAddToProjectButton";
-            this.EntityAddToProjectButton.Size = new System.Drawing.Size(95, 23);
+            this.EntityAddToProjectButton.Size = new System.Drawing.Size(111, 30);
             this.EntityAddToProjectButton.TabIndex = 33;
-            this.EntityAddToProjectButton.Text = "Add to Project";
+            this.EntityAddToProjectButton.Text = "添加到项目";
             this.EntityAddToProjectButton.UseVisualStyleBackColor = true;
             this.EntityAddToProjectButton.Click += new System.EventHandler(this.EntityAddToProjectButton_Click);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(15, 300);
+            this.label27.Location = new System.Drawing.Point(26, 359);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(61, 13);
+            this.label27.Size = new System.Drawing.Size(78, 17);
             this.label27.TabIndex = 26;
-            this.label27.Text = "ArtificialAO:";
+            this.label27.Text = "人造光 AO：";
             // 
             // EntityArtificialAOTextBox
             // 
             this.EntityArtificialAOTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityArtificialAOTextBox.Location = new System.Drawing.Point(93, 297);
+            this.EntityArtificialAOTextBox.Location = new System.Drawing.Point(108, 356);
+            this.EntityArtificialAOTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityArtificialAOTextBox.Name = "EntityArtificialAOTextBox";
-            this.EntityArtificialAOTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityArtificialAOTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityArtificialAOTextBox.TabIndex = 27;
             this.EntityArtificialAOTextBox.TextChanged += new System.EventHandler(this.EntityArtificialAOTextBox_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(15, 274);
+            this.label26.Location = new System.Drawing.Point(26, 328);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(66, 13);
+            this.label26.Size = new System.Drawing.Size(78, 17);
             this.label26.TabIndex = 24;
-            this.label26.Text = "AOMultiplier:";
+            this.label26.Text = "AO 倍增器：";
             // 
             // EntityAOMultiplierTextBox
             // 
             this.EntityAOMultiplierTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityAOMultiplierTextBox.Location = new System.Drawing.Point(93, 271);
+            this.EntityAOMultiplierTextBox.Location = new System.Drawing.Point(108, 325);
+            this.EntityAOMultiplierTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityAOMultiplierTextBox.Name = "EntityAOMultiplierTextBox";
-            this.EntityAOMultiplierTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityAOMultiplierTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityAOMultiplierTextBox.TabIndex = 25;
             this.EntityAOMultiplierTextBox.TextChanged += new System.EventHandler(this.EntityAOMultiplierTextBox_TextChanged);
             // 
@@ -315,9 +330,10 @@
             // 
             this.EntityGuidTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityGuidTextBox.Location = new System.Drawing.Point(93, 87);
+            this.EntityGuidTextBox.Location = new System.Drawing.Point(108, 104);
+            this.EntityGuidTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityGuidTextBox.Name = "EntityGuidTextBox";
-            this.EntityGuidTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityGuidTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityGuidTextBox.TabIndex = 11;
             this.EntityGuidTextBox.TextChanged += new System.EventHandler(this.EntityGuidTextBox_TextChanged);
             // 
@@ -327,47 +343,52 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EntityPriorityLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EntityPriorityLevelComboBox.FormattingEnabled = true;
-            this.EntityPriorityLevelComboBox.Location = new System.Drawing.Point(93, 244);
+            this.EntityPriorityLevelComboBox.Location = new System.Drawing.Point(108, 292);
+            this.EntityPriorityLevelComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityPriorityLevelComboBox.Name = "EntityPriorityLevelComboBox";
-            this.EntityPriorityLevelComboBox.Size = new System.Drawing.Size(233, 21);
+            this.EntityPriorityLevelComboBox.Size = new System.Drawing.Size(256, 25);
             this.EntityPriorityLevelComboBox.TabIndex = 23;
             this.EntityPriorityLevelComboBox.SelectedIndexChanged += new System.EventHandler(this.EntityPriorityLevelComboBox_SelectedIndexChanged);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(15, 247);
+            this.label24.Location = new System.Drawing.Point(48, 295);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
+            this.label24.Size = new System.Drawing.Size(56, 17);
             this.label24.TabIndex = 22;
-            this.label24.Text = "PriorityLevel:";
+            this.label24.Text = "优先级：";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 90);
+            this.label15.Location = new System.Drawing.Point(53, 107);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.Size = new System.Drawing.Size(51, 17);
             this.label15.TabIndex = 10;
-            this.label15.Text = "GUID:";
+            this.label15.Text = "GUID：";
             // 
             // EntityFlagsTextBox
             // 
             this.EntityFlagsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityFlagsTextBox.Location = new System.Drawing.Point(402, 87);
+            this.EntityFlagsTextBox.Location = new System.Drawing.Point(418, 104);
+            this.EntityFlagsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityFlagsTextBox.Name = "EntityFlagsTextBox";
-            this.EntityFlagsTextBox.Size = new System.Drawing.Size(147, 20);
+            this.EntityFlagsTextBox.Size = new System.Drawing.Size(207, 23);
             this.EntityFlagsTextBox.TabIndex = 31;
             this.EntityFlagsTextBox.TextChanged += new System.EventHandler(this.EntityFlagsTextBox_TextChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 116);
+            this.label18.Location = new System.Drawing.Point(41, 138);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 13);
+            this.label18.Size = new System.Drawing.Size(63, 17);
             this.label18.TabIndex = 12;
-            this.label18.Text = "ScaleXY:";
+            this.label18.Text = "缩放 XY：";
             // 
             // EntityLodLevelComboBox
             // 
@@ -375,9 +396,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EntityLodLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EntityLodLevelComboBox.FormattingEnabled = true;
-            this.EntityLodLevelComboBox.Location = new System.Drawing.Point(93, 217);
+            this.EntityLodLevelComboBox.Location = new System.Drawing.Point(108, 259);
+            this.EntityLodLevelComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityLodLevelComboBox.Name = "EntityLodLevelComboBox";
-            this.EntityLodLevelComboBox.Size = new System.Drawing.Size(233, 21);
+            this.EntityLodLevelComboBox.Size = new System.Drawing.Size(256, 25);
             this.EntityLodLevelComboBox.TabIndex = 21;
             this.EntityLodLevelComboBox.SelectedIndexChanged += new System.EventHandler(this.EntityLodLevelComboBox_SelectedIndexChanged);
             // 
@@ -385,85 +407,94 @@
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(361, 90);
+            this.label14.Location = new System.Drawing.Point(372, 107);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.Size = new System.Drawing.Size(50, 17);
             this.label14.TabIndex = 30;
-            this.label14.Text = "Flags:";
+            this.label14.Text = "Flags：";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(15, 220);
+            this.label23.Location = new System.Drawing.Point(34, 262);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 13);
+            this.label23.Size = new System.Drawing.Size(70, 17);
             this.label23.TabIndex = 20;
-            this.label23.Text = "LodLevel:";
+            this.label23.Text = "Lod 层级：";
             // 
             // EntityScaleXYTextBox
             // 
             this.EntityScaleXYTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityScaleXYTextBox.Location = new System.Drawing.Point(93, 113);
+            this.EntityScaleXYTextBox.Location = new System.Drawing.Point(108, 135);
+            this.EntityScaleXYTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityScaleXYTextBox.Name = "EntityScaleXYTextBox";
-            this.EntityScaleXYTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityScaleXYTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityScaleXYTextBox.TabIndex = 13;
             this.EntityScaleXYTextBox.TextChanged += new System.EventHandler(this.EntityScaleXYTextBox_TextChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 194);
+            this.label22.Location = new System.Drawing.Point(18, 231);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 13);
+            this.label22.Size = new System.Drawing.Size(86, 17);
             this.label22.TabIndex = 18;
-            this.label22.Text = "ChildLodDist:";
+            this.label22.Text = "子 Lod 距离：";
             // 
             // EntityArchetypeHashLabel
             // 
             this.EntityArchetypeHashLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EntityArchetypeHashLabel.AutoSize = true;
-            this.EntityArchetypeHashLabel.Location = new System.Drawing.Point(332, 64);
+            this.EntityArchetypeHashLabel.Location = new System.Drawing.Point(372, 76);
+            this.EntityArchetypeHashLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EntityArchetypeHashLabel.Name = "EntityArchetypeHashLabel";
-            this.EntityArchetypeHashLabel.Size = new System.Drawing.Size(44, 13);
+            this.EntityArchetypeHashLabel.Size = new System.Drawing.Size(51, 17);
             this.EntityArchetypeHashLabel.TabIndex = 9;
-            this.EntityArchetypeHashLabel.Text = "Hash: 0";
+            this.EntityArchetypeHashLabel.Text = "哈希：0";
             // 
             // EntityChildLodDistTextBox
             // 
             this.EntityChildLodDistTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityChildLodDistTextBox.Location = new System.Drawing.Point(93, 191);
+            this.EntityChildLodDistTextBox.Location = new System.Drawing.Point(108, 228);
+            this.EntityChildLodDistTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityChildLodDistTextBox.Name = "EntityChildLodDistTextBox";
-            this.EntityChildLodDistTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityChildLodDistTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityChildLodDistTextBox.TabIndex = 19;
             this.EntityChildLodDistTextBox.TextChanged += new System.EventHandler(this.EntityChildLodDistTextBox_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 142);
+            this.label19.Location = new System.Drawing.Point(49, 169);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 13);
+            this.label19.Size = new System.Drawing.Size(55, 17);
             this.label19.TabIndex = 14;
-            this.label19.Text = "ScaleZ:";
+            this.label19.Text = "缩放 Z：";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 168);
+            this.label21.Location = new System.Drawing.Point(34, 200);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 13);
+            this.label21.Size = new System.Drawing.Size(70, 17);
             this.label21.TabIndex = 16;
-            this.label21.Text = "LodDist:";
+            this.label21.Text = "Lod 距离：";
             // 
             // EntityScaleZTextBox
             // 
             this.EntityScaleZTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityScaleZTextBox.Location = new System.Drawing.Point(93, 139);
+            this.EntityScaleZTextBox.Location = new System.Drawing.Point(108, 166);
+            this.EntityScaleZTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityScaleZTextBox.Name = "EntityScaleZTextBox";
-            this.EntityScaleZTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityScaleZTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityScaleZTextBox.TabIndex = 15;
             this.EntityScaleZTextBox.TextChanged += new System.EventHandler(this.EntityScaleZTextBox_TextChanged);
             // 
@@ -471,9 +502,10 @@
             // 
             this.EntityLodDistTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityLodDistTextBox.Location = new System.Drawing.Point(93, 165);
+            this.EntityLodDistTextBox.Location = new System.Drawing.Point(108, 197);
+            this.EntityLodDistTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityLodDistTextBox.Name = "EntityLodDistTextBox";
-            this.EntityLodDistTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityLodDistTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityLodDistTextBox.TabIndex = 17;
             this.EntityLodDistTextBox.TextChanged += new System.EventHandler(this.EntityLodDistTextBox_TextChanged);
             // 
@@ -481,50 +513,55 @@
             // 
             this.EntityArchetypeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityArchetypeTextBox.Location = new System.Drawing.Point(93, 61);
+            this.EntityArchetypeTextBox.Location = new System.Drawing.Point(108, 73);
+            this.EntityArchetypeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityArchetypeTextBox.Name = "EntityArchetypeTextBox";
-            this.EntityArchetypeTextBox.Size = new System.Drawing.Size(233, 20);
+            this.EntityArchetypeTextBox.Size = new System.Drawing.Size(256, 23);
             this.EntityArchetypeTextBox.TabIndex = 8;
             this.EntityArchetypeTextBox.TextChanged += new System.EventHandler(this.EntityArchetypeTextBox_TextChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 12);
+            this.label16.Location = new System.Drawing.Point(60, 14);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 13);
+            this.label16.Size = new System.Drawing.Size(44, 17);
             this.label16.TabIndex = 1;
-            this.label16.Text = "Position:";
+            this.label16.Text = "位置：";
             // 
             // EntityPositionTextBox
             // 
             this.EntityPositionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityPositionTextBox.Location = new System.Drawing.Point(93, 9);
+            this.EntityPositionTextBox.Location = new System.Drawing.Point(108, 11);
+            this.EntityPositionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityPositionTextBox.Name = "EntityPositionTextBox";
-            this.EntityPositionTextBox.Size = new System.Drawing.Size(382, 20);
+            this.EntityPositionTextBox.Size = new System.Drawing.Size(430, 23);
             this.EntityPositionTextBox.TabIndex = 2;
             this.EntityPositionTextBox.TextChanged += new System.EventHandler(this.EntityPositionTextBox_TextChanged);
             // 
             // EntityGoToButton
             // 
             this.EntityGoToButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityGoToButton.Location = new System.Drawing.Point(481, 7);
+            this.EntityGoToButton.Location = new System.Drawing.Point(546, 8);
+            this.EntityGoToButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityGoToButton.Name = "EntityGoToButton";
-            this.EntityGoToButton.Size = new System.Drawing.Size(68, 23);
+            this.EntityGoToButton.Size = new System.Drawing.Size(79, 30);
             this.EntityGoToButton.TabIndex = 3;
-            this.EntityGoToButton.Text = "Go to";
+            this.EntityGoToButton.Text = "传送";
             this.EntityGoToButton.UseVisualStyleBackColor = true;
             this.EntityGoToButton.Click += new System.EventHandler(this.EntityGoToButton_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 38);
+            this.label17.Location = new System.Drawing.Point(60, 44);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(50, 13);
+            this.label17.Size = new System.Drawing.Size(44, 17);
             this.label17.TabIndex = 4;
-            this.label17.Text = "Rotation:";
+            this.label17.Text = "旋转：";
             // 
             // EntityLodTabPage
             // 
@@ -532,30 +569,33 @@
             this.EntityLodTabPage.Controls.Add(this.EntityParentIndexTextBox);
             this.EntityLodTabPage.Controls.Add(this.EntityNumChildrenTextBox);
             this.EntityLodTabPage.Controls.Add(this.label25);
-            this.EntityLodTabPage.Location = new System.Drawing.Point(4, 22);
+            this.EntityLodTabPage.Location = new System.Drawing.Point(4, 26);
+            this.EntityLodTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityLodTabPage.Name = "EntityLodTabPage";
-            this.EntityLodTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EntityLodTabPage.Size = new System.Drawing.Size(555, 476);
+            this.EntityLodTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EntityLodTabPage.Size = new System.Drawing.Size(634, 463);
             this.EntityLodTabPage.TabIndex = 1;
-            this.EntityLodTabPage.Text = "LOD Hierarchy";
+            this.EntityLodTabPage.Text = "LOD 层级";
             this.EntityLodTabPage.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 16);
+            this.label20.Location = new System.Drawing.Point(32, 20);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 13);
+            this.label20.Size = new System.Drawing.Size(68, 17);
             this.label20.TabIndex = 24;
-            this.label20.Text = "ParentIndex:";
+            this.label20.Text = "父级索引：";
             // 
             // EntityParentIndexTextBox
             // 
             this.EntityParentIndexTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityParentIndexTextBox.Location = new System.Drawing.Point(93, 13);
+            this.EntityParentIndexTextBox.Location = new System.Drawing.Point(108, 17);
+            this.EntityParentIndexTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityParentIndexTextBox.Name = "EntityParentIndexTextBox";
-            this.EntityParentIndexTextBox.Size = new System.Drawing.Size(245, 20);
+            this.EntityParentIndexTextBox.Size = new System.Drawing.Size(270, 23);
             this.EntityParentIndexTextBox.TabIndex = 25;
             this.EntityParentIndexTextBox.TextChanged += new System.EventHandler(this.EntityParentIndexTextBox_TextChanged);
             // 
@@ -563,39 +603,43 @@
             // 
             this.EntityNumChildrenTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityNumChildrenTextBox.Location = new System.Drawing.Point(93, 39);
+            this.EntityNumChildrenTextBox.Location = new System.Drawing.Point(108, 51);
+            this.EntityNumChildrenTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityNumChildrenTextBox.Name = "EntityNumChildrenTextBox";
-            this.EntityNumChildrenTextBox.Size = new System.Drawing.Size(245, 20);
+            this.EntityNumChildrenTextBox.Size = new System.Drawing.Size(270, 23);
             this.EntityNumChildrenTextBox.TabIndex = 35;
             this.EntityNumChildrenTextBox.TextChanged += new System.EventHandler(this.EntityNumChildrenTextBox_TextChanged);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 42);
+            this.label25.Location = new System.Drawing.Point(32, 54);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(70, 13);
+            this.label25.Size = new System.Drawing.Size(68, 17);
             this.label25.TabIndex = 34;
-            this.label25.Text = "NumChildren:";
+            this.label25.Text = "子级数量：";
             // 
             // EntityExtensionsTabPage
             // 
             this.EntityExtensionsTabPage.Controls.Add(this.label1);
-            this.EntityExtensionsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.EntityExtensionsTabPage.Location = new System.Drawing.Point(4, 26);
+            this.EntityExtensionsTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityExtensionsTabPage.Name = "EntityExtensionsTabPage";
-            this.EntityExtensionsTabPage.Size = new System.Drawing.Size(555, 476);
+            this.EntityExtensionsTabPage.Size = new System.Drawing.Size(634, 463);
             this.EntityExtensionsTabPage.TabIndex = 2;
-            this.EntityExtensionsTabPage.Text = "Extensions";
+            this.EntityExtensionsTabPage.Text = "扩展";
             this.EntityExtensionsTabPage.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 27);
+            this.label1.Location = new System.Drawing.Point(31, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.Size = new System.Drawing.Size(188, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Entity extensions editing TODO!";
+            this.label1.Text = "实体扩展编辑功能目前暂未完成！";
             // 
             // EntityPivotTabPage
             // 
@@ -605,71 +649,76 @@
             this.EntityPivotTabPage.Controls.Add(this.label93);
             this.EntityPivotTabPage.Controls.Add(this.EntityPivotPositionTextBox);
             this.EntityPivotTabPage.Controls.Add(this.label94);
-            this.EntityPivotTabPage.Location = new System.Drawing.Point(4, 22);
+            this.EntityPivotTabPage.Location = new System.Drawing.Point(4, 26);
+            this.EntityPivotTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityPivotTabPage.Name = "EntityPivotTabPage";
-            this.EntityPivotTabPage.Size = new System.Drawing.Size(555, 476);
+            this.EntityPivotTabPage.Size = new System.Drawing.Size(634, 463);
             this.EntityPivotTabPage.TabIndex = 3;
-            this.EntityPivotTabPage.Text = "Pivot";
+            this.EntityPivotTabPage.Text = "中心点";
             this.EntityPivotTabPage.UseVisualStyleBackColor = true;
             // 
             // EntityPivotRotationQuatBox
             // 
             this.EntityPivotRotationQuatBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityPivotRotationQuatBox.Location = new System.Drawing.Point(93, 94);
+            this.EntityPivotRotationQuatBox.Location = new System.Drawing.Point(70, 76);
             this.EntityPivotRotationQuatBox.Margin = new System.Windows.Forms.Padding(0);
             this.EntityPivotRotationQuatBox.Name = "EntityPivotRotationQuatBox";
-            this.EntityPivotRotationQuatBox.Size = new System.Drawing.Size(456, 24);
+            this.EntityPivotRotationQuatBox.Size = new System.Drawing.Size(555, 31);
             this.EntityPivotRotationQuatBox.TabIndex = 25;
             this.EntityPivotRotationQuatBox.ValueChanged += new System.EventHandler(this.EntityPivotRotationQuatBox_ValueChanged);
             // 
             // label95
             // 
-            this.label95.Location = new System.Drawing.Point(90, 152);
+            this.label95.Location = new System.Drawing.Point(67, 117);
+            this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(329, 51);
+            this.label95.Size = new System.Drawing.Size(471, 67);
             this.label95.TabIndex = 27;
-            this.label95.Text = "Note: Custom pivot is not saved. It will be reset if you close the project or res" +
-    "tart CodeWalker.";
+            this.label95.Text = "注意：自定义中心点不会保存。如果关闭项目或重新启动 CodeWalker，它将被重置。";
             // 
             // EntityPivotEditCheckBox
             // 
             this.EntityPivotEditCheckBox.AutoSize = true;
-            this.EntityPivotEditCheckBox.Location = new System.Drawing.Point(93, 32);
+            this.EntityPivotEditCheckBox.Location = new System.Drawing.Point(70, 16);
+            this.EntityPivotEditCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityPivotEditCheckBox.Name = "EntityPivotEditCheckBox";
-            this.EntityPivotEditCheckBox.Size = new System.Drawing.Size(137, 17);
+            this.EntityPivotEditCheckBox.Size = new System.Drawing.Size(159, 21);
             this.EntityPivotEditCheckBox.TabIndex = 20;
-            this.EntityPivotEditCheckBox.Text = "Edit pivot in World view";
+            this.EntityPivotEditCheckBox.Text = "在世界视图中编辑中心点";
             this.EntityPivotEditCheckBox.UseVisualStyleBackColor = true;
             this.EntityPivotEditCheckBox.CheckedChanged += new System.EventHandler(this.EntityPivotEditCheckBox_CheckedChanged);
             // 
             // label93
             // 
             this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(15, 73);
+            this.label93.Location = new System.Drawing.Point(18, 48);
+            this.label93.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(47, 13);
+            this.label93.Size = new System.Drawing.Size(44, 17);
             this.label93.TabIndex = 21;
-            this.label93.Text = "Position:";
+            this.label93.Text = "位置：";
             // 
             // EntityPivotPositionTextBox
             // 
             this.EntityPivotPositionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntityPivotPositionTextBox.Location = new System.Drawing.Point(93, 70);
+            this.EntityPivotPositionTextBox.Location = new System.Drawing.Point(70, 45);
+            this.EntityPivotPositionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityPivotPositionTextBox.Name = "EntityPivotPositionTextBox";
-            this.EntityPivotPositionTextBox.Size = new System.Drawing.Size(382, 20);
+            this.EntityPivotPositionTextBox.Size = new System.Drawing.Size(468, 23);
             this.EntityPivotPositionTextBox.TabIndex = 22;
             this.EntityPivotPositionTextBox.TextChanged += new System.EventHandler(this.EntityPivotPositionTextBox_TextChanged);
             // 
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(15, 99);
+            this.label94.Location = new System.Drawing.Point(18, 82);
+            this.label94.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(50, 13);
+            this.label94.Size = new System.Drawing.Size(44, 17);
             this.label94.TabIndex = 24;
-            this.label94.Text = "Rotation:";
+            this.label94.Text = "旋转：";
             // 
             // EntityMiloTabPage
             // 
@@ -683,80 +732,89 @@
             this.EntityMiloTabPage.Controls.Add(this.label4);
             this.EntityMiloTabPage.Controls.Add(this.MiloEntitySetsListBox);
             this.EntityMiloTabPage.Controls.Add(this.label2);
-            this.EntityMiloTabPage.Location = new System.Drawing.Point(4, 22);
+            this.EntityMiloTabPage.Location = new System.Drawing.Point(4, 26);
+            this.EntityMiloTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntityMiloTabPage.Name = "EntityMiloTabPage";
-            this.EntityMiloTabPage.Size = new System.Drawing.Size(555, 476);
+            this.EntityMiloTabPage.Size = new System.Drawing.Size(634, 463);
             this.EntityMiloTabPage.TabIndex = 4;
-            this.EntityMiloTabPage.Text = "MLO Instance";
+            this.EntityMiloTabPage.Text = "MLO 实例";
             this.EntityMiloTabPage.UseVisualStyleBackColor = true;
             // 
             // MiloFlagsTextBox
             // 
-            this.MiloFlagsTextBox.Location = new System.Drawing.Point(101, 93);
+            this.MiloFlagsTextBox.Location = new System.Drawing.Point(118, 113);
+            this.MiloFlagsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MiloFlagsTextBox.Name = "MiloFlagsTextBox";
-            this.MiloFlagsTextBox.Size = new System.Drawing.Size(154, 20);
+            this.MiloFlagsTextBox.Size = new System.Drawing.Size(179, 23);
             this.MiloFlagsTextBox.TabIndex = 43;
             this.MiloFlagsTextBox.TextChanged += new System.EventHandler(this.MiloFlagsTextBox_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 96);
+            this.label6.Location = new System.Drawing.Point(6, 116);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 42;
-            this.label6.Text = "MLOInstFlags:";
+            this.label6.Text = "MLO 实例 Flags：";
             // 
             // MiloNumExitPortalsTextBox
             // 
-            this.MiloNumExitPortalsTextBox.Location = new System.Drawing.Point(101, 67);
+            this.MiloNumExitPortalsTextBox.Location = new System.Drawing.Point(118, 82);
+            this.MiloNumExitPortalsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MiloNumExitPortalsTextBox.Name = "MiloNumExitPortalsTextBox";
-            this.MiloNumExitPortalsTextBox.Size = new System.Drawing.Size(154, 20);
+            this.MiloNumExitPortalsTextBox.Size = new System.Drawing.Size(179, 23);
             this.MiloNumExitPortalsTextBox.TabIndex = 41;
             this.MiloNumExitPortalsTextBox.TextChanged += new System.EventHandler(this.MiloNumExitPortalsTextBox_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 70);
+            this.label5.Location = new System.Drawing.Point(24, 88);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.Size = new System.Drawing.Size(92, 17);
             this.label5.TabIndex = 40;
-            this.label5.Text = "NumExitPortals:";
+            this.label5.Text = "出口门户数量：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 18);
+            this.label3.Location = new System.Drawing.Point(67, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 36;
-            this.label3.Text = "GroupID:";
+            this.label3.Text = "组 ID：";
             // 
             // MiloGroupIDTextBox
             // 
-            this.MiloGroupIDTextBox.Location = new System.Drawing.Point(101, 15);
+            this.MiloGroupIDTextBox.Location = new System.Drawing.Point(118, 20);
+            this.MiloGroupIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MiloGroupIDTextBox.Name = "MiloGroupIDTextBox";
-            this.MiloGroupIDTextBox.Size = new System.Drawing.Size(154, 20);
+            this.MiloGroupIDTextBox.Size = new System.Drawing.Size(179, 23);
             this.MiloGroupIDTextBox.TabIndex = 37;
             this.MiloGroupIDTextBox.TextChanged += new System.EventHandler(this.MiloGroupIDTextBox_TextChanged);
             // 
             // MiloFloorIDTextBox
             // 
-            this.MiloFloorIDTextBox.Location = new System.Drawing.Point(101, 41);
+            this.MiloFloorIDTextBox.Location = new System.Drawing.Point(118, 51);
+            this.MiloFloorIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MiloFloorIDTextBox.Name = "MiloFloorIDTextBox";
-            this.MiloFloorIDTextBox.Size = new System.Drawing.Size(154, 20);
+            this.MiloFloorIDTextBox.Size = new System.Drawing.Size(179, 23);
             this.MiloFloorIDTextBox.TabIndex = 39;
             this.MiloFloorIDTextBox.TextChanged += new System.EventHandler(this.MiloFloorIDTextBox_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 44);
+            this.label4.Location = new System.Drawing.Point(55, 54);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 38;
-            this.label4.Text = "FloorID:";
+            this.label4.Text = "地板 ID：";
             // 
             // MiloEntitySetsListBox
             // 
@@ -765,30 +823,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MiloEntitySetsListBox.CheckOnClick = true;
             this.MiloEntitySetsListBox.FormattingEnabled = true;
-            this.MiloEntitySetsListBox.Location = new System.Drawing.Point(103, 128);
+            this.MiloEntitySetsListBox.Location = new System.Drawing.Point(118, 170);
+            this.MiloEntitySetsListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MiloEntitySetsListBox.Name = "MiloEntitySetsListBox";
-            this.MiloEntitySetsListBox.Size = new System.Drawing.Size(434, 319);
+            this.MiloEntitySetsListBox.Size = new System.Drawing.Size(491, 220);
             this.MiloEntitySetsListBox.TabIndex = 4;
             this.MiloEntitySetsListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.MiloEntitySetsListBox_ItemCheck);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 129);
+            this.label2.Location = new System.Drawing.Point(24, 170);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "DefaultEntitySets:";
+            this.label2.Text = "默认实体预设：";
             // 
             // EditYmapEntityPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 505);
+            this.ClientSize = new System.Drawing.Size(644, 497);
             this.Controls.Add(this.EntityTabControl);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditYmapEntityPanel";
-            this.Text = "Entity";
+            this.Text = "实体";
             this.EntityTabControl.ResumeLayout(false);
             this.EntityGeneralTabPage.ResumeLayout(false);
             this.EntityGeneralTabPage.PerformLayout();

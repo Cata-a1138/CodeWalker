@@ -66,11 +66,11 @@ namespace CodeWalker.Tools
             {
                 GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
                 KeysLoaded = true;
-                UpdateStatus("Ready to scan...");
+                UpdateStatus("准备开始扫描...");
             }
             catch
             {
-                UpdateStatus("Keys not loaded! This should not happen.");
+                UpdateStatus("未找到秘钥！这不应该发生");
             }
         }
 
@@ -94,12 +94,12 @@ namespace CodeWalker.Tools
 
             if (!KeysLoaded) //this shouldn't ever really happen anymore
             {
-                MessageBox.Show("Please scan a GTA 5 exe dump for keys first, or include key files in this app's folder!");
+                MessageBox.Show("请先扫描 GTA5 EXE 文件来获取秘钥，或将秘钥文件放在软件目录下！");
                 return;
             }
             if (!Directory.Exists(FolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + FolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + FolderTextBox.Text);
                 return;
             }
 
@@ -116,7 +116,7 @@ namespace CodeWalker.Tools
             Task.Run(() =>
             {
 
-                UpdateStatus("Starting scan...");
+                UpdateStatus("开始扫描...");
 
                 string[] allfiles = Directory.GetFiles(searchpath, "*.rpf", SearchOption.AllDirectories);
 
@@ -130,14 +130,14 @@ namespace CodeWalker.Tools
                 {
                     if (AbortOperation)
                     {
-                        UpdateStatus("Scan aborted!");
+                        UpdateStatus("扫描已终止！");
                         InProgress = false;
                         return;
                     }
 
                     RpfFile rf = new RpfFile(rpfpath, rpfpath.Replace(replpath, ""));
 
-                    UpdateStatus("Scanning " + rf.Name + "...");
+                    UpdateStatus("正在扫描 " + rf.Name + "...");
 
                     rf.ScanStructure(UpdateStatus, UpdateStatus);
 
@@ -152,7 +152,7 @@ namespace CodeWalker.Tools
                     RootFiles.Add(rf);
                 }
 
-                UpdateStatus(string.Format("Scan complete. {0} RPF files, {1} total files, {2} total folders, {3} resources, {4} binary files.", totrpfs, totfiles, totfolders, totresfiles, totbinfiles));
+                UpdateStatus(string.Format("扫描完成。{0} RPF 文件，共计 {1} 文件，{2} 文件夹，{3} 资源，{4} 二进制文件。", totrpfs, totfiles, totfolders, totresfiles, totbinfiles));
                 InProgress = false;
                 TotalFileCount = (int)totfiles;
             });
@@ -327,13 +327,13 @@ namespace CodeWalker.Tools
                 RpfDirectoryEntry rde = entry as RpfDirectoryEntry;
                 if (rde != null)
                 {
-                    FileInfoLabel.Text = rde.Path + " (Directory)";
-                    DataTextBox.Text = "[Please select a data file]";
+                    FileInfoLabel.Text = rde.Path + " (文件夹)";
+                    DataTextBox.Text = "[请选择一个数据文件]";
                 }
                 else
                 {
-                    FileInfoLabel.Text = "[Nothing selected]";
-                    DataTextBox.Text = "[Please select a data file]";
+                    FileInfoLabel.Text = "[未选择对象]";
+                    DataTextBox.Text = "[请选择一个数据文件]";
                 }
                 ShowTextures(null);
                 return;
@@ -342,16 +342,16 @@ namespace CodeWalker.Tools
 
             Cursor = Cursors.WaitCursor;
 
-            string typestr = "Resource";
+            string typestr = "资源";
             if (rfe is RpfBinaryFileEntry)
             {
-                typestr = "Binary";
+                typestr = "二进制";
             }
             
             byte[] data = rfe.File.ExtractFile(rfe);
 
             int datalen = (data != null) ? data.Length : 0;
-            FileInfoLabel.Text = rfe.Path + " (" + typestr + " file)  -  " + TextUtil.GetBytesReadable(datalen);
+            FileInfoLabel.Text = rfe.Path + " (" + typestr + " 文件)  -  " + TextUtil.GetBytesReadable(datalen);
 
 
             if (ShowLargeFileContentsCheckBox.Checked || (datalen < 524287)) //512K
@@ -360,7 +360,7 @@ namespace CodeWalker.Tools
             }
             else
             {
-                DataTextBox.Text = "[Filesize >512KB. Select the Show large files option to view its contents]";
+                DataTextBox.Text = "[文件大小 >512KB。勾选查看大文件内容选项以查看其内容]";
             }
 
 
@@ -508,7 +508,7 @@ namespace CodeWalker.Tools
             if (data == null)
             {
                 Cursor = Cursors.Default;
-                DataTextBox.Text = "[Error extracting file! " + rfe.File.LastError + "]";
+                DataTextBox.Text = "[导出文件时错误：" + rfe.File.LastError + "]";
                 return;
             }
 
@@ -679,7 +679,7 @@ namespace CodeWalker.Tools
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error reading texture mip:\n" + ex.ToString());
+                MessageBox.Show("无法读取纹理 mip:\n" + ex.ToString());
                 SelTexturePictureBox.Image = null;
             }
 
@@ -698,7 +698,7 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (ScannedFiles.Count == 0)
             {
-                MessageBox.Show("Please scan the GTAV folder first.");
+                MessageBox.Show("请先扫描 GTAV 安装目录。");
                 return;
             }
 
@@ -706,12 +706,12 @@ namespace CodeWalker.Tools
             InProgress = true;
 
             DataTextBox.Text = string.Empty;
-            FileInfoLabel.Text = "[File test results]";
+            FileInfoLabel.Text = "[文件测试结果]";
 
             Task.Run(() =>
             {
 
-                UpdateStatus("Starting test...");
+                UpdateStatus("开始测试...");
 
                 StringBuilder sbout = new StringBuilder();
                 int errcount = 0;
@@ -723,12 +723,12 @@ namespace CodeWalker.Tools
                 {
                     if (AbortOperation)
                     {
-                        UpdateStatus("Test aborted.");
+                        UpdateStatus("测试已取消。");
                         InProgress = false;
                         return;
                     }
 
-                    UpdateStatus(curfile.ToString() + "/" + totrpfs.ToString() + ": Testing " + file.FilePath + "...");
+                    UpdateStatus(curfile.ToString() + "/" + totrpfs.ToString() + ": 正在测试 " + file.FilePath + "...");
 
                     string errorstr = file.TestExtractAllFiles();
 
@@ -744,7 +744,7 @@ namespace CodeWalker.Tools
                 }
 
 
-                UpdateStatus("Test complete. " + errcount.ToString() + " problems encountered, " + totbytes.ToString() + " total bytes extracted.");
+                UpdateStatus("测试已完成。找到 " + errcount.ToString() + " 个问题，共导出 " + totbytes.ToString() + " 字节。");
                 InProgress = false;
             });
         }
@@ -775,7 +775,7 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (ScannedFiles.Count == 0)
             {
-                MessageBox.Show("Please scan the GTAV folder first.");
+                MessageBox.Show("请先扫描 GTAV 安装目录。");
                 return;
             }
 
@@ -833,7 +833,7 @@ namespace CodeWalker.Tools
                         }
                         if (count >= max)
                         {
-                            MessageBox.Show("Search results limited to " + max.ToString() + " entries.");
+                            MessageBox.Show("搜索结果限制为 " + max.ToString() + " 条目。");
                             break;
                         }
                     }
@@ -865,20 +865,20 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (ScannedFiles.Count == 0)
             {
-                MessageBox.Show("Please scan the GTAV folder first.");
+                MessageBox.Show("请先扫描 GTAV 安装目录。");
                 return;
             }
             TreeNode node = MainTreeView.SelectedNode;
             if (node == null)
             {
-                MessageBox.Show("Please select a file to export.");
+                MessageBox.Show("请选择要导出的文件。");
                 return;
             }
 
             RpfFileEntry rfe = node.Tag as RpfFileEntry;
             if (rfe == null)
             {
-                MessageBox.Show("Please select a file to export.");
+                MessageBox.Show("请选择要导出的文件。");
                 return;
             }
 
@@ -904,7 +904,7 @@ namespace CodeWalker.Tools
 
                 if (data == null)
                 {
-                    MessageBox.Show("Error extracting file! " + rfe.File.LastError);
+                    MessageBox.Show("无法导出文件：" + rfe.File.LastError);
                     return;
                 }
 
@@ -916,7 +916,7 @@ namespace CodeWalker.Tools
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file! " + ex.ToString());
+                    MessageBox.Show("无法保存文件：" + ex.ToString());
                 }
 
             }
@@ -972,12 +972,12 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (ScannedFiles.Count == 0)
             {
-                MessageBox.Show("Please scan the GTAV folder first.");
+                MessageBox.Show("请先扫描 GTAV 安装目录。");
                 return;
             }
             if (SearchTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Please enter a search term.");
+                MessageBox.Show("请输入搜索关键字。");
                 return;
             }
 
@@ -1005,7 +1005,7 @@ namespace CodeWalker.Tools
             {
                 if (searchtxt.Length < 2)
                 {
-                    MessageBox.Show("Please enter at least one byte of hex (2 characters).");
+                    MessageBox.Show("请输入最少一个字节的十六进制字符串 (2 字符)。");
                     return;
                 }
                 try
@@ -1021,7 +1021,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    MessageBox.Show("Please enter a valid hex string.");
+                    MessageBox.Show("请输入一个有效的十六进制字符串。");
                     return;
                 }
             }
@@ -1070,7 +1070,7 @@ namespace CodeWalker.Tools
                         var duration = DateTime.Now - starttime;
                         if (AbortOperation)
                         {
-                            UpdateStatus(duration.ToString(@"hh\:mm\:ss") + " - Search aborted.");
+                            UpdateStatus(duration.ToString(@"hh\:mm\:ss") + " - 搜索已取消。");
                             InProgress = false;
                             SearchComplete();
                             return;
@@ -1099,7 +1099,7 @@ namespace CodeWalker.Tools
                             { continue; }
                         }
 
-                        UpdateStatus(string.Format("{0} - Searching {1}/{2} : {3}", duration.ToString(@"hh\:mm\:ss"), curfile, totfiles, fentry.Path));
+                        UpdateStatus(string.Format("{0} - 正在搜索 {1}/{2} : {3}", duration.ToString(@"hh\:mm\:ss"), curfile, totfiles, fentry.Path));
 
                         byte[] filebytes = fentry.File.ExtractFile(fentry);
                         if (filebytes == null) continue;
@@ -1136,7 +1136,7 @@ namespace CodeWalker.Tools
                 }
 
                 var totdur = DateTime.Now - starttime;
-                UpdateStatus(totdur.ToString(@"hh\:mm\:ss") + " - Search complete. " + resultcount.ToString() + " results found.");
+                UpdateStatus(totdur.ToString(@"hh\:mm\:ss") + " - 搜索完成。共计 " + resultcount.ToString() + " 个结果。");
                 InProgress = false;
                 SearchComplete();
             });

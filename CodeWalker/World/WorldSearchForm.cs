@@ -49,17 +49,17 @@ namespace CodeWalker.World
             var gfc = WorldForm.GameFileCache;
             if (!gfc.IsInited)
             {
-                MessageBox.Show("Please wait for CodeWalker to initialise.");
+                MessageBox.Show("请等待 CodeWalker 完成初始化。");
                 return;
             }
             if (s.Length == 0)
             {
-                MessageBox.Show("Please enter a search term.");
+                MessageBox.Show("请输入要搜索的关键字");
                 return;
             }
             if (s.Length < 2)
             {
-                MessageBox.Show("You don't really want to search for that do you?");
+                MessageBox.Show("你确定这样能搜索得到你想要的东西吗……？");
                 return;
             }
 
@@ -88,7 +88,7 @@ namespace CodeWalker.World
                         {
                             if (AbortOperation)
                             {
-                                ArchetypeSearchUpdateStatus("Search aborted!");
+                                ArchetypeSearchUpdateStatus("搜索已取消！");
                                 ArchetypeSearchComplete();
                                 return;
                             }
@@ -118,7 +118,7 @@ namespace CodeWalker.World
                     }
                 }
 
-                ArchetypeSearchUpdateStatus("Search complete. " + results.Count.ToString() + " archetypes found.");
+                ArchetypeSearchUpdateStatus("搜索完成。找到 " + results.Count.ToString() + " 个定义类型。");
                 ArchetypeSearchComplete();
             });
 
@@ -185,7 +185,7 @@ namespace CodeWalker.World
         {
             if (ArchetypeResults.Count == 0)
             {
-                MessageBox.Show("Nothing to export!");
+                MessageBox.Show("没有可以导出的文件！");
                 return;
             }
 
@@ -218,7 +218,7 @@ namespace CodeWalker.World
             }
             else
             {
-                e.Item = new ListViewItem("Error retrieving Archetype! Please tell dexyfex");
+                e.Item = new ListViewItem("检查定义类型出错！请联系作者！");
             }
         }
 
@@ -288,17 +288,17 @@ namespace CodeWalker.World
             var gfc = WorldForm.GameFileCache;
             if (!gfc.IsInited)
             {
-                MessageBox.Show("Please wait for CodeWalker to initialise.");
+                MessageBox.Show("请等待 CodeWalker 完成初始化。");
                 return;
             }
             if (s.Length == 0)
             {
-                MessageBox.Show("Please enter a search term.");
+                MessageBox.Show("请输入要搜索的关键字");
                 return;
             }
             if (s.Length < 2)
             {
-                MessageBox.Show("You don't really want to search for that do you?");
+                MessageBox.Show("你确定这样能搜索得到你想要的东西吗……？");
                 return;
             }
 
@@ -330,7 +330,7 @@ namespace CodeWalker.World
                         {
                             if (AbortOperation)
                             {
-                                EntitySearchUpdateStatus("Search aborted!");
+                                EntitySearchUpdateStatus("搜索已取消！");
                                 EntitySearchComplete();
                                 return;
                             }
@@ -360,7 +360,7 @@ namespace CodeWalker.World
                     }
                 }
 
-                EntitySearchUpdateStatus("Search complete. " + results.Count.ToString() + " entities found.");
+                EntitySearchUpdateStatus("搜索完成。找到 " + results.Count.ToString() + " 个实体。");
                 EntitySearchComplete();
             });
         }
@@ -428,7 +428,7 @@ namespace CodeWalker.World
         {
             if (EntityResults.Count == 0)
             {
-                MessageBox.Show("Nothing to export!");
+                MessageBox.Show("没有可导出的内容！");
                 return;
             }
 
@@ -453,7 +453,7 @@ namespace CodeWalker.World
         private void EntitySearchSetMarkersButton_Click(object sender, EventArgs e)
         {
             var usetextbox = EntityResults.Count < 250;
-            if (!usetextbox) MessageBox.Show("Markers will not be placed into the markers textbox\nbecause there are too many.", "Too many markers", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (!usetextbox) MessageBox.Show("标记将不会加入到标记文本框中\n因为已经有太多的标记了。", "太多的标记点", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Task.Run(() =>
             {
                 foreach (var ent in EntityResults)
@@ -474,7 +474,7 @@ namespace CodeWalker.World
             }
             else
             {
-                e.Item = new ListViewItem("Error retrieving YmapEntityDef! Please tell dexyfex");
+                e.Item = new ListViewItem("检索 YmapEntityDef 出错！请联系作者！");
             }
         }
 

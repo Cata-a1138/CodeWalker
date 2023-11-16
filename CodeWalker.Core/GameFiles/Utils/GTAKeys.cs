@@ -72,19 +72,19 @@ namespace CodeWalker.GameFiles
         {
             var exeStr = new MemoryStream(exeData);
 
-            updateStatus("Searching for AES key...");
+            updateStatus("正在搜索 AES 秘钥...");
             PC_AES_KEY = HashSearch.SearchHash(exeStr, GTA5KeyHashes.PC_AES_KEY_HASH, 0x20);
             //updateStatus("aes key found");
 
-            updateStatus("Searching for NG keys...");
+            updateStatus("正在搜索 NG 秘钥...");
             PC_NG_KEYS = HashSearch.SearchHashes(exeStr, GTA5KeyHashes.PC_NG_KEY_HASHES, 0x110);
             //updateStatus("ng keys found");
 
-            updateStatus("Searching for NG decrypt tables...");
+            updateStatus("正在搜索 NG 解密表...");
             var tabs = HashSearch.SearchHashes(exeStr, GTA5KeyHashes.PC_NG_DECRYPT_TABLE_HASHES, 0x400);
             //updateStatus("ng decrypt tables found");
 
-            updateStatus("Searching for NG hash lookup tables...");
+            updateStatus("正在搜索 NG 哈希查询表...");
             // 17 rounds
             PC_NG_DECRYPT_TABLES = new uint[17][][];
             for (int i = 0; i < 17; i++)
@@ -104,7 +104,7 @@ namespace CodeWalker.GameFiles
 
 
 
-            updateStatus("Calculating NG encryption tables...");
+            updateStatus("正在计算 NG 加密表...");
             PC_NG_ENCRYPT_TABLES = new uint[17][][];
             for (int i = 0; i < 17; i++)
             {
@@ -130,26 +130,26 @@ namespace CodeWalker.GameFiles
 
 
 
-            updateStatus("Calculating NG encryption tables (1/17)...");
+            updateStatus("正在计算 NG 加密表 (1/17)...");
             PC_NG_ENCRYPT_TABLES[0] = RandomGauss.Solve(PC_NG_DECRYPT_TABLES[0]);
             //updateStatus("ng encrypt table 1 of 17 calculated");
 
-            updateStatus("Calculating NG encryption tables (2/17)...");
+            updateStatus("正在计算 NG 加密表 (2/17)...");
             PC_NG_ENCRYPT_TABLES[1] = RandomGauss.Solve(PC_NG_DECRYPT_TABLES[1]);
             //updateStatus("ng encrypt table 2 of 17 calculated");
 
             for (int k = 2; k <= 15; k++)
             {
-                updateStatus("Calculating NG encryption tables (" + (k + 1).ToString() + "/17)...");
+                updateStatus("正在计算 NG 加密表 (" + (k + 1).ToString() + "/17)...");
                 PC_NG_ENCRYPT_LUTs[k] = LookUpTableGenerator.BuildLUTs2(PC_NG_DECRYPT_TABLES[k]);
                 //updateStatus("ng encrypt table " + (k + 1).ToString() + " of 17 calculated");
             }
 
-            updateStatus("Calculating NG encryption tables (17/17)...");
+            updateStatus("正在计算 NG 加密表 (17/17)...");
             PC_NG_ENCRYPT_TABLES[16] = RandomGauss.Solve(PC_NG_DECRYPT_TABLES[16]);
             //updateStatus("ng encrypt table 17 of 17 calculated");
 
-            updateStatus("Complete.");
+            updateStatus("完成。");
         }
 
 
@@ -157,10 +157,10 @@ namespace CodeWalker.GameFiles
         {
             var exeStr = new MemoryStream(exeData);
 
-            updateStatus?.Invoke("Searching for AES key...");
+            updateStatus?.Invoke("正在搜索 AES 秘钥...");
             PC_AES_KEY = HashSearch.SearchHash(exeStr, GTA5KeyHashes.PC_AES_KEY_HASH, 0x20);
 
-            updateStatus?.Invoke("Complete.");
+            updateStatus?.Invoke("完成。");
         }
 
 
@@ -219,7 +219,7 @@ namespace CodeWalker.GameFiles
 
             if (db == null)
             {
-                throw new Exception("Error deflating data.");
+                throw new Exception("压缩数据时出错。");
             }
 
             db = GTACrypto.EncryptAESData(db, PC_AES_KEY);
@@ -293,7 +293,7 @@ namespace CodeWalker.GameFiles
             }
             if (b == null)
             {
-                throw new Exception("Error inflating magic data.");
+                throw new Exception("解压数据时出错！");
             }
 
             byte[] b1 = new byte[27472];

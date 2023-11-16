@@ -85,7 +85,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = CurrentEntitySet?.Name ?? "Entity Set";
+            Text = CurrentEntitySet?.Name ?? "实体预设";
         }
 
         private void EntitySetNameTextBox_TextChanged(object sender, EventArgs e)

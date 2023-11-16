@@ -37,19 +37,22 @@
             this.DetailsPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DetailsPropertyGrid.HelpVisible = false;
             this.DetailsPropertyGrid.Location = new System.Drawing.Point(0, 0);
+            this.DetailsPropertyGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DetailsPropertyGrid.Name = "DetailsPropertyGrid";
-            this.DetailsPropertyGrid.Size = new System.Drawing.Size(692, 449);
+            this.DetailsPropertyGrid.Size = new System.Drawing.Size(728, 453);
             this.DetailsPropertyGrid.TabIndex = 1;
             // 
             // GenericForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 449);
+            this.ClientSize = new System.Drawing.Size(728, 453);
             this.Controls.Add(this.DetailsPropertyGrid);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GenericForm";
-            this.Text = "File Inspector - CodeWalker by dexyfex";
+            this.Text = "文件查看器 - CodeWalker by dexyfex";
             this.ResumeLayout(false);
 
         }

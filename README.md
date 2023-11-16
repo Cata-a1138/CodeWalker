@@ -1,74 +1,88 @@
 <div align="center">
     <h1>CodeWalker by dexyfex</h1>
-    This program is for viewing the contents of GTAV RPF archives.
+    本程序可用于查看和编辑 GTAV RPF 文件内容
 </div>
 
-## Requirements:
-- PC version of GTA:V;
-- 4GB RAM (8+ recommended);
-- Windows 7 and above, x64 processor;
-- .NET framework 4.5 or newer from [Microsoft](https://www.microsoft.com/net/download/thank-you/net471);
-- DirectX 11 and Shader Model 4.0 capable graphics.
+## 系统需求
+- PC 版本的 GTA5；
+- 4GB 内存 (建议 8GB 以上)；
+- Windows 7 或更高, 64 位操作系统；
+- .NET framework 4.5 或更高版本，可以从 [Microsoft](https://www.microsoft.com/net/download/thank-you/net471) 下载；
+- DirectX 11 以及 Shader Model 4.0 兼容的显卡。
 
-# App Usage:
-On first startup, the app will prompt to browse for the GTA:V game folder. If you have the Steam version installed
-in the default location `(C:\Program Files (x86)\Steam\SteamApps\common\Grand Theft Auto V)`, then this step will be skipped automatically.
+# 使用方法
+首次启动时，应用程序将提示浏览 GTA:V 游戏文件夹。 如果您安装了 Steam 版本的 GTAV 在默认位置 `(C:\Program Files (x86)\Steam\SteamApps\common\Grand Theft Auto V)`，则此步骤将自动跳过。
 
-The World View will load by default. It will take a while to load. Use the WASD keys to move the camera. Hold shift to move faster. Drag the left mouse button to rotate the view. Use the mouse wheel to zoom in/out, and change the base movement speed. (Zoom in = slower motion) Xbox controller input is also supported. The Toolbox can be shown by clicking the `<<` button in the top right-hand corner of the screen. `T` opens the main toolbar.
+默认情况下将加载世界视图。加载需要一段时间。使用 WASD 键移动相机。按住 Shift 可以移动得更快。拖动鼠标左键可旋转视图。使用鼠标滚轮放大/缩小，并更改基本移动速度。（放大 = 降低移动速度），还支持 Xbox 控制器输入。单击屏幕右上角的 `<<` 按钮可以显示工具箱。按下 `T` 打开主工具栏。
 
-First-person mode can be activated with the P key, or by pressing the Start button on the XBox controller. While in first-person mode, the left mouse button (or right trigger) will fire an egg.
+可以使用 P 键或按 Xbox 控制器上的开始按钮来激活第一人称模式。在第一人称模式下，鼠标左键（或右键触发器）将发射一个外星人蛋。
 
-Entities can be selected (with the right mouse button) by enabling the option on the Selection tab in the toolbox. The details of the selected entity, its archetype, and its drawable can be explored in the relevant sub-tabs. (This option can also be activated with the arrow button on the toolbar).
+通过启用工具箱中 “选择” 选项卡上的选项，可以选择实体（使用鼠标右键）。可以在相关的子选项卡中探索所选实体、其定义类型及其可绘制对象的详细信息。（也可以使用工具栏上的箭头按钮激活此选项）。
 
-When an entity is selected, `E` will switch to edit mode (or alternatively, edit mode can be activated by switching the Widget mode to anything other than Default). When in edit mode, `Q` will exit edit mode, `W` toggles the position widget, E toggles rotation, and R toggles scale. Also when in edit mode, movement is still WSAD, but only while you're holding the left mouse button down, and not interacting with the widget. `Ctrl-Z` and `Ctrl-Y` will Undo and Redo entity transformation (position/rotation/scale) actions.
+当选择一个实体时，按下 E 将切换到编辑模式（或者，可以通过将小部件模式切换到默认以外的任何模式来激活编辑模式）。在编辑模式下，按下 Q 将退出编辑模式，W 切换位置小部件，E 切换旋转，R 切换缩放。此外，在编辑模式下，移动仍然是 WSAD，但仅限于按住鼠标左键且不与小部件交互时。按下 `Ctrl-Z` 和 `Ctrl-Y` 将撤消和重做实体变换（位置/旋转/缩放）操作。
 
-The Project Window allows a CodeWalker project to be created (`.cwproj`), and files added to it. Editing entities while the Project Window is open will add the entity's `.ymap` to the current project. `Ymap` files can then be saved to disk, for use in a map mod. New `ymap` files can also be created, and entities can be added and removed. Also supported for editing are `.ynd` files (traffic paths), trains `.dat files` (train tracks), and scenarios (`.ymt`). (A full tutorial on making map mods is out of the scope of this readme.)
+项目窗口允许创建 CodeWalker 项目 (`.cwproj`)，并向其中添加文件。在项目窗口打开时编辑实体的话，会自动将实体的 `.ymap` 添加到当前项目。您可以将项目中的 Ymap 文件保存到磁盘，然后就可以在地图模组中使用了。还可以创建新的 ymap 文件，并且可以添加和删除实体。还支持编辑 .ynd 文件（交通路径）、火车 .dat 文件（火车轨道）和场景（.ymt）等等。受限于篇幅原因，这里不再详细介绍所有功能，您可以自行探索它们。
 
-A full explanation of all the tools in this application is still on the to-do list! The user is currently left to explore the options at their own peril. Note some options may cause CodeWalker to crash, or otherwise stop working properly. Restart the program if this happens! Also note that this program is a constant work in progress, so bugs and crashes are to be expected. Some parts of the world do not yet render correctly, but expect updates in the future to fix these issues.
+该应用程序中所有工具的完整说明仍在待办事项列表中！目前，用户只能自行承担探索这些选项的风险。请注意，某些选项可能会导致 CodeWalker 崩溃，或者停止正常运行。如果发生这种情况，请重新启动程序即可。另外请注意，该程序的开发仍然在持续进行中，因此错误和崩溃是可以预料的。地图上的某些地区可能存在渲染错误的问题，但预计未来的更新可以解决。
 
-# Menu Mode:
-The app can also be started with a main menu instead of loading the world view. This can be useful for situations where the world
-view is not needed, and the world loading can be avoided. To activate the menu mode, run CodeWalker with the 'menu' command line argument, e.g: CodeWalker.exe menu.
+# 菜单模式
+该应用程序还可以通过主菜单启动，而不是加载世界视图。这对于不需要世界视图的情况非常有用，并且可以避免世界加载。
 
-# Explorer Mode:
-The app can be started with the `'explorer'` command line argument. This displays an interface much like OpenIV, with a Windows-Explorer style interface for browsing the game's .rpf archives. Double-click on files to open them. Viewers for most file types are available, but hex view will be shown as a fallback. To activate the explorer mode, run the command: CodeWalker.exe explorer. Alternatively, run the CodeWalker Explorer batch file in the program's directory.
+要激活菜单模式，请使用 `menu` 命令行参数运行 CodeWalker，例如：`CodeWalker.exe menu`
 
-# Main Toolbar:
-The main toolbar is used to access most of the editing features in CodeWalker. Shortcuts for new, open and create files are provided. The selection mode can be changed with the "pointer" button. Move, rotate and scale buttons provide access to the different editing widget modes. Other shortcuts on the toolbar include buttons to open the Selection Info window, and the Project window. See the tooltips on the toolbar items for hints.
+# 资源管理器模式
+该应用程序可以使用 `explorer` 命令行参数启动。 这会显示一个与 OpenIV 非常相似的、具有 Windows 资源管理器风格的界面，用于浏览游戏的 .rpf 存档，双击文件将其打开。大多数游戏文件类型都可以打开，如果遇到不支持的文件则会以十六进制查看器显示。
 
-# Project Window:
-The project window is the starting point for editing files in CodeWalker. Project files can be created, and files can be added to them. It is recommended to create and save a project file before adding files to be edited and saved. The tree view displays the files in the current project, and their contents.
+要激活资源管理器模式，请运行命令：`CodeWalker.exe explorer`。或者，运行程序目录中的 CodeWalker Explorer.exe 文件。
 
-# YMAP Editing:
-New `YMAP` files can be created via the project window, and existing `YMAP` files can be edited. To edit an existing single player `YMAP`, first change codewalker DLC level to `patchday2ng`, and enable DLC. Open the toolbar, and enable Entity selection mode. Enable the Move widget with the toolbar Move button. Open the project window with the toolbar button. Changes made while the project window is open are automatically added to the project. Select an entity to edit by right clicking when the entity is moused over, and its bounding box shown in white. Move, rotate and/or scale the selected entity with the widget. When the first change is made, the entity's `YMAP` will be added to the current project. If no project is open, a new one will be created. The edited `YMAP` file can be saved to the drive using the File menu in the project window. After saving the file, it needs to be added into the mods folder. Using OpenIV, find the existing `YMAP` file using the search function (note: the correct path for the edited `YMAP` can be found in the selection info window in CodeWalker, when an entity is selected, look for `YMap`>`RpfFileEntry` in the selection info property grid). Replace the edited `YMAP` into a copy of the correct archive in the /mods folder. Newly created YMAPs can be added to DLC archives in the same manner.
+# 主工具栏
+主工具栏用于访问 CodeWalker 中的大部分编辑功能，提供了新建、打开和创建文件的快捷方式。可以使用 “指针” 按钮更改选择模式。移动、旋转和缩放按钮可以对世界中的各种对象进行变换操作。工具栏上还有其他快捷方式，包括用于打开 “选择信息” 窗口和 “项目” 窗口的按钮。将鼠标移动到图标上将会显示功能说明。
 
-# Train Tracks Editing:
-[TODO - write this!]
+# 项目窗口
+项目窗口是在 CodeWalker 中编辑文件的起点。在这里可以创建项目，并向其中添加文件。建议在添加要编辑和保存的文件之前，先创建并保存项目。左侧的树状视图将会显示当前项目中的文件及其内容。
 
-# (YND) Traffic Paths Editing:
-[TODO - write this!]
+# YMAP 编辑
+可以通过项目窗口创建新的 `YMAP` 文件，并且可以编辑现有的 `YMAP` 文件。要编辑现有的单人游戏 `YMAP`，请首先在主界面右侧的面板中，将 DLC 版本更改为 `patchday2ng`，然后勾选加载 DLC。打开工具栏，然后启用实体选择模式。
 
-# (YMT) Scenario Regions Editing:
-[TODO: write this!] <br>
-See https://youtu.be/U0nrVL44Fb4 - Scenario Editing Tutorial
+接下来，您可以使用工具栏 “移动” 按钮启用移动模式。使用工具栏按钮打开项目窗口。项目窗口打开时，所做的更改会自动添加到项目中。将鼠标悬停在实体上时右键单击以选择要编辑的实体，其边界框显示为白色。您还可以使用工具来旋转或缩放所选实体。
 
-# Regarding game files: (FYI)
+进行第一次更改时，实体的 `YMAP` 将添加到当前项目中。如果没有打开项目，则会创建一个新项目。可以使用项目窗口中的 “文件” 菜单将编辑后的 `YMAP` 文件保存到硬盘。如果要让游戏加载修改后的地图，您需要替换地图文件。
 
-The PC GTAV world is stored in the `RPF` archives in many different file formats. As expected, some formats are used for storing rendering-related content, for example the textures and 3d models, while other formats are used for storing game and engine related data.
+首先，您可以在 “选择信息” 窗口中，找到 `YMap` > `RpfFileEntry`，该文件就是地图所在的 RPF 文件。进入游戏目录找到该文件，然后将其复制，接着进入游戏 mods/ 文件夹（没有的话可以新建一个），然后按照原本目录的顺序新建文件夹，再粘贴刚刚复制的文件。举个例子：您想要编辑 `update/update.rpf` 文件，那么您可以在 mods 文件夹内新建一个 update 文件夹，然后将 update.rpf 文件复制进去。
 
-The main formats when it comes to rendering GTAV content are:
-`.ytd` - Texture Dictionary - Stores texture data in a DirectX format convenient for loading to the GPU. 
-`.ydr` - Drawable - Contains a single asset's 3d model. Can contain a Texture Dictionary, and up to 4 LODs of a model.
-`.ydd` - Drawable Dictionary - A collection of Drawables packed into a single file.
-`.yft` - Fragment - Contains a Drawable, along with other metadata for example physics data.
+复制完成之后，您可以点击世界视图右上角的工具 > RPF 文件浏览器，然后在打开的窗口中找到刚刚复制的 RPF 文件，双击打开该 RPF 文件，然后找到您所修改的 YMAP 文件，将右上角的编辑模式激活，然后将修改后的 YMAP 文件拖入窗口中，即可完成替换。
 
-The content Assets are pieced together to create the GTAV world via MapTypes (Archetypes) and MapData (Entity placements). At a high level, Archeypes define objects that are placeable, and Entities define where those objects are placed to make up the world. The collision mesh data for the world is stored in Bounds files.
+# 火车轨道编辑
+教程暂未完工
 
-### The formats for these are:
-`.ytyp` - MapTypes - Contains a group of MapTypes (Archetypes), each defining an object that could be placed.
-`.ymap` - MapData - Contains placements of Archetypes, each defining an Entity in the world.
-`.ybn` - Bounds - Contains collision mesh / bounding data for pieces of the world.
+# (YND) 交通路径编辑
+教程暂未完工
 
-The EntityData contained within the MapData (`.ymap`) files forms the LOD hierarchy. This hierarchy is arranged such that the lowest detail version of the world, at the root of the hierarchy, is represented by a small number of large models that can all be rendered simultaneously to draw the world at a great distance. The next branch in the hierarchy splits each of these large models into a group of smaller objects, each represented in a higher detail than the previous level. This pattern is continued for up to 6 levels of detail. When rendering the world, the correct level of detail for each branch in the hierarchy needs to be determined, as obviously the highest detail objects cannot all be rendered at once due to limited computing resources.
+# (YMT) 场景区域编辑
+教程暂未完工
 
-In CodeWalker, This is done by recursing the LOD tree from the roots, checking how far away from the camera the node's Entity is. If it is below a certain value, then the current level is used, otherwise it moves to the next higher level, depending on the LOD distance setting. (In the Ymap view, the highest LOD, ORPHANHD, is not rendered by default. The ORPHANHD entities can often be manually rendered by specifying the correct `strm ymap` file for the area in question in the `ymap` text box. The `strm ymap` name can often be found by mouse-selecting a high detail object in the area and noting what `ymap` the entity is contained in, in the selection details panel.)
+这里也有视频教程：[Scenario Editing Tutorial](https://youtu.be/U0nrVL44Fb4)
+
+# 关于游戏文件：（仅供参考）
+
+PC GTAV 世界以多种不同的文件格式存储在 `RPF` 档案中。正如预期的那样，某些格式用于存储与渲染相关的内容，例如纹理和 3D 模型，而其他格式用于存储游戏和引擎相关的数据。
+
+渲染 GTA 5 内容的主要格式有：
+
+* `.ytd` - 纹理字典，以 DirectX 格式存储纹理数据，方便加载到 GPU。
+* `.ydr` - 可绘制模型，包含单个资产的 3D 模型。 可以包含纹理字典以及模型的最多 4 个 LOD。
+* `.ydd` - 可绘制字典，打包到单个文件中的可绘制模型集合。
+* `.yft` - 模型分段，包含一个可绘制模型，以及其他元数据，例如物理数据。
+
+GTA5 的游戏世界是通过各种对象拼凑起来的，简单来说，MapTypes 储存了所有模型的定义信息，例如这个模型有多大，模型的类型等等。而 MapData 则储存了这些模型在世界中的位置，决定了要把模型摆在哪里。而 Bounds 则储存了世界中各个部分的碰撞网格/边界数据。
+
+### 这些的格式是：
+* `.ytyp` - MapTypes - 包含一组 MapTypes（定义类型），定义了模型的对象信息。
+* `.ymap` - MapData - 包含许多的对象，决定了每个对象在世界中的位置。
+* `.ybn` - Bounds - 包含世界各个部分的碰撞网格/边界数据。
+
+MapData (`.ymap`) 文件中包含的 EntityData 形成了 LOD 层次结构。层次结构的最底层是由几块面积较大的模型拼凑组成的，它们在游戏中的作用就是远景模型。接着，每个底层模型又会拆分为一组较小的模型，每个模型都比上一个层级的精度更高，以此类推下去，最多可以有 6 个层级，最高层级就是最精细的模型。
+
+在 CodeWalker 中，这是通过从底层开始递归 LOD 树，检查节点实体距离相机有多远来完成的。如果低于某个值，则使用当前级别，否则将使用到下一个更高级别，具体取决于实体的 LOD 距离设置。
+
+在 Ymap 视图中，默认情况下不渲染最高 LOD，也就是 `ORPHANHD`。您可以通过在 `ymap` 输入框中，为想要渲染最高 LOD 的区域指定正确的 `strm ymap` 文件来手动渲染 ORPHANHD 实体。`strm ymap` 名称通常可以通过鼠标选择区域中的高细节对象，并在选择信息面板中记下该实体包含在哪个 `ymap` 中来找到。

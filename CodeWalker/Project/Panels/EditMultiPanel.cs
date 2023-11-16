@@ -35,7 +35,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = (Items?.Length ?? 0).ToString() + " item" + ((Items?.Length == 1) ? "" : "s");
+            Text = (Items?.Length ?? 0).ToString() + " 对象";
         }
 
 
@@ -127,6 +127,10 @@ namespace CodeWalker.Project.Panels
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void RotationQuatBox_Load(object sender, EventArgs e) {
 
         }
     }

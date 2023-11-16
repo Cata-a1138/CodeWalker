@@ -95,7 +95,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - " + fileType.ToString() + " Editor - CodeWalker by dexyfex";
+            Text = fileName + " - " + fileType.ToString() + " 编辑器 - CodeWalker by dexyfex";
         }
 
         private void UpdateTextBoxFromData()
@@ -123,7 +123,7 @@ namespace CodeWalker.Forms
         {
             if (modified)
             {
-                var res = MessageBox.Show("Do you want to save the current document before closing it?", "Save before closing", MessageBoxButtons.YesNoCancel);
+                var res = MessageBox.Show("是否要在关闭之前保存该文件？", "关闭前保存", MessageBoxButtons.YesNoCancel);
                 switch (res)
                 {
                     case DialogResult.Yes:
@@ -147,7 +147,7 @@ namespace CodeWalker.Forms
             if (!CloseDocument()) return; //same thing really..
 
             fileType = TextFileType.Text;
-            FileName = "New.txt";
+            FileName = "新建文本文档.txt";
         }
         private void OpenDocument()
         {
@@ -363,6 +363,10 @@ namespace CodeWalker.Forms
         private void TextForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = !CloseDocument();
+        }
+
+        private void MainTextBox_Load(object sender, EventArgs e) {
+
         }
     }
 }

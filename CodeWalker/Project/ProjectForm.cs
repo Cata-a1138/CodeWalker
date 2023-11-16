@@ -180,7 +180,7 @@ namespace CodeWalker.Project
         {
             if (changing && (CurrentProjectFile != null))
             {
-                if (MessageBox.Show("Project will be closed before changing the theme. Are you sure you want to continue?", "Theme change", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("需要关闭项目才能够切换主题，您确定要继续吗？", "切换主题", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -1131,14 +1131,14 @@ namespace CodeWalker.Project
             }
 
             CurrentProjectFile = new ProjectFile();
-            CurrentProjectFile.Name = "New CodeWalker Project";
+            CurrentProjectFile.Name = "新的 CodeWalker 项目";
             CurrentProjectFile.Version = 1;
             CurrentProjectFile.HasChanged = true;
             LoadProjectUI();
         }
         public void OpenProject()
         {
-            string file = ShowOpenDialog("CodeWalker Projects|*.cwproj", string.Empty);
+            string file = ShowOpenDialog("CodeWalker 项目|*.cwproj", string.Empty);
             if (string.IsNullOrEmpty(file))
             {
                 return;
@@ -1164,7 +1164,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1181,7 +1181,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1198,7 +1198,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1215,7 +1215,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1232,7 +1232,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1249,7 +1249,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1266,7 +1266,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1283,7 +1283,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1300,7 +1300,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1317,7 +1317,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1334,7 +1334,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1351,7 +1351,7 @@ namespace CodeWalker.Project
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't find file: " + filename);
+                    MessageBox.Show("无法找到文件：" + filename);
                 }
             }
 
@@ -1367,7 +1367,7 @@ namespace CodeWalker.Project
                 if ((ymap != null) && (ymap.HasChanged))
                 {
                     //save the current ymap first?
-                    if (MessageBox.Show("Would you like to save " + ymap.Name + " before closing?", "Save .ymap before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + ymap.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentYmapFile = ymap;
                         SaveYmap();
@@ -1380,7 +1380,7 @@ namespace CodeWalker.Project
                 if ((ytyp != null) && (ytyp.HasChanged))
                 {
                     //save the current ytyp first?
-                    if (MessageBox.Show("Would you like to save " + ytyp.Name + " before closing?", "Save .ytyp before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + ytyp.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentYtypFile = ytyp;
                         SaveYtyp();
@@ -1393,7 +1393,7 @@ namespace CodeWalker.Project
                 if ((ybn != null) && (ybn.HasChanged))
                 {
                     //save the current ybn first?
-                    if (MessageBox.Show("Would you like to save " + ybn.Name + " before closing?", "Save .ybn before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + ybn.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentYbnFile = ybn;
                         SaveYbn();
@@ -1406,7 +1406,7 @@ namespace CodeWalker.Project
                 if ((ynd != null) && (ynd.HasChanged))
                 {
                     //save the current ynd first?
-                    if (MessageBox.Show("Would you like to save " + ynd.Name + " before closing?", "Save .ynd before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + ynd.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentYndFile = ynd;
                         SaveYnd();
@@ -1419,7 +1419,7 @@ namespace CodeWalker.Project
                 if ((ynv != null) && (ynv.HasChanged))
                 {
                     //save the current ynv first?
-                    if (MessageBox.Show("Would you like to save " + ynv.Name + " before closing?", "Save .ynv before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + ynv.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentYnvFile = ynv;
                         SaveYnv();
@@ -1432,7 +1432,7 @@ namespace CodeWalker.Project
                 if ((trains != null) && (trains.HasChanged))
                 {
                     //save the current trains file first?
-                    if (MessageBox.Show("Would you like to save " + trains.Name + " before closing?", "Save trains file before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + trains.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentTrainTrack = trains;
                         SaveTrainTrack();
@@ -1445,7 +1445,7 @@ namespace CodeWalker.Project
                 if ((scenario != null) && (scenario.HasChanged))
                 {
                     //save the current scenario file first?
-                    if (MessageBox.Show("Would you like to save " + scenario.Name + " before closing?", "Save scenario file before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + scenario.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentScenario = scenario;
                         SaveScenario();
@@ -1458,7 +1458,7 @@ namespace CodeWalker.Project
                 if ((datrel != null) && (datrel.HasChanged))
                 {
                     //save the current scenario file first?
-                    if (MessageBox.Show("Would you like to save " + datrel.Name + " before closing?", "Save scenario file before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("是否要在关闭之前保存 " + datrel.Name + " ？", "是否保存文件？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         CurrentAudioFile = datrel;
                         SaveAudioFile();
@@ -1470,7 +1470,7 @@ namespace CodeWalker.Project
             if (CurrentProjectFile.HasChanged)
             {
                 //save the current project first?
-                if (MessageBox.Show("Would you like to save the current project before closing?", "Save project before closing?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("是否要在关闭之前保存当前项目？", "是否保存项目？", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SaveProject();
                 }
@@ -1516,7 +1516,7 @@ namespace CodeWalker.Project
             if (CurrentProjectFile == null) return;
             if (string.IsNullOrEmpty(CurrentProjectFile.Filepath) || saveas)
             {
-                string fileName = ShowSaveDialog("CodeWalker Projects|*.cwproj", CurrentProjectFile.Filepath);
+                string fileName = ShowSaveDialog("CodeWalker 项目|*.cwproj", CurrentProjectFile.Filepath);
                 if (string.IsNullOrEmpty(fileName))
                 { return; } //user cancelled
 
@@ -1541,7 +1541,7 @@ namespace CodeWalker.Project
             if (files == null) return;
             if (files.Length > 100)
             {
-                if (MessageBox.Show("This folder contains many files, loading may take a long time!\nAre you sure you want to continue?", "Large folder warning", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("当前文件夹的文件数量过多，可能需要较长时间加载！\n您确定要继续吗？", "大量文件提醒", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -1554,20 +1554,20 @@ namespace CodeWalker.Project
             if (files == null)
             {
                 string[] filetypes = {
-                    "All supported|*.ymap;*.ytyp;*.ybn;*.ydr;*.ydd;*.yft;*.ytd;*.ynd;*.ynv;*.dat;*.ymt;*.rel",
-                    "Ymap files|*.ymap",
-                    "Ytyp files|*.ytyp",
-                    "Ybn files|*.ybn",
-                    "Ydr files|*.ydr",
-                    "Ydd files|*.ydd",
-                    "Yft files|*.yft",
-                    "Ytd files|*.ytd",
-                    "Ynd files|*.ynd",
-                    "Ynv files|*.ynv",
-                    "Dat files|*.dat",
-                    "Ymt files|*.ymt",
-                    "Rel files|*.rel",
-                    "All files|*.*"
+                    "所有支持的格式|*.ymap;*.ytyp;*.ybn;*.ydr;*.ydd;*.yft;*.ytd;*.ynd;*.ynv;*.dat;*.ymt;*.rel",
+                    "Ymap 文件|*.ymap",
+                    "Ytyp 文件|*.ytyp",
+                    "Ybn 文件|*.ybn",
+                    "Ydr 文件|*.ydr",
+                    "Ydd 文件|*.ydd",
+                    "Yft 文件|*.yft",
+                    "Ytd 文件|*.ytd",
+                    "Ynd 文件|*.ynd",
+                    "Ynv 文件|*.ynv",
+                    "Dat 文件|*.dat",
+                    "Ymt 文件|*.ymt",
+                    "Rel 文件|*.rel",
+                    "All 文件|*.*"
                 };
 
                 files = ShowOpenDialogMulti(string.Join("|", filetypes), string.Empty);
@@ -1667,7 +1667,7 @@ namespace CodeWalker.Project
 
             if (errorFiles.Count > 0)
             {
-                MessageBox.Show("Errors were encountered while loading file(s):\n" + String.Join("\n", errorFiles));
+                MessageBox.Show("加载文件时发生错误：\n" + String.Join("\n", errorFiles));
             }
         }
 
@@ -1956,7 +1956,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ymap files|*.ymap", filepath);
+                    filepath = ShowSaveDialog("Ymap 文件|*.ymap", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
                 }
@@ -1996,7 +1996,7 @@ namespace CodeWalker.Project
             if (CurrentYmapFile.SaveWarnings != null)
             {
                 string w = string.Join("\n", CurrentYmapFile.SaveWarnings);
-                MessageBox.Show(CurrentYmapFile.SaveWarnings.Count.ToString() + " warnings were generated while saving the ymap:\n" + w);
+                MessageBox.Show("保存 Ymap 文件时发生了" + CurrentYmapFile.SaveWarnings.Count.ToString() + " 个错误。\n" + w);
                 CurrentYmapFile.SaveWarnings = null;//clear it out for next time..
             }
         }
@@ -2202,7 +2202,7 @@ namespace CodeWalker.Project
 
             if (CurrentEntity._CEntityDef.numChildren != 0)
             {
-                MessageBox.Show("This entity's numChildren is not 0 - deleting entities with children is not currently supported by CodeWalker.");
+                MessageBox.Show("该实体的 numChildren 不为 0 - CodeWalker 暂不支持删除带有子级的实体。");
                 return true;
             }
 
@@ -2212,7 +2212,7 @@ namespace CodeWalker.Project
                 var ent = CurrentYmapFile.AllEntities[i];
                 if (ent._CEntityDef.numChildren != 0)
                 {
-                    MessageBox.Show("There are other entities present in this .ymap that have children. Deleting this entity is not currently supported by CodeWalker.");
+                    MessageBox.Show("此 Ymap 中还存在其他具有子级的实体。CodeWalker 暂不支持删除带有子级的实体。");
                     return true;
                 }
             }
@@ -2237,7 +2237,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Entity.Index didn't match the index of the entity in the ymap. This shouldn't happen, check LOD linkages!");
+                MessageBox.Show("Entity.Index 与 ymap 中实体的索引不匹配。这种情况不应该发生，请检查 LOD 链接！");
             }
 
             var delent = CurrentEntity;
@@ -2349,7 +2349,7 @@ namespace CodeWalker.Project
             if (CurrentGrassBatch.Ymap != CurrentYmapFile) return false;
             if (CurrentYmapFile.GrassInstanceBatches == null) return false; //nothing to delete..
 
-            if (MessageBox.Show("Are you sure you want to delete this grass batch?\n" + CurrentGrassBatch.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除此实例草吗？\n" + CurrentGrassBatch.ToString() + "\n\n该操作是不可撤销的，是否继续？", "删除确认", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -2369,7 +2369,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the grass batch. This shouldn't happen!");
+                MessageBox.Show("无法删除实例草，这不应该发生！");
             }
 
             var delbatch = CurrentGrassBatch;
@@ -2582,7 +2582,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the car generator. This shouldn't happen!");
+                MessageBox.Show("无法删除车辆生成器，这不应该发生！");
             }
 
             var delgen = CurrentCarGen;
@@ -2712,7 +2712,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the LOD light. This shouldn't happen!");
+                MessageBox.Show("无法删除远景灯光，这不应该发生！");
             }
 
             ProjectExplorer?.RemoveLodLightTreeNode(CurrentLodLight);
@@ -2835,7 +2835,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the box occluder. This shouldn't happen!");
+                MessageBox.Show("无法删除遮挡盒，这不应该发生！");
             }
 
             ProjectExplorer?.RemoveBoxOccluderTreeNode(CurrentBoxOccluder);
@@ -2953,7 +2953,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the occlude model. This shouldn't happen!");
+                MessageBox.Show("无法删除遮挡模型，这不应该发生！");
             }
 
             ProjectExplorer?.RemoveOccludeModelTreeNode(CurrentOccludeModel);
@@ -3073,7 +3073,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the occlude model triangle. This shouldn't happen!");
+                MessageBox.Show("无法删除遮挡模型三角，这不应该发生！");
             }
 
             ProjectExplorer?.UpdateOccludeModelTreeNode(CurrentOccludeModelTri?.Model);
@@ -3105,7 +3105,7 @@ namespace CodeWalker.Project
                 NewProject();
             }
 
-            var xmlpath = ShowOpenDialog("XML Files|*.xml", string.Empty);
+            var xmlpath = ShowOpenDialog("XML 文件|*.xml", string.Empty);
 
             if (string.IsNullOrEmpty(xmlpath)) return;
 
@@ -3117,7 +3117,7 @@ namespace CodeWalker.Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading file!\n" + ex.ToString());
+                MessageBox.Show("无法加载文件！\n" + ex.ToString());
             }
 
             if (string.IsNullOrEmpty(xmlstr)) return;
@@ -3252,7 +3252,7 @@ namespace CodeWalker.Project
             ShowProjectItem(CurrentYmapFile, false);
 
 
-            MessageBox.Show(entcount.ToString() + " entities imported. \n" + carcount.ToString() + " car generators imported. \n" + pedcount.ToString() + " peds ignored. \n" + unkcount.ToString() + " others ignored.");
+            MessageBox.Show(entcount.ToString() + " 实体导入成功。\n" + carcount.ToString() + " 车辆生成器导入成功。\n" + pedcount.ToString() + " 角色已忽略。\n" + unkcount.ToString() + " 其他实体已忽略。");
 
         }
 
@@ -3317,7 +3317,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ytyp files|*.ytyp", filepath);
+                    filepath = ShowSaveDialog("Ytyp 文件|*.ytyp", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -3362,7 +3362,7 @@ namespace CodeWalker.Project
             if (CurrentYtypFile.SaveWarnings != null)
             {
                 string w = string.Join("\n", CurrentYtypFile.SaveWarnings);
-                MessageBox.Show(CurrentYtypFile.SaveWarnings.Count.ToString() + " warnings were generated while saving the ytyp:\n" + w);
+                MessageBox.Show("保存 Ytyp 时发生了 " + CurrentYtypFile.SaveWarnings.Count.ToString() + " 个错误。\n" + w);
                 CurrentYtypFile.SaveWarnings = null;//clear it out for next time..
             }
         }
@@ -3429,7 +3429,7 @@ namespace CodeWalker.Project
         {
             if (CurrentYtypFile == null) return;
 
-            string[] files = ShowOpenDialogMulti("Ydr files|*.ydr", string.Empty);
+            string[] files = ShowOpenDialogMulti("Ydr 文件|*.ydr", string.Empty);
             if (files == null) return;
             if (files.Length == 0) return;
 
@@ -3475,7 +3475,7 @@ namespace CodeWalker.Project
             var mloInstance = TryGetMloInstance(mloArch);
             if (mloInstance == null)
             {
-                MessageBox.Show("Unable to find MLO instance for this interior! Try adding an MLO instance ymap to the project.");
+                MessageBox.Show("无法找到此内饰的 MLO 实例！ 尝试将 MLO 实例 ymap 添加到项目中。");
                 return null;
             }
 
@@ -3496,7 +3496,7 @@ namespace CodeWalker.Project
                 {
                     if ((mloArch.rooms?.Length ?? 0) <= 0)
                     {
-                        MessageBox.Show($@"Mlo {mloArch.Name} has no rooms! Cannot create entity.");
+                        MessageBox.Show($@"Mlo {mloArch.Name} 没有房间！无法创建实体！");
                         return null;
                     }
                     CurrentMloRoom = mloArch.rooms[0];
@@ -3507,21 +3507,21 @@ namespace CodeWalker.Project
             int roomIndex = CurrentMloRoom?.Index ?? -1;
             if (roomIndex >= (mloArch.rooms?.Length ?? 0))
             {
-                MessageBox.Show($@"Room at index {roomIndex} does not exist in {mloArch.Name}! {mloArch.Name} only has {(mloArch.rooms?.Length ?? 0)} rooms.");
+                MessageBox.Show($@"位于索引 {roomIndex} 的房间不存在于 {mloArch.Name}! {mloArch.Name} 只有 {(mloArch.rooms?.Length ?? 0)} 个房间。");
                 return null;
             }
 
             int portalIndex = CurrentMloPortal?.Index ?? -1;
             if (portalIndex >= (mloArch.portals?.Length ?? 0))
             {
-                MessageBox.Show($@"Portal at index {portalIndex} does not exist in {mloArch.Name}! {mloArch.Name} only has {(mloArch.portals?.Length ?? 0)} portals.");
+                MessageBox.Show($@"位于索引 {portalIndex} 的门户不存在于 {mloArch.Name}! {mloArch.Name} 只有 {(mloArch.portals?.Length ?? 0)} 个门户。");
                 return null;
             }
 
             int entsetIndex = CurrentMloEntitySet?.Index ?? -1;
             if (entsetIndex >= (mloArch.entitySets?.Length ?? 0))
             {
-                MessageBox.Show($@"EntitySet at index {entsetIndex} does not exist in {mloArch.Name}! {mloArch.Name} only has {(mloArch.entitySets?.Length ?? 0)} entitySets.");
+                MessageBox.Show($@"位于索引 {entsetIndex} 的实体预设不存在于 {mloArch.Name}! {mloArch.Name} 只有 {(mloArch.entitySets?.Length ?? 0)} 个实体预设。");
                 return null;
             }
 
@@ -3586,7 +3586,7 @@ namespace CodeWalker.Project
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, e.Message, "Create MLO Entity Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, e.Message, "创建 Mlo 实体错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
@@ -3722,7 +3722,7 @@ namespace CodeWalker.Project
             if (CurrentArchetype == null) return false;
             if (CurrentArchetype.Ytyp != CurrentYtypFile) return false;
 
-            if (MessageBox.Show("Are you sure you want to delete this archetype?\n" + CurrentArchetype._BaseArchetypeDef.name.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除此定义类型吗？\n" + CurrentArchetype._BaseArchetypeDef.name.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -3742,7 +3742,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Archetype couldn't be removed!");
+                MessageBox.Show("无法删除定义类型！");
                 return false;
             }
 
@@ -3775,7 +3775,7 @@ namespace CodeWalker.Project
 
             if (CurrentEntity._CEntityDef.numChildren != 0)
             {
-                MessageBox.Show("This entity's numChildren is not 0 - deleting entities with children is not currently supported by CodeWalker.");
+                MessageBox.Show("该实体的 numChildren 不为 0 - CodeWalker 暂不支持删除带有子级的实体。");
                 return true;
             }
 
@@ -3814,7 +3814,7 @@ namespace CodeWalker.Project
             }
             catch (Exception e) // various failures could happen so we'll use a trycatch for when an exception is thrown.
             {
-                MessageBox.Show(this, "Cannot delete entity: " + Environment.NewLine + e.Message);
+                MessageBox.Show(this, "无法删除实体：" + Environment.NewLine + e.Message);
                 return false;
             }
 
@@ -3835,7 +3835,7 @@ namespace CodeWalker.Project
             var mlo = CurrentMloRoom?.OwnerMlo;
             if (mlo == null) return false;
 
-            if (MessageBox.Show("Are you sure you want to delete this room?\n" + CurrentMloRoom.Name + "\n\nDeleting existing rooms is generally not recommended, as it will mess up all the room IDs.\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该房间吗？\n" + CurrentMloRoom.Name + "\n\n通常不建议删除现有的房间，因为这会打乱所有的房间 ID。\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -3864,7 +3864,7 @@ namespace CodeWalker.Project
             var mlo = CurrentMloPortal?.OwnerMlo;
             if (mlo == null) return false;
 
-            if (MessageBox.Show("Are you sure you want to delete this portal?\n" + CurrentMloPortal.Name + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该门户吗？\n" + CurrentMloPortal.Name + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -3893,7 +3893,7 @@ namespace CodeWalker.Project
             var mlo = CurrentMloEntitySet?.OwnerMlo;
             if (mlo == null) return false;
 
-            if (MessageBox.Show("Are you sure you want to delete this entity set?\n" + CurrentMloEntitySet.Name + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该实体预设吗？\n" + CurrentMloEntitySet.Name + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -4013,7 +4013,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ybn files|*.ybn", filepath);
+                    filepath = ShowSaveDialog("Ybn 文件|*.ybn", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -4214,7 +4214,7 @@ namespace CodeWalker.Project
                 CurrentYbnFile = CurrentCollisionBounds.GetRootYbn();
                 if (CurrentYbnFile == null)
                 {
-                    MessageBox.Show("Sorry, only YBN collisions can currently be added to the project. Embedded collisions TODO!");
+                    MessageBox.Show("抱歉，目前只能将 YBN 碰撞添加到项目中。嵌入式碰撞暂未支持。");
                     return;
                 }
 
@@ -4238,7 +4238,7 @@ namespace CodeWalker.Project
             if (CurrentYbnFile == null) return false;
             if (CurrentCollisionBounds.GetRootYbn() != CurrentYbnFile) return false;
 
-            if (MessageBox.Show("Are you sure you want to delete this collision bounds?\n" + CurrentCollisionBounds.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该碰撞体吗？\n" + CurrentCollisionBounds.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -4274,7 +4274,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the collision bounds. This shouldn't happen!");
+                MessageBox.Show("无法删除碰撞体，这不应该发生！");
             }
 
             var delb = CurrentCollisionBounds;
@@ -4427,7 +4427,7 @@ namespace CodeWalker.Project
                 CurrentYbnFile = CurrentCollisionPoly.Owner?.GetRootYbn();
                 if (CurrentYbnFile == null)
                 {
-                    MessageBox.Show("Sorry, only YBN collisions can currently be added to the project. Embedded collisions TODO!");
+                    MessageBox.Show("抱歉，目前只能将 YBN 碰撞添加到项目中。嵌入式碰撞暂未支持。");
                     return;
                 }
 
@@ -4473,7 +4473,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the collision poly. This shouldn't happen!");
+                MessageBox.Show("无法删除碰撞多边形，这不应该发生！");
             }
 
             var delp = CurrentCollisionPoly;
@@ -4507,7 +4507,7 @@ namespace CodeWalker.Project
                 CurrentYbnFile = CurrentCollisionVertex.Owner?.GetRootYbn();
                 if (CurrentYbnFile == null)
                 {
-                    MessageBox.Show("Sorry, only YBN collisions can currently be added to the project. Embedded collisions TODO!");
+                    MessageBox.Show("抱歉，目前只能将 YBN 碰撞添加到项目中。嵌入式碰撞暂未支持。");
                     return;
                 }
 
@@ -4553,7 +4553,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the collision vertex. This shouldn't happen!");
+                MessageBox.Show("无法删除碰撞顶点，这不应该发生！");
             }
 
             var delv = CurrentCollisionVertex;
@@ -4641,7 +4641,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ynd files|*.ynd", filepath);
+                    filepath = ShowSaveDialog("Ynd 文件|*.ynd", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -4828,7 +4828,7 @@ namespace CodeWalker.Project
 
             //if (!res)
             {
-                MessageBox.Show("Unable to delete the path node. This shouldn't happen!");
+                MessageBox.Show("无法删除路线节点，这不应该发生！");
             }
 
             var delnode = CurrentPathNode;
@@ -4927,7 +4927,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ynv files|*.ynv", filepath);
+                    filepath = ShowSaveDialog("Ynv 文件|*.ynv", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -5108,7 +5108,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Dat files|*.dat", filepath);
+                    filepath = ShowSaveDialog("Dat 文件|*.dat", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -5255,7 +5255,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the train track node. This shouldn't happen!");
+                MessageBox.Show("无法删除火车轨道节点，这不应该发生！");
             }
 
             var delnode = CurrentTrainNode;
@@ -5356,7 +5356,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("Ymt files|*.ymt", filepath);
+                    filepath = ShowSaveDialog("Ymt 文件|*.ymt", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     { return; }
 
@@ -5502,7 +5502,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unable to delete the scenario node. This shouldn't happen!");
+                MessageBox.Show("无法删除场景节点，这不应该发生！");
             }
 
             var delnode = CurrentScenarioNode;
@@ -5925,13 +5925,13 @@ namespace CodeWalker.Project
             if (rgn == null) return;
 
 
-            if (MessageBox.Show("Are you sure you want to delete this scenario chain?\n" + chain.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该场景链接吗？\n" + chain.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return;
             }
 
             bool delpoints = false;
-            if (MessageBox.Show("Delete all Scenario Points for this chain as well?", "Confirm delete points", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("是否同时删除该链接的所有场景点？", "确认删除点", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 delpoints = true;
             }
@@ -5984,13 +5984,13 @@ namespace CodeWalker.Project
             if (rgn == null) return;
 
 
-            if (MessageBox.Show("Are you sure you want to delete this scenario cluster?\n" + cluster.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该场景集群吗？\n" + cluster.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return;
             }
 
             bool delpoints = false;
-            if (MessageBox.Show("Delete all Scenario Points for this cluster as well?", "Confirm delete points", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("是否同时删除该集群的所有场景点？", "确认删除点", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 delpoints = true;
             }
@@ -6043,7 +6043,7 @@ namespace CodeWalker.Project
             if (rgn == null) return;
 
 
-            if (MessageBox.Show("Are you sure you want to delete this scenario entity override, and all its override points?\n" + entity.ToString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除此场景实体覆盖及其所有覆盖点吗？\n" + entity.ToString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return;
             }
@@ -6088,8 +6088,8 @@ namespace CodeWalker.Project
             if (rgn == null) return;
 
             TextInputForm f = new TextInputForm();
-            f.TitleText = "Import scenario chain points";
-            f.PromptText = "Input chain points in CSV (or TSV) format. Direction is in radians. NavSpeed is from 0 to 15. NavMode can be either Direct, NavMesh, or Roads. ScenarioType is the name of the scenario type to use.";
+            f.TitleText = "导入场景链接点";
+            f.PromptText = "使用 CSV (或 TSV) 格式输入场景链接点。方向以弧度为单位。 NavSpeed 的范围是 0 到 15。NavMode 可以是 Direct、NavMesh 或 Roads。ScenarioType 是要使用的场景类型的名称。";
             f.MainText = "X, Y, Z, Direction, NavSpeed, NavMode, ScenarioType, ModelSet, Flags";
             if (f.ShowDialog() == DialogResult.Cancel) return;
 
@@ -6326,7 +6326,7 @@ namespace CodeWalker.Project
                 saveas = saveas || string.IsNullOrEmpty(filepath);
                 if (saveas)
                 {
-                    filepath = ShowSaveDialog("DatRel files|*.rel", filepath);
+                    filepath = ShowSaveDialog("DatRel 文件|*.rel", filepath);
                     if (string.IsNullOrEmpty(filepath))
                     {
                         return;
@@ -6509,7 +6509,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio zone from the file!");
+                MessageBox.Show("从文件中删除音频区域时发生未指定的错误！");
             }
 
             var delzone = CurrentAudioZone;
@@ -6625,7 +6625,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio emitter from the file!");
+                MessageBox.Show("从文件中删除音频发生器时发生未指定的错误！");
             }
 
             var delem = CurrentAudioEmitter;
@@ -6697,7 +6697,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio zone list from the file!");
+                MessageBox.Show("从文件中删除音频区域列表时发生未指定的错误！");
             }
 
             var delzl = CurrentAudioZoneList;
@@ -6764,7 +6764,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio emitter list from the file!");
+                MessageBox.Show("从文件中删除音频发生器列表时发生未指定的错误！");
             }
 
             var delel = CurrentAudioEmitterList;
@@ -6813,7 +6813,7 @@ namespace CodeWalker.Project
             if (CurrentAudioFile?.RelDatasSorted == null) return false; //nothing to delete..
 
 
-            if (MessageBox.Show("Are you sure you want to delete this audio interior?\n" + CurrentAudioInterior.GetNameString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该音频内饰吗？\n" + CurrentAudioInterior.GetNameString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -6833,7 +6833,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio interior from the file!");
+                MessageBox.Show("从文件中删除音频内饰时发生未指定的错误！");
             }
 
             var delel = CurrentAudioInterior;
@@ -6884,7 +6884,7 @@ namespace CodeWalker.Project
             if (CurrentAudioFile?.RelDatasSorted == null) return false; //nothing to delete..
 
 
-            if (MessageBox.Show("Are you sure you want to delete this audio interior room?\n" + CurrentAudioInteriorRoom.GetNameString() + "\n\nThis operation cannot be undone. Continue?", "Confirm delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (MessageBox.Show("您确定要删除该音频内饰房间吗？\n" + CurrentAudioInteriorRoom.GetNameString() + "\n\n此操作不可撤销，是否继续？", "确认删除", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 return true;
             }
@@ -6904,7 +6904,7 @@ namespace CodeWalker.Project
             }
             if (!res)
             {
-                MessageBox.Show("Unspecified error occurred when removing the audio interior from the file!");
+                MessageBox.Show("从文件中删除音频内饰时发生未指定的错误！");
             }
 
             var delel = CurrentAudioInteriorRoom;
@@ -8768,7 +8768,7 @@ namespace CodeWalker.Project
         {
             if (CurrentProjectFile == null)
             {
-                Text = "Project - CodeWalker by dexyfex";
+                Text = "项目 - CodeWalker by dexyfex";
             }
             else
             {
@@ -8827,7 +8827,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YmapNameMenu.Text = "(No .ymap file selected)";
+                YmapNameMenu.Text = "(未选择 .ymap 文件)";
             }
 
             YmapAddToProjectMenu.Enabled = enable && !inproj;
@@ -8882,7 +8882,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YtypNameMenu.Text = "(No .ytyp file selected)";
+                YtypNameMenu.Text = "(未选择 .ytyp 文件)";
             }
 
             YtypAddToProjectMenu.Enabled = enable && !inproj;
@@ -8908,7 +8908,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YbnNameMenu.Text = "(No .ybn file selected)";
+                YbnNameMenu.Text = "(未选择 .ybn 文件)";
             }
 
             YbnAddToProjectMenu.Enabled = enable && !inproj;
@@ -8933,7 +8933,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YndNameMenu.Text = "(No .ynd file selected)";
+                YndNameMenu.Text = "(未选择 .ynd 文件)";
             }
 
             YndAddToProjectMenu.Enabled = enable && !inproj;
@@ -8958,7 +8958,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YnvNameMenu.Text = "(No .ynv file selected)";
+                YnvNameMenu.Text = "(未选择 .ynv 文件)";
             }
 
             YnvAddToProjectMenu.Enabled = enable && !inproj;
@@ -8983,7 +8983,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                TrainsNameMenu.Text = "(No train track selected)";
+                TrainsNameMenu.Text = "(未选择火车轨道文件)";
             }
 
             TrainsAddToProjectMenu.Enabled = enable && !inproj;
@@ -9013,7 +9013,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                ScenarioNameMenu.Text = "(No scenario region selected)";
+                ScenarioNameMenu.Text = "(未选择场景区域文件)";
             }
 
             ScenarioAddToProjectMenu.Enabled = enable && !inproj;
@@ -9043,7 +9043,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                AudioNameMenu.Text = "(No audio dat file selected)";
+                AudioNameMenu.Text = "(未选择音频 dat 文件)";
             }
 
             AudioAddToProjectMenu.Enabled = enable && !inproj;
@@ -9066,7 +9066,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YdrNameMenu.Text = "(No .ydr file selected)";
+                YdrNameMenu.Text = "(未选择 .ydr 文件)";
             }
 
             //YdrAddToProjectMenu.Enabled = enable && !inproj;
@@ -9084,7 +9084,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YddNameMenu.Text = "(No .ydd file selected)";
+                YddNameMenu.Text = "(未选择 .ydd 文件)";
             }
 
             //YddAddToProjectMenu.Enabled = enable && !inproj;
@@ -9102,7 +9102,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YftNameMenu.Text = "(No .yft file selected)";
+                YftNameMenu.Text = "(未选择 .yft 文件)";
             }
 
             //YftAddToProjectMenu.Enabled = enable && !inproj;
@@ -9120,7 +9120,7 @@ namespace CodeWalker.Project
             }
             else
             {
-                YtdNameMenu.Text = "(No .ytd file selected)";
+                YtdNameMenu.Text = "(未选择 .ytd 文件)";
             }
 
             //YtdAddToProjectMenu.Enabled = enable && !inproj;
@@ -9169,15 +9169,15 @@ namespace CodeWalker.Project
 
             if (enable)
             {
-                FileSaveItemMenu.Text = "Save " + filename;
-                FileSaveItemAsMenu.Text = "Save " + filename + " As...";
-                ToolbarSaveButton.Text = "Save " + filename;
+                FileSaveItemMenu.Text = "保存 " + filename;
+                FileSaveItemAsMenu.Text = "另存为 " + filename + " 到...";
+                ToolbarSaveButton.Text = "保存 " + filename;
             }
             else
             {
-                FileSaveItemMenu.Text = "Save";
-                FileSaveItemAsMenu.Text = "Save As...";
-                ToolbarSaveButton.Text = "Save";
+                FileSaveItemMenu.Text = "保存";
+                FileSaveItemAsMenu.Text = "另存为...";
+                ToolbarSaveButton.Text = "保存";
             }
 
             FileSaveItemMenu.Tag = filename;
@@ -9247,12 +9247,12 @@ namespace CodeWalker.Project
         {
             if (CurrentProjectFile != null)
             {
-                var msg = "Are you sure you want to close the project window?";
-                var tit = "Confirm close";
+                var msg = "您确定要关闭项目窗口吗？";
+                var tit = "确认关闭";
                 if (e.CloseReason == CloseReason.FormOwnerClosing)
                 {
-                    msg = "Are you sure you want to quit CodeWalker?";
-                    tit = "Confirm quit";
+                    msg = "您确定要退出 CodeWalker 吗？";
+                    tit = "确认退出";
                 }
                 if (MessageBox.Show(msg, tit, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {

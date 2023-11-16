@@ -54,7 +54,7 @@ namespace CodeWalker.Utils
         {
             if(!GTAFolder.ValidateGTAFolder(SelectedFolder, out string failReason))
             {
-                MessageBox.Show("The selected folder could not be used:\n\n" + failReason, "Invalid GTA Folder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("所选择的目录无法使用：\n\n" + failReason, "无效的 GTA5 目录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.brushModeGroupBox = new System.Windows.Forms.GroupBox();
+            this.brushDeleteProjectRadio = new System.Windows.Forms.RadioButton();
+            this.brushDeleteBatchRadio = new System.Windows.Forms.RadioButton();
             this.brushDeleteAnyRadio = new System.Windows.Forms.RadioButton();
             this.brushDeleteYmapRadio = new System.Windows.Forms.RadioButton();
             this.brushDisabledRadio = new System.Windows.Forms.RadioButton();
@@ -36,10 +38,8 @@
             this.RadiusNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.radiusLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.brushDeleteBatchRadio = new System.Windows.Forms.RadioButton();
             this.currentYmapTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.brushDeleteProjectRadio = new System.Windows.Forms.RadioButton();
             this.brushModeGroupBox.SuspendLayout();
             this.brushSettingsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusNumericUpDown)).BeginInit();
@@ -52,43 +52,70 @@
             this.brushModeGroupBox.Controls.Add(this.brushDeleteAnyRadio);
             this.brushModeGroupBox.Controls.Add(this.brushDeleteYmapRadio);
             this.brushModeGroupBox.Controls.Add(this.brushDisabledRadio);
-            this.brushModeGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.brushModeGroupBox.Location = new System.Drawing.Point(14, 16);
+            this.brushModeGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.brushModeGroupBox.Name = "brushModeGroupBox";
-            this.brushModeGroupBox.Size = new System.Drawing.Size(187, 138);
+            this.brushModeGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.brushModeGroupBox.Size = new System.Drawing.Size(218, 180);
             this.brushModeGroupBox.TabIndex = 70;
             this.brushModeGroupBox.TabStop = false;
-            this.brushModeGroupBox.Text = "Delete Grass Brush Mode";
+            this.brushModeGroupBox.Text = "删除实例草笔刷模式";
+            // 
+            // brushDeleteProjectRadio
+            // 
+            this.brushDeleteProjectRadio.AutoSize = true;
+            this.brushDeleteProjectRadio.Location = new System.Drawing.Point(19, 113);
+            this.brushDeleteProjectRadio.Margin = new System.Windows.Forms.Padding(4);
+            this.brushDeleteProjectRadio.Name = "brushDeleteProjectRadio";
+            this.brushDeleteProjectRadio.Size = new System.Drawing.Size(175, 21);
+            this.brushDeleteProjectRadio.TabIndex = 6;
+            this.brushDeleteProjectRadio.Text = "从所有项目的 Ymap 中删除";
+            this.brushDeleteProjectRadio.UseVisualStyleBackColor = true;
+            // 
+            // brushDeleteBatchRadio
+            // 
+            this.brushDeleteBatchRadio.AutoSize = true;
+            this.brushDeleteBatchRadio.Location = new System.Drawing.Point(19, 57);
+            this.brushDeleteBatchRadio.Margin = new System.Windows.Forms.Padding(4);
+            this.brushDeleteBatchRadio.Name = "brushDeleteBatchRadio";
+            this.brushDeleteBatchRadio.Size = new System.Drawing.Size(122, 21);
+            this.brushDeleteBatchRadio.TabIndex = 5;
+            this.brushDeleteBatchRadio.Text = "从该实例组中删除";
+            this.brushDeleteBatchRadio.UseVisualStyleBackColor = true;
             // 
             // brushDeleteAnyRadio
             // 
             this.brushDeleteAnyRadio.AutoSize = true;
-            this.brushDeleteAnyRadio.Location = new System.Drawing.Point(16, 109);
+            this.brushDeleteAnyRadio.Location = new System.Drawing.Point(19, 143);
+            this.brushDeleteAnyRadio.Margin = new System.Windows.Forms.Padding(4);
             this.brushDeleteAnyRadio.Name = "brushDeleteAnyRadio";
-            this.brushDeleteAnyRadio.Size = new System.Drawing.Size(122, 17);
+            this.brushDeleteAnyRadio.Size = new System.Drawing.Size(139, 21);
             this.brushDeleteAnyRadio.TabIndex = 4;
-            this.brushDeleteAnyRadio.Text = "Delete In A&ny YMAP";
+            this.brushDeleteAnyRadio.Text = "从所有 Ymap 中删除";
             this.brushDeleteAnyRadio.UseVisualStyleBackColor = true;
             // 
             // brushDeleteYmapRadio
             // 
             this.brushDeleteYmapRadio.AutoSize = true;
-            this.brushDeleteYmapRadio.Location = new System.Drawing.Point(16, 65);
+            this.brushDeleteYmapRadio.Location = new System.Drawing.Point(19, 85);
+            this.brushDeleteYmapRadio.Margin = new System.Windows.Forms.Padding(4);
             this.brushDeleteYmapRadio.Name = "brushDeleteYmapRadio";
-            this.brushDeleteYmapRadio.Size = new System.Drawing.Size(124, 17);
+            this.brushDeleteYmapRadio.Size = new System.Drawing.Size(127, 21);
             this.brushDeleteYmapRadio.TabIndex = 3;
-            this.brushDeleteYmapRadio.Text = "Delete In This &YMAP";
+            this.brushDeleteYmapRadio.Text = "从该 Ymap 中删除";
             this.brushDeleteYmapRadio.UseVisualStyleBackColor = true;
             // 
             // brushDisabledRadio
             // 
             this.brushDisabledRadio.AutoSize = true;
             this.brushDisabledRadio.Checked = true;
-            this.brushDisabledRadio.Location = new System.Drawing.Point(16, 21);
+            this.brushDisabledRadio.Location = new System.Drawing.Point(19, 27);
+            this.brushDisabledRadio.Margin = new System.Windows.Forms.Padding(4);
             this.brushDisabledRadio.Name = "brushDisabledRadio";
-            this.brushDisabledRadio.Size = new System.Drawing.Size(66, 17);
+            this.brushDisabledRadio.Size = new System.Drawing.Size(50, 21);
             this.brushDisabledRadio.TabIndex = 0;
             this.brushDisabledRadio.TabStop = true;
-            this.brushDisabledRadio.Text = "&Disabled";
+            this.brushDisabledRadio.Text = "&禁用";
             this.brushDisabledRadio.UseVisualStyleBackColor = true;
             // 
             // brushSettingsGroupBox
@@ -96,12 +123,14 @@
             this.brushSettingsGroupBox.Controls.Add(this.RadiusNumericUpDown);
             this.brushSettingsGroupBox.Controls.Add(this.radiusLabel);
             this.brushSettingsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brushSettingsGroupBox.Location = new System.Drawing.Point(221, 13);
+            this.brushSettingsGroupBox.Location = new System.Drawing.Point(258, 17);
+            this.brushSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.brushSettingsGroupBox.Name = "brushSettingsGroupBox";
-            this.brushSettingsGroupBox.Size = new System.Drawing.Size(140, 59);
+            this.brushSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.brushSettingsGroupBox.Size = new System.Drawing.Size(163, 76);
             this.brushSettingsGroupBox.TabIndex = 71;
             this.brushSettingsGroupBox.TabStop = false;
-            this.brushSettingsGroupBox.Text = "Delete Brush Settings";
+            this.brushSettingsGroupBox.Text = "删除笔刷设置";
             // 
             // RadiusNumericUpDown
             // 
@@ -111,9 +140,10 @@
             0,
             0,
             65536});
-            this.RadiusNumericUpDown.Location = new System.Drawing.Point(52, 28);
+            this.RadiusNumericUpDown.Location = new System.Drawing.Point(61, 37);
+            this.RadiusNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.RadiusNumericUpDown.Name = "RadiusNumericUpDown";
-            this.RadiusNumericUpDown.Size = new System.Drawing.Size(65, 20);
+            this.RadiusNumericUpDown.Size = new System.Drawing.Size(76, 23);
             this.RadiusNumericUpDown.TabIndex = 11;
             this.RadiusNumericUpDown.Value = new decimal(new int[] {
             5,
@@ -124,73 +154,58 @@
             // radiusLabel
             // 
             this.radiusLabel.AutoSize = true;
-            this.radiusLabel.Location = new System.Drawing.Point(6, 30);
+            this.radiusLabel.Location = new System.Drawing.Point(7, 40);
+            this.radiusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.radiusLabel.Name = "radiusLabel";
-            this.radiusLabel.Size = new System.Drawing.Size(40, 13);
+            this.radiusLabel.Size = new System.Drawing.Size(32, 17);
             this.radiusLabel.TabIndex = 10;
-            this.radiusLabel.Text = "Radius";
+            this.radiusLabel.Text = "范围";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 163);
+            this.label1.Location = new System.Drawing.Point(14, 212);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(397, 48);
+            this.label1.Size = new System.Drawing.Size(463, 51);
             this.label1.TabIndex = 72;
-            this.label1.Text = "Hold CTRL to use delete brush. In \"Any YMAP\" mode new YMAPs will be automatically" +
-    " added to the project.";
-            // 
-            // brushDeleteBatchRadio
-            // 
-            this.brushDeleteBatchRadio.AutoSize = true;
-            this.brushDeleteBatchRadio.Location = new System.Drawing.Point(16, 43);
-            this.brushDeleteBatchRadio.Name = "brushDeleteBatchRadio";
-            this.brushDeleteBatchRadio.Size = new System.Drawing.Size(122, 17);
-            this.brushDeleteBatchRadio.TabIndex = 5;
-            this.brushDeleteBatchRadio.Text = "Delete In This &Batch";
-            this.brushDeleteBatchRadio.UseVisualStyleBackColor = true;
+            this.label1.Text = "按住 CTRL 来使用删除笔刷。在 “所有 Ymap” 模式下，被删除的实例草所在的 Ymap 文件会自动添加到当前项目中。";
             // 
             // currentYmapTextBox
             // 
             this.currentYmapTextBox.Enabled = false;
-            this.currentYmapTextBox.Location = new System.Drawing.Point(221, 118);
+            this.currentYmapTextBox.Location = new System.Drawing.Point(258, 154);
+            this.currentYmapTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.currentYmapTextBox.Name = "currentYmapTextBox";
             this.currentYmapTextBox.ReadOnly = true;
-            this.currentYmapTextBox.Size = new System.Drawing.Size(188, 20);
+            this.currentYmapTextBox.Size = new System.Drawing.Size(219, 23);
             this.currentYmapTextBox.TabIndex = 73;
             this.currentYmapTextBox.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 102);
+            this.label2.Location = new System.Drawing.Point(254, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 74;
-            this.label2.Text = "Current YMAP";
+            this.label2.Text = "当前 YMAP";
             this.label2.Visible = false;
-            // 
-            // brushDeleteProjectRadio
-            // 
-            this.brushDeleteProjectRadio.AutoSize = true;
-            this.brushDeleteProjectRadio.Location = new System.Drawing.Point(16, 87);
-            this.brushDeleteProjectRadio.Name = "brushDeleteProjectRadio";
-            this.brushDeleteProjectRadio.Size = new System.Drawing.Size(158, 17);
-            this.brushDeleteProjectRadio.TabIndex = 6;
-            this.brushDeleteProjectRadio.Text = "Delete In Any &Project YMAP";
-            this.brushDeleteProjectRadio.UseVisualStyleBackColor = true;
             // 
             // DeleteGrassPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 228);
+            this.ClientSize = new System.Drawing.Size(502, 265);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.currentYmapTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.brushSettingsGroupBox);
             this.Controls.Add(this.brushModeGroupBox);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DeleteGrassPanel";
-            this.Text = "Delete Grass Instances";
+            this.Text = "删除实例草";
             this.brushModeGroupBox.ResumeLayout(false);
             this.brushModeGroupBox.PerformLayout();
             this.brushSettingsGroupBox.ResumeLayout(false);

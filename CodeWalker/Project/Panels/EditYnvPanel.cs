@@ -66,19 +66,19 @@ namespace CodeWalker.Project.Panels
                 YnvProjectPathTextBox.Text = string.Empty;
                 YnvAreaIDXUpDown.Value = 0;
                 YnvAreaIDYUpDown.Value = 0;
-                YnvAreaIDInfoLabel.Text = "ID: -";
+                YnvAreaIDInfoLabel.Text = "ID：-";
                 YnvAABBSizeTextBox.Text = string.Empty;
                 YnvFlagsPolygonsCheckBox.Checked = false;
                 YnvFlagsPortalsCheckBox.Checked = false;
                 YnvFlagsVehicleCheckBox.Checked = false;
                 YnvFlagsUnknown8CheckBox.Checked = false;
                 YnvFlagsUnknown16CheckBox.Checked = false;
-                YnvVertexCountLabel.Text = "Vertex count: -";
-                YnvPolyCountLabel.Text = "Poly count: -";
-                YnvPortalCountLabel.Text = "Portal count: -";
-                YnvPortalLinkCountLabel.Text = "Portal link count: -";
-                YnvPointCountLabel.Text = "Sector unk count: -";
-                YnvByteCountLabel.Text = "Byte count: -";
+                YnvVertexCountLabel.Text = "顶点数量：-";
+                YnvPolyCountLabel.Text = "多边形数量：-";
+                YnvPortalCountLabel.Text = "门户数量：-";
+                YnvPortalLinkCountLabel.Text = "门户链接数量：-";
+                YnvPointCountLabel.Text = "扇区未知数量：-";
+                YnvByteCountLabel.Text = "字节数量：-";
                 YnvVersionUnkHashTextBox.Text = string.Empty;
             }
             else
@@ -90,19 +90,19 @@ namespace CodeWalker.Project.Panels
                 YnvProjectPathTextBox.Text = (Ynv != null) ? ProjectForm.CurrentProjectFile.GetRelativePath(Ynv.FilePath) : Ynv.FilePath;
                 YnvAreaIDXUpDown.Value = Ynv.CellX;
                 YnvAreaIDYUpDown.Value = Ynv.CellY;
-                YnvAreaIDInfoLabel.Text = "ID: " + Ynv.AreaID.ToString();
+                YnvAreaIDInfoLabel.Text = "ID：" + Ynv.AreaID.ToString();
                 YnvAABBSizeTextBox.Text = FloatUtil.GetVector3String(nv.AABBSize);
                 YnvFlagsPolygonsCheckBox.Checked = nv.ContentFlags.HasFlag(NavMeshFlags.Polygons);
                 YnvFlagsPortalsCheckBox.Checked = nv.ContentFlags.HasFlag(NavMeshFlags.Portals);
                 YnvFlagsVehicleCheckBox.Checked = nv.ContentFlags.HasFlag(NavMeshFlags.Vehicle);
                 YnvFlagsUnknown8CheckBox.Checked = nv.ContentFlags.HasFlag(NavMeshFlags.Unknown8);
                 YnvFlagsUnknown16CheckBox.Checked = nv.ContentFlags.HasFlag(NavMeshFlags.Unknown16);
-                YnvVertexCountLabel.Text = "Vertex count: " + nv.VerticesCount.ToString();
-                YnvPolyCountLabel.Text = "Poly count: " + nv.PolysCount.ToString();
-                YnvPortalCountLabel.Text = "Portal count: " + nv.PortalsCount.ToString();
-                YnvPortalLinkCountLabel.Text = "Portal link count: " + nv.PortalLinksCount.ToString();
-                YnvPointCountLabel.Text = "Point count: " + nv.PointsCount.ToString();
-                YnvByteCountLabel.Text = "Byte count: " + nv.TotalBytes.ToString();
+                YnvVertexCountLabel.Text = "顶点数量：" + nv.VerticesCount.ToString();
+                YnvPolyCountLabel.Text = "多边形数量：" + nv.PolysCount.ToString();
+                YnvPortalCountLabel.Text = "门户数量：" + nv.PortalsCount.ToString();
+                YnvPortalLinkCountLabel.Text = "门户链接数量：" + nv.PortalLinksCount.ToString();
+                YnvPointCountLabel.Text = "点数量：" + nv.PointsCount.ToString();
+                YnvByteCountLabel.Text = "字节数量：" + nv.TotalBytes.ToString();
                 YnvVersionUnkHashTextBox.Text = nv.VersionUnk2.Hash.ToString();
                 YnvAdjAreaIDsTextBox.Text = GetAdjAreaIDsString(nv.AdjAreaIDs.Values);
                 populatingui = false;
@@ -149,7 +149,7 @@ namespace CodeWalker.Project.Panels
                 {
                     Ynv.AreaID = areaid;
                     //Ynv.Name = "nodes" + areaid.ToString() + ".ynd";
-                    YnvAreaIDInfoLabel.Text = "ID: " + areaid.ToString();
+                    YnvAreaIDInfoLabel.Text = "ID：" + areaid.ToString();
                     ProjectForm.SetYnvHasChanged(true);
                 }
             }

@@ -62,7 +62,7 @@ namespace CodeWalker.Forms
         private void UpdateFormTitle()
         {
             string ro = "";// " [Read-Only]";
-            Text = fileName + " - Meta Editor" + ro + " - CodeWalker by dexyfex";
+            Text = fileName + " - 元数据编辑器" + ro + " - CodeWalker by dexyfex";
         }
 
         private void UpdateTextBoxFromData()
@@ -112,7 +112,7 @@ namespace CodeWalker.Forms
         {
             if (modified)
             {
-                var res = MessageBox.Show("Do you want to save the current document before closing it?", "Save before closing", MessageBoxButtons.YesNoCancel);
+                var res = MessageBox.Show("您有未保存的更改，是否现在保存它们？", "关闭前保存", MessageBoxButtons.YesNoCancel);
                 switch (res)
                 {
                     case DialogResult.Yes:
@@ -172,7 +172,7 @@ namespace CodeWalker.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There's something wrong with your XML document:\r\n" + ex.Message, "Unable to parse XML");
+                    MessageBox.Show("您的 XML 文档内容存在错误：\r\n" + ex.Message, "无法解析 XML");
                     return;
                 }
                 if (SaveMeta(doc))
@@ -441,7 +441,7 @@ namespace CodeWalker.Forms
 
                 if (data == null)
                 {
-                    MessageBox.Show("Schema not supported.", "Cannot import " + XmlMeta.GetXMLFormatName(metaFormat));
+                    MessageBox.Show("不支持的文档格式。", "无法导入 " + XmlMeta.GetXMLFormatName(metaFormat));
                     return false;
                 }
 
@@ -458,7 +458,7 @@ namespace CodeWalker.Forms
             {
                 if (!rpfFileEntry.Path.ToLowerInvariant().StartsWith("mods"))
                 {
-                    if (MessageBox.Show("This file is NOT located in the mods folder - Are you SURE you want to save this file?\r\nWARNING: This could cause permanent damage to your game!!!", "WARNING: Are you sure about this?", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    if (MessageBox.Show("该文件不在 mods 目录内，您确定要保存该文件吗？\r\n警告：请谨慎操作，这可能会导致你的游戏损坏！！！", "警告：直接编辑游戏文件", MessageBoxButtons.YesNo) != DialogResult.Yes)
                     {
                         return false;//that was a close one
                     }
@@ -477,13 +477,13 @@ namespace CodeWalker.Forms
 
                     modified = false;
 
-                    StatusLabel.Text = metaFormat.ToString() + " file saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = metaFormat.ToString() + " 文件已经成功保存于 " + DateTime.Now.ToString();
 
                     return true; //victory!
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file to RPF! The RPF archive may be corrupted...\r\n" + ex.ToString(), "Really Bad Error");
+                    MessageBox.Show("无法保存文件到 RPF 存档内！RPF 存档文件可能已损坏...\r\n" + ex.ToString(), "发生读写错误");
                 }
             }
             else if (!string.IsNullOrEmpty(rpfFileEntry?.Path))
@@ -496,13 +496,13 @@ namespace CodeWalker.Forms
 
                     modified = false;
 
-                    StatusLabel.Text = metaFormat.ToString() + " file saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = metaFormat.ToString() + " 文件已成功保存于 " + DateTime.Now.ToString();
 
                     return true; //victory!
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file to filesystem!\r\n" + ex.ToString(), "File I/O Error");
+                    MessageBox.Show("无法写入文件内容！\r\n" + ex.ToString(), "读写发生 I/O 错误");
                 }
             }
 

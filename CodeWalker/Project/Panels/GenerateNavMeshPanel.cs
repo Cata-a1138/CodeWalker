@@ -32,7 +32,7 @@ namespace CodeWalker.Project.Panels
             {
                 //could happen in some other startup mode - world form is required for this..
                 GenerateButton.Enabled = false;
-                UpdateStatus("Unable to generate - World View not available!");
+                UpdateStatus("无法生成：世界视图不可用！请确保世界预览视图已经打开并完成加载！");
             }
         }
 
@@ -56,13 +56,13 @@ namespace CodeWalker.Project.Panels
 
             if (min == max)
             {
-                MessageBox.Show("Unable to generate - No valid area was specified!\nMake sure Min and Max form a box around the area you want to generate the nav meshes for.");
+                MessageBox.Show("无法生成：未指定有效区域！\n确保最小和最大参数在要为其生成寻路网格的区域周围形成一个框。");
                 return;
             }
 
             if ((min.X < -6000) || (min.Y < -6000) || (max.X > 9000) || (max.Y > 9000))//it's over 9000
             {
-                if (MessageBox.Show("Warning: min/max goes outside the possible navmesh area - valid range is from -6000 to 9000 (X and Y).\nDo you want to continue anyway?", "Warning - specified area out of range", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("警告：最小/最大超出可能的导航网格区域，有效范围为 -6000 到 9000（X 和 Y）。\n是否仍要继续？", "警告：指定区域超出范围", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -119,7 +119,7 @@ namespace CodeWalker.Project.Panels
 
                 Ray ray = new Ray(Vector3.Zero, new Vector3(0, 0, -1));//for casting with
 
-                UpdateStatus("Loading YBNs...");
+                UpdateStatus("正在加载 YBN...");
 
                 var bmin = new Vector3(min, 0);
                 var bmax = new Vector3(max, 0);
@@ -133,14 +133,14 @@ namespace CodeWalker.Project.Panels
                     { continue; } //ybn not found?
                     if (!ybn.Loaded) //ybn not loaded yet...
                     {
-                        UpdateStatus("Loading ybn: " + boundsitem.Name.ToString() + " ...");
+                        UpdateStatus("正在加载 ybn: " + boundsitem.Name.ToString() + " ...");
                         int waitCount = 0;
                         while (!ybn.Loaded)
                         {
                             waitCount++;
                             if (waitCount > 10000)
                             {
-                                UpdateStatus("Timeout waiting for ybn " + boundsitem.Name.ToString() + " to load!");
+                                UpdateStatus("尝试加载 ybn " + boundsitem.Name.ToString() + " 文件超时！");
                                 Thread.Sleep(1000); //just to let the message display for a second...
                                 break;
                             }
@@ -160,7 +160,7 @@ namespace CodeWalker.Project.Panels
                 //ray-cast each XY vertex position, and find the height and surface from ybn's
                 //continue casting down to find more surfaces...
 
-                UpdateStatus("Processing...");
+                UpdateStatus("处理中...");
 
                 for (int vx = 0; vx < vertexCountX; vx++)
                 {
@@ -235,7 +235,7 @@ namespace CodeWalker.Project.Panels
 
 
                 //try merge generated polys into bigger ones, while keeping convex!
-                UpdateStatus("Building edge dictionary...");
+                UpdateStatus("正在构建边缘字典...");
                 var edgeDict = new Dictionary<GenEdgeKey, GenEdge>();
                 var tryGetEdge = new Func<Vector3, Vector3, GenEdge>((v1, v2) => 
                 {
@@ -283,7 +283,7 @@ namespace CodeWalker.Project.Panels
                 });
                 buildEdgeDict();
 
-                UpdateStatus("Merging polygons...");
+                UpdateStatus("合并多边形中...");
                 float plthresh = 0.3f;//threshold for plane dist test
                 float dpthresh = 0.75f;//threshold for plane normals test
                 float dthresh = 6.0f;//absolute distance thresh
@@ -431,7 +431,7 @@ namespace CodeWalker.Project.Panels
                 polys = mergedPolys;
 
                 
-                UpdateStatus("Merging edges...");
+                UpdateStatus("合并边缘中...");
                 edgeDict = new Dictionary<GenEdgeKey, GenEdge>();
                 buildEdgeDict();
                 float dpthresh1 = 0.5f;
@@ -492,7 +492,7 @@ namespace CodeWalker.Project.Panels
 
 
                 
-                UpdateStatus("Convexifying polygons...");
+                UpdateStatus("正在处理多边形...");
                 mergedPolys = new List<GenPoly>();
                 var getAngle = new Func<GenPoly, int, int, float>((poly, i1, i2) => 
                 {
@@ -761,7 +761,7 @@ namespace CodeWalker.Project.Panels
 
 
 
-                UpdateStatus("Building YNVs...");
+                UpdateStatus("正在构建 YNV...");
                 foreach (var poly in polys)
                 {
                     if (poly.Vertices == null) continue;
@@ -789,7 +789,7 @@ namespace CodeWalker.Project.Panels
 
 
 
-                UpdateStatus("Creating YNV files...");
+                UpdateStatus("正在创建 YNV 文件...");
 
                 var path = ProjectForm.CurrentProjectFile?.GetFullFilePath("navmeshes") + "\\";
                 foreach (var ynv in ynvs)
@@ -814,9 +814,9 @@ namespace CodeWalker.Project.Panels
 
 
 
-                var statf = "{0} hit tests, {1} hits, {2} new polys";
+                var statf = "进行了 {0} 次射线测试，击中 {1} 次，创建了 {2} 个多边形。";
                 var stats = string.Format(statf, hitTestCount, hitCount, newCount);
-                UpdateStatus("Process complete. " + stats);
+                UpdateStatus("处理已完成，" + stats);
                 GenerateComplete();
             });
         }

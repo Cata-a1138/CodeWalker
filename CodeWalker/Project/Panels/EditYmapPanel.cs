@@ -62,10 +62,10 @@ namespace CodeWalker.Project.Panels
         {
             if (Ymap == null)
             {
-                YmapNameTextBox.Text = "<No ymap selected>";
-                YmapNameHashLabel.Text = "Hash: 0";
+                YmapNameTextBox.Text = "<未选择 ymap>";
+                YmapNameHashLabel.Text = "哈希：0";
                 YmapParentTextBox.Text = string.Empty;
-                YmapParentHashLabel.Text = "Hash: 0";
+                YmapParentHashLabel.Text = "哈希：0";
                 YmapFlagsTextBox.Text = string.Empty;
                 YmapContentFlagsTextBox.Text = string.Empty;
                 YmapCFlagsHDCheckBox.Checked = false;
@@ -103,9 +103,9 @@ namespace CodeWalker.Project.Panels
                 var project = ProjectForm?.CurrentProjectFile;
 
                 YmapNameTextBox.Text = md.name.ToString();
-                YmapNameHashLabel.Text = "Hash: " + md.name.Hash.ToString();
+                YmapNameHashLabel.Text = "哈希：" + md.name.Hash.ToString();
                 YmapParentTextBox.Text = md.parent.ToString();
-                YmapParentHashLabel.Text = "Hash: " + md.parent.Hash.ToString();
+                YmapParentHashLabel.Text = "哈希：" + md.parent.Hash.ToString();
                 YmapEntitiesExtentsMinTextBox.Text = FloatUtil.GetVector3String(md.entitiesExtentsMin);
                 YmapEntitiesExtentsMaxTextBox.Text = FloatUtil.GetVector3String(md.entitiesExtentsMax);
                 YmapStreamingExtentsMinTextBox.Text = FloatUtil.GetVector3String(md.streamingExtentsMin);
@@ -120,8 +120,8 @@ namespace CodeWalker.Project.Panels
                 populatingui = false;
 
                 ////struct CMapData:
-                //MetaHash name { get; set; } //8   8: Hash: 0: name
-                //MetaHash parent { get; set; } //12   12: Hash: 0: parent
+                //MetaHash name { get; set; } //8   8: 哈希：0: name
+                //MetaHash parent { get; set; } //12   12: 哈希：0: parent
                 //uint flags { get; set; } //16   16: UnsignedInt: 0: flags
                 //uint contentFlags { get; set; } //20   20: UnsignedInt: 0: contentFlags//1785155637
                 //Vector3 streamingExtentsMin { get; set; } //32   32: Float_XYZ: 0: streamingExtentsMin//3710026271
@@ -132,7 +132,7 @@ namespace CodeWalker.Project.Panels
                 //Array_Structure containerLods { get; set; } //112   112: Array: 0: containerLods//2935983381  {0: Structure: 372253349: 256}
                 //Array_Structure boxOccluders { get; set; } //128   128: Array: 0: boxOccluders//3983590932  {0: Structure: SectionUNKNOWN7: 256}
                 //Array_Structure occludeModels { get; set; } //144   144: Array: 0: occludeModels//2132383965  {0: Structure: SectionUNKNOWN5: 256}
-                //Array_uint physicsDictionaries { get; set; } //160   160: Array: 0: physicsDictionaries//949589348  {0: Hash: 0: 256}
+                //Array_uint physicsDictionaries { get; set; } //160   160: Array: 0: physicsDictionaries//949589348  {0: 哈希：0: 256}
                 //rage__fwInstancedMapData instancedData { get; set; } //176   176: Structure: rage__fwInstancedMapData: instancedData//2569067561
                 //Array_Structure timeCycleModifiers { get; set; } //224   224: Array: 0: timeCycleModifiers  {0: Structure: CTimeCycleModifier: 256}
                 //Array_Structure carGenerators { get; set; } //240   240: Array: 0: carGenerators//3254823756  {0: Structure: CCarGen: 256}
@@ -356,7 +356,7 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            YmapNameHashLabel.Text = "Hash: " + hash.ToString();
+            YmapNameHashLabel.Text = "哈希：" + hash.ToString();
 
             if (Ymap != null)
             {
@@ -383,14 +383,14 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            YmapParentHashLabel.Text = "Hash: " + hash.ToString();
+            YmapParentHashLabel.Text = "哈希：" + hash.ToString();
 
             if (hash != 0)
             {
                 var entry = ProjectForm.FindParentYmapEntry(hash);
                 if (entry == null)
                 {
-                    YmapParentHashLabel.Text += " (not found!)";
+                    YmapParentHashLabel.Text += " (未找到！)";
                 }
             }
 
@@ -558,6 +558,10 @@ namespace CodeWalker.Project.Panels
         private void YmapPhysicsDictionariesTextBox_TextChanged(object sender, EventArgs e)
         {
             SetYmapPhysicsDictionariesFromTextbox();
+        }
+
+        private void label6_Click(object sender, EventArgs e) {
+
         }
     }
 }

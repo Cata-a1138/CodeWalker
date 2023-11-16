@@ -36,7 +36,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = CurrentArchetype?.Name ?? "Edit Archetype";
+            Text = CurrentArchetype?.Name ?? "编辑定义类型";
         }
 
         private void UpdateControls()
@@ -157,7 +157,7 @@ namespace CodeWalker.Project.Panels
                 // Embedded...
                 if (TextureDictTextBox.Text == ArchetypeNameTextBox.Text)
                 {
-                    TextureDictHashLabel.Text = "Embedded";
+                    TextureDictHashLabel.Text = "嵌入";
                     CurrentArchetype._BaseArchetypeDef.textureDictionary = CurrentArchetype._BaseArchetypeDef.name;
                     return;
                 }
@@ -173,14 +173,14 @@ namespace CodeWalker.Project.Panels
                     var ytd = ProjectForm.GameFileCache.GetYtd(hash);
                     if (ytd == null)
                     {
-                        TextureDictHashLabel.Text = "Hash: " + hash.ToString() + " (invalid)";
+                        TextureDictHashLabel.Text = "哈希：" + hash.ToString() + " (无效)";
                         ProjectForm.SetYtypHasChanged(true);
                         return;
                     }
                     CurrentArchetype._BaseArchetypeDef.textureDictionary = hash;
                     ProjectForm.SetYtypHasChanged(true);
                 }
-                TextureDictHashLabel.Text = "Hash: " + hash.ToString();
+                TextureDictHashLabel.Text = "哈希：" + hash.ToString();
             }
         }
 
@@ -196,7 +196,7 @@ namespace CodeWalker.Project.Panels
                 // Embedded...
                 if (PhysicsDictionaryTextBox.Text == ArchetypeNameTextBox.Text)
                 {
-                    PhysicsDictHashLabel.Text = "Embedded";
+                    PhysicsDictHashLabel.Text = "嵌入";
                     CurrentArchetype._BaseArchetypeDef.physicsDictionary = CurrentArchetype._BaseArchetypeDef.name;
                     return;
                 }
@@ -212,14 +212,14 @@ namespace CodeWalker.Project.Panels
                     var ytd = ProjectForm.GameFileCache.GetYbn(hash);
                     if (ytd == null)
                     {
-                        PhysicsDictHashLabel.Text = "Hash: " + hash.ToString() + " (invalid)";
+                        PhysicsDictHashLabel.Text = "哈希：" + hash.ToString() + " (无效)";
                         ProjectForm.SetYtypHasChanged(true);
                         return;
                     }
                     CurrentArchetype._BaseArchetypeDef.physicsDictionary = hash;
                     ProjectForm.SetYtypHasChanged(true);
                 }
-                PhysicsDictHashLabel.Text = "Hash: " + hash.ToString();
+                PhysicsDictHashLabel.Text = "哈希：" + hash.ToString();
             }
         }
 
@@ -430,6 +430,10 @@ namespace CodeWalker.Project.Panels
                     }
                 }
             }
+        }
+
+        private void label14_Click(object sender, EventArgs e) {
+
         }
     }
 }

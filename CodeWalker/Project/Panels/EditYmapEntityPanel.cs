@@ -33,7 +33,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = CurrentEntity?.Name ?? "Entity";
+            Text = CurrentEntity?.Name ?? "实体";
         }
 
 
@@ -64,7 +64,7 @@ namespace CodeWalker.Project.Panels
                 EntityAddToProjectButton.Enabled = false;
                 EntityDeleteButton.Enabled = false;
                 EntityArchetypeTextBox.Text = string.Empty;
-                EntityArchetypeHashLabel.Text = "Hash: 0";
+                EntityArchetypeHashLabel.Text = "哈希：0";
                 EntityFlagsTextBox.Text = string.Empty;
                 EntityGuidTextBox.Text = string.Empty;
                 EntityPositionTextBox.Text = string.Empty;
@@ -99,7 +99,7 @@ namespace CodeWalker.Project.Panels
                 EntityAddToProjectButton.Enabled = CurrentEntity.Ymap != null ? !ProjectForm.YmapExistsInProject(CurrentEntity.Ymap) : !ProjectForm.YtypExistsInProject(CurrentEntity.MloParent?.Archetype?.Ytyp);
                 EntityDeleteButton.Enabled = !EntityAddToProjectButton.Enabled;
                 EntityArchetypeTextBox.Text = e.archetypeName.ToString();
-                EntityArchetypeHashLabel.Text = "Hash: " + e.archetypeName.Hash.ToString();
+                EntityArchetypeHashLabel.Text = "哈希：" + e.archetypeName.Hash.ToString();
                 EntityFlagsTextBox.Text = e.flags.ToString();
                 EntityGuidTextBox.Text = e.guid.ToString();
                 EntityPositionTextBox.Text = FloatUtil.GetVector3String(e.position);
@@ -172,7 +172,7 @@ namespace CodeWalker.Project.Panels
                 }
 
                 ////struct CEntityDef:
-                //MetaHash archetypeName { get; set; } //8   8: Hash: 0: archetypeName
+                //MetaHash archetypeName { get; set; } //8   8: 哈希：0: archetypeName
                 //uint flags { get; set; } //12   12: UnsignedInt: 0: flags
                 //uint guid { get; set; } //16   16: UnsignedInt: 0: guid
                 //Vector3 position { get; set; } //32   32: Float_XYZ: 0: position
@@ -246,12 +246,12 @@ namespace CodeWalker.Project.Panels
                 hash = JenkHash.GenHash(name);
                 JenkIndex.Ensure(name);
             }
-            EntityArchetypeHashLabel.Text = "Hash: " + hash.ToString();
+            EntityArchetypeHashLabel.Text = "哈希：" + hash.ToString();
 
             var arch = ProjectForm.GameFileCache.GetArchetype(hash);
             if (arch == null)
             {
-                EntityArchetypeHashLabel.Text += " (not found)";
+                EntityArchetypeHashLabel.Text += " (未找到)";
             }
 
             if (CurrentEntity != null)

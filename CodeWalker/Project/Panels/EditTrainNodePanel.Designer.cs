@@ -49,75 +49,82 @@
             "3 - (Not used)",
             "4 - Underground",
             "5 - Underground Station"});
-            this.TrainNodeTypeComboBox.Location = new System.Drawing.Point(76, 45);
+            this.TrainNodeTypeComboBox.Location = new System.Drawing.Point(79, 59);
+            this.TrainNodeTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TrainNodeTypeComboBox.Name = "TrainNodeTypeComboBox";
-            this.TrainNodeTypeComboBox.Size = new System.Drawing.Size(142, 21);
+            this.TrainNodeTypeComboBox.Size = new System.Drawing.Size(261, 25);
             this.TrainNodeTypeComboBox.TabIndex = 47;
             this.TrainNodeTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TrainNodeTypeComboBox_SelectedIndexChanged);
             // 
             // label82
             // 
             this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(23, 48);
+            this.label82.Location = new System.Drawing.Point(27, 62);
+            this.label82.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(34, 13);
+            this.label82.Size = new System.Drawing.Size(44, 17);
             this.label82.TabIndex = 46;
-            this.label82.Text = "Type:";
+            this.label82.Text = "类型：";
             // 
             // TrainNodeDeleteButton
             // 
             this.TrainNodeDeleteButton.Enabled = false;
-            this.TrainNodeDeleteButton.Location = new System.Drawing.Point(172, 92);
+            this.TrainNodeDeleteButton.Location = new System.Drawing.Point(192, 101);
+            this.TrainNodeDeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TrainNodeDeleteButton.Name = "TrainNodeDeleteButton";
-            this.TrainNodeDeleteButton.Size = new System.Drawing.Size(90, 23);
+            this.TrainNodeDeleteButton.Size = new System.Drawing.Size(105, 30);
             this.TrainNodeDeleteButton.TabIndex = 49;
-            this.TrainNodeDeleteButton.Text = "Delete Node";
+            this.TrainNodeDeleteButton.Text = "删除节点";
             this.TrainNodeDeleteButton.UseVisualStyleBackColor = true;
             this.TrainNodeDeleteButton.Click += new System.EventHandler(this.TrainNodeDeleteButton_Click);
             // 
             // TrainNodeAddToProjectButton
             // 
             this.TrainNodeAddToProjectButton.Enabled = false;
-            this.TrainNodeAddToProjectButton.Location = new System.Drawing.Point(76, 92);
+            this.TrainNodeAddToProjectButton.Location = new System.Drawing.Point(79, 101);
+            this.TrainNodeAddToProjectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TrainNodeAddToProjectButton.Name = "TrainNodeAddToProjectButton";
-            this.TrainNodeAddToProjectButton.Size = new System.Drawing.Size(90, 23);
+            this.TrainNodeAddToProjectButton.Size = new System.Drawing.Size(105, 30);
             this.TrainNodeAddToProjectButton.TabIndex = 48;
-            this.TrainNodeAddToProjectButton.Text = "Add to Project";
+            this.TrainNodeAddToProjectButton.Text = "添加到项目";
             this.TrainNodeAddToProjectButton.UseVisualStyleBackColor = true;
             this.TrainNodeAddToProjectButton.Click += new System.EventHandler(this.TrainNodeAddToProjectButton_Click);
             // 
             // TrainNodeGoToButton
             // 
-            this.TrainNodeGoToButton.Location = new System.Drawing.Point(306, 10);
+            this.TrainNodeGoToButton.Location = new System.Drawing.Point(348, 13);
+            this.TrainNodeGoToButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TrainNodeGoToButton.Name = "TrainNodeGoToButton";
-            this.TrainNodeGoToButton.Size = new System.Drawing.Size(68, 23);
+            this.TrainNodeGoToButton.Size = new System.Drawing.Size(79, 30);
             this.TrainNodeGoToButton.TabIndex = 44;
-            this.TrainNodeGoToButton.Text = "Go to";
+            this.TrainNodeGoToButton.Text = "传送";
             this.TrainNodeGoToButton.UseVisualStyleBackColor = true;
             this.TrainNodeGoToButton.Click += new System.EventHandler(this.TrainNodeGoToButton_Click);
             // 
             // TrainNodePositionTextBox
             // 
-            this.TrainNodePositionTextBox.Location = new System.Drawing.Point(76, 12);
+            this.TrainNodePositionTextBox.Location = new System.Drawing.Point(79, 17);
+            this.TrainNodePositionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TrainNodePositionTextBox.Name = "TrainNodePositionTextBox";
-            this.TrainNodePositionTextBox.Size = new System.Drawing.Size(224, 20);
+            this.TrainNodePositionTextBox.Size = new System.Drawing.Size(261, 23);
             this.TrainNodePositionTextBox.TabIndex = 43;
             this.TrainNodePositionTextBox.TextChanged += new System.EventHandler(this.TrainNodePositionTextBox_TextChanged);
             // 
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(23, 15);
+            this.label81.Location = new System.Drawing.Point(27, 20);
+            this.label81.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(47, 13);
+            this.label81.Size = new System.Drawing.Size(44, 17);
             this.label81.TabIndex = 45;
-            this.label81.Text = "Position:";
+            this.label81.Text = "位置：";
             // 
             // EditTrainNodePanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 310);
+            this.ClientSize = new System.Drawing.Size(463, 175);
             this.Controls.Add(this.TrainNodeTypeComboBox);
             this.Controls.Add(this.label82);
             this.Controls.Add(this.TrainNodeDeleteButton);
@@ -125,7 +132,9 @@
             this.Controls.Add(this.TrainNodeGoToButton);
             this.Controls.Add(this.TrainNodePositionTextBox);
             this.Controls.Add(this.label81);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditTrainNodePanel";
             this.Text = "Edit Train Node";
             this.ResumeLayout(false);

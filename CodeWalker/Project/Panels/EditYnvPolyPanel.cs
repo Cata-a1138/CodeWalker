@@ -284,5 +284,9 @@ namespace CodeWalker.Project.Panels
         {
             MessageBox.Show("Delete Polygon TODO!");
         }
+
+        private void label2_Click(object sender, EventArgs e) {
+
+        }
     }
 }

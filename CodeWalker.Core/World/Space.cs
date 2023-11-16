@@ -55,38 +55,38 @@ namespace CodeWalker.World
             GameFileCache = gameFileCache;
 
 
-            updateStatus("Scanning manifests...");
+            updateStatus("正在扫描清单文件...");
 
             InitManifestData();
 
 
-            updateStatus("Scanning caches...");
+            updateStatus("正在扫描缓存...");
 
             InitCacheData();
 
 
-            updateStatus("Building map data store...");
+            updateStatus("正在构建地图数据存储...");
 
             InitMapDataStore();
 
 
-            updateStatus("Building bounds store...");
+            updateStatus("正在构建碰撞体存储...");
 
             InitBoundsStore();
 
 
-            updateStatus("Loading paths...");
+            updateStatus("正在加载路径...");
 
             InitNodeGrid();
 
 
-            updateStatus("Loading nav meshes...");
+            updateStatus("正在加载寻路网格...");
 
             InitNavGrid();
 
 
             Inited = true;
-            updateStatus("World initialised.");
+            updateStatus("世界初始化完成。");
         }
 
 
@@ -699,7 +699,16 @@ namespace CodeWalker.World
 
         public YndFile[] GetYndFilesThatDependOnYndFile(YndFile file)
         {
-            return AllYnds.Values.Where(y => y.Links.Any(l => l.Node2.AreaID == file.AreaID)).ToArray();
+            try {
+                YndFile[] yndFiles = new YndFile[0];
+                if (file != null) {
+                    yndFiles = AllYnds.Values.Where(y => y.Links.Any(l => l.Node2.AreaID == file.AreaID)).ToArray();
+                }
+                return yndFiles;
+            } catch (NullReferenceException e) {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return new YndFile[0];
+            }
         }
 
         public void MoveYndArea(YndFile ynd, int desiredX, int desiredY)

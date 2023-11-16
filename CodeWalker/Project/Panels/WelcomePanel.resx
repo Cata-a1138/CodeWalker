@@ -118,11 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>This window is the starting point for modding using CodeWalker. It allows editing of various different file types often used in creating map mods.
+    <value>这个窗口将是您使用 CodeWalker 来创作模组的起点，它允许您编辑和创建地图模组的各种不同类型的文件。您可以使用各种工具在 CodeWalker 的世界视图中编辑对象，并且世界视图中修改的对象所在的文件将会自动添加到项目中。世界视图中选定的对象也可以直接在其属性页面上修改其属性。
 
-To get started, create a new project or open an existing one using the File menu.
-
-Items can be edited in the CodeWalker World View using the various tools, and modified items in the World View will have their containing files added to the project automatically. The selected item in World View can also have its properties modified directly on its property page.</value>
+现在，您可以创建一个新项目，或使用“文件”菜单打开一个现有的项目。如有需要，您也可以点击下方的链接查看 CodeWalker 相关的使用教程（部分英文链接需要科学上网才能打开）。</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

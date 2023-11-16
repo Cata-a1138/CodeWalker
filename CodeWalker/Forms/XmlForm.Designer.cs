@@ -82,18 +82,20 @@
             this.XmlTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.XmlTextBox.DelayedEventsInterval = 1;
             this.XmlTextBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.XmlTextBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.XmlTextBox.IsReplaceMode = false;
             this.XmlTextBox.Language = FastColoredTextBoxNS.Language.XML;
             this.XmlTextBox.LeftBracket = '<';
             this.XmlTextBox.LeftBracket2 = '(';
-            this.XmlTextBox.Location = new System.Drawing.Point(0, 52);
+            this.XmlTextBox.Location = new System.Drawing.Point(0, 68);
+            this.XmlTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.XmlTextBox.Name = "XmlTextBox";
             this.XmlTextBox.Paddings = new System.Windows.Forms.Padding(0);
             this.XmlTextBox.RightBracket = '>';
             this.XmlTextBox.RightBracket2 = ')';
             this.XmlTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.XmlTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("XmlTextBox.ServiceColors")));
-            this.XmlTextBox.Size = new System.Drawing.Size(834, 482);
+            this.XmlTextBox.Size = new System.Drawing.Size(944, 489);
             this.XmlTextBox.TabIndex = 0;
             this.XmlTextBox.Zoom = 100;
             this.XmlTextBox.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.XmlTextBox_TextChanged);
@@ -103,16 +105,17 @@
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 537);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 568);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(834, 22);
+            this.MainStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.MainStatusStrip.Size = new System.Drawing.Size(944, 22);
             this.MainStatusStrip.TabIndex = 1;
             this.MainStatusStrip.Text = "Main Status Strip";
             // 
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(819, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(927, 17);
             this.StatusLabel.Spring = true;
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -124,7 +127,8 @@
             this.ViewMenu});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(834, 24);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.MainMenu.Size = new System.Drawing.Size(944, 27);
             this.MainMenu.TabIndex = 2;
             this.MainMenu.Text = "Main Menu";
             // 
@@ -138,63 +142,63 @@
             this.toolStripSeparator1,
             this.FileCloseMenu});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
-            this.FileMenu.Text = "File";
+            this.FileMenu.Size = new System.Drawing.Size(44, 21);
+            this.FileMenu.Text = "文件";
             // 
             // FileNewMenu
             // 
             this.FileNewMenu.Name = "FileNewMenu";
-            this.FileNewMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileNewMenu.Text = "New";
+            this.FileNewMenu.Size = new System.Drawing.Size(180, 22);
+            this.FileNewMenu.Text = "新建";
             this.FileNewMenu.Click += new System.EventHandler(this.FileNewMenu_Click);
             // 
             // FileOpenMenu
             // 
             this.FileOpenMenu.Name = "FileOpenMenu";
-            this.FileOpenMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileOpenMenu.Text = "Open...";
+            this.FileOpenMenu.Size = new System.Drawing.Size(180, 22);
+            this.FileOpenMenu.Text = "打开...";
             this.FileOpenMenu.Click += new System.EventHandler(this.FileOpenMenu_Click);
             // 
             // FileSaveMenu
             // 
             this.FileSaveMenu.Name = "FileSaveMenu";
-            this.FileSaveMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileSaveMenu.Text = "Save";
+            this.FileSaveMenu.Size = new System.Drawing.Size(180, 22);
+            this.FileSaveMenu.Text = "保存";
             this.FileSaveMenu.Click += new System.EventHandler(this.FileSaveMenu_Click);
             // 
             // FileSaveAsMenu
             // 
             this.FileSaveAsMenu.Name = "FileSaveAsMenu";
-            this.FileSaveAsMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileSaveAsMenu.Text = "Save As...";
+            this.FileSaveAsMenu.Size = new System.Drawing.Size(180, 22);
+            this.FileSaveAsMenu.Text = "另存为...";
             this.FileSaveAsMenu.Click += new System.EventHandler(this.FileSaveAsMenu_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // FileCloseMenu
             // 
             this.FileCloseMenu.Name = "FileCloseMenu";
             this.FileCloseMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.FileCloseMenu.Size = new System.Drawing.Size(145, 22);
-            this.FileCloseMenu.Text = "Close";
+            this.FileCloseMenu.Size = new System.Drawing.Size(180, 22);
+            this.FileCloseMenu.Text = "关闭";
             this.FileCloseMenu.Click += new System.EventHandler(this.FileCloseMenu_Click);
             // 
             // EditMenu
             // 
             this.EditMenu.Enabled = false;
             this.EditMenu.Name = "EditMenu";
-            this.EditMenu.Size = new System.Drawing.Size(39, 20);
-            this.EditMenu.Text = "Edit";
+            this.EditMenu.Size = new System.Drawing.Size(44, 21);
+            this.EditMenu.Text = "编辑";
             // 
             // ViewMenu
             // 
             this.ViewMenu.Enabled = false;
             this.ViewMenu.Name = "ViewMenu";
-            this.ViewMenu.Size = new System.Drawing.Size(44, 20);
-            this.ViewMenu.Text = "View";
+            this.ViewMenu.Size = new System.Drawing.Size(44, 21);
+            this.ViewMenu.Text = "查看";
             // 
             // MainToolbar
             // 
@@ -202,9 +206,9 @@
             this.NewButton,
             this.OpenButton,
             this.SaveButton});
-            this.MainToolbar.Location = new System.Drawing.Point(0, 24);
+            this.MainToolbar.Location = new System.Drawing.Point(0, 27);
             this.MainToolbar.Name = "MainToolbar";
-            this.MainToolbar.Size = new System.Drawing.Size(834, 25);
+            this.MainToolbar.Size = new System.Drawing.Size(944, 25);
             this.MainToolbar.TabIndex = 3;
             this.MainToolbar.Text = "Main Toolbar";
             // 
@@ -215,7 +219,7 @@
             this.NewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(32, 22);
-            this.NewButton.Text = "New...";
+            this.NewButton.Text = "新建...";
             this.NewButton.ButtonClick += new System.EventHandler(this.NewButton_ButtonClick);
             // 
             // OpenButton
@@ -225,7 +229,7 @@
             this.OpenButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(32, 22);
-            this.OpenButton.Text = "Open...";
+            this.OpenButton.Text = "打开...";
             this.OpenButton.ButtonClick += new System.EventHandler(this.OpenButton_ButtonClick);
             // 
             // SaveButton
@@ -235,7 +239,7 @@
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(32, 22);
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "保存";
             this.SaveButton.ButtonClick += new System.EventHandler(this.SaveButton_ButtonClick);
             // 
             // OpenFileDialog
@@ -248,17 +252,19 @@
             // 
             // XmlForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 559);
+            this.ClientSize = new System.Drawing.Size(944, 590);
             this.Controls.Add(this.MainToolbar);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.XmlTextBox);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "XmlForm";
-            this.Text = "XML Editor - CodeWalker by dexyfex";
+            this.Text = "XML 编辑器 - CodeWalker by dexyfex";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.XmlForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.XmlTextBox)).EndInit();
             this.MainStatusStrip.ResumeLayout(false);

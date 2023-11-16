@@ -22,19 +22,19 @@ namespace CodeWalker
 
             if(string.IsNullOrWhiteSpace(folder))
             {
-                failReason = "No folder specified";
+                failReason = "未指定文件夹";
                 return false;
             }
 
             if(!Directory.Exists(folder))
             {
-                failReason = $"Folder \"{folder}\" does not exist";
+                failReason = $"文件夹 \"{folder}\" 不存在";
                 return false;
             }
 
             if(!File.Exists(folder + @"\gta5.exe"))
             {
-                failReason = $"GTA5.exe not found in folder \"{folder}\"";
+                failReason = $"在 \"{folder}\" 文件夹内无法找到 GTA5.exe 文件";
                 return false;
             }
 
@@ -57,7 +57,7 @@ namespace CodeWalker
             SelectFolderForm f = new SelectFolderForm();
 
             string autoFolder = AutoDetectFolder(out string source);
-            if (autoFolder != null && MessageBox.Show($"Auto-detected game folder \"{autoFolder}\" from {source}.\n\nContinue with auto-detected folder?", "Auto-detected game folder", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (autoFolder != null && MessageBox.Show($"自动检测到 GTA5 安装目录 \"{autoFolder}\"（来自 {source}）。\n\n要使用自动检测的目录继续吗？", "自动检测到游戏目录", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 f.SelectedFolder = autoFolder;
             }
@@ -74,12 +74,12 @@ namespace CodeWalker
                 SetGTAFolder(folder);
                 if(folder != origFolder)
                 {
-                    MessageBox.Show($"Successfully changed GTA Folder to \"{folder}\"", "Set GTA Folder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"已成功将 GTA5 目录切换为 \"{folder}\"", "切换 GTA5 目录", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 return true;
             } else
             {
-                var tryAgain = MessageBox.Show($"Folder \"{folder}\" is not a valid GTA folder:\n\n{failReason}\n\nDo you want to try choosing a different folder?", "Unable to set GTA Folder", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                var tryAgain = MessageBox.Show($"文件夹 \"{folder}\" 不是一个有效的 GTA5 安装目录：\n\n{failReason}\n\n您想要选择另外一个目录吗？", "无法设置 GTA5 目录", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if(tryAgain == DialogResult.Retry)
                 {
                     return UpdateGTAFolder(false);

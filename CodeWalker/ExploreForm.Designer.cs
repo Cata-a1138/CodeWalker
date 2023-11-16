@@ -20,6 +20,13 @@
             base.Dispose(disposing);
         }
 
+        public void LogToConsole(string text) {
+            // [H:i:s] message
+            var now = System.DateTime.Now;
+            var timestamp = now.ToString("HH:mm:ss");
+            ConsoleTextBox.AppendText($"[{timestamp}] {text}\n");
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -42,6 +49,7 @@
             this.EditExportXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.EditExtractRawMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.EditExtractAllMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditUnlockModelMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.EditImportFbxMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.EditImportXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +75,7 @@
             this.ViewThemeBlueMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewThemeLightMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewThemeDarkMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.EnableConsole = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsBinSearchMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsAudioExplorerMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +89,7 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.OptionsStartInFolderDefaultMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionsStartInFolderCurrentMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
             this.BackButton = new System.Windows.Forms.ToolStripSplitButton();
             this.BackListButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +112,7 @@
             this.FileImageList16 = new System.Windows.Forms.ImageList(this.components);
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.MainTreeView = new System.Windows.Forms.TreeView();
+            this.SubSplitContainer = new System.Windows.Forms.SplitContainer();
             this.MainListView = new System.Windows.Forms.ListView();
             this.MainNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainTypeColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,6 +125,7 @@
             this.EditModeModsWarningPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ConsoleTextBox = new CodeWalker.WinForms.TextBoxFix();
             this.ListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ListContextViewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ListContextViewHexMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,6 +134,7 @@
             this.ListContextExtractRawMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ListContextExtractUncompressedMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ListContextExtractAllMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListContextUnlockModelMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.ListContextNewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ListContextNewFolderMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,6 +178,10 @@
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SubSplitContainer)).BeginInit();
+            this.SubSplitContainer.Panel1.SuspendLayout();
+            this.SubSplitContainer.Panel2.SuspendLayout();
+            this.SubSplitContainer.SuspendLayout();
             this.EditModeBaseWarningPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.EditModeModsWarningPanel.SuspendLayout();
@@ -180,10 +197,12 @@
             this.EditMenu,
             this.ViewMenu,
             this.ToolsMenu,
-            this.OptionsMenu});
-            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.OptionsMenu,
+            this.AboutMenu});
+            this.MainMenu.Location = new System.Drawing.Point(3, 2);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(876, 24);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.MainMenu.Size = new System.Drawing.Size(1040, 25);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -194,27 +213,27 @@
             this.toolStripSeparator7,
             this.FileExitMenu});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
-            this.FileMenu.Text = "File";
+            this.FileMenu.Size = new System.Drawing.Size(44, 21);
+            this.FileMenu.Text = "文件";
             // 
             // FileOpenFolderMenu
             // 
             this.FileOpenFolderMenu.Name = "FileOpenFolderMenu";
-            this.FileOpenFolderMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileOpenFolderMenu.Text = "Open Folder...";
+            this.FileOpenFolderMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileOpenFolderMenu.Text = "打开文件夹...";
             this.FileOpenFolderMenu.Click += new System.EventHandler(this.FileOpenFolderMenu_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(142, 6);
             // 
             // FileExitMenu
             // 
             this.FileExitMenu.Name = "FileExitMenu";
             this.FileExitMenu.ShortcutKeyDisplayString = "Alt+F4";
-            this.FileExitMenu.Size = new System.Drawing.Size(148, 22);
-            this.FileExitMenu.Text = "Exit";
+            this.FileExitMenu.Size = new System.Drawing.Size(145, 22);
+            this.FileExitMenu.Text = "退出";
             this.FileExitMenu.Click += new System.EventHandler(this.FileExitMenu_Click);
             // 
             // EditMenu
@@ -226,6 +245,7 @@
             this.EditExportXmlMenu,
             this.EditExtractRawMenu,
             this.EditExtractAllMenu,
+            this.EditUnlockModelMenu,
             this.toolStripSeparator4,
             this.EditImportFbxMenu,
             this.EditImportXmlMenu,
@@ -241,16 +261,16 @@
             this.EditEditModeMenuSeparator,
             this.EditSelectAllMenu});
             this.EditMenu.Name = "EditMenu";
-            this.EditMenu.Size = new System.Drawing.Size(39, 20);
-            this.EditMenu.Text = "Edit";
+            this.EditMenu.Size = new System.Drawing.Size(44, 21);
+            this.EditMenu.Text = "编辑";
             // 
             // EditViewMenu
             // 
             this.EditViewMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditViewMenu.Image")));
             this.EditViewMenu.Name = "EditViewMenu";
             this.EditViewMenu.ShortcutKeyDisplayString = "Ctrl+P";
-            this.EditViewMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditViewMenu.Text = "View...";
+            this.EditViewMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditViewMenu.Text = "查看...";
             this.EditViewMenu.Click += new System.EventHandler(this.EditViewMenu_Click);
             // 
             // EditViewHexMenu
@@ -258,22 +278,22 @@
             this.EditViewHexMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditViewHexMenu.Image")));
             this.EditViewHexMenu.Name = "EditViewHexMenu";
             this.EditViewHexMenu.ShortcutKeyDisplayString = "Ctrl+H";
-            this.EditViewHexMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditViewHexMenu.Text = "View Hex...";
+            this.EditViewHexMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditViewHexMenu.Text = "查看十六进制...";
             this.EditViewHexMenu.Click += new System.EventHandler(this.EditViewHexMenu_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(232, 6);
             // 
             // EditExportXmlMenu
             // 
             this.EditExportXmlMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditExportXmlMenu.Image")));
             this.EditExportXmlMenu.Name = "EditExportXmlMenu";
             this.EditExportXmlMenu.ShortcutKeyDisplayString = "Ctrl+S";
-            this.EditExportXmlMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditExportXmlMenu.Text = "Export XML...";
+            this.EditExportXmlMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditExportXmlMenu.Text = "导出 XML...";
             this.EditExportXmlMenu.Click += new System.EventHandler(this.EditExportXmlMenu_Click);
             // 
             // EditExtractRawMenu
@@ -281,28 +301,35 @@
             this.EditExtractRawMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditExtractRawMenu.Image")));
             this.EditExtractRawMenu.Name = "EditExtractRawMenu";
             this.EditExtractRawMenu.ShortcutKeyDisplayString = "Ctrl+E";
-            this.EditExtractRawMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditExtractRawMenu.Text = "Extract Raw...";
+            this.EditExtractRawMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditExtractRawMenu.Text = "导出原始文件...";
             this.EditExtractRawMenu.Click += new System.EventHandler(this.EditExtractRawMenu_Click);
             // 
             // EditExtractAllMenu
             // 
             this.EditExtractAllMenu.Name = "EditExtractAllMenu";
             this.EditExtractAllMenu.ShortcutKeyDisplayString = "Ctrl+Shift+E";
-            this.EditExtractAllMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditExtractAllMenu.Text = "Extract All...";
+            this.EditExtractAllMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditExtractAllMenu.Text = "导出所有文件...";
             this.EditExtractAllMenu.Click += new System.EventHandler(this.EditExtractAllMenu_Click);
+            // 
+            // EditUnlockModelMenu
+            // 
+            this.EditUnlockModelMenu.Name = "EditUnlockModelMenu";
+            this.EditUnlockModelMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditUnlockModelMenu.Text = "移除 ZModeler 文件锁";
+            this.EditUnlockModelMenu.Click += new System.EventHandler(this.EditUnlockModelMenu_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(232, 6);
             // 
             // EditImportFbxMenu
             // 
             this.EditImportFbxMenu.Name = "EditImportFbxMenu";
-            this.EditImportFbxMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditImportFbxMenu.Text = "Import FBX...";
+            this.EditImportFbxMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditImportFbxMenu.Text = "导入 FBX...";
             this.EditImportFbxMenu.Visible = false;
             this.EditImportFbxMenu.Click += new System.EventHandler(this.EditImportFbxMenu_Click);
             // 
@@ -311,8 +338,8 @@
             this.EditImportXmlMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditImportXmlMenu.Image")));
             this.EditImportXmlMenu.Name = "EditImportXmlMenu";
             this.EditImportXmlMenu.ShortcutKeyDisplayString = "Shift+Ins";
-            this.EditImportXmlMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditImportXmlMenu.Text = "Import XML...";
+            this.EditImportXmlMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditImportXmlMenu.Text = "导入 XML...";
             this.EditImportXmlMenu.Visible = false;
             this.EditImportXmlMenu.Click += new System.EventHandler(this.EditImportXmlMenu_Click);
             // 
@@ -321,15 +348,15 @@
             this.EditImportRawMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditImportRawMenu.Image")));
             this.EditImportRawMenu.Name = "EditImportRawMenu";
             this.EditImportRawMenu.ShortcutKeyDisplayString = "Ins";
-            this.EditImportRawMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditImportRawMenu.Text = "Import Raw...";
+            this.EditImportRawMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditImportRawMenu.Text = "导入原始文件...";
             this.EditImportRawMenu.Visible = false;
             this.EditImportRawMenu.Click += new System.EventHandler(this.EditImportRawMenu_Click);
             // 
             // EditImportMenuSeparator
             // 
             this.EditImportMenuSeparator.Name = "EditImportMenuSeparator";
-            this.EditImportMenuSeparator.Size = new System.Drawing.Size(205, 6);
+            this.EditImportMenuSeparator.Size = new System.Drawing.Size(232, 6);
             this.EditImportMenuSeparator.Visible = false;
             // 
             // EditCopyMenu
@@ -337,44 +364,44 @@
             this.EditCopyMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditCopyMenu.Image")));
             this.EditCopyMenu.Name = "EditCopyMenu";
             this.EditCopyMenu.ShortcutKeyDisplayString = "Ctrl+C";
-            this.EditCopyMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditCopyMenu.Text = "Copy";
+            this.EditCopyMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditCopyMenu.Text = "复制";
             this.EditCopyMenu.Click += new System.EventHandler(this.EditCopyMenu_Click);
             // 
             // EditCopyPathMenu
             // 
             this.EditCopyPathMenu.Name = "EditCopyPathMenu";
             this.EditCopyPathMenu.ShortcutKeyDisplayString = "Ctrl+Shift+C";
-            this.EditCopyPathMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditCopyPathMenu.Text = "Copy Path";
+            this.EditCopyPathMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditCopyPathMenu.Text = "复制路径";
             this.EditCopyPathMenu.Click += new System.EventHandler(this.EditCopyPathMenu_Click);
             // 
             // EditCopyFileListMenu
             // 
             this.EditCopyFileListMenu.Name = "EditCopyFileListMenu";
-            this.EditCopyFileListMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditCopyFileListMenu.Text = "Copy File List";
+            this.EditCopyFileListMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditCopyFileListMenu.Text = "复制文件列表";
             this.EditCopyFileListMenu.Click += new System.EventHandler(this.EditCopyFileListMenu_Click);
             // 
             // EditPasteMenu
             // 
             this.EditPasteMenu.Name = "EditPasteMenu";
-            this.EditPasteMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditPasteMenu.Text = "Paste";
+            this.EditPasteMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditPasteMenu.Text = "粘贴";
             this.EditPasteMenu.Click += new System.EventHandler(this.EditPasteMenu_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(232, 6);
             // 
             // EditRenameMenu
             // 
             this.EditRenameMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditRenameMenu.Image")));
             this.EditRenameMenu.Name = "EditRenameMenu";
             this.EditRenameMenu.ShortcutKeyDisplayString = "F2";
-            this.EditRenameMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditRenameMenu.Text = "Rename...";
+            this.EditRenameMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditRenameMenu.Text = "重命名...";
             this.EditRenameMenu.Visible = false;
             this.EditRenameMenu.Click += new System.EventHandler(this.EditRenameMenu_Click);
             // 
@@ -383,23 +410,23 @@
             this.EditDeleteMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditDeleteMenu.Image")));
             this.EditDeleteMenu.Name = "EditDeleteMenu";
             this.EditDeleteMenu.ShortcutKeyDisplayString = "Shift+Del";
-            this.EditDeleteMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditDeleteMenu.Text = "Delete";
+            this.EditDeleteMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditDeleteMenu.Text = "删除";
             this.EditDeleteMenu.Visible = false;
             this.EditDeleteMenu.Click += new System.EventHandler(this.EditDeleteMenu_Click);
             // 
             // EditEditModeMenuSeparator
             // 
             this.EditEditModeMenuSeparator.Name = "EditEditModeMenuSeparator";
-            this.EditEditModeMenuSeparator.Size = new System.Drawing.Size(205, 6);
+            this.EditEditModeMenuSeparator.Size = new System.Drawing.Size(232, 6);
             this.EditEditModeMenuSeparator.Visible = false;
             // 
             // EditSelectAllMenu
             // 
             this.EditSelectAllMenu.Name = "EditSelectAllMenu";
             this.EditSelectAllMenu.ShortcutKeyDisplayString = "Ctrl+A";
-            this.EditSelectAllMenu.Size = new System.Drawing.Size(208, 22);
-            this.EditSelectAllMenu.Text = "Select All";
+            this.EditSelectAllMenu.Size = new System.Drawing.Size(235, 22);
+            this.EditSelectAllMenu.Text = "选择全部文件";
             this.EditSelectAllMenu.Click += new System.EventHandler(this.EditSelectAllMenu_Click);
             // 
             // ViewMenu
@@ -410,30 +437,31 @@
             this.ViewListMenu,
             this.ViewDetailsMenu,
             this.toolStripSeparator11,
-            this.ViewThemeMenu});
+            this.ViewThemeMenu,
+            this.EnableConsole});
             this.ViewMenu.Name = "ViewMenu";
-            this.ViewMenu.Size = new System.Drawing.Size(44, 20);
-            this.ViewMenu.Text = "View";
+            this.ViewMenu.Size = new System.Drawing.Size(44, 21);
+            this.ViewMenu.Text = "查看";
             // 
             // ViewLargeIconsMenu
             // 
             this.ViewLargeIconsMenu.Name = "ViewLargeIconsMenu";
-            this.ViewLargeIconsMenu.Size = new System.Drawing.Size(134, 22);
-            this.ViewLargeIconsMenu.Text = "Large Icons";
+            this.ViewLargeIconsMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewLargeIconsMenu.Text = "大图标";
             this.ViewLargeIconsMenu.Click += new System.EventHandler(this.ViewLargeIconsMenu_Click);
             // 
             // ViewSmallIconsMenu
             // 
             this.ViewSmallIconsMenu.Name = "ViewSmallIconsMenu";
-            this.ViewSmallIconsMenu.Size = new System.Drawing.Size(134, 22);
-            this.ViewSmallIconsMenu.Text = "Small Icons";
+            this.ViewSmallIconsMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewSmallIconsMenu.Text = "小图标";
             this.ViewSmallIconsMenu.Click += new System.EventHandler(this.ViewSmallIconsMenu_Click);
             // 
             // ViewListMenu
             // 
             this.ViewListMenu.Name = "ViewListMenu";
-            this.ViewListMenu.Size = new System.Drawing.Size(134, 22);
-            this.ViewListMenu.Text = "List";
+            this.ViewListMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewListMenu.Text = "列表";
             this.ViewListMenu.Click += new System.EventHandler(this.ViewListMenu_Click);
             // 
             // ViewDetailsMenu
@@ -441,14 +469,14 @@
             this.ViewDetailsMenu.Checked = true;
             this.ViewDetailsMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewDetailsMenu.Name = "ViewDetailsMenu";
-            this.ViewDetailsMenu.Size = new System.Drawing.Size(134, 22);
-            this.ViewDetailsMenu.Text = "Details";
+            this.ViewDetailsMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewDetailsMenu.Text = "详细信息";
             this.ViewDetailsMenu.Click += new System.EventHandler(this.ViewDetailsMenu_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(133, 6);
             // 
             // ViewThemeMenu
             // 
@@ -458,38 +486,46 @@
             this.ViewThemeLightMenu,
             this.ViewThemeDarkMenu});
             this.ViewThemeMenu.Name = "ViewThemeMenu";
-            this.ViewThemeMenu.Size = new System.Drawing.Size(134, 22);
-            this.ViewThemeMenu.Text = "Theme";
+            this.ViewThemeMenu.Size = new System.Drawing.Size(136, 22);
+            this.ViewThemeMenu.Text = "主题";
             // 
             // ViewThemeWindowsMenu
             // 
             this.ViewThemeWindowsMenu.Checked = true;
             this.ViewThemeWindowsMenu.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewThemeWindowsMenu.Name = "ViewThemeWindowsMenu";
-            this.ViewThemeWindowsMenu.Size = new System.Drawing.Size(123, 22);
-            this.ViewThemeWindowsMenu.Text = "Windows";
+            this.ViewThemeWindowsMenu.Size = new System.Drawing.Size(124, 22);
+            this.ViewThemeWindowsMenu.Text = "跟随系统";
             this.ViewThemeWindowsMenu.Click += new System.EventHandler(this.ViewThemeWindowsMenu_Click);
             // 
             // ViewThemeBlueMenu
             // 
             this.ViewThemeBlueMenu.Name = "ViewThemeBlueMenu";
-            this.ViewThemeBlueMenu.Size = new System.Drawing.Size(123, 22);
-            this.ViewThemeBlueMenu.Text = "Blue";
+            this.ViewThemeBlueMenu.Size = new System.Drawing.Size(124, 22);
+            this.ViewThemeBlueMenu.Text = "蓝色";
             this.ViewThemeBlueMenu.Click += new System.EventHandler(this.ViewThemeBlueMenu_Click);
             // 
             // ViewThemeLightMenu
             // 
             this.ViewThemeLightMenu.Name = "ViewThemeLightMenu";
-            this.ViewThemeLightMenu.Size = new System.Drawing.Size(123, 22);
-            this.ViewThemeLightMenu.Text = "Light";
+            this.ViewThemeLightMenu.Size = new System.Drawing.Size(124, 22);
+            this.ViewThemeLightMenu.Text = "亮色调";
             this.ViewThemeLightMenu.Click += new System.EventHandler(this.ViewThemeLightMenu_Click);
             // 
             // ViewThemeDarkMenu
             // 
             this.ViewThemeDarkMenu.Name = "ViewThemeDarkMenu";
-            this.ViewThemeDarkMenu.Size = new System.Drawing.Size(123, 22);
-            this.ViewThemeDarkMenu.Text = "Dark";
+            this.ViewThemeDarkMenu.Size = new System.Drawing.Size(124, 22);
+            this.ViewThemeDarkMenu.Text = "暗色调";
             this.ViewThemeDarkMenu.Click += new System.EventHandler(this.ViewThemeDarkMenu_Click);
+            // 
+            // EnableConsole
+            // 
+            this.EnableConsole.CheckOnClick = true;
+            this.EnableConsole.Name = "EnableConsole";
+            this.EnableConsole.Size = new System.Drawing.Size(136, 22);
+            this.EnableConsole.Text = "调试控制台";
+            this.EnableConsole.Click += new System.EventHandler(this.EnableConsole_Click);
             // 
             // ToolsMenu
             // 
@@ -500,42 +536,42 @@
             this.ToolsJenkGenMenu,
             this.ToolsJenkIndMenu});
             this.ToolsMenu.Name = "ToolsMenu";
-            this.ToolsMenu.Size = new System.Drawing.Size(46, 20);
-            this.ToolsMenu.Text = "Tools";
+            this.ToolsMenu.Size = new System.Drawing.Size(44, 21);
+            this.ToolsMenu.Text = "工具";
             // 
             // ToolsBinSearchMenu
             // 
             this.ToolsBinSearchMenu.Name = "ToolsBinSearchMenu";
-            this.ToolsBinSearchMenu.Size = new System.Drawing.Size(180, 22);
-            this.ToolsBinSearchMenu.Text = "Binary Search...";
+            this.ToolsBinSearchMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolsBinSearchMenu.Text = "二进制搜索...";
             this.ToolsBinSearchMenu.Click += new System.EventHandler(this.ToolsBinSearchMenu_Click);
             // 
             // ToolsAudioExplorerMenu
             // 
             this.ToolsAudioExplorerMenu.Name = "ToolsAudioExplorerMenu";
-            this.ToolsAudioExplorerMenu.Size = new System.Drawing.Size(180, 22);
-            this.ToolsAudioExplorerMenu.Text = "Audio Explorer";
+            this.ToolsAudioExplorerMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolsAudioExplorerMenu.Text = "音频浏览器";
             this.ToolsAudioExplorerMenu.Click += new System.EventHandler(this.ToolsAudioExplorerMenu_Click);
             // 
             // ToolsRpfBrowserMenu
             // 
             this.ToolsRpfBrowserMenu.Name = "ToolsRpfBrowserMenu";
-            this.ToolsRpfBrowserMenu.Size = new System.Drawing.Size(180, 22);
-            this.ToolsRpfBrowserMenu.Text = "Old RPF Browser";
+            this.ToolsRpfBrowserMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolsRpfBrowserMenu.Text = "旧版 RPF 浏览器";
             this.ToolsRpfBrowserMenu.Click += new System.EventHandler(this.ToolsRpfBrowserMenu_Click);
             // 
             // ToolsJenkGenMenu
             // 
             this.ToolsJenkGenMenu.Name = "ToolsJenkGenMenu";
-            this.ToolsJenkGenMenu.Size = new System.Drawing.Size(180, 22);
-            this.ToolsJenkGenMenu.Text = "JenkGen";
+            this.ToolsJenkGenMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolsJenkGenMenu.Text = "哈希生成器";
             this.ToolsJenkGenMenu.Click += new System.EventHandler(this.ToolsJenkGenMenu_Click);
             // 
             // ToolsJenkIndMenu
             // 
             this.ToolsJenkIndMenu.Name = "ToolsJenkIndMenu";
-            this.ToolsJenkIndMenu.Size = new System.Drawing.Size(180, 22);
-            this.ToolsJenkIndMenu.Text = "JenkInd";
+            this.ToolsJenkIndMenu.Size = new System.Drawing.Size(165, 22);
+            this.ToolsJenkIndMenu.Text = "哈希搜索器";
             this.ToolsJenkIndMenu.Click += new System.EventHandler(this.ToolsJenkIndMenu_Click);
             // 
             // OptionsMenu
@@ -544,14 +580,14 @@
             this.OptionsStartInEditModeMenu,
             this.OptionsStartInFolderMenu});
             this.OptionsMenu.Name = "OptionsMenu";
-            this.OptionsMenu.Size = new System.Drawing.Size(61, 20);
-            this.OptionsMenu.Text = "Options";
+            this.OptionsMenu.Size = new System.Drawing.Size(44, 21);
+            this.OptionsMenu.Text = "选项";
             // 
             // OptionsStartInEditModeMenu
             // 
             this.OptionsStartInEditModeMenu.Name = "OptionsStartInEditModeMenu";
-            this.OptionsStartInEditModeMenu.Size = new System.Drawing.Size(168, 22);
-            this.OptionsStartInEditModeMenu.Text = "Start in Edit mode";
+            this.OptionsStartInEditModeMenu.Size = new System.Drawing.Size(172, 22);
+            this.OptionsStartInEditModeMenu.Text = "自动进入编辑模式";
             this.OptionsStartInEditModeMenu.Click += new System.EventHandler(this.OptionsStartInEditModeMenu_Click);
             // 
             // OptionsStartInFolderMenu
@@ -562,34 +598,41 @@
             this.OptionsStartInFolderDefaultMenu,
             this.OptionsStartInFolderCurrentMenu});
             this.OptionsStartInFolderMenu.Name = "OptionsStartInFolderMenu";
-            this.OptionsStartInFolderMenu.Size = new System.Drawing.Size(168, 22);
-            this.OptionsStartInFolderMenu.Text = "Start in Folder";
+            this.OptionsStartInFolderMenu.Size = new System.Drawing.Size(172, 22);
+            this.OptionsStartInFolderMenu.Text = "启动目录";
             // 
             // OptionsStartInFolderValueMenu
             // 
             this.OptionsStartInFolderValueMenu.Enabled = false;
             this.OptionsStartInFolderValueMenu.Name = "OptionsStartInFolderValueMenu";
-            this.OptionsStartInFolderValueMenu.Size = new System.Drawing.Size(183, 22);
-            this.OptionsStartInFolderValueMenu.Text = "(Default)";
+            this.OptionsStartInFolderValueMenu.Size = new System.Drawing.Size(160, 22);
+            this.OptionsStartInFolderValueMenu.Text = "(默认)";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(180, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(157, 6);
             // 
             // OptionsStartInFolderDefaultMenu
             // 
             this.OptionsStartInFolderDefaultMenu.Name = "OptionsStartInFolderDefaultMenu";
-            this.OptionsStartInFolderDefaultMenu.Size = new System.Drawing.Size(183, 22);
-            this.OptionsStartInFolderDefaultMenu.Text = "Set to Default";
+            this.OptionsStartInFolderDefaultMenu.Size = new System.Drawing.Size(160, 22);
+            this.OptionsStartInFolderDefaultMenu.Text = "设置为默认";
             this.OptionsStartInFolderDefaultMenu.Click += new System.EventHandler(this.OptionsStartInFolderDefaultMenu_Click);
             // 
             // OptionsStartInFolderCurrentMenu
             // 
             this.OptionsStartInFolderCurrentMenu.Name = "OptionsStartInFolderCurrentMenu";
-            this.OptionsStartInFolderCurrentMenu.Size = new System.Drawing.Size(183, 22);
-            this.OptionsStartInFolderCurrentMenu.Text = "Set to Current Folder";
+            this.OptionsStartInFolderCurrentMenu.Size = new System.Drawing.Size(160, 22);
+            this.OptionsStartInFolderCurrentMenu.Text = "设置为当前目录";
             this.OptionsStartInFolderCurrentMenu.Click += new System.EventHandler(this.OptionsStartInFolderCurrentMenu_Click);
+            // 
+            // AboutMenu
+            // 
+            this.AboutMenu.Name = "AboutMenu";
+            this.AboutMenu.Size = new System.Drawing.Size(44, 21);
+            this.AboutMenu.Text = "关于";
+            this.AboutMenu.Click += new System.EventHandler(this.AboutMenu_Click);
             // 
             // MainToolbar
             // 
@@ -606,11 +649,11 @@
             this.toolStripSeparator1,
             this.SearchTextBox,
             this.SearchButton});
-            this.MainToolbar.Location = new System.Drawing.Point(0, 24);
+            this.MainToolbar.Location = new System.Drawing.Point(3, 27);
             this.MainToolbar.Name = "MainToolbar";
-            this.MainToolbar.Size = new System.Drawing.Size(876, 25);
+            this.MainToolbar.Size = new System.Drawing.Size(1040, 25);
             this.MainToolbar.TabIndex = 1;
-            this.MainToolbar.Text = "Main Toolbar";
+            this.MainToolbar.Text = "主工具栏";
             // 
             // BackButton
             // 
@@ -622,13 +665,13 @@
             this.BackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(32, 22);
-            this.BackButton.Text = "Back";
+            this.BackButton.Text = "返回";
             this.BackButton.ButtonClick += new System.EventHandler(this.BackButton_ButtonClick);
             // 
             // BackListButton
             // 
             this.BackListButton.Name = "BackListButton";
-            this.BackListButton.Size = new System.Drawing.Size(100, 22);
+            this.BackListButton.Size = new System.Drawing.Size(103, 22);
             this.BackListButton.Text = "[List]";
             this.BackListButton.Click += new System.EventHandler(this.BackListButton_Click);
             // 
@@ -642,13 +685,13 @@
             this.ForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(32, 22);
-            this.ForwardButton.Text = "Forward";
+            this.ForwardButton.Text = "前进";
             this.ForwardButton.ButtonClick += new System.EventHandler(this.ForwardButton_ButtonClick);
             // 
             // ForwardListButton
             // 
             this.ForwardListButton.Name = "ForwardListButton";
-            this.ForwardListButton.Size = new System.Drawing.Size(100, 22);
+            this.ForwardListButton.Size = new System.Drawing.Size(103, 22);
             this.ForwardListButton.Text = "[List]";
             this.ForwardListButton.Click += new System.EventHandler(this.ForwardListButton_Click);
             // 
@@ -662,13 +705,13 @@
             this.UpButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UpButton.Name = "UpButton";
             this.UpButton.Size = new System.Drawing.Size(32, 22);
-            this.UpButton.Text = "Up";
+            this.UpButton.Text = "返回上级";
             this.UpButton.ButtonClick += new System.EventHandler(this.UpButton_ButtonClick);
             // 
             // UpListButton
             // 
             this.UpListButton.Name = "UpListButton";
-            this.UpListButton.Size = new System.Drawing.Size(100, 22);
+            this.UpListButton.Size = new System.Drawing.Size(103, 22);
             this.UpListButton.Text = "[List]";
             this.UpListButton.Click += new System.EventHandler(this.UpListButton_Click);
             // 
@@ -676,7 +719,7 @@
             // 
             this.LocationTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LocationTextBox.Name = "LocationTextBox";
-            this.LocationTextBox.Size = new System.Drawing.Size(423, 25);
+            this.LocationTextBox.Size = new System.Drawing.Size(569, 25);
             this.LocationTextBox.Enter += new System.EventHandler(this.LocationTextBox_Enter);
             this.LocationTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LocationTextBox_KeyPress);
             // 
@@ -688,7 +731,7 @@
             this.GoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(23, 22);
-            this.GoButton.Text = "Go";
+            this.GoButton.Text = "访问";
             this.GoButton.Click += new System.EventHandler(this.GoButton_Click);
             // 
             // RefreshButton
@@ -699,7 +742,7 @@
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(23, 22);
-            this.RefreshButton.Text = "Refresh All";
+            this.RefreshButton.Text = "刷新全部文件";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // toolStripSeparator10
@@ -714,8 +757,8 @@
             this.EditModeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EditModeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditModeButton.Name = "EditModeButton";
-            this.EditModeButton.Size = new System.Drawing.Size(81, 22);
-            this.EditModeButton.Text = "Edit mode";
+            this.EditModeButton.Size = new System.Drawing.Size(76, 22);
+            this.EditModeButton.Text = "编辑模式";
             this.EditModeButton.Click += new System.EventHandler(this.EditModeButton_Click);
             // 
             // toolStripSeparator1
@@ -727,7 +770,7 @@
             // 
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(140, 25);
+            this.SearchTextBox.Size = new System.Drawing.Size(163, 25);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
             this.SearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchTextBox_KeyPress);
             // 
@@ -743,7 +786,7 @@
             this.SearchButton.Margin = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(32, 22);
-            this.SearchButton.Text = "Global Search";
+            this.SearchButton.Text = "全局搜索";
             this.SearchButton.ButtonClick += new System.EventHandler(this.SearchButton_ButtonClick);
             // 
             // SearchGlobalButton
@@ -752,7 +795,7 @@
             this.SearchGlobalButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.SearchGlobalButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchGlobalButton.Image")));
             this.SearchGlobalButton.Name = "SearchGlobalButton";
-            this.SearchGlobalButton.Size = new System.Drawing.Size(146, 22);
+            this.SearchGlobalButton.Size = new System.Drawing.Size(157, 22);
             this.SearchGlobalButton.Text = "Global Search";
             this.SearchGlobalButton.Click += new System.EventHandler(this.SearchGlobalButton_Click);
             // 
@@ -760,17 +803,18 @@
             // 
             this.SearchFilterButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchFilterButton.Image")));
             this.SearchFilterButton.Name = "SearchFilterButton";
-            this.SearchFilterButton.Size = new System.Drawing.Size(146, 22);
-            this.SearchFilterButton.Text = "Filter";
+            this.SearchFilterButton.Size = new System.Drawing.Size(157, 22);
+            this.SearchFilterButton.Text = "过滤器";
             this.SearchFilterButton.Click += new System.EventHandler(this.SearchFilterButton_Click);
             // 
             // MainStatusBar
             // 
             this.MainStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainStatusBar.Location = new System.Drawing.Point(0, 565);
+            this.MainStatusBar.Location = new System.Drawing.Point(3, 594);
             this.MainStatusBar.Name = "MainStatusBar";
-            this.MainStatusBar.Size = new System.Drawing.Size(876, 22);
+            this.MainStatusBar.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.MainStatusBar.Size = new System.Drawing.Size(1040, 22);
             this.MainStatusBar.TabIndex = 2;
             this.MainStatusBar.Text = "MainStatusBar";
             // 
@@ -778,9 +822,9 @@
             // 
             this.StatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(861, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(1023, 17);
             this.StatusLabel.Spring = true;
-            this.StatusLabel.Text = "Initialising...";
+            this.StatusLabel.Text = "初始化中...";
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FileImageList16
@@ -816,7 +860,8 @@
             // 
             this.MainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.MainSplitContainer.Location = new System.Drawing.Point(0, 49);
+            this.MainSplitContainer.Location = new System.Drawing.Point(3, 52);
+            this.MainSplitContainer.Margin = new System.Windows.Forms.Padding(4);
             this.MainSplitContainer.Name = "MainSplitContainer";
             // 
             // MainSplitContainer.Panel1
@@ -825,11 +870,10 @@
             // 
             // MainSplitContainer.Panel2
             // 
-            this.MainSplitContainer.Panel2.Controls.Add(this.MainListView);
-            this.MainSplitContainer.Panel2.Controls.Add(this.EditModeBaseWarningPanel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.EditModeModsWarningPanel);
-            this.MainSplitContainer.Size = new System.Drawing.Size(876, 516);
+            this.MainSplitContainer.Panel2.Controls.Add(this.SubSplitContainer);
+            this.MainSplitContainer.Size = new System.Drawing.Size(1040, 542);
             this.MainSplitContainer.SplitterDistance = 309;
+            this.MainSplitContainer.SplitterWidth = 5;
             this.MainSplitContainer.TabIndex = 3;
             // 
             // MainTreeView
@@ -843,15 +887,39 @@
             this.MainTreeView.ImageIndex = 0;
             this.MainTreeView.ImageList = this.FileImageList16;
             this.MainTreeView.ItemHeight = 20;
-            this.MainTreeView.Location = new System.Drawing.Point(3, 3);
+            this.MainTreeView.Location = new System.Drawing.Point(4, 4);
+            this.MainTreeView.Margin = new System.Windows.Forms.Padding(4);
             this.MainTreeView.Name = "MainTreeView";
             this.MainTreeView.SelectedImageIndex = 0;
             this.MainTreeView.ShowLines = false;
             this.MainTreeView.ShowNodeToolTips = true;
-            this.MainTreeView.Size = new System.Drawing.Size(305, 513);
+            this.MainTreeView.Size = new System.Drawing.Size(305, 538);
             this.MainTreeView.TabIndex = 0;
             this.MainTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MainTreeView_AfterSelect);
             this.MainTreeView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainTreeView_MouseUp);
+            // 
+            // SubSplitContainer
+            // 
+            this.SubSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.SubSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.SubSplitContainer.Margin = new System.Windows.Forms.Padding(4);
+            this.SubSplitContainer.Name = "SubSplitContainer";
+            this.SubSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // SubSplitContainer.Panel1
+            // 
+            this.SubSplitContainer.Panel1.Controls.Add(this.MainListView);
+            this.SubSplitContainer.Panel1.Controls.Add(this.EditModeBaseWarningPanel);
+            this.SubSplitContainer.Panel1.Controls.Add(this.EditModeModsWarningPanel);
+            // 
+            // SubSplitContainer.Panel2
+            // 
+            this.SubSplitContainer.Panel2.Controls.Add(this.ConsoleTextBox);
+            this.SubSplitContainer.Size = new System.Drawing.Size(726, 542);
+            this.SubSplitContainer.SplitterDistance = 407;
+            this.SubSplitContainer.SplitterWidth = 6;
+            this.SubSplitContainer.TabIndex = 4;
             // 
             // MainListView
             // 
@@ -859,6 +927,7 @@
             this.MainListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainListView.BackColor = System.Drawing.SystemColors.Window;
             this.MainListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MainNameColumnHeader,
@@ -868,10 +937,11 @@
             this.MainPathColumnHeader});
             this.MainListView.FullRowSelect = true;
             this.MainListView.HideSelection = false;
-            this.MainListView.Location = new System.Drawing.Point(1, 3);
+            this.MainListView.Location = new System.Drawing.Point(1, 4);
+            this.MainListView.Margin = new System.Windows.Forms.Padding(4);
             this.MainListView.Name = "MainListView";
             this.MainListView.ShowItemToolTips = true;
-            this.MainListView.Size = new System.Drawing.Size(559, 513);
+            this.MainListView.Size = new System.Drawing.Size(725, 403);
             this.MainListView.SmallImageList = this.FileImageList16;
             this.MainListView.TabIndex = 0;
             this.MainListView.UseCompatibleStateImageBehavior = false;
@@ -890,28 +960,28 @@
             // 
             // MainNameColumnHeader
             // 
-            this.MainNameColumnHeader.Text = "Name";
+            this.MainNameColumnHeader.Text = "文件名";
             this.MainNameColumnHeader.Width = 219;
             // 
             // MainTypeColumnHeader
             // 
-            this.MainTypeColumnHeader.Text = "Type";
+            this.MainTypeColumnHeader.Text = "类型";
             this.MainTypeColumnHeader.Width = 120;
             // 
             // MainSizeColumnHeader
             // 
-            this.MainSizeColumnHeader.Text = "Size";
+            this.MainSizeColumnHeader.Text = "大小";
             this.MainSizeColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MainSizeColumnHeader.Width = 70;
             // 
             // MainAttrColumnHeader
             // 
-            this.MainAttrColumnHeader.Text = "Attributes";
-            this.MainAttrColumnHeader.Width = 118;
+            this.MainAttrColumnHeader.Text = "属性";
+            this.MainAttrColumnHeader.Width = 130;
             // 
             // MainPathColumnHeader
             // 
-            this.MainPathColumnHeader.Text = "Path";
+            this.MainPathColumnHeader.Text = "路径";
             this.MainPathColumnHeader.Width = 225;
             // 
             // EditModeBaseWarningPanel
@@ -921,17 +991,19 @@
             this.EditModeBaseWarningPanel.BackColor = System.Drawing.Color.DarkRed;
             this.EditModeBaseWarningPanel.Controls.Add(this.pictureBox1);
             this.EditModeBaseWarningPanel.Controls.Add(this.label1);
-            this.EditModeBaseWarningPanel.Location = new System.Drawing.Point(1, 3);
+            this.EditModeBaseWarningPanel.Location = new System.Drawing.Point(1, 4);
+            this.EditModeBaseWarningPanel.Margin = new System.Windows.Forms.Padding(4);
             this.EditModeBaseWarningPanel.Name = "EditModeBaseWarningPanel";
-            this.EditModeBaseWarningPanel.Size = new System.Drawing.Size(559, 24);
+            this.EditModeBaseWarningPanel.Size = new System.Drawing.Size(765, 32);
             this.EditModeBaseWarningPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.Size = new System.Drawing.Size(19, 21);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -941,11 +1013,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 5);
+            this.label1.Location = new System.Drawing.Point(29, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 13);
+            this.label1.Size = new System.Drawing.Size(215, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Warning: You are directly editing base game files";
+            this.label1.Text = "警告：您正在直接编辑游戏本体文件";
             // 
             // EditModeModsWarningPanel
             // 
@@ -954,17 +1027,19 @@
             this.EditModeModsWarningPanel.BackColor = System.Drawing.Color.DarkGreen;
             this.EditModeModsWarningPanel.Controls.Add(this.pictureBox2);
             this.EditModeModsWarningPanel.Controls.Add(this.label2);
-            this.EditModeModsWarningPanel.Location = new System.Drawing.Point(1, 28);
+            this.EditModeModsWarningPanel.Location = new System.Drawing.Point(1, 36);
+            this.EditModeModsWarningPanel.Margin = new System.Windows.Forms.Padding(4);
             this.EditModeModsWarningPanel.Name = "EditModeModsWarningPanel";
-            this.EditModeModsWarningPanel.Size = new System.Drawing.Size(559, 24);
+            this.EditModeModsWarningPanel.Size = new System.Drawing.Size(765, 32);
             this.EditModeModsWarningPanel.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(19, 21);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -974,11 +1049,30 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 5);
+            this.label2.Location = new System.Drawing.Point(29, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 13);
+            this.label2.Size = new System.Drawing.Size(200, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "You are editing files in the mods folder";
+            this.label2.Text = "您正在编辑 mods 文件夹中的文件";
+            // 
+            // ConsoleTextBox
+            // 
+            this.ConsoleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ConsoleTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ConsoleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConsoleTextBox.Font = new System.Drawing.Font("Consolas", 10F);
+            this.ConsoleTextBox.Location = new System.Drawing.Point(0, 0);
+            this.ConsoleTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ConsoleTextBox.Multiline = true;
+            this.ConsoleTextBox.Name = "ConsoleTextBox";
+            this.ConsoleTextBox.ReadOnly = true;
+            this.ConsoleTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.ConsoleTextBox.Size = new System.Drawing.Size(726, 127);
+            this.ConsoleTextBox.TabIndex = 7;
+            this.ConsoleTextBox.WordWrap = false;
             // 
             // ListContextMenu
             // 
@@ -990,6 +1084,7 @@
             this.ListContextExtractRawMenu,
             this.ListContextExtractUncompressedMenu,
             this.ListContextExtractAllMenu,
+            this.ListContextUnlockModelMenu,
             this.toolStripSeparator5,
             this.ListContextNewMenu,
             this.ListContextImportFbxMenu,
@@ -1010,15 +1105,15 @@
             this.ListContextDefragmentSeparator,
             this.ListContextSelectAllMenu});
             this.ListContextMenu.Name = "MainContextMenu";
-            this.ListContextMenu.Size = new System.Drawing.Size(209, 464);
+            this.ListContextMenu.Size = new System.Drawing.Size(212, 486);
             // 
             // ListContextViewMenu
             // 
             this.ListContextViewMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextViewMenu.Image")));
             this.ListContextViewMenu.Name = "ListContextViewMenu";
             this.ListContextViewMenu.ShortcutKeyDisplayString = "Ctrl+P";
-            this.ListContextViewMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextViewMenu.Text = "View...";
+            this.ListContextViewMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextViewMenu.Text = "查看...";
             this.ListContextViewMenu.Click += new System.EventHandler(this.ListContextViewMenu_Click);
             // 
             // ListContextViewHexMenu
@@ -1026,22 +1121,22 @@
             this.ListContextViewHexMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextViewHexMenu.Image")));
             this.ListContextViewHexMenu.Name = "ListContextViewHexMenu";
             this.ListContextViewHexMenu.ShortcutKeyDisplayString = "Ctrl+H";
-            this.ListContextViewHexMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextViewHexMenu.Text = "View Hex...";
+            this.ListContextViewHexMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextViewHexMenu.Text = "查看十六进制...";
             this.ListContextViewHexMenu.Click += new System.EventHandler(this.ListContextViewHexMenu_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextExportXmlMenu
             // 
             this.ListContextExportXmlMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextExportXmlMenu.Image")));
             this.ListContextExportXmlMenu.Name = "ListContextExportXmlMenu";
             this.ListContextExportXmlMenu.ShortcutKeyDisplayString = "Ctrl+S";
-            this.ListContextExportXmlMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextExportXmlMenu.Text = "Export XML...";
+            this.ListContextExportXmlMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextExportXmlMenu.Text = "导出 XML...";
             this.ListContextExportXmlMenu.Click += new System.EventHandler(this.ListContextExportXmlMenu_Click);
             // 
             // ListContextExtractRawMenu
@@ -1049,29 +1144,36 @@
             this.ListContextExtractRawMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextExtractRawMenu.Image")));
             this.ListContextExtractRawMenu.Name = "ListContextExtractRawMenu";
             this.ListContextExtractRawMenu.ShortcutKeyDisplayString = "Ctrl+E";
-            this.ListContextExtractRawMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextExtractRawMenu.Text = "Extract Raw...";
+            this.ListContextExtractRawMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextExtractRawMenu.Text = "导出原始文件...";
             this.ListContextExtractRawMenu.Click += new System.EventHandler(this.ListContextExtractRawMenu_Click);
             // 
             // ListContextExtractUncompressedMenu
             // 
             this.ListContextExtractUncompressedMenu.Name = "ListContextExtractUncompressedMenu";
-            this.ListContextExtractUncompressedMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextExtractUncompressedMenu.Text = "Extract Uncompressed...";
+            this.ListContextExtractUncompressedMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextExtractUncompressedMenu.Text = "导出未压缩文件...";
             this.ListContextExtractUncompressedMenu.Click += new System.EventHandler(this.ListContextExtractUncompressedMenu_Click);
             // 
             // ListContextExtractAllMenu
             // 
             this.ListContextExtractAllMenu.Name = "ListContextExtractAllMenu";
             this.ListContextExtractAllMenu.ShortcutKeyDisplayString = "Ctrl+Shift+E";
-            this.ListContextExtractAllMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextExtractAllMenu.Text = "Extract All...";
+            this.ListContextExtractAllMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextExtractAllMenu.Text = "导出全部...";
             this.ListContextExtractAllMenu.Click += new System.EventHandler(this.ListContextExtractAllMenu_Click);
+            // 
+            // ListContextUnlockModelMenu
+            // 
+            this.ListContextUnlockModelMenu.Name = "ListContextUnlockModelMenu";
+            this.ListContextUnlockModelMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextUnlockModelMenu.Text = "移除 ZModeler 文件锁";
+            this.ListContextUnlockModelMenu.Click += new System.EventHandler(this.ListContextUnlockModelMenu_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextNewMenu
             // 
@@ -1081,40 +1183,40 @@
             this.toolStripSeparator13,
             this.ListContextNewYtdFileMenu});
             this.ListContextNewMenu.Name = "ListContextNewMenu";
-            this.ListContextNewMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextNewMenu.Text = "New";
+            this.ListContextNewMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextNewMenu.Text = "新建";
             // 
             // ListContextNewFolderMenu
             // 
             this.ListContextNewFolderMenu.Name = "ListContextNewFolderMenu";
-            this.ListContextNewFolderMenu.Size = new System.Drawing.Size(146, 22);
-            this.ListContextNewFolderMenu.Text = "Folder...";
+            this.ListContextNewFolderMenu.Size = new System.Drawing.Size(136, 22);
+            this.ListContextNewFolderMenu.Text = "文件夹...";
             this.ListContextNewFolderMenu.Click += new System.EventHandler(this.ListContextNewFolderMenu_Click);
             // 
             // ListContextNewRpfArchiveMenu
             // 
             this.ListContextNewRpfArchiveMenu.Name = "ListContextNewRpfArchiveMenu";
-            this.ListContextNewRpfArchiveMenu.Size = new System.Drawing.Size(146, 22);
-            this.ListContextNewRpfArchiveMenu.Text = "RPF Archive...";
+            this.ListContextNewRpfArchiveMenu.Size = new System.Drawing.Size(136, 22);
+            this.ListContextNewRpfArchiveMenu.Text = "RPF 存档...";
             this.ListContextNewRpfArchiveMenu.Click += new System.EventHandler(this.ListContextNewRpfArchiveMenu_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(133, 6);
             // 
             // ListContextNewYtdFileMenu
             // 
             this.ListContextNewYtdFileMenu.Name = "ListContextNewYtdFileMenu";
-            this.ListContextNewYtdFileMenu.Size = new System.Drawing.Size(146, 22);
-            this.ListContextNewYtdFileMenu.Text = "YTD File...";
+            this.ListContextNewYtdFileMenu.Size = new System.Drawing.Size(136, 22);
+            this.ListContextNewYtdFileMenu.Text = "YTD 文件...";
             this.ListContextNewYtdFileMenu.Click += new System.EventHandler(this.ListContextNewYtdFileMenu_Click);
             // 
             // ListContextImportFbxMenu
             // 
             this.ListContextImportFbxMenu.Name = "ListContextImportFbxMenu";
-            this.ListContextImportFbxMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextImportFbxMenu.Text = "Import FBX...";
+            this.ListContextImportFbxMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextImportFbxMenu.Text = "导入 FBX...";
             this.ListContextImportFbxMenu.Click += new System.EventHandler(this.ListContextImportFbxMenu_Click);
             // 
             // ListContextImportXmlMenu
@@ -1122,8 +1224,8 @@
             this.ListContextImportXmlMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextImportXmlMenu.Image")));
             this.ListContextImportXmlMenu.Name = "ListContextImportXmlMenu";
             this.ListContextImportXmlMenu.ShortcutKeyDisplayString = "Shift+Ins";
-            this.ListContextImportXmlMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextImportXmlMenu.Text = "Import XML...";
+            this.ListContextImportXmlMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextImportXmlMenu.Text = "导入 XML...";
             this.ListContextImportXmlMenu.Click += new System.EventHandler(this.ListContextImportXmlMenu_Click);
             // 
             // ListContextImportRawMenu
@@ -1131,71 +1233,71 @@
             this.ListContextImportRawMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextImportRawMenu.Image")));
             this.ListContextImportRawMenu.Name = "ListContextImportRawMenu";
             this.ListContextImportRawMenu.ShortcutKeyDisplayString = "Ins";
-            this.ListContextImportRawMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextImportRawMenu.Text = "Import Raw...";
+            this.ListContextImportRawMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextImportRawMenu.Text = "导入原始文件...";
             this.ListContextImportRawMenu.Click += new System.EventHandler(this.ListContextImportRawMenu_Click);
             // 
             // ListContextImportSeparator
             // 
             this.ListContextImportSeparator.Name = "ListContextImportSeparator";
-            this.ListContextImportSeparator.Size = new System.Drawing.Size(205, 6);
+            this.ListContextImportSeparator.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextCopyMenu
             // 
             this.ListContextCopyMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextCopyMenu.Image")));
             this.ListContextCopyMenu.Name = "ListContextCopyMenu";
             this.ListContextCopyMenu.ShortcutKeyDisplayString = "Ctrl+C";
-            this.ListContextCopyMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextCopyMenu.Text = "Copy";
+            this.ListContextCopyMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextCopyMenu.Text = "复制";
             this.ListContextCopyMenu.Click += new System.EventHandler(this.ListContextCopyMenu_Click);
             // 
             // ListContextCopyPathMenu
             // 
             this.ListContextCopyPathMenu.Name = "ListContextCopyPathMenu";
             this.ListContextCopyPathMenu.ShortcutKeyDisplayString = "Ctrl+Shift+C";
-            this.ListContextCopyPathMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextCopyPathMenu.Text = "Copy Path";
+            this.ListContextCopyPathMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextCopyPathMenu.Text = "复制路径";
             this.ListContextCopyPathMenu.Click += new System.EventHandler(this.ListContextCopyPathMenu_Click);
             // 
             // ListContextCopyFileListMenu
             // 
             this.ListContextCopyFileListMenu.Name = "ListContextCopyFileListMenu";
-            this.ListContextCopyFileListMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextCopyFileListMenu.Text = "Copy File List";
+            this.ListContextCopyFileListMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextCopyFileListMenu.Text = "复制文件列表";
             this.ListContextCopyFileListMenu.Click += new System.EventHandler(this.ListContextCopyFileListMenu_Click);
             // 
             // ListContextPasteMenu
             // 
             this.ListContextPasteMenu.Name = "ListContextPasteMenu";
             this.ListContextPasteMenu.ShortcutKeyDisplayString = "Ctrl+V";
-            this.ListContextPasteMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextPasteMenu.Text = "Paste";
+            this.ListContextPasteMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextPasteMenu.Text = "粘贴";
             this.ListContextPasteMenu.Click += new System.EventHandler(this.ListContextPasteMenu_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(205, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextOpenFileLocationMenu
             // 
             this.ListContextOpenFileLocationMenu.Name = "ListContextOpenFileLocationMenu";
-            this.ListContextOpenFileLocationMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextOpenFileLocationMenu.Text = "Open File Location";
+            this.ListContextOpenFileLocationMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextOpenFileLocationMenu.Text = "打开文件位置";
             this.ListContextOpenFileLocationMenu.Click += new System.EventHandler(this.ListContextOpenFileLocationMenu_Click);
             // 
             // ListContextOpenFileLocationSeparator
             // 
             this.ListContextOpenFileLocationSeparator.Name = "ListContextOpenFileLocationSeparator";
-            this.ListContextOpenFileLocationSeparator.Size = new System.Drawing.Size(205, 6);
+            this.ListContextOpenFileLocationSeparator.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextRenameMenu
             // 
             this.ListContextRenameMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextRenameMenu.Image")));
             this.ListContextRenameMenu.Name = "ListContextRenameMenu";
             this.ListContextRenameMenu.ShortcutKeyDisplayString = "F2";
-            this.ListContextRenameMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextRenameMenu.Text = "Rename";
+            this.ListContextRenameMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextRenameMenu.Text = "重命名";
             this.ListContextRenameMenu.Click += new System.EventHandler(this.ListContextRenameMenu_Click);
             // 
             // ListContextDeleteMenu
@@ -1203,33 +1305,33 @@
             this.ListContextDeleteMenu.Image = ((System.Drawing.Image)(resources.GetObject("ListContextDeleteMenu.Image")));
             this.ListContextDeleteMenu.Name = "ListContextDeleteMenu";
             this.ListContextDeleteMenu.ShortcutKeyDisplayString = "Shift+Del";
-            this.ListContextDeleteMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextDeleteMenu.Text = "Delete";
+            this.ListContextDeleteMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextDeleteMenu.Text = "删除";
             this.ListContextDeleteMenu.Click += new System.EventHandler(this.ListContextDeleteMenu_Click);
             // 
             // ListContextEditSeparator
             // 
             this.ListContextEditSeparator.Name = "ListContextEditSeparator";
-            this.ListContextEditSeparator.Size = new System.Drawing.Size(205, 6);
+            this.ListContextEditSeparator.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextDefragmentMenu
             // 
             this.ListContextDefragmentMenu.Name = "ListContextDefragmentMenu";
-            this.ListContextDefragmentMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextDefragmentMenu.Text = "Defragment Archive...";
+            this.ListContextDefragmentMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextDefragmentMenu.Text = "碎片整理...";
             this.ListContextDefragmentMenu.Click += new System.EventHandler(this.ListContextDefragmentMenu_Click);
             // 
             // ListContextDefragmentSeparator
             // 
             this.ListContextDefragmentSeparator.Name = "ListContextDefragmentSeparator";
-            this.ListContextDefragmentSeparator.Size = new System.Drawing.Size(205, 6);
+            this.ListContextDefragmentSeparator.Size = new System.Drawing.Size(208, 6);
             // 
             // ListContextSelectAllMenu
             // 
             this.ListContextSelectAllMenu.Name = "ListContextSelectAllMenu";
             this.ListContextSelectAllMenu.ShortcutKeyDisplayString = "Ctrl+A";
-            this.ListContextSelectAllMenu.Size = new System.Drawing.Size(208, 22);
-            this.ListContextSelectAllMenu.Text = "Select All";
+            this.ListContextSelectAllMenu.Size = new System.Drawing.Size(211, 22);
+            this.ListContextSelectAllMenu.Text = "选择全部";
             this.ListContextSelectAllMenu.Click += new System.EventHandler(this.ListContextSelectAllMenu_Click);
             // 
             // TreeContextMenu
@@ -1244,60 +1346,60 @@
             this.TreeContextCloseFolderSeparator,
             this.TreeContextCloseFolderMenu});
             this.TreeContextMenu.Name = "MainContextMenu";
-            this.TreeContextMenu.Size = new System.Drawing.Size(215, 148);
+            this.TreeContextMenu.Size = new System.Drawing.Size(246, 148);
             // 
             // TreeContextCopyPathMenu
             // 
             this.TreeContextCopyPathMenu.Image = ((System.Drawing.Image)(resources.GetObject("TreeContextCopyPathMenu.Image")));
             this.TreeContextCopyPathMenu.Name = "TreeContextCopyPathMenu";
-            this.TreeContextCopyPathMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextCopyPathMenu.Text = "Copy Path";
+            this.TreeContextCopyPathMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextCopyPathMenu.Text = "复制路径";
             this.TreeContextCopyPathMenu.Click += new System.EventHandler(this.TreeContextCopyPathMenu_Click);
             // 
             // TreeContextWinExplorerMenu
             // 
             this.TreeContextWinExplorerMenu.Image = ((System.Drawing.Image)(resources.GetObject("TreeContextWinExplorerMenu.Image")));
             this.TreeContextWinExplorerMenu.Name = "TreeContextWinExplorerMenu";
-            this.TreeContextWinExplorerMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextWinExplorerMenu.Text = "Show in Windows Explorer";
+            this.TreeContextWinExplorerMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextWinExplorerMenu.Text = "在 Windows 资源管理器中显示";
             this.TreeContextWinExplorerMenu.Click += new System.EventHandler(this.TreeContextWinExplorerMenu_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(211, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(242, 6);
             // 
             // TreeContextExpandMenu
             // 
             this.TreeContextExpandMenu.Name = "TreeContextExpandMenu";
-            this.TreeContextExpandMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextExpandMenu.Text = "Expand";
+            this.TreeContextExpandMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextExpandMenu.Text = "展开";
             this.TreeContextExpandMenu.Click += new System.EventHandler(this.TreeContextExpandMenu_Click);
             // 
             // TreeContextCollapseMenu
             // 
             this.TreeContextCollapseMenu.Name = "TreeContextCollapseMenu";
-            this.TreeContextCollapseMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextCollapseMenu.Text = "Collapse";
+            this.TreeContextCollapseMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextCollapseMenu.Text = "收起";
             this.TreeContextCollapseMenu.Click += new System.EventHandler(this.TreeContextCollapseMenu_Click);
             // 
             // TreeContextCollapseAllMenu
             // 
             this.TreeContextCollapseAllMenu.Name = "TreeContextCollapseAllMenu";
-            this.TreeContextCollapseAllMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextCollapseAllMenu.Text = "Collapse All";
+            this.TreeContextCollapseAllMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextCollapseAllMenu.Text = "收起所有";
             this.TreeContextCollapseAllMenu.Click += new System.EventHandler(this.TreeContextCollapseAllMenu_Click);
             // 
             // TreeContextCloseFolderSeparator
             // 
             this.TreeContextCloseFolderSeparator.Name = "TreeContextCloseFolderSeparator";
-            this.TreeContextCloseFolderSeparator.Size = new System.Drawing.Size(211, 6);
+            this.TreeContextCloseFolderSeparator.Size = new System.Drawing.Size(242, 6);
             // 
             // TreeContextCloseFolderMenu
             // 
             this.TreeContextCloseFolderMenu.Name = "TreeContextCloseFolderMenu";
-            this.TreeContextCloseFolderMenu.Size = new System.Drawing.Size(214, 22);
-            this.TreeContextCloseFolderMenu.Text = "Close Folder";
+            this.TreeContextCloseFolderMenu.Size = new System.Drawing.Size(245, 22);
+            this.TreeContextCloseFolderMenu.Text = "关闭文件夹";
             this.TreeContextCloseFolderMenu.Click += new System.EventHandler(this.TreeContextCloseFolderMenu_Click);
             // 
             // OpenFileDialog
@@ -1310,17 +1412,21 @@
             // 
             // ExploreForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 587);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1046, 618);
             this.Controls.Add(this.MainSplitContainer);
             this.Controls.Add(this.MainStatusBar);
             this.Controls.Add(this.MainToolbar);
             this.Controls.Add(this.MainMenu);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExploreForm";
-            this.Text = "RPF Explorer - CodeWalker by dexyfex";
+            this.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Text = "RPF 文件浏览器 - CodeWalker by dexyfex | 汉化 by Akkariin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExploreForm_FormClosed);
             this.Load += new System.EventHandler(this.ExploreForm_Load);
             this.MainMenu.ResumeLayout(false);
@@ -1333,6 +1439,11 @@
             this.MainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
+            this.SubSplitContainer.Panel1.ResumeLayout(false);
+            this.SubSplitContainer.Panel2.ResumeLayout(false);
+            this.SubSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SubSplitContainer)).EndInit();
+            this.SubSplitContainer.ResumeLayout(false);
             this.EditModeBaseWarningPanel.ResumeLayout(false);
             this.EditModeBaseWarningPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1364,6 +1475,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox SearchTextBox;
         private System.Windows.Forms.SplitContainer MainSplitContainer;
+        private System.Windows.Forms.SplitContainer SubSplitContainer;
         private System.Windows.Forms.TreeView MainTreeView;
         private System.Windows.Forms.ListView MainListView;
         private System.Windows.Forms.ColumnHeader MainNameColumnHeader;
@@ -1476,5 +1588,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripMenuItem ListContextNewYtdFileMenu;
         private System.Windows.Forms.ToolStripMenuItem ToolsAudioExplorerMenu;
+        private WinForms.TextBoxFix ConsoleTextBox;
+        private System.Windows.Forms.ToolStripMenuItem EnableConsole;
+        private System.Windows.Forms.ToolStripMenuItem EditUnlockModelMenu;
+        private System.Windows.Forms.ToolStripMenuItem ListContextUnlockModelMenu;
+        private System.Windows.Forms.ToolStripMenuItem AboutMenu;
     }
 }

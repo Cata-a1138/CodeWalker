@@ -67,7 +67,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = CurrentRoom?.RoomName ?? "Room";
+            Text = CurrentRoom?.RoomName ?? "房间";
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)

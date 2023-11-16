@@ -166,7 +166,7 @@ namespace CodeWalker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading shaders!\n" + ex.ToString());
+                MessageBox.Show("无法加载着色器\n" + ex.ToString());
                 return;
             }
 
@@ -326,7 +326,7 @@ namespace CodeWalker
             //main content loading thread.
             running = true;
 
-            UpdateStatus("Scanning...");
+            UpdateStatus("扫描中...");
 
             try
             {
@@ -334,7 +334,7 @@ namespace CodeWalker
             }
             catch
             {
-                MessageBox.Show("Keys not found! This shouldn't happen.");
+                MessageBox.Show("无法找到秘钥！这不应该发生！");
                 Close();
                 return;
             }
@@ -417,18 +417,18 @@ namespace CodeWalker
 
         private void LoadWorld()
         {
-            UpdateStatus("Loading timecycles...");
+            UpdateStatus("正在加载 timecycles...");
             timecycle.Init(GameFileCache, UpdateStatus);
             timecycle.SetTime(Renderer.timeofday);
 
-            UpdateStatus("Loading materials...");
+            UpdateStatus("正在加载材质...");
             BoundsMaterialTypes.Init(GameFileCache);
 
-            UpdateStatus("Loading weather...");
+            UpdateStatus("正在加载天气...");
             weather.Init(GameFileCache, UpdateStatus, timecycle);
             //UpdateWeatherTypesComboBox(weather);
 
-            UpdateStatus("Loading clouds...");
+            UpdateStatus("正在加载云层...");
             clouds.Init(GameFileCache, UpdateStatus, weather);
             //UpdateCloudTypesComboBox(clouds);
 
@@ -515,10 +515,10 @@ namespace CodeWalker
             dnode.Tag = drawable;
             dnode.Checked = check;
 
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "High Detail", true, dnode, tnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "Medium Detail", false, dnode, tnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "Low Detail", false, dnode, tnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "Very Low Detail", false, dnode, tnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "高细节", true, dnode, tnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "中细节", false, dnode, tnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "低细节", false, dnode, tnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "极低细节", false, dnode, tnode);
             //AddDrawableModelsTreeNodes(drawable.DrawableModels?.Extra, "X Detail", false, dnode, tnode);
 
         }
@@ -573,7 +573,7 @@ namespace CodeWalker
                                 var tstr = tex.Name.Trim();
                                 if (t != null)
                                 {
-                                    tstr = string.Format("{0} ({1}x{2}, embedded)", tex.Name, t.Width, t.Height);
+                                    tstr = string.Format("{0} ({1}x{2}, 嵌入)", tex.Name, t.Width, t.Height);
                                 }
                                 var tnode = tgnode.Nodes.Add(hash.ToString().Trim() + ": " + tstr);
                                 tnode.Tag = tex;

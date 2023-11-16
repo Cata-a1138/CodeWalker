@@ -363,16 +363,16 @@ namespace CodeWalker.Rendering
             {
                 switch (modestr)
                 {
-                    case "Perspective":
+                    case "透视视图":
                         camera.IsOrthographic = false;
                         MapViewEnabled = false;
                         camera.UpdateProj = true;
                         break;
-                    case "Orthographic":
+                    case "正交视图":
                         camera.IsOrthographic = true;
                         MapViewEnabled = false;
                         break;
-                    case "2D Map":
+                    case "2D 地图":
                         camera.IsOrthographic = true;
                         MapViewEnabled = true;
                         break;
@@ -392,7 +392,7 @@ namespace CodeWalker.Rendering
             long vr = renderableCache.TotalGraphicsMemoryUse + (shaders != null ? shaders.TotalGraphicsMemoryUse : 0);
             string vram = TextUtil.GetBytesReadable(vr);
             //StatsLabel.Text = string.Format("Drawn: {0} geom, Loaded: {1}/{5} dr, {2}/{6} tx, Vram: {3}, Fps: {4}", rgc, crc, ctc, vram, fps, tcrc, tctc);
-            return string.Format("Drawn: {0} geom, Loaded: {1} dr, {2} tx, Vram: {3}, Fps: {4}", rgc, crc, ctc, vram, fps);
+            return string.Format("绘制：{0} 几何体 | 已加载 {1} 对象，{2} 纹理 | 内存：{3} | FPS：{4}", rgc, crc, ctc, vram, fps);
         }
 
 

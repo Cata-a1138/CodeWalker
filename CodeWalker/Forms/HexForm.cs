@@ -54,7 +54,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - Hex Viewer - CodeWalker by dexyfex";
+            Text = fileName + " - 十六进制查看器 - CodeWalker by dexyfex";
         }
 
         private void UpdateTextBoxFromData()
@@ -66,7 +66,7 @@ namespace CodeWalker.Forms
             }
             if (data.Length > (1048576 * 5))
             {
-                HexTextBox.Text = "[File size > 5MB - Not shown due to performance limitations - Please use an external viewer for this file.]";
+                HexTextBox.Text = "[文件大小 > 5MB - 受限于性能原因无法显示，请使用外部查看器打开此文件]";
                 return;
             }
 

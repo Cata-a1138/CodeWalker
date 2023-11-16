@@ -40,7 +40,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - Waypoint Records Viewer - CodeWalker by dexyfex";
+            Text = fileName + " - 导航记录查看器 - CodeWalker by dexyfex";
         }
 
 
@@ -63,7 +63,7 @@ namespace CodeWalker.Forms
             }
             else
             {
-                MessageBox.Show("Error", "Could not load ywr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("错误", "无法加载 ywr", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private string GenerateText()

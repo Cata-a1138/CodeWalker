@@ -32,7 +32,7 @@ namespace CodeWalker.Tools
             {
                 GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
                 KeysLoaded = true;
-                UpdateStatus("Keys loaded. Nothing to do here!");
+                UpdateStatus("秘钥已加载！");
             }
             catch
             {
@@ -84,7 +84,7 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (KeysLoaded)
             {
-                if (MessageBox.Show("Keys are already loaded. Do you wish to do the extraction anyway?", "Keys already loaded", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                if (MessageBox.Show("秘钥已经加载过了，您确定要再次进行导出？", "秘钥已加载", MessageBoxButtons.OKCancel) != DialogResult.OK)
                 {
                     return;
                 }
@@ -103,32 +103,32 @@ namespace CodeWalker.Tools
 
                     if (AbortOperation)
                     {
-                        UpdateStatus("Key extraction aborted.");
+                        UpdateStatus("秘钥导出已取消");
                         return;
                     }
 
                     FileInfo dmpfi = new FileInfo(exepath);
 
-                    UpdateStatus(string.Format("Scanning {0} for keys...", dmpfi.Name));
+                    UpdateStatus(string.Format("正在扫描 {0} 获取秘钥...", dmpfi.Name));
 
 
                     byte[] exedat = File.ReadAllBytes(exepath);
                     GTA5Keys.GenerateV2(exedat, UpdateStatus);
 
 
-                    UpdateStatus("Saving found keys...");
+                    UpdateStatus("正在保存已找到的秘钥...");
 
                     Settings.Default.Key = Convert.ToBase64String(GTA5Keys.PC_AES_KEY);
                     Settings.Default.Save();
                     //GTA5Keys.SaveToPath();
 
-                    UpdateStatus("Keys extracted successfully.");
+                    UpdateStatus("密钥已经成功导出！");
                     KeysLoaded = true;
                     InProgress = false;
                 }
                 catch (Exception ex)
                 {
-                    UpdateStatus("Error - " + ex.ToString());
+                    UpdateStatus("错误 - " + ex.ToString());
 
                     InProgress = false;
                 }

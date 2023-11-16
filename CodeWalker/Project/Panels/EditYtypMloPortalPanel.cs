@@ -78,7 +78,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "Portal " + (CurrentPortal?.Name ?? "");
+            Text = "门户 " + (CurrentPortal?.Name ?? "");
         }
 
         private void UpdateProjectExplorer()

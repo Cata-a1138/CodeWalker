@@ -40,7 +40,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - FXC Viewer - CodeWalker by dexyfex";
+            Text = fileName + " - 着色器查看器 - CodeWalker by dexyfex";
         }
 
 
@@ -79,7 +79,7 @@ namespace CodeWalker.Forms
             }
 
 
-            StatusLabel.Text = (fxc.Shaders?.Length??0).ToString() + " shaders, " + (fxc.Techniques?.Length??0).ToString() + " techniques";
+            StatusLabel.Text = (fxc.Shaders?.Length??0).ToString() + " 着色器，" + (fxc.Techniques?.Length??0).ToString() + " 技术";
         }
 
 

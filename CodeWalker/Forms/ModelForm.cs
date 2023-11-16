@@ -216,7 +216,7 @@ namespace CodeWalker.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading shaders!\n" + ex.ToString());
+                MessageBox.Show("无法加载着色器！\n" + ex.ToString());
                 return;
             }
 
@@ -473,7 +473,7 @@ namespace CodeWalker.Forms
 
             if ((arch != null) && (arch != currentArchetype) && (updateArchetypeStatus))
             {
-                UpdateStatus("Archetype: " + arch.Name.ToString());
+                UpdateStatus("定义类型：" + arch.Name.ToString());
                 currentArchetype = arch;
                 updateArchetypeStatus = false;
             }
@@ -1112,10 +1112,10 @@ namespace CodeWalker.Forms
             TexturesTreeView.Nodes.Clear();
             if (drawable != null)
             {
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "High Detail", true);
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "Medium Detail", false);
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "Low Detail", false);
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "Very Low Detail", false);
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "高细节", true);
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "中细节", false);
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "低细节", false);
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "极低细节", false);
                 //AddDrawableModelsTreeNodes(drawable.DrawableModels?.Extra, "X Detail", false);
 
                 var fdrawable = drawable as FragDrawable;
@@ -1132,10 +1132,10 @@ namespace CodeWalker.Forms
                                 if (cdrwbl.Owner is FragDrawable) continue; //it's a copied drawable... eg a wheel
 
                                 var dname = child.GroupName;
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.High, dname + " - High Detail", true);
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Med, dname + " - Medium Detail", false);
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Low, dname + " - Low Detail", false);
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.VLow, dname + " - Very Low Detail", false);
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.High, dname + " - 高细节", true);
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Med, dname + " - 中细节", false);
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Low, dname + " - 低细节", false);
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.VLow, dname + " - 极低细节", false);
                             }
                         }
                     }
@@ -1150,11 +1150,11 @@ namespace CodeWalker.Forms
                             if ((arrd != null) && (arrd.AllModels?.Length > 0))
                             {
                                 var dname = ((fdnames != null) && (i < fdnames.Length)) ? fdnames[i]?.Value : arrd.Name;
-                                if (string.IsNullOrEmpty(dname)) dname = "(No name)";
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.High, dname + " - High Detail", false);
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Med, dname + " - Medium Detail", false);
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Low, dname + " - Low Detail", false);
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.VLow, dname + " - Very Low Detail", false);
+                                if (string.IsNullOrEmpty(dname)) dname = "(未命名)";
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.High, dname + " - 高细节", false);
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Med, dname + " - 中细节", false);
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Low, dname + " - 低细节", false);
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.VLow, dname + " - 极低细节", false);
                             }
                         }
                     }
@@ -1238,10 +1238,10 @@ namespace CodeWalker.Forms
             dnode.Tag = drawable;
             dnode.Checked = check;
 
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "High Detail", true, dnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "Medium Detail", false, dnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "Low Detail", false, dnode);
-            AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "Very Low Detail", false, dnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "高细节", true, dnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "中细节", false, dnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "低细节", false, dnode);
+            AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "极低细节", false, dnode);
             //AddDrawableModelsTreeNodes(drawable.DrawableModels?.Extra, "X Detail", false, dnode);
 
         }
@@ -1295,7 +1295,7 @@ namespace CodeWalker.Forms
                                 var tstr = tex.Name.Trim();
                                 if (t != null)
                                 {
-                                    tstr = string.Format("{0} ({1}x{2}, embedded)", tex.Name, t.Width, t.Height);
+                                    tstr = string.Format("{0} ({1}x{2}, 嵌入)", tex.Name, t.Width, t.Height);
                                 }
                                 var tnode = tgnode.Nodes.Add(hash.ToString().Trim() + ": " + tstr);
                                 tnode.Tag = tex;
@@ -1500,7 +1500,7 @@ namespace CodeWalker.Forms
             }
             else
             {
-                MessageBox.Show("Material editor not supported for the current file.");
+                MessageBox.Show("当前文件不支持材质编辑器");
                 return;
             }
 
@@ -1554,7 +1554,7 @@ namespace CodeWalker.Forms
             }
             else
             {
-                MessageBox.Show("Couldn't find embedded texture dict.");
+                MessageBox.Show("无法找到嵌入的纹理字典");
             }
         }
 
@@ -1581,7 +1581,7 @@ namespace CodeWalker.Forms
             }
             else
             {
-                MessageBox.Show("Light editor not supported for the current file.");
+                MessageBox.Show("当前文件不支持光照编辑器");
             }
 
             if (lightForm == null)
@@ -1669,7 +1669,7 @@ namespace CodeWalker.Forms
                 {
                     fileExt = fileExt.Substring(1);
                 }
-                SaveFileDialog.Filter = fileExt.ToUpperInvariant() + " files|*." + fileExt + "|All files|*.*";
+                SaveFileDialog.Filter = fileExt.ToUpperInvariant() + " 文件|*." + fileExt + "|所有文件|*.*";
 
                 if (SaveFileDialog.ShowDialog() != DialogResult.OK) return;
                 fn = SaveFileDialog.FileName;
@@ -1718,7 +1718,7 @@ namespace CodeWalker.Forms
 #endif
             if (fileBytes == null)
             {
-                MessageBox.Show("Error saving file!\n fileBytes was null!");
+                MessageBox.Show("无法保存文件！\n 文件内容为空！");
                 return;
             }
 
@@ -1729,7 +1729,7 @@ namespace CodeWalker.Forms
             {
                 if (!rpfFileEntry.Path.ToLowerInvariant().StartsWith("mods"))
                 {
-                    if (MessageBox.Show("This file is NOT located in the mods folder - Are you SURE you want to save this file?\r\nWARNING: This could cause permanent damage to your game!!!", "WARNING: Are you sure about this?", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    if (MessageBox.Show("该文件不在 mods 目录内，您确定要保存该文件吗？\r\n警告：请谨慎操作，这可能会导致你的游戏损坏！！！", "警告：直接编辑游戏文件", MessageBoxButtons.YesNo) != DialogResult.Yes)
                     {
                         return;//that was a close one
                     }
@@ -1746,13 +1746,13 @@ namespace CodeWalker.Forms
 
                     exploreForm?.RefreshMainListViewInvoke(); //update the file details in explorer...
 
-                    StatusLabel.Text = rpfFileEntry.Name + " saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = rpfFileEntry.Name + " 文件成功保存于 " + DateTime.Now.ToString();
 
                     //victory!
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file to RPF! The RPF archive may be corrupted...\r\n" + ex.ToString(), "Really Bad Error");
+                    MessageBox.Show("无法将文件写入 RPF 存档！RPF 存档文件可能已损坏！\r\n" + ex.ToString(), "发生错误");
                 }
 
             }
@@ -1771,11 +1771,11 @@ namespace CodeWalker.Forms
 
                     exploreForm?.RefreshMainListViewInvoke(); //update the file details in explorer...
 
-                    StatusLabel.Text = fileName + " saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = fileName + " 文件成功保存于 " + DateTime.Now.ToString();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error writing file to disk!\n" + ex.ToString());
+                    MessageBox.Show("无法将文件写入硬盘！\n" + ex.ToString());
                     return;
                 }
             }
@@ -1794,7 +1794,7 @@ namespace CodeWalker.Forms
         {
             if (gameFileCache == null)
             {
-                MessageBox.Show("This operation requires GameFileCache to continue. This shouldn't happen!");
+                MessageBox.Show("该操作需要 GameFileCache 才能继续，这不应该发生！");
                 return;
             }
 
@@ -1994,15 +1994,15 @@ namespace CodeWalker.Forms
             var sb = new StringBuilder();
             if (successcount > 0)
             {
-                sb.AppendLine(successcount.ToString() + " textures successfully exported.");
+                sb.AppendLine(successcount.ToString() + " 纹理导出成功。");
             }
             if (texturesMissing.Count > 0)
             {
-                sb.AppendLine(texturesMissing.Count.ToString() + " textures weren't found!");
+                sb.AppendLine(texturesMissing.Count.ToString() + " 纹理不存在！");
             }
             if (errordds.Count > 0)
             {
-                sb.AppendLine(errordds.Count.ToString() + " textures couldn't be converted to .dds!");
+                sb.AppendLine(errordds.Count.ToString() + " 纹理无法转换为 .dds 格式！");
             }
             if (sb.Length > 0)
             {
@@ -2010,7 +2010,7 @@ namespace CodeWalker.Forms
             }
             else
             {
-                MessageBox.Show("No textures were found to export.");
+                MessageBox.Show("没有找到可导出的纹理。");
             }
 
         }
@@ -2641,6 +2641,10 @@ namespace CodeWalker.Forms
         private void ToolbarScaleButton_Click(object sender, EventArgs e)
         {
             SetWidgetMode(ToolbarScaleButton.Checked ? WidgetMode.Default : WidgetMode.Scale);
+        }
+
+        private void MainToolbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+
         }
     }
 }

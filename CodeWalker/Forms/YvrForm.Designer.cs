@@ -57,11 +57,12 @@
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseButton.Location = new System.Drawing.Point(845, 389);
+            this.CloseButton.Location = new System.Drawing.Point(919, 386);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(75, 23);
+            this.CloseButton.Size = new System.Drawing.Size(88, 29);
             this.CloseButton.TabIndex = 5;
-            this.CloseButton.Text = "Close";
+            this.CloseButton.Text = "关闭";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
@@ -89,107 +90,109 @@
             this.BrakePedalPowerColumn,
             this.HandbrakeUsedColumn});
             this.MainListView.HideSelection = false;
-            this.MainListView.Location = new System.Drawing.Point(12, 12);
+            this.MainListView.Location = new System.Drawing.Point(14, 16);
+            this.MainListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainListView.Name = "MainListView";
-            this.MainListView.Size = new System.Drawing.Size(908, 371);
+            this.MainListView.Size = new System.Drawing.Size(992, 358);
             this.MainListView.TabIndex = 6;
             this.MainListView.UseCompatibleStateImageBehavior = false;
             this.MainListView.View = System.Windows.Forms.View.Details;
             // 
             // PosXColumn
             // 
-            this.PosXColumn.Text = "X Pos";
+            this.PosXColumn.Text = "X 坐标";
             this.PosXColumn.Width = 72;
             // 
             // PosYColumn
             // 
-            this.PosYColumn.Text = "Y Pos";
+            this.PosYColumn.Text = "Y 坐标";
             this.PosYColumn.Width = 72;
             // 
             // PosZColumn
             // 
-            this.PosZColumn.Text = "Z Pos";
+            this.PosZColumn.Text = "Z 坐标";
             this.PosZColumn.Width = 72;
             // 
             // TimeColumn
             // 
-            this.TimeColumn.Text = "Time";
+            this.TimeColumn.Text = "时间";
             this.TimeColumn.Width = 55;
             // 
             // VelocityXColumn
             // 
-            this.VelocityXColumn.Text = "X Velocity";
+            this.VelocityXColumn.Text = "X 加速度";
             this.VelocityXColumn.Width = 48;
             // 
             // VelocityYColumn
             // 
-            this.VelocityYColumn.Text = "Y Velocity";
+            this.VelocityYColumn.Text = "Y 加速度";
             this.VelocityYColumn.Width = 48;
             // 
             // VelocityZColumn
             // 
-            this.VelocityZColumn.Text = "Z Velocity";
+            this.VelocityZColumn.Text = "Z 加速度";
             this.VelocityZColumn.Width = 48;
             // 
             // RightXColumn
             // 
-            this.RightXColumn.Text = "Right X";
+            this.RightXColumn.Text = "右边 X";
             this.RightXColumn.Width = 48;
             // 
             // RightYColumn
             // 
-            this.RightYColumn.Text = "Right Y";
+            this.RightYColumn.Text = "右边 Y";
             this.RightYColumn.Width = 48;
             // 
             // RightZColumn
             // 
-            this.RightZColumn.Text = "Right Z";
+            this.RightZColumn.Text = "右边 Z";
             this.RightZColumn.Width = 48;
             // 
             // ForwardXColumn
             // 
-            this.ForwardXColumn.Text = "Fwd X";
+            this.ForwardXColumn.Text = "前进 X";
             this.ForwardXColumn.Width = 44;
             // 
             // ForwardYColumn
             // 
-            this.ForwardYColumn.Text = "Fwd Y";
+            this.ForwardYColumn.Text = "前进 Y";
             this.ForwardYColumn.Width = 44;
             // 
             // ForwardZColumn
             // 
-            this.ForwardZColumn.Text = "Fwd Z";
+            this.ForwardZColumn.Text = "前进 Z";
             this.ForwardZColumn.Width = 44;
             // 
             // SteeringAngleColumn
             // 
-            this.SteeringAngleColumn.Text = "Steer Angle";
+            this.SteeringAngleColumn.Text = "转向角度";
             this.SteeringAngleColumn.Width = 47;
             // 
             // GasPedalPowerColumn
             // 
-            this.GasPedalPowerColumn.Text = "Gas Power";
+            this.GasPedalPowerColumn.Text = "油门力度";
             this.GasPedalPowerColumn.Width = 42;
             // 
             // BrakePedalPowerColumn
             // 
-            this.BrakePedalPowerColumn.Text = "Brake Power";
+            this.BrakePedalPowerColumn.Text = "刹车力度";
             this.BrakePedalPowerColumn.Width = 50;
             // 
             // HandbrakeUsedColumn
             // 
-            this.HandbrakeUsedColumn.Text = "Handbrake";
+            this.HandbrakeUsedColumn.Text = "手刹";
             this.HandbrakeUsedColumn.Width = 65;
             // 
             // ExportButton
             // 
             this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportButton.Enabled = false;
-            this.ExportButton.Location = new System.Drawing.Point(764, 389);
+            this.ExportButton.Location = new System.Drawing.Point(824, 386);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(75, 23);
+            this.ExportButton.Size = new System.Drawing.Size(88, 29);
             this.ExportButton.TabIndex = 7;
-            this.ExportButton.Text = "Export";
+            this.ExportButton.Text = "导出";
             this.ExportButton.UseVisualStyleBackColor = true;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
@@ -197,27 +200,30 @@
             // 
             this.CopyClipboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CopyClipboardButton.Enabled = false;
-            this.CopyClipboardButton.Location = new System.Drawing.Point(656, 389);
+            this.CopyClipboardButton.Location = new System.Drawing.Point(698, 386);
+            this.CopyClipboardButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CopyClipboardButton.Name = "CopyClipboardButton";
-            this.CopyClipboardButton.Size = new System.Drawing.Size(102, 23);
+            this.CopyClipboardButton.Size = new System.Drawing.Size(119, 29);
             this.CopyClipboardButton.TabIndex = 8;
-            this.CopyClipboardButton.Text = "Copy to clipboard";
+            this.CopyClipboardButton.Text = "复制到剪切板";
             this.CopyClipboardButton.UseVisualStyleBackColor = true;
             this.CopyClipboardButton.Click += new System.EventHandler(this.CopyClipboardButton_Click);
             // 
             // YvrForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
-            this.ClientSize = new System.Drawing.Size(932, 421);
+            this.ClientSize = new System.Drawing.Size(1020, 425);
             this.Controls.Add(this.CopyClipboardButton);
             this.Controls.Add(this.ExportButton);
             this.Controls.Add(this.MainListView);
             this.Controls.Add(this.CloseButton);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "YvrForm";
-            this.Text = "Vehicle Records Viewer - CodeWalker by dexyfex";
+            this.Text = "载具记录查看器 - CodeWalker by dexyfex";
             this.ResumeLayout(false);
 
         }

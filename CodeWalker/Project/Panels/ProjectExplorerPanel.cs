@@ -44,7 +44,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YmapFiles.Count > 0)
             {
-                var ymapsnode = projnode.Nodes.Add("Ymap Files");
+                var ymapsnode = projnode.Nodes.Add("Ymap 文件");
                 ymapsnode.Name = "Ymap";
 
                 foreach (var ymapfile in CurrentProjectFile.YmapFiles)
@@ -68,7 +68,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YtypFiles.Count > 0)
             {
-                var ytypsnode = projnode.Nodes.Add("Ytyp Files");
+                var ytypsnode = projnode.Nodes.Add("Ytyp 文件");
                 ytypsnode.Name = "Ytyp";
 
                 foreach (var ytypfile in CurrentProjectFile.YtypFiles)
@@ -92,7 +92,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YbnFiles.Count > 0)
             {
-                var ybnsnode = projnode.Nodes.Add("Ybn Files");
+                var ybnsnode = projnode.Nodes.Add("Ybn 文件");
                 ybnsnode.Name = "Ybn";
 
                 foreach (var ybnfile in CurrentProjectFile.YbnFiles)
@@ -113,7 +113,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YndFiles.Count > 0)
             {
-                var yndsnode = projnode.Nodes.Add("Ynd Files");
+                var yndsnode = projnode.Nodes.Add("Ynd 文件");
                 yndsnode.Name = "Ynd";
 
                 foreach (var yndfile in CurrentProjectFile.YndFiles)
@@ -134,7 +134,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YnvFiles.Count > 0)
             {
-                var ynvsnode = projnode.Nodes.Add("Ynv Files");
+                var ynvsnode = projnode.Nodes.Add("Ynv 文件");
                 ynvsnode.Name = "Ynv";
 
                 foreach (var ynvfile in CurrentProjectFile.YnvFiles)
@@ -155,7 +155,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.TrainsFiles.Count > 0)
             {
-                var trainsnode = projnode.Nodes.Add("Trains Files");
+                var trainsnode = projnode.Nodes.Add("火车轨道文件");
                 trainsnode.Name = "Trains";
 
                 foreach (var trainfile in CurrentProjectFile.TrainsFiles)
@@ -176,7 +176,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.ScenarioFiles.Count > 0)
             {
-                var scenariosnode = projnode.Nodes.Add("Scenario Files");
+                var scenariosnode = projnode.Nodes.Add("场景文件");
                 scenariosnode.Name = "Scenarios";
 
                 foreach (var scenariofile in CurrentProjectFile.ScenarioFiles)
@@ -197,7 +197,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.AudioRelFiles.Count > 0)
             {
-                var audiorelsnode = projnode.Nodes.Add("Audio Rel Files");
+                var audiorelsnode = projnode.Nodes.Add("音频 Rel 文件");
                 audiorelsnode.Name = "AudioRels";
 
                 foreach (var audiorelfile in CurrentProjectFile.AudioRelFiles)
@@ -218,7 +218,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YdrFiles.Count > 0)
             {
-                var ydrsnode = projnode.Nodes.Add("Ydr Files");
+                var ydrsnode = projnode.Nodes.Add("Ydr 文件");
                 ydrsnode.Name = "Ydr";
 
                 foreach (var ydrfile in CurrentProjectFile.YdrFiles)
@@ -239,7 +239,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YddFiles.Count > 0)
             {
-                var yddsnode = projnode.Nodes.Add("Ydd Files");
+                var yddsnode = projnode.Nodes.Add("Ydd 文件");
                 yddsnode.Name = "Ydd";
 
                 foreach (var yddfile in CurrentProjectFile.YddFiles)
@@ -260,7 +260,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YftFiles.Count > 0)
             {
-                var yftsnode = projnode.Nodes.Add("Yft Files");
+                var yftsnode = projnode.Nodes.Add("Yft 文件");
                 yftsnode.Name = "Yft";
 
                 foreach (var yftfile in CurrentProjectFile.YftFiles)
@@ -281,7 +281,7 @@ namespace CodeWalker.Project.Panels
 
             if (CurrentProjectFile.YtdFiles.Count > 0)
             {
-                var ytdsnode = projnode.Nodes.Add("Ytd Files");
+                var ytdsnode = projnode.Nodes.Add("Ytd 文件");
                 ytdsnode.Name = "Ytd";
 
                 foreach (var ytdfile in CurrentProjectFile.YtdFiles)
@@ -300,6 +300,21 @@ namespace CodeWalker.Project.Panels
                 ytdsnode.Expand();
             }
 
+            // Debug Log
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: LoadProjectTree: " + CurrentProjectFile.Name);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YmapFiles.Count: " + CurrentProjectFile.YmapFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YtypFiles.Count: " + CurrentProjectFile.YtypFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YbnFiles.Count: " + CurrentProjectFile.YbnFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YndFiles.Count: " + CurrentProjectFile.YndFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YnvFiles.Count: " + CurrentProjectFile.YnvFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.TrainsFiles.Count: " + CurrentProjectFile.TrainsFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.ScenarioFiles.Count: " + CurrentProjectFile.ScenarioFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.AudioRelFiles.Count: " + CurrentProjectFile.AudioRelFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YdrFiles.Count: " + CurrentProjectFile.YdrFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YddFiles.Count: " + CurrentProjectFile.YddFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YftFiles.Count: " + CurrentProjectFile.YftFiles.Count);
+            System.Diagnostics.Debug.WriteLine("ProjectExplorerPanel: CurrentProjectFile.YtdFiles.Count: " + CurrentProjectFile.YtdFiles.Count);
+
             projnode.Expand();
 
         }
@@ -314,7 +329,7 @@ namespace CodeWalker.Project.Panels
 
             if ((ymap.AllEntities != null) && (ymap.AllEntities.Length > 0))
             {
-                var entsnode = node.Nodes.Add("Entities (" + ymap.AllEntities.Length.ToString() + ")");
+                var entsnode = node.Nodes.Add("实体 (" + ymap.AllEntities.Length.ToString() + ")");
                 entsnode.Name = "Entities";
                 entsnode.Tag = ymap;
                 var ents = ymap.AllEntities;
@@ -333,7 +348,7 @@ namespace CodeWalker.Project.Panels
             }
             if ((ymap.CarGenerators != null) && (ymap.CarGenerators.Length > 0))
             {
-                var cargensnode = node.Nodes.Add("Car Generators (" + ymap.CarGenerators.Length.ToString() + ")");
+                var cargensnode = node.Nodes.Add("车辆生成器 (" + ymap.CarGenerators.Length.ToString() + ")");
                 cargensnode.Name = "CarGens";
                 cargensnode.Tag = ymap;
                 var cargens = ymap.CarGenerators;
@@ -346,7 +361,7 @@ namespace CodeWalker.Project.Panels
             }
             if ((ymap.LODLights?.LodLights != null) && (ymap.LODLights.LodLights.Length > 0))
             {
-                var lodlightsnode = node.Nodes.Add("LOD Lights (" + ymap.LODLights.LodLights.Length.ToString() + ")");
+                var lodlightsnode = node.Nodes.Add("远景灯光 (" + ymap.LODLights.LodLights.Length.ToString() + ")");
                 lodlightsnode.Name = "LodLights";
                 lodlightsnode.Tag = ymap;
                 var lodlights = ymap.LODLights.LodLights;
@@ -359,7 +374,7 @@ namespace CodeWalker.Project.Panels
             }
             if ((ymap.BoxOccluders != null) && (ymap.BoxOccluders.Length > 0))
             {
-                var boxocclsnode = node.Nodes.Add("Box Occluders (" + ymap.BoxOccluders.Length.ToString() + ")");
+                var boxocclsnode = node.Nodes.Add("遮挡盒 (" + ymap.BoxOccluders.Length.ToString() + ")");
                 boxocclsnode.Name = "BoxOccluders";
                 boxocclsnode.Tag = ymap;
                 var boxes = ymap.BoxOccluders;
@@ -372,7 +387,7 @@ namespace CodeWalker.Project.Panels
             }
             if ((ymap.OccludeModels != null) && (ymap.OccludeModels.Length > 0))
             {
-                var occlmodsnode = node.Nodes.Add("Occlude Models (" + ymap.OccludeModels.Length.ToString() + ")");
+                var occlmodsnode = node.Nodes.Add("遮挡模型 (" + ymap.OccludeModels.Length.ToString() + ")");
                 occlmodsnode.Name = "OccludeModels";
                 occlmodsnode.Tag = ymap;
                 var models = ymap.OccludeModels;
@@ -385,7 +400,7 @@ namespace CodeWalker.Project.Panels
             }
             if ((ymap.GrassInstanceBatches != null) && (ymap.GrassInstanceBatches.Length > 0))
             {
-                var grassbatchesnodes = node.Nodes.Add("Grass Batches (" + ymap.GrassInstanceBatches.Length.ToString() + ")");
+                var grassbatchesnodes = node.Nodes.Add("批处理实例草 (" + ymap.GrassInstanceBatches.Length.ToString() + ")");
                 grassbatchesnodes.Name = "GrassBatches";
                 grassbatchesnodes.Tag = ymap;
                 var grassbatches = ymap.GrassInstanceBatches;
@@ -408,7 +423,7 @@ namespace CodeWalker.Project.Panels
 
             if ((ytyp.AllArchetypes != null) && (ytyp.AllArchetypes.Length > 0))
             {
-                var archetypesnode = node.Nodes.Add("Archetypes (" + ytyp.AllArchetypes.Length.ToString() + ")");
+                var archetypesnode = node.Nodes.Add("定义类型 (" + ytyp.AllArchetypes.Length.ToString() + ")");
                 archetypesnode.Name = "Archetypes";
                 archetypesnode.Tag = ytyp;
                 var archetypes = ytyp.AllArchetypes;
@@ -426,7 +441,7 @@ namespace CodeWalker.Project.Panels
                         var portals = mlo.portals;
                         if ((rooms != null) && (rooms.Length > 0))
                         {
-                            var roomsnode = tarch.Nodes.Add("Rooms (" + rooms.Length.ToString() + ")");
+                            var roomsnode = tarch.Nodes.Add("房间 (" + rooms.Length.ToString() + ")");
                             roomsnode.Name = "Rooms";
                             for (int j = 0; j < rooms.Length; j++)
                             {
@@ -451,7 +466,7 @@ namespace CodeWalker.Project.Panels
                         }
                         if ((portals != null) && (portals.Length > 0))
                         {
-                            var portalsnode = tarch.Nodes.Add("Portals (" + portals.Length.ToString() + ")");
+                            var portalsnode = tarch.Nodes.Add("门户 (" + portals.Length.ToString() + ")");
                             portalsnode.Name = "Portals";
                             for (int j = 0; j < portals.Length; j++)
                             {
@@ -476,7 +491,7 @@ namespace CodeWalker.Project.Panels
                         }
                         if ((entsets != null) && (entsets.Length > 0))
                         {
-                            var setsnode = tarch.Nodes.Add("Entity Sets (" + entsets.Length.ToString() + ")");
+                            var setsnode = tarch.Nodes.Add("实体预设 (" + entsets.Length.ToString() + ")");
                             setsnode.Name = "EntitySets";
                             for (int j = 0; j < entsets.Length; j++)
                             {
@@ -541,11 +556,11 @@ namespace CodeWalker.Project.Panels
             else if (b is BoundGeometry bg)
             {
                 TreeNode n;
-                n = boundsnode.Nodes.Add("Edit Polygon");
+                n = boundsnode.Nodes.Add("编辑多边形");
                 n.Name = "EditPoly";
                 n.Tag = b; //this tag should get updated with the selected poly!
 
-                n = boundsnode.Nodes.Add("Edit Vertex");
+                n = boundsnode.Nodes.Add("编辑顶点");
                 n.Name = "EditVertex";
                 n.Tag = b; //this tag should get updated with the selected vertex!
             }
@@ -563,7 +578,7 @@ namespace CodeWalker.Project.Panels
 
             if ((ynd.Nodes != null) && (ynd.Nodes.Length > 0))
             {
-                var nodesnode = node.Nodes.Add("Nodes (" + ynd.Nodes.Length.ToString() + ")");
+                var nodesnode = node.Nodes.Add("节点 (" + ynd.Nodes.Length.ToString() + ")");
                 nodesnode.Name = "Nodes";
                 nodesnode.Tag = ynd;
                 var nodes = ynd.Nodes;
@@ -587,15 +602,15 @@ namespace CodeWalker.Project.Panels
 
 
             TreeNode n;
-            n = node.Nodes.Add("Edit Polygon");
+            n = node.Nodes.Add("编辑多边形");
             n.Name = "EditPoly";
             n.Tag = ynv; //this tag should get updated with the selected poly!
 
-            n = node.Nodes.Add("Edit Portal");
+            n = node.Nodes.Add("编辑门户");
             n.Name = "EditPortal";
             n.Tag = ynv; //this tag should get updated with the selected portal!
 
-            n = node.Nodes.Add("Edit Point");
+            n = node.Nodes.Add("编辑点");
             n.Name = "EditPoint";
             n.Tag = ynv; //this tag should get updated with the selected point!
 
@@ -613,7 +628,7 @@ namespace CodeWalker.Project.Panels
 
             if ((track.Nodes != null) && (track.Nodes.Count > 0))
             {
-                var nodesnode = node.Nodes.Add("Nodes (" + track.Nodes.Count.ToString() + ")");
+                var nodesnode = node.Nodes.Add("节点 (" + track.Nodes.Count.ToString() + ")");
                 nodesnode.Name = "Nodes";
                 nodesnode.Tag = track;
                 var nodes = track.Nodes;
@@ -639,7 +654,7 @@ namespace CodeWalker.Project.Panels
             var nodes = region.Nodes;
             if ((nodes == null) || (nodes.Count == 0)) return;
 
-            var pointsnode = node.Nodes.Add("Points (" + nodes.Count.ToString() + ")");
+            var pointsnode = node.Nodes.Add("点 (" + nodes.Count.ToString() + ")");
             pointsnode.Name = "Points";
             pointsnode.Tag = ymt;
             for (int i = 0; i < nodes.Count; i++)
@@ -747,7 +762,7 @@ namespace CodeWalker.Project.Panels
 
             if (zones.Count > 0)
             {
-                var n = node.Nodes.Add("Ambient Zones (" + zones.Count.ToString() + ")");
+                var n = node.Nodes.Add("环境音区域 (" + zones.Count.ToString() + ")");
                 n.Name = "AmbientZones";
                 n.Tag = rel;
 
@@ -762,7 +777,7 @@ namespace CodeWalker.Project.Panels
 
             if (emitters.Count > 0)
             {
-                var n = node.Nodes.Add("Ambient Emitters (" + emitters.Count.ToString() + ")");
+                var n = node.Nodes.Add("环境音发生器 (" + emitters.Count.ToString() + ")");
                 n.Name = "AmbientEmitters";
                 n.Tag = rel;
 
@@ -778,7 +793,7 @@ namespace CodeWalker.Project.Panels
 
             if (zonelists.Count > 0)
             {
-                var zonelistsnode = node.Nodes.Add("Ambient Zone Lists (" + zonelists.Count.ToString() + ")");
+                var zonelistsnode = node.Nodes.Add("环境音区域列表 (" + zonelists.Count.ToString() + ")");
                 zonelistsnode.Name = "AmbientZoneLists";
                 zonelistsnode.Tag = rel;
                 for (int i = 0; i < zonelists.Count; i++)
@@ -791,7 +806,7 @@ namespace CodeWalker.Project.Panels
 
             if (emitterlists.Count > 0)
             {
-                var emitterlistsnode = node.Nodes.Add("Ambient Emitter Lists (" + emitterlists.Count.ToString() + ")");
+                var emitterlistsnode = node.Nodes.Add("环境音发生器列表 (" + emitterlists.Count.ToString() + ")");
                 emitterlistsnode.Name = "AmbientEmitterLists";
                 emitterlistsnode.Tag = rel;
                 for (int i = 0; i < emitterlists.Count; i++)
@@ -804,7 +819,7 @@ namespace CodeWalker.Project.Panels
 
             if (interiors.Count > 0)
             {
-                var n = node.Nodes.Add("Interiors (" + interiors.Count.ToString() + ")");
+                var n = node.Nodes.Add("室内 (" + interiors.Count.ToString() + ")");
                 n.Name = "Interiors";
                 n.Tag = rel;
                 for (int i = 0; i < interiors.Count; i++)
@@ -817,7 +832,7 @@ namespace CodeWalker.Project.Panels
 
             if (interiorrooms.Count > 0)
             {
-                var n = node.Nodes.Add("Interior Rooms (" + interiorrooms.Count.ToString() + ")");
+                var n = node.Nodes.Add("室内房间 (" + interiorrooms.Count.ToString() + ")");
                 n.Name = "InteriorRooms";
                 n.Tag = rel;
                 for (int i = 0; i < interiorrooms.Count; i++)
@@ -2321,7 +2336,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindEntityTreeNode(ent);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Entities (" + ent.Ymap.AllEntities.Length.ToString() + ")";
+                tn.Parent.Text = "实体 (" + ent.Ymap.AllEntities.Length.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2330,7 +2345,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindCarGenTreeNode(cargen);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Car Generators (" + cargen.Ymap.CarGenerators.Length.ToString() + ")";
+                tn.Parent.Text = "车辆生成器 (" + cargen.Ymap.CarGenerators.Length.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2343,7 +2358,7 @@ namespace CodeWalker.Project.Panels
                 var pn = tn.Parent;
                 var yn = pn.Parent;
                 yn.Nodes.Remove(pn);
-                pn = yn.Nodes.Add("LOD Lights (" + (lodlights?.Length.ToString() ?? "0") + ")");
+                pn = yn.Nodes.Add("远景灯光 (" + (lodlights?.Length.ToString() ?? "0") + ")");
                 pn.Name = "LodLights";
                 pn.Tag = lodlight.LodLights.Ymap;
                 foreach (var ll in lodlights)
@@ -2362,7 +2377,7 @@ namespace CodeWalker.Project.Panels
                 var pn = tn.Parent;
                 var yn = pn.Parent;
                 yn.Nodes.Remove(pn);
-                pn = yn.Nodes.Add("Box Occluders (" + (ymap?.BoxOccluders?.Length.ToString() ?? "0") + ")");
+                pn = yn.Nodes.Add("遮挡盒 (" + (ymap?.BoxOccluders?.Length.ToString() ?? "0") + ")");
                 pn.Name = "BoxOccluders";
                 pn.Tag = ymap;
                 if (ymap.BoxOccluders != null)
@@ -2384,7 +2399,7 @@ namespace CodeWalker.Project.Panels
                 var pn = tn.Parent;
                 var yn = pn.Parent;
                 yn.Nodes.Remove(pn);
-                pn = yn.Nodes.Add("Occlude Models (" + (ymap?.OccludeModels?.Length.ToString() ?? "0") + ")");
+                pn = yn.Nodes.Add("遮挡模型 (" + (ymap?.OccludeModels?.Length.ToString() ?? "0") + ")");
                 pn.Name = "OccludeModels";
                 pn.Tag = ymap;
                 if (ymap.OccludeModels != null)
@@ -2402,7 +2417,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindGrassTreeNode(batch);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Grass Batches (" + batch.Ymap.GrassInstanceBatches.Length.ToString() + ")";
+                tn.Parent.Text = "批处理实例草 (" + batch.Ymap.GrassInstanceBatches.Length.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2411,7 +2426,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindArchetypeTreeNode(archetype);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Archetypes (" + archetype.Ytyp.AllArchetypes.Length.ToString() + ")";
+                tn.Parent.Text = "定义类型 (" + archetype.Ytyp.AllArchetypes.Length.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2428,7 +2443,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindMloRoomTreeNode(room);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Rooms (" + (room.OwnerMlo?.rooms?.Length.ToString() ?? "0") + ")";
+                tn.Parent.Text = "房间 (" + (room.OwnerMlo?.rooms?.Length.ToString() ?? "0") + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2437,7 +2452,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindMloPortalTreeNode(portal);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Portals (" + (portal.OwnerMlo?.portals?.Length.ToString() ?? "0") + ")";
+                tn.Parent.Text = "门户 (" + (portal.OwnerMlo?.portals?.Length.ToString() ?? "0") + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2446,7 +2461,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindMloEntitySetTreeNode(set);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Entity Sets (" + (set.OwnerMlo?.entitySets?.Length.ToString() ?? "0") + ")";
+                tn.Parent.Text = "实体预设 (" + (set.OwnerMlo?.entitySets?.Length.ToString() ?? "0") + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2463,7 +2478,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindPathNodeTreeNode(node);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Nodes (" + node.Ynd.Nodes.Length.ToString() + ")";
+                tn.Parent.Text = "节点 (" + node.Ynd.Nodes.Length.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2472,7 +2487,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindTrainNodeTreeNode(node);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Nodes (" + node.Track.Nodes.Count.ToString() + ")";
+                tn.Parent.Text = "节点 (" + node.Track.Nodes.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2481,7 +2496,7 @@ namespace CodeWalker.Project.Panels
             var tn = FindScenarioNodeTreeNode(node);
             if ((tn != null) && (tn.Parent != null))
             {
-                tn.Parent.Text = "Points (" + (node.Ymt?.ScenarioRegion?.Nodes?.Count ?? 0).ToString() + ")";
+                tn.Parent.Text = "点 (" + (node.Ymt?.ScenarioRegion?.Nodes?.Count ?? 0).ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2499,7 +2514,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Ambient Zones (" + zones.Count.ToString() + ")";
+                tn.Parent.Text = "环境音区域 (" + zones.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2517,7 +2532,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Ambient Emitters (" + emitters.Count.ToString() + ")";
+                tn.Parent.Text = "环境音发生器 (" + emitters.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2535,7 +2550,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Ambient Zone Lists (" + zonelists.Count.ToString() + ")";
+                tn.Parent.Text = "环境音区域列表 (" + zonelists.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2553,7 +2568,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Ambient Emitter Lists (" + emitterlists.Count.ToString() + ")";
+                tn.Parent.Text = "环境音发生器列表 (" + emitterlists.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2571,7 +2586,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Interiors (" + interiors.Count.ToString() + ")";
+                tn.Parent.Text = "室内 (" + interiors.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }
@@ -2589,7 +2604,7 @@ namespace CodeWalker.Project.Panels
                     }
                 }
 
-                tn.Parent.Text = "Interior Rooms (" + interiors.Count.ToString() + ")";
+                tn.Parent.Text = "室内房间 (" + interiors.Count.ToString() + ")";
                 tn.Parent.Nodes.Remove(tn);
             }
         }

@@ -46,52 +46,55 @@
             // 
             // EntitySetNameTextBox
             // 
-            this.EntitySetNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EntitySetNameTextBox.Location = new System.Drawing.Point(72, 15);
+            this.EntitySetNameTextBox.Location = new System.Drawing.Point(84, 20);
+            this.EntitySetNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EntitySetNameTextBox.Name = "EntitySetNameTextBox";
-            this.EntitySetNameTextBox.Size = new System.Drawing.Size(269, 20);
+            this.EntitySetNameTextBox.Size = new System.Drawing.Size(233, 23);
             this.EntitySetNameTextBox.TabIndex = 7;
             this.EntitySetNameTextBox.TextChanged += new System.EventHandler(this.EntitySetNameTextBox_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 18);
+            this.label3.Location = new System.Drawing.Point(32, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Name: ";
+            this.label3.Text = "名称：";
             // 
             // ForceVisibleCheckBox
             // 
-            this.ForceVisibleCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ForceVisibleCheckBox.AutoSize = true;
-            this.ForceVisibleCheckBox.Location = new System.Drawing.Point(403, 17);
+            this.ForceVisibleCheckBox.Location = new System.Drawing.Point(325, 22);
+            this.ForceVisibleCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ForceVisibleCheckBox.Name = "ForceVisibleCheckBox";
-            this.ForceVisibleCheckBox.Size = new System.Drawing.Size(125, 17);
+            this.ForceVisibleCheckBox.Size = new System.Drawing.Size(135, 21);
             this.ForceVisibleCheckBox.TabIndex = 8;
-            this.ForceVisibleCheckBox.Text = "Force visible in editor";
+            this.ForceVisibleCheckBox.Text = "强制在编辑器内可见";
             this.ForceVisibleCheckBox.UseVisualStyleBackColor = true;
             this.ForceVisibleCheckBox.CheckedChanged += new System.EventHandler(this.ForceVisibleCheckBox_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Location = new System.Drawing.Point(32, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Locations:";
+            this.label1.Text = "位置：";
             // 
             // LocationsListBox
             // 
             this.LocationsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LocationsListBox.FormattingEnabled = true;
-            this.LocationsListBox.Location = new System.Drawing.Point(72, 50);
+            this.LocationsListBox.ItemHeight = 17;
+            this.LocationsListBox.Location = new System.Drawing.Point(84, 51);
+            this.LocationsListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LocationsListBox.Name = "LocationsListBox";
-            this.LocationsListBox.Size = new System.Drawing.Size(200, 381);
+            this.LocationsListBox.Size = new System.Drawing.Size(233, 429);
             this.LocationsListBox.TabIndex = 10;
             this.LocationsListBox.SelectedIndexChanged += new System.EventHandler(this.LocationsListBox_SelectedIndexChanged);
             // 
@@ -103,12 +106,14 @@
             this.SelectedLocationGroupBox.Controls.Add(this.label4);
             this.SelectedLocationGroupBox.Controls.Add(this.SelectedLocationEntityLabel);
             this.SelectedLocationGroupBox.Controls.Add(this.label2);
-            this.SelectedLocationGroupBox.Location = new System.Drawing.Point(278, 51);
+            this.SelectedLocationGroupBox.Location = new System.Drawing.Point(325, 51);
+            this.SelectedLocationGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectedLocationGroupBox.Name = "SelectedLocationGroupBox";
-            this.SelectedLocationGroupBox.Size = new System.Drawing.Size(275, 83);
+            this.SelectedLocationGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectedLocationGroupBox.Size = new System.Drawing.Size(270, 109);
             this.SelectedLocationGroupBox.TabIndex = 11;
             this.SelectedLocationGroupBox.TabStop = false;
-            this.SelectedLocationGroupBox.Text = "Selected Location";
+            this.SelectedLocationGroupBox.Text = "选择的位置";
             this.SelectedLocationGroupBox.Visible = false;
             // 
             // SelectedLocationRoomCombo
@@ -116,66 +121,74 @@
             this.SelectedLocationRoomCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectedLocationRoomCombo.FormattingEnabled = true;
-            this.SelectedLocationRoomCombo.Location = new System.Drawing.Point(51, 45);
+            this.SelectedLocationRoomCombo.Location = new System.Drawing.Point(59, 60);
+            this.SelectedLocationRoomCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectedLocationRoomCombo.Name = "SelectedLocationRoomCombo";
-            this.SelectedLocationRoomCombo.Size = new System.Drawing.Size(199, 21);
+            this.SelectedLocationRoomCombo.Size = new System.Drawing.Size(180, 25);
             this.SelectedLocationRoomCombo.TabIndex = 13;
             this.SelectedLocationRoomCombo.SelectedIndexChanged += new System.EventHandler(this.SelectedLocationRoomCombo_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 48);
+            this.label4.Location = new System.Drawing.Point(8, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Room:";
+            this.label4.Text = "房间：";
             // 
             // SelectedLocationEntityLabel
             // 
             this.SelectedLocationEntityLabel.AutoSize = true;
-            this.SelectedLocationEntityLabel.Location = new System.Drawing.Point(48, 25);
+            this.SelectedLocationEntityLabel.Location = new System.Drawing.Point(56, 33);
+            this.SelectedLocationEntityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectedLocationEntityLabel.Name = "SelectedLocationEntityLabel";
-            this.SelectedLocationEntityLabel.Size = new System.Drawing.Size(10, 13);
+            this.SelectedLocationEntityLabel.Size = new System.Drawing.Size(13, 17);
             this.SelectedLocationEntityLabel.TabIndex = 11;
             this.SelectedLocationEntityLabel.Text = "-";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Location = new System.Drawing.Point(8, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Entity:";
+            this.label2.Text = "实体：";
             // 
             // AddEntityButton
             // 
-            this.AddEntityButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddEntityButton.Location = new System.Drawing.Point(72, 453);
+            this.AddEntityButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddEntityButton.Location = new System.Drawing.Point(325, 168);
+            this.AddEntityButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddEntityButton.Name = "AddEntityButton";
-            this.AddEntityButton.Size = new System.Drawing.Size(95, 23);
+            this.AddEntityButton.Size = new System.Drawing.Size(270, 30);
             this.AddEntityButton.TabIndex = 39;
-            this.AddEntityButton.Text = "Add Entity";
+            this.AddEntityButton.Text = "添加实体";
             this.AddEntityButton.UseVisualStyleBackColor = true;
             this.AddEntityButton.Click += new System.EventHandler(this.AddEntityButton_Click);
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteButton.Location = new System.Drawing.Point(313, 453);
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteButton.Location = new System.Drawing.Point(325, 206);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(95, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(270, 30);
             this.DeleteButton.TabIndex = 40;
-            this.DeleteButton.Text = "Delete Entity Set";
+            this.DeleteButton.Text = "删除实体预设";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // EditYtypMloEntSetPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 505);
+            this.ClientSize = new System.Drawing.Size(608, 504);
             this.Controls.Add(this.AddEntityButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.SelectedLocationGroupBox);
@@ -184,9 +197,11 @@
             this.Controls.Add(this.ForceVisibleCheckBox);
             this.Controls.Add(this.EntitySetNameTextBox);
             this.Controls.Add(this.label3);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditYtypMloEntSetPanel";
-            this.Text = "Entity Set";
+            this.Text = "实体预设";
             this.SelectedLocationGroupBox.ResumeLayout(false);
             this.SelectedLocationGroupBox.PerformLayout();
             this.ResumeLayout(false);

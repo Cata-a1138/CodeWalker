@@ -71,7 +71,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - Audio dat.rel Editor - CodeWalker by dexyfex";
+            Text = fileName + " - 音频 dat.rel 编辑器 - CodeWalker by dexyfex";
         }
 
         private void UpdateTextBoxFromData()
@@ -143,7 +143,7 @@ namespace CodeWalker.Forms
             {
                 if (rel.NameTable != null)
                 {
-                    sb.AppendLine("NameTable - " + rel.NameTable.Length.ToString() + " entries");
+                    sb.AppendLine("名称表 - " + rel.NameTable.Length.ToString() + " 条目");
                     foreach (var name in rel.NameTable)
                     {
                         sb.AppendLine(name);
@@ -152,7 +152,7 @@ namespace CodeWalker.Forms
                 }
                 if (rel.IndexStrings != null)
                 {
-                    sb.AppendLine("IndexStrings - " + rel.IndexStrings.Length.ToString() + " entries");
+                    sb.AppendLine("索引字符串 - " + rel.IndexStrings.Length.ToString() + " 条目");
                     foreach (var rstr in rel.IndexStrings)
                     {
                         sb.AppendLine(rstr.Name);
@@ -161,7 +161,7 @@ namespace CodeWalker.Forms
                 }
                 if (rel.IndexHashes != null)
                 {
-                    sb.AppendLine("IndexHashes - " + rel.IndexHashes.Length.ToString() + " entries");
+                    sb.AppendLine("索引哈希 - " + rel.IndexHashes.Length.ToString() + " 条目");
                     foreach (var rhash in rel.IndexHashes)
                     {
                         uint h = rhash.Name;
@@ -224,7 +224,7 @@ namespace CodeWalker.Forms
                         var rel = XmlRel.GetRel(doc);
                         if ((rel?.RelDatasSorted == null) || (rel.RelDatasSorted.Length == 0))
                         {
-                            MessageBox.Show("Schema not supported.", "Cannot import REL XML");
+                            MessageBox.Show("不支持的文档结构。", "无法导入 REL XML");
                             return false;
                         }
                         data = rel.Save();
@@ -240,7 +240,7 @@ namespace CodeWalker.Forms
 #endif
             if (data == null)
             {
-                MessageBox.Show("Schema not supported. (Unspecified error - data was null!)", "Cannot convert XML");
+                MessageBox.Show("不支持的文档结构。(未知错误 - 数据为空！)", "无法转换 XML");
                 return false;
             }
 
@@ -248,7 +248,7 @@ namespace CodeWalker.Forms
             {
                 if (!rpfFileEntry.Path.ToLowerInvariant().StartsWith("mods"))
                 {
-                    if (MessageBox.Show("This file is NOT located in the mods folder - Are you SURE you want to save this file?\r\nWARNING: This could cause permanent damage to your game!!!", "WARNING: Are you sure about this?", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    if (MessageBox.Show("该文件不在 mods 目录内，您确定要保存该文件吗？\r\n警告：请谨慎操作，这可能会导致你的游戏损坏！！！", "警告：直接编辑游戏文件", MessageBoxButtons.YesNo) != DialogResult.Yes)
                     {
                         return false;//that was a close one
                     }
@@ -267,13 +267,13 @@ namespace CodeWalker.Forms
 
                     modified = false;
 
-                    StatusLabel.Text = metaFormat.ToString() + " file saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = metaFormat.ToString() + " 文件成功保存于 " + DateTime.Now.ToString();
 
                     return true; //victory!
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file to RPF! The RPF archive may be corrupted...\r\n" + ex.ToString(), "Really Bad Error");
+                    MessageBox.Show("无法将文件写入 RPF 存档！RPF 存档文件可能已损坏！\r\n" + ex.ToString(), "发生错误");
                 }
             }
             else if (!string.IsNullOrEmpty(rpfFileEntry?.Path))
@@ -286,13 +286,13 @@ namespace CodeWalker.Forms
 
                     modified = false;
 
-                    StatusLabel.Text = metaFormat.ToString() + " file saved successfully at " + DateTime.Now.ToString();
+                    StatusLabel.Text = metaFormat.ToString() + " 文件成功保存于 " + DateTime.Now.ToString();
 
                     return true; //victory!
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file to filesystem!\r\n" + ex.ToString(), "File I/O Error");
+                    MessageBox.Show("无法保存文件到硬盘！\r\n" + ex.ToString(), "读写发生 I/O 错误");
                 }
             }
 
@@ -306,7 +306,7 @@ namespace CodeWalker.Forms
         {
             if (modified)
             {
-                var res = MessageBox.Show("Do you want to save the current document before closing it?", "Save before closing", MessageBoxButtons.YesNoCancel);
+                var res = MessageBox.Show("您当前有未保存的修改，是否保存它们？", "关闭前保存", MessageBoxButtons.YesNoCancel);
                 switch (res)
                 {
                     case DialogResult.Yes:
@@ -370,7 +370,7 @@ namespace CodeWalker.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There's something wrong with your XML document:\r\n" + ex.Message, "Unable to parse XML");
+                    MessageBox.Show("您的 XML 文档内容存在错误：\r\n" + ex.Message, "无法解析 XML");
                     return;
                 }
                 if (SaveRel(doc))
@@ -699,7 +699,7 @@ namespace CodeWalker.Forms
             var newSynth = AssembleSynth();
             if (newSynth == null)
             {
-                StatusLabel.Text = "Failed to assemble synth";
+                StatusLabel.Text = "无法组合合成器";
             }
             else
             {
@@ -716,7 +716,7 @@ namespace CodeWalker.Forms
             var newSynth = AssembleSynth();
             if (newSynth == null)
             {
-                StatusLabel.Text = "Failed to assemble synth";
+                StatusLabel.Text = "无法组合合成器";
             }
             else
             {
@@ -780,7 +780,7 @@ namespace CodeWalker.Forms
                 {
                     SynthPlayButton.Enabled = true;
                     SynthStopButton.Enabled = false;
-                    StatusLabel.Text = $"Synthesizer error: {ex}";
+                    StatusLabel.Text = $"合成器错误：{ex}";
                 }
 //#endif
             }

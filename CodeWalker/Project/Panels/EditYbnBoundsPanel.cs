@@ -105,8 +105,8 @@ namespace CodeWalker.Project.Panels
                 CompPositionTextBox.Text = string.Empty;
                 CompRotationQuatBox.Value = Quaternion.Identity;
                 CompScaleTextBox.Text = string.Empty;
-                VertexCountLabel.Text = "0 vertices";
-                PolyCountLabel.Text = "0 polygons";
+                VertexCountLabel.Text = "0 个顶点";
+                PolyCountLabel.Text = "0 个多边形";
             }
             else
             {
@@ -140,8 +140,8 @@ namespace CodeWalker.Project.Panels
                     QuantumTextBox.Text = FloatUtil.GetVector3String(bg.Quantum);
                     UnkFloat1TextBox.Text = FloatUtil.ToString(bg.Unknown_9Ch);
                     UnkFloat2TextBox.Text = FloatUtil.ToString(bg.Unknown_ACh);
-                    VertexCountLabel.Text = bg.VerticesCount.ToString() + ((bg.VerticesCount == 1) ? " vertex" : " vertices");
-                    PolyCountLabel.Text = bg.PolygonsCount.ToString() + ((bg.PolygonsCount == 1) ? " polygon" : " polygons");
+                    VertexCountLabel.Text = bg.VerticesCount.ToString() + " 个顶点";
+                    PolyCountLabel.Text = bg.PolygonsCount.ToString() + " 个多边形";
                 }
                 else
                 {
@@ -150,8 +150,8 @@ namespace CodeWalker.Project.Panels
                     QuantumTextBox.Text = string.Empty;
                     UnkFloat1TextBox.Text = string.Empty;
                     UnkFloat2TextBox.Text = string.Empty;
-                    VertexCountLabel.Text = "0 vertices";
-                    PolyCountLabel.Text = "0 polygons";
+                    VertexCountLabel.Text = "0 个顶点";
+                    PolyCountLabel.Text = "0 个多边形";
                 }
 
                 if (b.Parent != null)

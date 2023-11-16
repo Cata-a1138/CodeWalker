@@ -107,17 +107,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 47;
-            this.label1.Text = "GTAV folder:";
+            this.label1.Text = "GTAV 目录：";
             // 
             // FolderBrowseButton
             // 
-            this.FolderBrowseButton.Location = new System.Drawing.Point(347, 4);
+            this.FolderBrowseButton.Location = new System.Drawing.Point(405, 6);
+            this.FolderBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderBrowseButton.Name = "FolderBrowseButton";
-            this.FolderBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.FolderBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.FolderBrowseButton.TabIndex = 2;
             this.FolderBrowseButton.Text = "...";
             this.FolderBrowseButton.UseVisualStyleBackColor = true;
@@ -125,19 +127,21 @@
             // 
             // FolderTextBox
             // 
-            this.FolderTextBox.Location = new System.Drawing.Point(90, 6);
+            this.FolderTextBox.Location = new System.Drawing.Point(105, 8);
+            this.FolderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderTextBox.Name = "FolderTextBox";
             this.FolderTextBox.ReadOnly = true;
-            this.FolderTextBox.Size = new System.Drawing.Size(251, 20);
+            this.FolderTextBox.Size = new System.Drawing.Size(292, 23);
             this.FolderTextBox.TabIndex = 1;
             // 
             // ScanButton
             // 
-            this.ScanButton.Location = new System.Drawing.Point(380, 4);
+            this.ScanButton.Location = new System.Drawing.Point(443, 6);
+            this.ScanButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ScanButton.Name = "ScanButton";
-            this.ScanButton.Size = new System.Drawing.Size(75, 23);
+            this.ScanButton.Size = new System.Drawing.Size(88, 30);
             this.ScanButton.TabIndex = 0;
-            this.ScanButton.Text = "Scan";
+            this.ScanButton.Text = "扫描";
             this.ScanButton.UseVisualStyleBackColor = true;
             this.ScanButton.Click += new System.EventHandler(this.ScanButton_Click);
             // 
@@ -146,7 +150,8 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 32);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 42);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -159,8 +164,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.ExportButton);
             this.splitContainer1.Panel2.Controls.Add(this.FileInfoLabel);
             this.splitContainer1.Panel2.Controls.Add(this.SelectionTabControl);
-            this.splitContainer1.Size = new System.Drawing.Size(855, 492);
-            this.splitContainer1.SplitterDistance = 281;
+            this.splitContainer1.Size = new System.Drawing.Size(994, 557);
+            this.splitContainer1.SplitterDistance = 326;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 5;
             // 
             // tabControl1
@@ -170,10 +176,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 3);
+            this.tabControl1.Location = new System.Drawing.Point(0, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(278, 489);
+            this.tabControl1.Size = new System.Drawing.Size(322, 553);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -183,32 +190,35 @@
             this.tabPage1.Controls.Add(this.MainTreeView);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.FindTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(270, 463);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(314, 523);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Browse";
+            this.tabPage1.Text = "浏览";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FlattenStructureCheckBox
             // 
             this.FlattenStructureCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FlattenStructureCheckBox.AutoSize = true;
-            this.FlattenStructureCheckBox.Location = new System.Drawing.Point(3, 443);
+            this.FlattenStructureCheckBox.Location = new System.Drawing.Point(4, 491);
+            this.FlattenStructureCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FlattenStructureCheckBox.Name = "FlattenStructureCheckBox";
-            this.FlattenStructureCheckBox.Size = new System.Drawing.Size(128, 17);
+            this.FlattenStructureCheckBox.Size = new System.Drawing.Size(116, 21);
             this.FlattenStructureCheckBox.TabIndex = 50;
-            this.FlattenStructureCheckBox.Text = "Flatten RPF Structure";
+            this.FlattenStructureCheckBox.Text = "扁平化 RPF 结构";
             this.FlattenStructureCheckBox.UseVisualStyleBackColor = true;
             this.FlattenStructureCheckBox.CheckedChanged += new System.EventHandler(this.FlattenStructureCheckBox_CheckedChanged);
             // 
             // FindButton
             // 
             this.FindButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindButton.Location = new System.Drawing.Point(240, 4);
+            this.FindButton.Location = new System.Drawing.Point(278, 6);
+            this.FindButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(27, 22);
+            this.FindButton.Size = new System.Drawing.Size(31, 28);
             this.FindButton.TabIndex = 11;
             this.FindButton.Text = ">";
             this.FindButton.UseVisualStyleBackColor = true;
@@ -220,28 +230,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTreeView.HideSelection = false;
-            this.MainTreeView.Location = new System.Drawing.Point(0, 32);
+            this.MainTreeView.Location = new System.Drawing.Point(0, 42);
+            this.MainTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainTreeView.Name = "MainTreeView";
-            this.MainTreeView.Size = new System.Drawing.Size(267, 408);
+            this.MainTreeView.Size = new System.Drawing.Size(309, 442);
             this.MainTreeView.TabIndex = 12;
             this.MainTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MainTreeView_AfterSelect);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 8);
+            this.label2.Location = new System.Drawing.Point(5, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 49;
-            this.label2.Text = "Find:";
+            this.label2.Text = "查找";
             // 
             // FindTextBox
             // 
             this.FindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindTextBox.Location = new System.Drawing.Point(38, 5);
+            this.FindTextBox.Location = new System.Drawing.Point(44, 7);
+            this.FindTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(199, 20);
+            this.FindTextBox.Size = new System.Drawing.Size(229, 23);
             this.FindTextBox.TabIndex = 10;
             this.FindTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FindTextBox_KeyPress);
             // 
@@ -259,22 +272,24 @@
             this.tabPage2.Controls.Add(this.SearchButton);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.SearchTextBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(270, 463);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(314, 523);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Search";
+            this.tabPage2.Text = "搜索";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // SearchSaveResultsButton
             // 
             this.SearchSaveResultsButton.Enabled = false;
-            this.SearchSaveResultsButton.Location = new System.Drawing.Point(178, 95);
+            this.SearchSaveResultsButton.Location = new System.Drawing.Point(208, 125);
+            this.SearchSaveResultsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchSaveResultsButton.Name = "SearchSaveResultsButton";
-            this.SearchSaveResultsButton.Size = new System.Drawing.Size(86, 22);
+            this.SearchSaveResultsButton.Size = new System.Drawing.Size(100, 28);
             this.SearchSaveResultsButton.TabIndex = 19;
-            this.SearchSaveResultsButton.Text = "Save results...";
+            this.SearchSaveResultsButton.Text = "保存结果...";
             this.SearchSaveResultsButton.UseVisualStyleBackColor = true;
             this.SearchSaveResultsButton.Click += new System.EventHandler(this.SearchSaveResultsButton_Click);
             // 
@@ -282,9 +297,10 @@
             // 
             this.SearchIgnoreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchIgnoreTextBox.Location = new System.Drawing.Point(65, 70);
+            this.SearchIgnoreTextBox.Location = new System.Drawing.Point(76, 92);
+            this.SearchIgnoreTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchIgnoreTextBox.Name = "SearchIgnoreTextBox";
-            this.SearchIgnoreTextBox.Size = new System.Drawing.Size(202, 20);
+            this.SearchIgnoreTextBox.Size = new System.Drawing.Size(233, 23);
             this.SearchIgnoreTextBox.TabIndex = 16;
             this.SearchIgnoreTextBox.Text = ".ydr, .ydd, .ytd, .yft, .ybn, .ycd, .awc, .bik";
             // 
@@ -293,11 +309,12 @@
             this.SearchIgnoreCheckBox.AutoSize = true;
             this.SearchIgnoreCheckBox.Checked = true;
             this.SearchIgnoreCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SearchIgnoreCheckBox.Location = new System.Drawing.Point(6, 72);
+            this.SearchIgnoreCheckBox.Location = new System.Drawing.Point(7, 94);
+            this.SearchIgnoreCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchIgnoreCheckBox.Name = "SearchIgnoreCheckBox";
-            this.SearchIgnoreCheckBox.Size = new System.Drawing.Size(59, 17);
+            this.SearchIgnoreCheckBox.Size = new System.Drawing.Size(63, 21);
             this.SearchIgnoreCheckBox.TabIndex = 15;
-            this.SearchIgnoreCheckBox.Text = "Ignore:";
+            this.SearchIgnoreCheckBox.Text = "忽略：";
             this.SearchIgnoreCheckBox.UseVisualStyleBackColor = true;
             this.SearchIgnoreCheckBox.CheckedChanged += new System.EventHandler(this.SearchIgnoreCheckBox_CheckedChanged);
             // 
@@ -306,31 +323,34 @@
             this.SearchBothDirectionsCheckBox.AutoSize = true;
             this.SearchBothDirectionsCheckBox.Checked = true;
             this.SearchBothDirectionsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SearchBothDirectionsCheckBox.Location = new System.Drawing.Point(106, 50);
+            this.SearchBothDirectionsCheckBox.Location = new System.Drawing.Point(124, 65);
+            this.SearchBothDirectionsCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchBothDirectionsCheckBox.Name = "SearchBothDirectionsCheckBox";
-            this.SearchBothDirectionsCheckBox.Size = new System.Drawing.Size(96, 17);
+            this.SearchBothDirectionsCheckBox.Size = new System.Drawing.Size(75, 21);
             this.SearchBothDirectionsCheckBox.TabIndex = 14;
-            this.SearchBothDirectionsCheckBox.Text = "Both directions";
+            this.SearchBothDirectionsCheckBox.Text = "双向搜索";
             this.SearchBothDirectionsCheckBox.UseVisualStyleBackColor = true;
             // 
             // SearchCaseSensitiveCheckBox
             // 
             this.SearchCaseSensitiveCheckBox.AutoSize = true;
-            this.SearchCaseSensitiveCheckBox.Location = new System.Drawing.Point(6, 50);
+            this.SearchCaseSensitiveCheckBox.Location = new System.Drawing.Point(7, 65);
+            this.SearchCaseSensitiveCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchCaseSensitiveCheckBox.Name = "SearchCaseSensitiveCheckBox";
-            this.SearchCaseSensitiveCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.SearchCaseSensitiveCheckBox.Size = new System.Drawing.Size(87, 21);
             this.SearchCaseSensitiveCheckBox.TabIndex = 13;
-            this.SearchCaseSensitiveCheckBox.Text = "Case-sensitive";
+            this.SearchCaseSensitiveCheckBox.Text = "区分大小写";
             this.SearchCaseSensitiveCheckBox.UseVisualStyleBackColor = true;
             // 
             // SearchHexRadioButton
             // 
             this.SearchHexRadioButton.AutoSize = true;
-            this.SearchHexRadioButton.Location = new System.Drawing.Point(155, 7);
+            this.SearchHexRadioButton.Location = new System.Drawing.Point(139, 8);
+            this.SearchHexRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchHexRadioButton.Name = "SearchHexRadioButton";
-            this.SearchHexRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.SearchHexRadioButton.Size = new System.Drawing.Size(74, 21);
             this.SearchHexRadioButton.TabIndex = 12;
-            this.SearchHexRadioButton.Text = "Hex";
+            this.SearchHexRadioButton.Text = "十六进制";
             this.SearchHexRadioButton.UseVisualStyleBackColor = true;
             this.SearchHexRadioButton.CheckedChanged += new System.EventHandler(this.SearchHexRadioButton_CheckedChanged);
             // 
@@ -338,12 +358,13 @@
             // 
             this.SearchTextRadioButton.AutoSize = true;
             this.SearchTextRadioButton.Checked = true;
-            this.SearchTextRadioButton.Location = new System.Drawing.Point(103, 7);
+            this.SearchTextRadioButton.Location = new System.Drawing.Point(81, 8);
+            this.SearchTextRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchTextRadioButton.Name = "SearchTextRadioButton";
-            this.SearchTextRadioButton.Size = new System.Drawing.Size(46, 17);
+            this.SearchTextRadioButton.Size = new System.Drawing.Size(50, 21);
             this.SearchTextRadioButton.TabIndex = 11;
             this.SearchTextRadioButton.TabStop = true;
-            this.SearchTextRadioButton.Text = "Text";
+            this.SearchTextRadioButton.Text = "文本";
             this.SearchTextRadioButton.UseVisualStyleBackColor = true;
             this.SearchTextRadioButton.CheckedChanged += new System.EventHandler(this.SearchTextRadioButton_CheckedChanged);
             // 
@@ -357,10 +378,11 @@
             this.columnHeader2});
             this.SearchResultsListView.FullRowSelect = true;
             this.SearchResultsListView.HideSelection = false;
-            this.SearchResultsListView.Location = new System.Drawing.Point(0, 123);
+            this.SearchResultsListView.Location = new System.Drawing.Point(0, 162);
+            this.SearchResultsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchResultsListView.MultiSelect = false;
             this.SearchResultsListView.Name = "SearchResultsListView";
-            this.SearchResultsListView.Size = new System.Drawing.Size(267, 340);
+            this.SearchResultsListView.Size = new System.Drawing.Size(309, 353);
             this.SearchResultsListView.TabIndex = 20;
             this.SearchResultsListView.UseCompatibleStateImageBehavior = false;
             this.SearchResultsListView.View = System.Windows.Forms.View.Details;
@@ -370,70 +392,76 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "File";
+            this.columnHeader1.Text = "文件";
             this.columnHeader1.Width = 176;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Offset";
+            this.columnHeader2.Text = "偏移量";
             // 
             // SearchAbortButton
             // 
-            this.SearchAbortButton.Location = new System.Drawing.Point(87, 95);
+            this.SearchAbortButton.Location = new System.Drawing.Point(102, 125);
+            this.SearchAbortButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchAbortButton.Name = "SearchAbortButton";
-            this.SearchAbortButton.Size = new System.Drawing.Size(75, 22);
+            this.SearchAbortButton.Size = new System.Drawing.Size(88, 28);
             this.SearchAbortButton.TabIndex = 18;
-            this.SearchAbortButton.Text = "Abort";
+            this.SearchAbortButton.Text = "取消";
             this.SearchAbortButton.UseVisualStyleBackColor = true;
             this.SearchAbortButton.Click += new System.EventHandler(this.SearchAbortButton_Click);
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(6, 95);
+            this.SearchButton.Location = new System.Drawing.Point(7, 125);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 22);
+            this.SearchButton.Size = new System.Drawing.Size(88, 28);
             this.SearchButton.TabIndex = 17;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "搜索";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 9);
+            this.label3.Location = new System.Drawing.Point(5, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 52;
-            this.label3.Text = "Search in files for:";
+            this.label3.Text = "搜索类型：";
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchTextBox.Location = new System.Drawing.Point(3, 27);
+            this.SearchTextBox.Location = new System.Drawing.Point(4, 35);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(264, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(305, 23);
             this.SearchTextBox.TabIndex = 10;
             // 
             // ExportCompressCheckBox
             // 
             this.ExportCompressCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportCompressCheckBox.AutoSize = true;
-            this.ExportCompressCheckBox.Location = new System.Drawing.Point(414, 5);
+            this.ExportCompressCheckBox.Location = new System.Drawing.Point(514, 7);
+            this.ExportCompressCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExportCompressCheckBox.Name = "ExportCompressCheckBox";
-            this.ExportCompressCheckBox.Size = new System.Drawing.Size(72, 17);
+            this.ExportCompressCheckBox.Size = new System.Drawing.Size(51, 21);
             this.ExportCompressCheckBox.TabIndex = 105;
-            this.ExportCompressCheckBox.Text = "Compress";
+            this.ExportCompressCheckBox.Text = "压缩";
             this.ExportCompressCheckBox.UseVisualStyleBackColor = true;
             // 
             // ExportButton
             // 
             this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportButton.Location = new System.Drawing.Point(488, 2);
+            this.ExportButton.Location = new System.Drawing.Point(567, 3);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(75, 23);
+            this.ExportButton.Size = new System.Drawing.Size(88, 30);
             this.ExportButton.TabIndex = 104;
-            this.ExportButton.Text = "Export...";
+            this.ExportButton.Text = "导出...";
             this.ExportButton.UseVisualStyleBackColor = true;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
@@ -442,11 +470,12 @@
             this.FileInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FileInfoLabel.AutoEllipsis = true;
-            this.FileInfoLabel.Location = new System.Drawing.Point(7, 6);
+            this.FileInfoLabel.Location = new System.Drawing.Point(8, 8);
+            this.FileInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FileInfoLabel.Name = "FileInfoLabel";
-            this.FileInfoLabel.Size = new System.Drawing.Size(401, 16);
+            this.FileInfoLabel.Size = new System.Drawing.Size(466, 21);
             this.FileInfoLabel.TabIndex = 51;
-            this.FileInfoLabel.Text = "[Nothing selected]";
+            this.FileInfoLabel.Text = "[未选择对象]";
             // 
             // SelectionTabControl
             // 
@@ -456,10 +485,11 @@
             this.SelectionTabControl.Controls.Add(this.tabPage3);
             this.SelectionTabControl.Controls.Add(this.tabPage4);
             this.SelectionTabControl.Controls.Add(this.TexturesTabPage);
-            this.SelectionTabControl.Location = new System.Drawing.Point(3, 30);
+            this.SelectionTabControl.Location = new System.Drawing.Point(4, 40);
+            this.SelectionTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectionTabControl.Name = "SelectionTabControl";
             this.SelectionTabControl.SelectedIndex = 0;
-            this.SelectionTabControl.Size = new System.Drawing.Size(564, 462);
+            this.SelectionTabControl.Size = new System.Drawing.Size(656, 518);
             this.SelectionTabControl.TabIndex = 0;
             // 
             // tabPage3
@@ -469,22 +499,24 @@
             this.tabPage3.Controls.Add(this.DataTextRadio);
             this.tabPage3.Controls.Add(this.DataHexRadio);
             this.tabPage3.Controls.Add(this.DataTextBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(556, 436);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(648, 488);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Data";
+            this.tabPage3.Text = "数据";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // ShowLargeFileContentsCheckBox
             // 
             this.ShowLargeFileContentsCheckBox.AutoSize = true;
-            this.ShowLargeFileContentsCheckBox.Location = new System.Drawing.Point(395, 7);
+            this.ShowLargeFileContentsCheckBox.Location = new System.Drawing.Point(461, 8);
+            this.ShowLargeFileContentsCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowLargeFileContentsCheckBox.Name = "ShowLargeFileContentsCheckBox";
-            this.ShowLargeFileContentsCheckBox.Size = new System.Drawing.Size(139, 17);
+            this.ShowLargeFileContentsCheckBox.Size = new System.Drawing.Size(111, 21);
             this.ShowLargeFileContentsCheckBox.TabIndex = 104;
-            this.ShowLargeFileContentsCheckBox.Text = "Show large file contents";
+            this.ShowLargeFileContentsCheckBox.Text = "显示大文件内容";
             this.ShowLargeFileContentsCheckBox.UseVisualStyleBackColor = true;
             this.ShowLargeFileContentsCheckBox.CheckedChanged += new System.EventHandler(this.ShowLargeFileContentsCheckBox_CheckedChanged);
             // 
@@ -496,20 +528,22 @@
             "8",
             "16",
             "32"});
-            this.DataHexLineCombo.Location = new System.Drawing.Point(56, 5);
+            this.DataHexLineCombo.Location = new System.Drawing.Point(91, 7);
+            this.DataHexLineCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataHexLineCombo.Name = "DataHexLineCombo";
-            this.DataHexLineCombo.Size = new System.Drawing.Size(49, 21);
+            this.DataHexLineCombo.Size = new System.Drawing.Size(56, 25);
             this.DataHexLineCombo.TabIndex = 101;
             this.DataHexLineCombo.SelectedIndexChanged += new System.EventHandler(this.DataHexLineCombo_SelectedIndexChanged);
             // 
             // DataTextRadio
             // 
             this.DataTextRadio.AutoSize = true;
-            this.DataTextRadio.Location = new System.Drawing.Point(176, 6);
+            this.DataTextRadio.Location = new System.Drawing.Point(205, 8);
+            this.DataTextRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataTextRadio.Name = "DataTextRadio";
-            this.DataTextRadio.Size = new System.Drawing.Size(46, 17);
+            this.DataTextRadio.Size = new System.Drawing.Size(50, 21);
             this.DataTextRadio.TabIndex = 102;
-            this.DataTextRadio.Text = "Text";
+            this.DataTextRadio.Text = "文本";
             this.DataTextRadio.UseVisualStyleBackColor = true;
             this.DataTextRadio.CheckedChanged += new System.EventHandler(this.DataTextRadio_CheckedChanged);
             // 
@@ -517,12 +551,13 @@
             // 
             this.DataHexRadio.AutoSize = true;
             this.DataHexRadio.Checked = true;
-            this.DataHexRadio.Location = new System.Drawing.Point(6, 6);
+            this.DataHexRadio.Location = new System.Drawing.Point(7, 8);
+            this.DataHexRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataHexRadio.Name = "DataHexRadio";
-            this.DataHexRadio.Size = new System.Drawing.Size(44, 17);
+            this.DataHexRadio.Size = new System.Drawing.Size(74, 21);
             this.DataHexRadio.TabIndex = 100;
             this.DataHexRadio.TabStop = true;
-            this.DataHexRadio.Text = "Hex";
+            this.DataHexRadio.Text = "十六进制";
             this.DataHexRadio.UseVisualStyleBackColor = true;
             this.DataHexRadio.CheckedChanged += new System.EventHandler(this.DataHexRadio_CheckedChanged);
             // 
@@ -533,24 +568,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataTextBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataTextBox.HideSelection = false;
-            this.DataTextBox.Location = new System.Drawing.Point(6, 29);
+            this.DataTextBox.Location = new System.Drawing.Point(7, 38);
+            this.DataTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataTextBox.Multiline = true;
             this.DataTextBox.Name = "DataTextBox";
             this.DataTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DataTextBox.Size = new System.Drawing.Size(544, 401);
+            this.DataTextBox.Size = new System.Drawing.Size(632, 432);
             this.DataTextBox.TabIndex = 103;
-            this.DataTextBox.Text = "[Please select a data file]";
+            this.DataTextBox.Text = "[请选择一个数据文件]";
             this.DataTextBox.WordWrap = false;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.DetailsPropertyGrid);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 26);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(556, 436);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(648, 488);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Details";
+            this.tabPage4.Text = "详情";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // DetailsPropertyGrid
@@ -558,25 +595,28 @@
             this.DetailsPropertyGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DetailsPropertyGrid.Location = new System.Drawing.Point(6, 6);
+            this.DetailsPropertyGrid.Location = new System.Drawing.Point(7, 8);
+            this.DetailsPropertyGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DetailsPropertyGrid.Name = "DetailsPropertyGrid";
-            this.DetailsPropertyGrid.Size = new System.Drawing.Size(544, 424);
+            this.DetailsPropertyGrid.Size = new System.Drawing.Size(633, 464);
             this.DetailsPropertyGrid.TabIndex = 104;
             // 
             // TexturesTabPage
             // 
             this.TexturesTabPage.Controls.Add(this.splitContainer2);
-            this.TexturesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.TexturesTabPage.Location = new System.Drawing.Point(4, 26);
+            this.TexturesTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TexturesTabPage.Name = "TexturesTabPage";
-            this.TexturesTabPage.Size = new System.Drawing.Size(556, 436);
+            this.TexturesTabPage.Size = new System.Drawing.Size(648, 488);
             this.TexturesTabPage.TabIndex = 2;
-            this.TexturesTabPage.Text = "Textures";
+            this.TexturesTabPage.Text = "纹理";
             this.TexturesTabPage.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -592,8 +632,9 @@
             this.splitContainer2.Panel2.Controls.Add(this.label4);
             this.splitContainer2.Panel2.Controls.Add(this.SelTextureNameTextBox);
             this.splitContainer2.Panel2.Controls.Add(this.SelTexturePictureBox);
-            this.splitContainer2.Size = new System.Drawing.Size(556, 436);
-            this.splitContainer2.SplitterDistance = 177;
+            this.splitContainer2.Size = new System.Drawing.Size(648, 488);
+            this.splitContainer2.SplitterDistance = 206;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // SelTexturesListView
@@ -605,10 +646,11 @@
             this.columnHeader5});
             this.SelTexturesListView.FullRowSelect = true;
             this.SelTexturesListView.HideSelection = false;
-            this.SelTexturesListView.Location = new System.Drawing.Point(3, 3);
+            this.SelTexturesListView.Location = new System.Drawing.Point(4, 4);
+            this.SelTexturesListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelTexturesListView.MultiSelect = false;
             this.SelTexturesListView.Name = "SelTexturesListView";
-            this.SelTexturesListView.Size = new System.Drawing.Size(171, 430);
+            this.SelTexturesListView.Size = new System.Drawing.Size(199, 479);
             this.SelTexturesListView.TabIndex = 21;
             this.SelTexturesListView.UseCompatibleStateImageBehavior = false;
             this.SelTexturesListView.View = System.Windows.Forms.View.Details;
@@ -616,35 +658,38 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Texture";
+            this.columnHeader5.Text = "纹理";
             this.columnHeader5.Width = 146;
             // 
             // SelTextureMipLabel
             // 
             this.SelTextureMipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SelTextureMipLabel.AutoSize = true;
-            this.SelTextureMipLabel.Location = new System.Drawing.Point(41, 401);
+            this.SelTextureMipLabel.Location = new System.Drawing.Point(48, 442);
+            this.SelTextureMipLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelTextureMipLabel.Name = "SelTextureMipLabel";
-            this.SelTextureMipLabel.Size = new System.Drawing.Size(13, 13);
+            this.SelTextureMipLabel.Size = new System.Drawing.Size(15, 17);
             this.SelTextureMipLabel.TabIndex = 44;
             this.SelTextureMipLabel.Text = "0";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 10);
+            this.label5.Location = new System.Drawing.Point(12, 13);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Name:";
+            this.label5.Text = "名称：";
             // 
             // SelTextureDimensionsLabel
             // 
             this.SelTextureDimensionsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SelTextureDimensionsLabel.AutoSize = true;
-            this.SelTextureDimensionsLabel.Location = new System.Drawing.Point(301, 401);
+            this.SelTextureDimensionsLabel.Location = new System.Drawing.Point(350, 442);
+            this.SelTextureDimensionsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelTextureDimensionsLabel.Name = "SelTextureDimensionsLabel";
-            this.SelTextureDimensionsLabel.Size = new System.Drawing.Size(10, 13);
+            this.SelTextureDimensionsLabel.Size = new System.Drawing.Size(13, 17);
             this.SelTextureDimensionsLabel.TabIndex = 42;
             this.SelTextureDimensionsLabel.Text = "-";
             // 
@@ -655,10 +700,11 @@
             this.SelTextureMipTrackBar.AutoSize = false;
             this.SelTextureMipTrackBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.SelTextureMipTrackBar.LargeChange = 1;
-            this.SelTextureMipTrackBar.Location = new System.Drawing.Point(60, 395);
+            this.SelTextureMipTrackBar.Location = new System.Drawing.Point(70, 435);
+            this.SelTextureMipTrackBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelTextureMipTrackBar.Maximum = 0;
             this.SelTextureMipTrackBar.Name = "SelTextureMipTrackBar";
-            this.SelTextureMipTrackBar.Size = new System.Drawing.Size(234, 31);
+            this.SelTextureMipTrackBar.Size = new System.Drawing.Size(272, 41);
             this.SelTextureMipTrackBar.TabIndex = 41;
             this.SelTextureMipTrackBar.Scroll += new System.EventHandler(this.SelTextureMipTrackBar_Scroll);
             // 
@@ -666,17 +712,19 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 401);
+            this.label4.Location = new System.Drawing.Point(12, 442);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 40;
             this.label4.Text = "Mip:";
             // 
             // SelTextureNameTextBox
             // 
-            this.SelTextureNameTextBox.Location = new System.Drawing.Point(60, 7);
+            this.SelTextureNameTextBox.Location = new System.Drawing.Point(70, 8);
+            this.SelTextureNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelTextureNameTextBox.Name = "SelTextureNameTextBox";
-            this.SelTextureNameTextBox.Size = new System.Drawing.Size(192, 20);
+            this.SelTextureNameTextBox.Size = new System.Drawing.Size(223, 23);
             this.SelTextureNameTextBox.TabIndex = 39;
             // 
             // SelTexturePictureBox
@@ -686,9 +734,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SelTexturePictureBox.BackColor = System.Drawing.Color.DarkGray;
             this.SelTexturePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SelTexturePictureBox.Location = new System.Drawing.Point(3, 33);
+            this.SelTexturePictureBox.Location = new System.Drawing.Point(4, 42);
+            this.SelTexturePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelTexturePictureBox.Name = "SelTexturePictureBox";
-            this.SelTexturePictureBox.Size = new System.Drawing.Size(369, 351);
+            this.SelTexturePictureBox.Size = new System.Drawing.Size(429, 376);
             this.SelTexturePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SelTexturePictureBox.TabIndex = 38;
             this.SelTexturePictureBox.TabStop = false;
@@ -697,37 +746,40 @@
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 527);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 610);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(855, 22);
+            this.MainStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.MainStatusStrip.Size = new System.Drawing.Size(994, 22);
             this.MainStatusStrip.TabIndex = 50;
             this.MainStatusStrip.Text = "statusStrip1";
             // 
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(840, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(977, 17);
             this.StatusLabel.Spring = true;
-            this.StatusLabel.Text = "Scan the GTAV folder to begin.";
+            this.StatusLabel.Text = "请先扫描 GTAV 目录。";
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TestAllButton
             // 
-            this.TestAllButton.Location = new System.Drawing.Point(537, 4);
+            this.TestAllButton.Location = new System.Drawing.Point(604, 6);
+            this.TestAllButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TestAllButton.Name = "TestAllButton";
-            this.TestAllButton.Size = new System.Drawing.Size(75, 23);
+            this.TestAllButton.Size = new System.Drawing.Size(110, 30);
             this.TestAllButton.TabIndex = 3;
-            this.TestAllButton.Text = "Test all files";
+            this.TestAllButton.Text = "测试所有文件";
             this.TestAllButton.UseVisualStyleBackColor = true;
             this.TestAllButton.Click += new System.EventHandler(this.TestAllButton_Click);
             // 
             // AbortButton
             // 
-            this.AbortButton.Location = new System.Drawing.Point(618, 4);
+            this.AbortButton.Location = new System.Drawing.Point(721, 6);
+            this.AbortButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AbortButton.Name = "AbortButton";
-            this.AbortButton.Size = new System.Drawing.Size(75, 23);
+            this.AbortButton.Size = new System.Drawing.Size(88, 30);
             this.AbortButton.TabIndex = 4;
-            this.AbortButton.Text = "Abort";
+            this.AbortButton.Text = "取消";
             this.AbortButton.UseVisualStyleBackColor = true;
             this.AbortButton.Click += new System.EventHandler(this.AbortButton_Click);
             // 
@@ -737,9 +789,9 @@
             // 
             // BrowseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 549);
+            this.ClientSize = new System.Drawing.Size(994, 632);
             this.Controls.Add(this.AbortButton);
             this.Controls.Add(this.TestAllButton);
             this.Controls.Add(this.MainStatusStrip);
@@ -749,9 +801,11 @@
             this.Controls.Add(this.FolderBrowseButton);
             this.Controls.Add(this.FolderTextBox);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BrowseForm";
-            this.Text = "RPF Browser - CodeWalker by dexyfex";
+            this.Text = "RPF 浏览器 - CodeWalker by dexyfex";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BrowseForm_FormClosed);
             this.Load += new System.EventHandler(this.BrowseForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

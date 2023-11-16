@@ -82,7 +82,7 @@ namespace CodeWalker.Tools
                 }
                 else
                 {
-                    StatusLabel.Text = "Ready";
+                    StatusLabel.Text = "已准备好";
                     //RpfSearchPanel.Enabled = true;
                 }
             }
@@ -114,12 +114,12 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (searchfolder.Length == 0)
             {
-                MessageBox.Show("Please select a folder...");
+                MessageBox.Show("请选择一个文件夹...");
                 return;
             }
             if (!Directory.Exists(searchfolder))
             {
-                MessageBox.Show("Please select a valid folder!");
+                MessageBox.Show("请选择一个有效的文件夹！");
                 return;
             }
 
@@ -144,7 +144,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    MessageBox.Show("Please enter a valid hex string.");
+                    MessageBox.Show("请输入一个有效的十六进制字符串！");
                     return;
                 }
             }
@@ -167,7 +167,7 @@ namespace CodeWalker.Tools
             Task.Run(() =>
             {
 
-                FileSearchAddResult("Searching " + searchfolder + "...");
+                FileSearchAddResult("正在搜索 " + searchfolder + "...");
 
                 string[] filenames = Directory.GetFiles(searchfolder);
 
@@ -207,7 +207,7 @@ namespace CodeWalker.Tools
 
                         if (AbortOperation)
                         {
-                            FileSearchAddResult("Search aborted.");
+                            FileSearchAddResult("搜索已取消。");
                             FileSearchComplete();
                             InProgress = false;
                             return;
@@ -217,7 +217,7 @@ namespace CodeWalker.Tools
 
                 }
 
-                FileSearchAddResult(string.Format("Search complete. {0} results found.", matchcount));
+                FileSearchAddResult(string.Format("搜索完成。找到 {0} 个结果。", matchcount));
                 FileSearchComplete();
                 InProgress = false;
             });
@@ -320,12 +320,12 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (!(RpfMan?.IsInited ?? false))
             {
-                MessageBox.Show("Please wait for the scan to complete.");
+                MessageBox.Show("请等待扫描完成。");
                 return;
             }
             if (RpfSearchTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Please enter a search term.");
+                MessageBox.Show("请输入搜索关键字。");
                 return;
             }
 
@@ -362,7 +362,7 @@ namespace CodeWalker.Tools
             {
                 if (searchtxt.Length < 2)
                 {
-                    MessageBox.Show("Please enter at least one byte of hex (2 characters).");
+                    MessageBox.Show("请输入最少一个字节的十六进制字符串（2 个字符）。");
                     return;
                 }
                 try
@@ -378,7 +378,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    MessageBox.Show("Please enter a valid hex string.");
+                    MessageBox.Show("请输入一个有效的十六进制字符串。");
                     return;
                 }
             }
@@ -433,7 +433,7 @@ namespace CodeWalker.Tools
                         var duration = DateTime.Now - starttime;
                         if (AbortOperation)
                         {
-                            UpdateStatus(duration.ToString(@"hh\:mm\:ss") + " - Search aborted.");
+                            UpdateStatus(duration.ToString(@"hh\:mm\:ss") + " - 搜索已取消。");
                             InProgress = false;
                             RpfSearchComplete();
                             return;
@@ -477,7 +477,7 @@ namespace CodeWalker.Tools
                             { continue; }
                         }
 
-                        UpdateStatus(string.Format("{0} - Searching {1}/{2} : {3}", duration.ToString(@"hh\:mm\:ss"), curfile, totfiles, fentry.Path));
+                        UpdateStatus(string.Format("{0} - 正在搜索 {1}/{2} : {3}", duration.ToString(@"hh\:mm\:ss"), curfile, totfiles, fentry.Path));
 
                         byte[] filebytes = fentry.File.ExtractFile(fentry);
                         if (filebytes == null) continue;
@@ -514,7 +514,7 @@ namespace CodeWalker.Tools
                 }
 
                 var totdur = DateTime.Now - starttime;
-                UpdateStatus(totdur.ToString(@"hh\:mm\:ss") + " - Search complete. " + resultcount.ToString() + " results found.");
+                UpdateStatus(totdur.ToString(@"hh\:mm\:ss") + " - 搜索完成。找到 " + resultcount.ToString() + " 个结果。");
                 InProgress = false;
                 RpfSearchComplete();
             });
@@ -653,13 +653,13 @@ namespace CodeWalker.Tools
                 RpfDirectoryEntry rde = entry as RpfDirectoryEntry;
                 if (rde != null)
                 {
-                    FileInfoLabel.Text = rde.Path + " (Directory)";
-                    DataTextBox.Text = "[Please select a data file]";
+                    FileInfoLabel.Text = rde.Path + " (文件夹)";
+                    DataTextBox.Text = "[请选择一个数据文件]";
                 }
                 else
                 {
-                    FileInfoLabel.Text = "[Nothing selected]";
-                    DataTextBox.Text = "[Please select a search result]";
+                    FileInfoLabel.Text = "[未选择对象]";
+                    DataTextBox.Text = "[请选择一个搜索结果]";
                 }
                 return;
             }
@@ -667,16 +667,16 @@ namespace CodeWalker.Tools
 
             Cursor = Cursors.WaitCursor;
 
-            string typestr = "Resource";
+            string typestr = "资源";
             if (rfe is RpfBinaryFileEntry)
             {
-                typestr = "Binary";
+                typestr = "二进制";
             }
 
             byte[] data = rfe.File.ExtractFile(rfe);
 
             int datalen = (data != null) ? data.Length : 0;
-            FileInfoLabel.Text = rfe.Path + " (" + typestr + " file)  -  " + TextUtil.GetBytesReadable(datalen);
+            FileInfoLabel.Text = rfe.Path + " (" + typestr + " 文件)  -  " + TextUtil.GetBytesReadable(datalen);
 
 
             if (ShowLargeFileContentsCheckBox.Checked || (datalen < 524287)) //512K
@@ -685,7 +685,7 @@ namespace CodeWalker.Tools
             }
             else
             {
-                DataTextBox.Text = "[Filesize >512KB. Select the Show large files option to view its contents]";
+                DataTextBox.Text = "[文件大小  >512KB。勾选查看大文件内容选项以查看其内容]";
             }
 
 
@@ -828,7 +828,7 @@ namespace CodeWalker.Tools
             if (data == null)
             {
                 Cursor = Cursors.Default;
-                DataTextBox.Text = "[Error extracting file! " + rfe.File.LastError + "]";
+                DataTextBox.Text = "[导出文件时错误 " + rfe.File.LastError + "]";
                 return;
             }
 
@@ -915,14 +915,14 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (!(RpfMan?.IsInited ?? false))
             {
-                MessageBox.Show("Please wait for the scan to complete.");
+                MessageBox.Show("请等待扫描完成。");
                 return;
             }
 
             RpfFileEntry rfe = RpfSelectedEntry as RpfFileEntry;
             if (rfe == null)
             {
-                MessageBox.Show("Please select a file to export.");
+                MessageBox.Show("请选择要导出的文件。");
                 return;
             }
 
@@ -948,7 +948,7 @@ namespace CodeWalker.Tools
 
                 if (data == null)
                 {
-                    MessageBox.Show("Error extracting file! " + rfe.File.LastError);
+                    MessageBox.Show("导出文件时错误：" + rfe.File.LastError);
                     return;
                 }
 
@@ -960,7 +960,7 @@ namespace CodeWalker.Tools
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saving file! " + ex.ToString());
+                    MessageBox.Show("保存文件时错误：" + ex.ToString());
                 }
 
             }

@@ -35,12 +35,12 @@ namespace CodeWalker.Tools
             {
                 GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
                 KeysLoaded = true;
-                UpdateDumpStatus("Ready.");
-                UpdateExtractStatus("Ready to extract.");
+                UpdateDumpStatus("就绪。");
+                UpdateExtractStatus("已准备好导出。");
             }
             catch
             {
-                UpdateDumpStatus("Keys not found! This shouldn't happen.");
+                UpdateDumpStatus("秘钥未找到！这不应该发生！");
             }
         }
 
@@ -86,7 +86,7 @@ namespace CodeWalker.Tools
             if (InProgress) return;
             if (KeysLoaded)
             {
-                if (MessageBox.Show("Keys are already loaded. Do you wish to scan the exe dump anyway?", "Keys already loaded", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                if (MessageBox.Show("秘钥已经加载了，您确定要重新进行秘钥转储吗？", "秘钥已加载", MessageBoxButtons.OKCancel) != DialogResult.OK)
                 {
                     return;
                 }
@@ -105,31 +105,31 @@ namespace CodeWalker.Tools
 
                     if (AbortOperation)
                     {
-                        UpdateDumpStatus("Dump scan aborted.");
+                        UpdateDumpStatus("转储扫描取消。");
                         return;
                     }
 
                     FileInfo dmpfi = new FileInfo(dmppath);
 
-                    UpdateDumpStatus(string.Format("Scanning {0} for keys...", dmpfi.Name));
+                    UpdateDumpStatus(string.Format("正在扫描 {0} 以获取秘钥...", dmpfi.Name));
 
 
                     byte[] exedat = File.ReadAllBytes(dmppath);
                     GTA5Keys.Generate(exedat, UpdateDumpStatus);
 
 
-                    UpdateDumpStatus("Saving found keys...");
+                    UpdateDumpStatus("正在保存秘钥...");
 
                     GTA5Keys.SaveToPath();
 
-                    UpdateDumpStatus("Keys loaded.");
-                    UpdateExtractStatus("Keys loaded, ready to extract.");
+                    UpdateDumpStatus("秘钥已加载。");
+                    UpdateExtractStatus("秘钥已加载，准备开始扫描。");
                     KeysLoaded = true;
                     InProgress = false;
                 }
                 catch (Exception ex)
                 {
-                    UpdateDumpStatus("Error - " + ex.ToString());
+                    UpdateDumpStatus("错误 - " + ex.ToString());
 
                     InProgress = false;
                 }
@@ -142,22 +142,22 @@ namespace CodeWalker.Tools
 
             if (!KeysLoaded)
             {
-                MessageBox.Show("Please scan a GTA 5 exe dump for keys first, or include key files in this app's folder!");
+                MessageBox.Show("请选择 GTA5 EXE 来进行扫描，或者将秘钥放在程序目录下！");
                 return;
             }
             if (!Directory.Exists(FolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + FolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + FolderTextBox.Text);
                 return;
             }
             if (!Directory.Exists(OutputFolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + OutputFolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + OutputFolderTextBox.Text);
                 return;
             }
             if (Directory.GetFiles(OutputFolderTextBox.Text, "*.ysc", SearchOption.AllDirectories).Length > 0)
             {
-                if (MessageBox.Show("Output folder already contains .ysc files. Are you sure you want to continue?", "Output folder already contains .ysc files", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                if (MessageBox.Show("输出目录下已经存在 ysc 文件，您确定要继续吗？", "文件已存在", MessageBoxButtons.OKCancel) != DialogResult.OK)
                 {
                     return;
                 }
@@ -173,17 +173,17 @@ namespace CodeWalker.Tools
             Task.Run(() =>
             {
 
-                UpdateExtractStatus("Keys loaded.");
+                UpdateExtractStatus("秘钥已加载。");
 
                 string[] allfiles = Directory.GetFiles(searchpath, "*.rpf", SearchOption.AllDirectories);
                 foreach (string rpfpath in allfiles)
                 {
                     RpfFile rf = new RpfFile(rpfpath, rpfpath.Replace(replpath, ""));
-                    UpdateExtractStatus("Searching " + rf.Name + "...");
+                    UpdateExtractStatus("正在搜索 " + rf.Name + "...");
                     rf.ExtractScripts(outputpath, UpdateExtractStatus);
                 }
 
-                UpdateExtractStatus("Complete.");
+                UpdateExtractStatus("完成。");
                 InProgress = false;
             });
         }

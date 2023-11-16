@@ -89,11 +89,11 @@ namespace CodeWalker.GameFiles
 
             if (buildIndex)
             {
-                updateStatus("Building jenkindex...");
+                updateStatus("构建哈希索引中...");
                 BuildBaseJenkIndex();
             }
 
-            updateStatus("Scan complete");
+            updateStatus("扫描已完成");
 
             IsInited = true;
         }

@@ -39,7 +39,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            var sn = CurrentPathNode.StreetName.Hash == 0 ? "Path node" : CurrentPathNode?.StreetName.ToString() ?? string.Empty;
+            var sn = CurrentPathNode.StreetName.Hash == 0 ? "路线节点" : CurrentPathNode?.StreetName.ToString() ?? string.Empty;
             Text = sn + " " + CurrentPathNode.NodeID.ToString();
         }
 
@@ -67,11 +67,11 @@ namespace CodeWalker.Project.Panels
                 PathNodeNodeIDUpDown.Value = 0;
                 PathNodePositionTextBox.Text = string.Empty;
                 PathNodeStreetHashTextBox.Text = string.Empty;
-                PathNodeStreetNameLabel.Text = "Name: [None]";
+                PathNodeStreetNameLabel.Text = "名称：[无]";
 
                 UpdatePathNodeFlagsUI(true, true);
 
-                PathNodeLinkCountLabel.Text = "Link Count: 0";
+                PathNodeLinkCountLabel.Text = "链接数量：0";
                 PathNodeLinksListBox.Items.Clear();
 
             }
@@ -87,11 +87,11 @@ namespace CodeWalker.Project.Panels
                 PathNodeNodeIDUpDown.Value = n.NodeID;
                 PathNodePositionTextBox.Text = FloatUtil.GetVector3String(CurrentPathNode.Position);
                 PathNodeStreetHashTextBox.Text = n.StreetName.Hash.ToString();
-                PathNodeStreetNameLabel.Text = "Name: " + ((n.StreetName.Hash == 0) ? "[None]" : (string.IsNullOrEmpty(streetname) ? "[Not found]" : streetname));
+                PathNodeStreetNameLabel.Text = "名称：" + ((n.StreetName.Hash == 0) ? "[无]" : (string.IsNullOrEmpty(streetname) ? "[未找到]" : streetname));
 
                 UpdatePathNodeFlagsUI(true, true);
 
-                PathNodeLinkCountLabel.Text = "Link Count: " + CurrentPathNode.LinkCount.ToString();
+                PathNodeLinkCountLabel.Text = "链接数量：" + CurrentPathNode.LinkCount.ToString();
                 PathNodeLinksListBox.Items.Clear();
                 if (CurrentPathNode.Links != null)
                 {
@@ -122,8 +122,8 @@ namespace CodeWalker.Project.Panels
                 PathNodesSpeedComboBox.SelectedItem = CurrentPathNode.Speed;
 
                 PathNodeEnableDisableButton.Text = CurrentPathNode.IsDisabledUnk0
-                    ? "Enable Section"
-                    : "Disable Section";
+                    ? "启用选择"
+                    : "禁用选择";
             }
         }
 
@@ -646,7 +646,7 @@ namespace CodeWalker.Project.Panels
 
             if (linknode == null)
             {
-                PathNodeLinkageStatusLabel.Text = "Unable to find node " + areaid.ToString() + ":" + nodeid.ToString() + ".";
+                PathNodeLinkageStatusLabel.Text = "无法找到节点 " + areaid.ToString() + ":" + nodeid.ToString() + "。";
             }
             else
             {
@@ -774,7 +774,7 @@ namespace CodeWalker.Project.Panels
             uint hash;
             uint.TryParse(PathNodeStreetHashTextBox.Text, out hash);
             var streetname = GlobalText.TryGetString(hash);
-            PathNodeStreetNameLabel.Text = "Name: " + ((hash == 0) ? "[None]" : (string.IsNullOrEmpty(streetname) ? "[Not found]" : streetname));
+            PathNodeStreetNameLabel.Text = "名称：" + ((hash == 0) ? "[无]" : (string.IsNullOrEmpty(streetname) ? "[未找到]" : streetname));
 
             lock (ProjectForm.ProjectSyncRoot)
             {
@@ -1359,9 +1359,9 @@ namespace CodeWalker.Project.Panels
                     {
                         var res = MessageBox.Show(
                             specialIsPedNode
-                                ? "This operation will change this node from a vehicle node to a ped node. This will remove all links. Are you sure you want to do this?"
-                                : "This operation will change this node from a ped node to a vehicle node. This will remove all links. Are you sure you want to do this?",
-                            "Are you sure?",
+                                ? "此操作将把此节点从车辆节点更改为人物角色节点，这将删除所有链接。您确定要继续吗？"
+                                : "此操作将把此节点从人物角色节点更改为车辆节点，这将删除所有链接。您确定要继续吗？",
+                            "确定这么做吗？",
                             MessageBoxButtons.YesNo
                         );
 
@@ -1402,7 +1402,7 @@ namespace CodeWalker.Project.Panels
             var partner = CurrentPathLink.Node2.Links.FirstOrDefault(l => l.Node2 == CurrentPathNode);
             if (partner == null)
             {
-                MessageBox.Show("Could not find partner!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("无法找到合流道路！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1447,8 +1447,8 @@ namespace CodeWalker.Project.Panels
                 CurrentPathNode.FloodCopyFlags(out var affectedFiles);
 
                 PathNodeEnableDisableButton.Text = CurrentPathNode.IsDisabledUnk0
-                    ? "Enable Section"
-                    : "Disable Section";
+                    ? "启用选择"
+                    : "禁用选择";
 
                 ProjectForm.AddYndToProject(CurrentYndFile);
                 ProjectForm.WorldForm.UpdatePathYndGraphics(CurrentYndFile, false);

@@ -59,7 +59,7 @@ namespace CodeWalker.Tools
                     var fname = kvp.Key;
                     var idata = kvp.Value;
 
-                    UpdateStatus("Converting " + fname + "...");
+                    UpdateStatus("正在转换文件 " + fname + "...");
 
                     FbxConverter fc = new FbxConverter();
 
@@ -68,7 +68,7 @@ namespace CodeWalker.Tools
 
                     if (ydr == null)
                     {
-                        UpdateStatus("Converting " + fname + " failed!"); //TODO: error message
+                        UpdateStatus("转换文件 " + fname + " 失败！"); //TODO: error message
 
                         continue; //something went wrong..
                     }
@@ -78,7 +78,7 @@ namespace CodeWalker.Tools
                     OutputFiles.Add(fname + ".ydr", odata);
                 }
 
-                UpdateStatus("Process complete.");
+                UpdateStatus("处理完成。");
 
                 ConvertComplete();
 

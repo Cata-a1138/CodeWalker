@@ -33,11 +33,11 @@ namespace CodeWalker.Tools
             {
                 GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
                 KeysLoaded = true;
-                UpdateExtractStatus("Ready to extract.");
+                UpdateExtractStatus("已准备好导出");
             }
             catch
             {
-                UpdateExtractStatus("Keys not found! This shouldn't happen.");
+                UpdateExtractStatus("未找到秘钥！这不应该发生！");
             }
         }
 
@@ -85,22 +85,22 @@ namespace CodeWalker.Tools
 
             if (!KeysLoaded)
             {
-                MessageBox.Show("Please scan a GTA 5 exe dump for keys first, or include key files in this app's folder!");
+                MessageBox.Show("请选择 GTA5 EXE 所在位置，或者将秘钥文件放在程序目录下！");
                 return;
             }
             if (!Directory.Exists(FolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + FolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + FolderTextBox.Text);
                 return;
             }
             if (!Directory.Exists(OutputFolderTextBox.Text))
             {
-                MessageBox.Show("Folder doesn't exist: " + OutputFolderTextBox.Text);
+                MessageBox.Show("文件夹不存在：" + OutputFolderTextBox.Text);
                 return;
             }
             if(string.IsNullOrEmpty(FileMatchTextBox.Text) || (FileMatchTextBox.Text.Length < 3))
             {
-                MessageBox.Show("Please enter at least 3 characters to match.");
+                MessageBox.Show("请输入至少 3 个字符以进行匹配");
                 return;
             }
 
@@ -117,7 +117,7 @@ namespace CodeWalker.Tools
             Task.Run(() =>
             {
 
-                UpdateExtractStatus("Keys loaded.");
+                UpdateExtractStatus("已找到秘钥。");
 
 
 
@@ -125,7 +125,7 @@ namespace CodeWalker.Tools
                 rpfman.Init(searchpath, UpdateExtractStatus, UpdateExtractStatus);
 
 
-                UpdateExtractStatus("Beginning file extraction...");
+                UpdateExtractStatus("开始导出文件...");
                 StringBuilder errsb = new StringBuilder();
                 foreach (RpfFile rpf in rpfman.AllRpfs)
                 {
@@ -133,7 +133,7 @@ namespace CodeWalker.Tools
                     {
                         if (AbortOperation)
                         {
-                            UpdateExtractStatus("Operation aborted");
+                            UpdateExtractStatus("操作已取消");
                             InProgress = false;
                             return;
                         }
@@ -189,7 +189,7 @@ namespace CodeWalker.Tools
                                 }
                                 else
                                 {
-                                    throw new Exception("Couldn't extract data.");
+                                    throw new Exception("无法导出数据");
                                 }
                             }
                         }
@@ -205,7 +205,7 @@ namespace CodeWalker.Tools
 
                 File.WriteAllText(outputpath + "\\_errors.txt", errsb.ToString());
 
-                UpdateExtractStatus("Complete.");
+                UpdateExtractStatus("完成。");
                 InProgress = false;
             });
         }

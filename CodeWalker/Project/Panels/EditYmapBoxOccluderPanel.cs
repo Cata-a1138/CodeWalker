@@ -37,7 +37,7 @@ namespace CodeWalker.Project.Panels
 
         private void UpdateFormTitle()
         {
-            Text = "BoxOccluder: " + (CurrentBoxOccluder?.Index.ToString() ?? "(none)");
+            Text = "遮挡盒：" + (CurrentBoxOccluder?.Index.ToString() ?? "(无)");
         }
 
 

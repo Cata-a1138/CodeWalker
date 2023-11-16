@@ -51,18 +51,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 10);
+            this.label6.Location = new System.Drawing.Point(23, 9);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
+            this.label6.Size = new System.Drawing.Size(122, 17);
             this.label6.TabIndex = 56;
-            this.label6.Text = "Extract all YSC scripts:";
+            this.label6.Text = "导出所有 YSC 脚本：";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 170);
+            this.label5.Location = new System.Drawing.Point(14, 222);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 55;
             this.label5.Text = "Decryption Keys:";
             this.label5.Visible = false;
@@ -70,17 +72,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 55);
+            this.label4.Location = new System.Drawing.Point(23, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 54;
-            this.label4.Text = "Output folder:";
+            this.label4.Text = "输出目录：";
             // 
             // OutputFolderBrowseButton
             // 
-            this.OutputFolderBrowseButton.Location = new System.Drawing.Point(355, 50);
+            this.OutputFolderBrowseButton.Location = new System.Drawing.Point(414, 65);
+            this.OutputFolderBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OutputFolderBrowseButton.Name = "OutputFolderBrowseButton";
-            this.OutputFolderBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.OutputFolderBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.OutputFolderBrowseButton.TabIndex = 53;
             this.OutputFolderBrowseButton.Text = "...";
             this.OutputFolderBrowseButton.UseVisualStyleBackColor = true;
@@ -88,17 +92,19 @@
             // 
             // OutputFolderTextBox
             // 
-            this.OutputFolderTextBox.Location = new System.Drawing.Point(98, 52);
+            this.OutputFolderTextBox.Location = new System.Drawing.Point(114, 68);
+            this.OutputFolderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OutputFolderTextBox.Name = "OutputFolderTextBox";
-            this.OutputFolderTextBox.Size = new System.Drawing.Size(251, 20);
+            this.OutputFolderTextBox.Size = new System.Drawing.Size(292, 23);
             this.OutputFolderTextBox.TabIndex = 52;
             this.OutputFolderTextBox.TextChanged += new System.EventHandler(this.OutputFolderTextBox_TextChanged);
             // 
             // FindKeysButton
             // 
-            this.FindKeysButton.Location = new System.Drawing.Point(388, 185);
+            this.FindKeysButton.Location = new System.Drawing.Point(453, 242);
+            this.FindKeysButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FindKeysButton.Name = "FindKeysButton";
-            this.FindKeysButton.Size = new System.Drawing.Size(75, 23);
+            this.FindKeysButton.Size = new System.Drawing.Size(88, 30);
             this.FindKeysButton.TabIndex = 51;
             this.FindKeysButton.Text = "Find keys";
             this.FindKeysButton.UseVisualStyleBackColor = true;
@@ -108,18 +114,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 190);
+            this.label3.Location = new System.Drawing.Point(23, 248);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 50;
             this.label3.Text = "GTAV dump:";
             this.label3.Visible = false;
             // 
             // DumpBrowseButton
             // 
-            this.DumpBrowseButton.Location = new System.Drawing.Point(355, 185);
+            this.DumpBrowseButton.Location = new System.Drawing.Point(414, 242);
+            this.DumpBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DumpBrowseButton.Name = "DumpBrowseButton";
-            this.DumpBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.DumpBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.DumpBrowseButton.TabIndex = 49;
             this.DumpBrowseButton.Text = "...";
             this.DumpBrowseButton.UseVisualStyleBackColor = true;
@@ -128,9 +136,10 @@
             // 
             // DumpTextBox
             // 
-            this.DumpTextBox.Location = new System.Drawing.Point(98, 187);
+            this.DumpTextBox.Location = new System.Drawing.Point(114, 245);
+            this.DumpTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DumpTextBox.Name = "DumpTextBox";
-            this.DumpTextBox.Size = new System.Drawing.Size(251, 20);
+            this.DumpTextBox.Size = new System.Drawing.Size(292, 23);
             this.DumpTextBox.TabIndex = 48;
             this.DumpTextBox.Text = "gta5_dump.exe";
             this.DumpTextBox.Visible = false;
@@ -139,46 +148,51 @@
             // ExtractStatusLabel
             // 
             this.ExtractStatusLabel.AutoEllipsis = true;
-            this.ExtractStatusLabel.Location = new System.Drawing.Point(45, 80);
+            this.ExtractStatusLabel.Location = new System.Drawing.Point(23, 108);
+            this.ExtractStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ExtractStatusLabel.Name = "ExtractStatusLabel";
-            this.ExtractStatusLabel.Size = new System.Drawing.Size(455, 41);
+            this.ExtractStatusLabel.Size = new System.Drawing.Size(518, 54);
             this.ExtractStatusLabel.TabIndex = 47;
-            this.ExtractStatusLabel.Text = "Initialising...";
+            this.ExtractStatusLabel.Text = "初始化中...";
             // 
             // DumpStatusLabel
             // 
             this.DumpStatusLabel.AutoEllipsis = true;
-            this.DumpStatusLabel.Location = new System.Drawing.Point(45, 215);
+            this.DumpStatusLabel.Location = new System.Drawing.Point(52, 280);
+            this.DumpStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DumpStatusLabel.Name = "DumpStatusLabel";
-            this.DumpStatusLabel.Size = new System.Drawing.Size(455, 37);
+            this.DumpStatusLabel.Size = new System.Drawing.Size(531, 48);
             this.DumpStatusLabel.TabIndex = 46;
             this.DumpStatusLabel.Text = "Keys not found!";
             this.DumpStatusLabel.Visible = false;
             // 
             // ExtractScriptsButton
             // 
-            this.ExtractScriptsButton.Location = new System.Drawing.Point(388, 50);
+            this.ExtractScriptsButton.Location = new System.Drawing.Point(453, 65);
+            this.ExtractScriptsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExtractScriptsButton.Name = "ExtractScriptsButton";
-            this.ExtractScriptsButton.Size = new System.Drawing.Size(75, 23);
+            this.ExtractScriptsButton.Size = new System.Drawing.Size(88, 30);
             this.ExtractScriptsButton.TabIndex = 45;
-            this.ExtractScriptsButton.Text = "Extract";
+            this.ExtractScriptsButton.Text = "导出";
             this.ExtractScriptsButton.UseVisualStyleBackColor = true;
             this.ExtractScriptsButton.Click += new System.EventHandler(this.ExtractScriptsButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 29);
+            this.label1.Location = new System.Drawing.Point(23, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 44;
-            this.label1.Text = "GTAV folder:";
+            this.label1.Text = "GTAV 目录：";
             // 
             // FolderBrowseButton
             // 
-            this.FolderBrowseButton.Location = new System.Drawing.Point(355, 24);
+            this.FolderBrowseButton.Location = new System.Drawing.Point(414, 31);
+            this.FolderBrowseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderBrowseButton.Name = "FolderBrowseButton";
-            this.FolderBrowseButton.Size = new System.Drawing.Size(27, 23);
+            this.FolderBrowseButton.Size = new System.Drawing.Size(31, 30);
             this.FolderBrowseButton.TabIndex = 43;
             this.FolderBrowseButton.Text = "...";
             this.FolderBrowseButton.UseVisualStyleBackColor = true;
@@ -186,17 +200,18 @@
             // 
             // FolderTextBox
             // 
-            this.FolderTextBox.Location = new System.Drawing.Point(98, 26);
+            this.FolderTextBox.Location = new System.Drawing.Point(114, 34);
+            this.FolderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FolderTextBox.Name = "FolderTextBox";
             this.FolderTextBox.ReadOnly = true;
-            this.FolderTextBox.Size = new System.Drawing.Size(251, 20);
+            this.FolderTextBox.Size = new System.Drawing.Size(292, 23);
             this.FolderTextBox.TabIndex = 42;
             // 
             // ExtractScriptsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 143);
+            this.ClientSize = new System.Drawing.Size(564, 174);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -212,9 +227,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FolderBrowseButton);
             this.Controls.Add(this.FolderTextBox);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExtractScriptsForm";
-            this.Text = "Script Extractor - CodeWalker by dexyfex";
+            this.Text = "脚本导出器 - CodeWalker by dexyfex";
             this.Load += new System.EventHandler(this.ExtractForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,7 +28,7 @@ namespace CodeWalker.Project.Panels
             {
                 //could happen in some other startup mode - world form is required for this..
                 GenerateButton.Enabled = false;
-                UpdateStatus("Unable to generate - World View not available!");
+                UpdateStatus("无法生成 - 世界视图不可用！请确保世界预览窗口已经打开并加载完成！");
             }
         }
 
@@ -107,10 +107,10 @@ namespace CodeWalker.Project.Panels
                         while (waiting)
                         {
                             dwbl = gameFileCache.TryGetDrawable(ent.Archetype, out waiting);
-                            UpdateStatus("Waiting for " + ent.Archetype.AssetName + " to load...");
+                            UpdateStatus("正在等待 " + ent.Archetype.AssetName + " 完成加载...");
                             Thread.Sleep(20);
                         }
-                        UpdateStatus("Adding lights from " + ent.Archetype.Name + "...");
+                        UpdateStatus("正在为实体 " + ent.Archetype.Name + " 添加灯光...");
                         if (dwbl != null)
                         {
                             var fphys = (dwbl as FragDrawable)?.OwnerFragmentPhys;
@@ -179,7 +179,7 @@ namespace CodeWalker.Project.Panels
 
                 if (lights.Count == 0)
                 {
-                    MessageBox.Show("No lights found in project!");
+                    MessageBox.Show("当前项目文件内没有找到任何灯光！");
                     return;
                 }
 
@@ -222,7 +222,7 @@ namespace CodeWalker.Project.Panels
 
 
 
-                UpdateStatus("Creating new ymap files...");
+                UpdateStatus("正在创建新的 Ymap 文件...");
 
                 var lodymap = new YmapFile();
                 var distymap = new YmapFile();
@@ -275,7 +275,7 @@ namespace CodeWalker.Project.Panels
                 lodymap.Loaded = true;
                 distymap.Loaded = true;
 
-                UpdateStatus("Adding new ymap files to project...");
+                UpdateStatus("正在将新创建的 Ymap 文件添加到项目中...");
 
                 ProjectForm.Invoke((MethodInvoker)delegate
                 {
@@ -284,7 +284,7 @@ namespace CodeWalker.Project.Panels
                 });
 
                 var stats = "";
-                UpdateStatus("Process complete. " + stats);
+                UpdateStatus("处理已完成。" + stats);
                 GenerateComplete();
 
             });

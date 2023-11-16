@@ -47,7 +47,7 @@ namespace CodeWalker.Tools
                 {
                     Task.Run(() =>
                     {
-                        UpdateStatus("Loading strings...");
+                        UpdateStatus("正在加载字符串...");
                         gameFileCache.DoFullStringIndex = true;
                         gameFileCache.InitStringDicts();
                         IndexBuildComplete();
@@ -85,7 +85,7 @@ namespace CodeWalker.Tools
                 }
                 else
                 {
-                    StatusLabel.Text = "Index built";
+                    StatusLabel.Text = "索引建立";
                     MainPanel.Enabled = true;
                     Cursor = Cursors.Default;
                 }
@@ -107,7 +107,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    StatusLabel.Text = "Invalid hex value!";
+                    StatusLabel.Text = "无效的十六进制数值！";
                     return;
                 }
             }
@@ -119,7 +119,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    StatusLabel.Text = "Invalid unsigned int value!";
+                    StatusLabel.Text = "无效的无符号整数值！";
                     return;
                 }
             }
@@ -131,7 +131,7 @@ namespace CodeWalker.Tools
                 }
                 catch
                 {
-                    StatusLabel.Text = "Invalid signed int value!";
+                    StatusLabel.Text = "无效的整数值！";
                     return;
                 }
             }
@@ -149,7 +149,7 @@ namespace CodeWalker.Tools
 
             if (hasstr && hastxt)
             {
-                MatchTextBox.Text = string.Format("JenkIndex match:\r\n{0}\r\nGlobalText match:\r\n{1}", str, txt);
+                MatchTextBox.Text = string.Format("索引匹配：\r\n{0}\r\n全局文本匹配：\r\n{1}", str, txt);
             }
             else if (hasstr)
             {
@@ -157,19 +157,19 @@ namespace CodeWalker.Tools
             }
             else if (hastxt)
             {
-                MatchTextBox.Text = "GlobalText match:\r\n" + txt;
+                MatchTextBox.Text = "全局文本匹配：\r\n" + txt;
             }
             else if (hasext)
             {
-                MatchTextBox.Text = "Extra strings match:\r\n" + ext;
+                MatchTextBox.Text = "扩展字符串匹配：\r\n" + ext;
             }
             else if (hassta)
             {
-                MatchTextBox.Text = "Stats match:\r\n" + sta;
+                MatchTextBox.Text = "总计匹配：\r\n" + sta;
             }
             else
             {
-                MatchTextBox.Text = "[No match found]";
+                MatchTextBox.Text = "[未找到匹配项]";
             }
 
 
@@ -234,11 +234,11 @@ namespace CodeWalker.Tools
                     var hash = JenkHash.GenHash(str);
                     extraStrings[hash] = str;
                 }
-                MessageBox.Show(lines.Length.ToString() + " strings imported successfully.");
+                MessageBox.Show(lines.Length.ToString() + " 字符串已成功导入");
             }
             catch
             {
-                MessageBox.Show("Error reading file.");
+                MessageBox.Show("读取文件时发生错误");
             }
 
         }
@@ -258,11 +258,11 @@ namespace CodeWalker.Tools
 
                 File.WriteAllLines(file, lines);
 
-                MessageBox.Show(lines.Length.ToString() + " strings exported successfully.");
+                MessageBox.Show(lines.Length.ToString() + " 字符串已成功导出");
             }
             catch
             {
-                MessageBox.Show("Error saving strings file.");
+                MessageBox.Show("写入文件时发生错误");
             }
         }
     }

@@ -118,11 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>This tool allows for generating LOD Lights ymap files for the entities in the current project.
+    <value>该工具允许为当前项目中的实体生成远景灯光 ymap 文件。
 
-Make sure that all archetypes and drawables containing lights info are either in base game files or in a DLC that is currently loaded by CodeWalker.
+在开始生成之前，请您先确保您所需要生成远景灯光的实体定义类型 (Ytyp) 以及可绘制模型 (Ydr) 已经存在于以下任意位置中：
 
-Generated ymap files will be named in the format name_distantlights.ymap and name_lodlights.ymap, and will be added to the project.</value>
+● 游戏本体文件内
+● 当前项目窗口已打开并加载的文件
+● 当前已加载的模组或 DLC 内（主界面上要打钩加载）
+
+生成的 ymap 文件将以 name_distantlights.ymap 和 name_lodlights.ymap 格式命名，并将添加到项目中。</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

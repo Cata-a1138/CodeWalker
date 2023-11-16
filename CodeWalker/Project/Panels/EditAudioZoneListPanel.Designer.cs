@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAudioZoneListPanel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.HashesTextBox = new CodeWalker.WinForms.TextBoxFix();
-            this.DeleteButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -46,10 +46,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(2, 3);
+            this.tabControl1.Location = new System.Drawing.Point(2, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(559, 446);
+            this.tabControl1.Size = new System.Drawing.Size(624, 485);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -59,76 +60,84 @@
             this.tabPage1.Controls.Add(this.NameTextBox);
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.HashesTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(551, 420);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(616, 455);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Ambient Zone List";
+            this.tabPage1.Text = "环境音区域列表";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteButton.Location = new System.Drawing.Point(483, 396);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(108, 30);
+            this.DeleteButton.TabIndex = 77;
+            this.DeleteButton.Text = "删除列表";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 9);
+            this.label12.Location = new System.Drawing.Point(44, 11);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.Size = new System.Drawing.Size(68, 17);
             this.label12.TabIndex = 3;
-            this.label12.Text = "Name hash:";
+            this.label12.Text = "名称哈希：";
             // 
             // NameTextBox
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(103, 6);
+            this.NameTextBox.Location = new System.Drawing.Point(120, 8);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(428, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(471, 23);
             this.NameTextBox.TabIndex = 4;
             this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(18, 35);
+            this.label19.Location = new System.Drawing.Point(44, 45);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.Size = new System.Drawing.Size(68, 17);
             this.label19.TabIndex = 5;
-            this.label19.Text = "Zone hashes:";
+            this.label19.Text = "区域哈希：";
             // 
             // HashesTextBox
             // 
             this.HashesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.HashesTextBox.Location = new System.Drawing.Point(103, 32);
+            this.HashesTextBox.Location = new System.Drawing.Point(120, 42);
+            this.HashesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HashesTextBox.Multiline = true;
             this.HashesTextBox.Name = "HashesTextBox";
             this.HashesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.HashesTextBox.Size = new System.Drawing.Size(428, 330);
+            this.HashesTextBox.Size = new System.Drawing.Size(471, 327);
             this.HashesTextBox.TabIndex = 6;
             this.HashesTextBox.WordWrap = false;
             this.HashesTextBox.TextChanged += new System.EventHandler(this.HashesTextBox_TextChanged);
             // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteButton.Location = new System.Drawing.Point(438, 381);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(93, 23);
-            this.DeleteButton.TabIndex = 77;
-            this.DeleteButton.Text = "Delete list";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
             // EditAudioZoneListPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 450);
+            this.ClientSize = new System.Drawing.Size(628, 489);
             this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditAudioZoneListPanel";
-            this.Text = "Edit Audio Zone List";
+            this.Text = "编辑音频区域列表";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

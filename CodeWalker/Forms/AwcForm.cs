@@ -41,7 +41,7 @@ namespace CodeWalker.Forms
 
         private void UpdateFormTitle()
         {
-            Text = fileName + " - AWC Player - CodeWalker by dexyfex";
+            Text = fileName + " - 音频播放器 - CodeWalker by dexyfex";
         }
 
         private void UpdateXmlTextBox(string xml)
@@ -109,7 +109,7 @@ namespace CodeWalker.Forms
                     var stereo = (audio.ChannelStreams?.Length == 2);
                     if ((audio.StreamBlocks != null) && (!stereo)) continue;//don't display multichannel source audios
                     var name = audio.Name;
-                    if (stereo) name = "(Stereo Playback)";
+                    if (stereo) name = "(立体声播放)";
                     var item = PlayListView.Items.Add(name);
                     item.SubItems.Add(audio.Type);
                     item.SubItems.Add(audio.LengthStr);
@@ -119,7 +119,7 @@ namespace CodeWalker.Forms
                 }
             }
 
-            LabelInfo.Text = awc.Streams.Length.ToString() + " track(s), Length: " + TimeSpan.FromSeconds((float)totalLength).ToString("h\\:mm\\:ss");
+            LabelInfo.Text = awc.Streams.Length.ToString() + " 轨道，长度：" + TimeSpan.FromSeconds((float)totalLength).ToString("h\\:mm\\:ss");
             UpdateFormTitle();
         }
 
@@ -379,7 +379,7 @@ namespace CodeWalker.Forms
 
                 if (stereo)
                 {
-                    MessageBox.Show("Sorry, export for stereo output is not currently available.");
+                    MessageBox.Show("抱歉，目前暂不支持导出立体声轨道");
                     return;
                 }
 
@@ -411,14 +411,14 @@ namespace CodeWalker.Forms
 
         private void PlayListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ExportAsWav.Text = "Export as .wav";
+            ExportAsWav.Text = "导出为 .wav";
             if (PlayListView.SelectedItems.Count == 1)
             {
                 var item = PlayListView.SelectedItems[0];
                 var audio = item.Tag as AwcStream;
                 if (audio?.MidiChunk != null)
                 {
-                    ExportAsWav.Text = "Export as .midi";
+                    ExportAsWav.Text = "导出为 .midi";
                 }
             }
         }

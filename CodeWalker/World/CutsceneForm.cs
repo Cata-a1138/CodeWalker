@@ -384,14 +384,14 @@ namespace CodeWalker.World
             if (Playing)
             {
                 Playing = false;
-                PlayStopButton.Text = "Play";
+                PlayStopButton.Text = "播放";
                 PlaybackTimer.Enabled = false;
                 StopAudio();
             }
             else
             {
                 Playing = true;
-                PlayStopButton.Text = "Stop";
+                PlayStopButton.Text = "停止";
                 PlaybackTimer.Enabled = true;
                 PlayAudio(Cutscene.PlaybackTime);
             }

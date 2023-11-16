@@ -68,7 +68,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioYmtGridMinTextBox.Text = string.Empty;
                 ScenarioYmtGridMaxTextBox.Text = string.Empty;
                 ScenarioYmtGridScaleTextBox.Text = string.Empty;
-                ScenarioYmtGridInfoLabel.Text = "Total grid points: 0";
+                ScenarioYmtGridInfoLabel.Text = "总计网格点数：0";
                 ScenarioYmtExtentsMinTextBox.Text = string.Empty;
                 ScenarioYmtExtentsMaxTextBox.Text = string.Empty;
                 ScenarioYmtFileLocationTextBox.Text = string.Empty;
@@ -90,7 +90,7 @@ namespace CodeWalker.Project.Panels
                 ScenarioYmtGridMinTextBox.Text = FloatUtil.GetVector2String(accg.Min);
                 ScenarioYmtGridMaxTextBox.Text = FloatUtil.GetVector2String(accg.Max);
                 ScenarioYmtGridScaleTextBox.Text = FloatUtil.GetVector2String(accg.Scale);
-                ScenarioYmtGridInfoLabel.Text = "Total grid points: " + (rgn?.Unk_3844724227?.Length ?? 0).ToString();
+                ScenarioYmtGridInfoLabel.Text = "总计网格点数：" + (rgn?.Unk_3844724227?.Length ?? 0).ToString();
                 ScenarioYmtExtentsMinTextBox.Text = FloatUtil.GetVector3String(emin);
                 ScenarioYmtExtentsMaxTextBox.Text = FloatUtil.GetVector3String(emax);
                 ScenarioYmtFileLocationTextBox.Text = CurrentScenario.RpfFileEntry?.Path ?? "";

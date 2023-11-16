@@ -33,12 +33,12 @@
             // 
             // EditYtypPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 406);
+            this.ClientSize = new System.Drawing.Size(599, 375);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditYtypPanel";
-            this.Text = "Edit Ytyp";
+            this.Text = "编辑 Ytyp";
             this.ResumeLayout(false);
 
         }

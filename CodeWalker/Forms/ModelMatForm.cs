@@ -36,10 +36,10 @@ namespace CodeWalker.Forms
             ModelsTreeView.ShowRootLines = false;
             if (drawable != null)
             {
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "High Detail");
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "Medium Detail");
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "Low Detail");
-                AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "Very Low Detail");
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "高细节");
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "中细节");
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "低细节");
+                AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "极低细节");
 
                 var fdrawable = drawable as FragDrawable;
                 if (fdrawable != null)
@@ -55,10 +55,10 @@ namespace CodeWalker.Forms
                                 if (cdrwbl.Owner is FragDrawable) continue; //it's a copied drawable... eg a wheel
 
                                 var dname = child.GroupName;
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.High, dname + " - High Detail");
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Med, dname + " - Medium Detail");
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Low, dname + " - Low Detail");
-                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.VLow, dname + " - Very Low Detail");
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.High, dname + " - 高细节");
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Med, dname + " - 中细节");
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.Low, dname + " - 低细节");
+                                AddDrawableModelsTreeNodes(cdrwbl.DrawableModels?.VLow, dname + " - 极低细节");
                             }
                         }
                     }
@@ -73,11 +73,11 @@ namespace CodeWalker.Forms
                             if ((arrd != null) && (arrd.AllModels?.Length > 0))
                             {
                                 var dname = ((fdnames != null) && (i < fdnames.Length)) ? fdnames[i]?.Value : arrd.Name;
-                                if (string.IsNullOrEmpty(dname)) dname = "(No name)";
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.High, dname + " - High Detail");
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Med, dname + " - Medium Detail");
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Low, dname + " - Low Detail");
-                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.VLow, dname + " - Very Low Detail");
+                                if (string.IsNullOrEmpty(dname)) dname = "(未命名)";
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.High, dname + " - 高细节");
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Med, dname + " - 中细节");
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.Low, dname + " - 低细节");
+                                AddDrawableModelsTreeNodes(arrd.DrawableModels?.VLow, dname + " - 极低细节");
                             }
                         }
                     }
@@ -102,9 +102,9 @@ namespace CodeWalker.Forms
                     var dnode = ModelsTreeView.Nodes.Add(mhash.ToString());
                     dnode.Tag = drawable;
 
-                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "High Detail", dnode);
-                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "Medium Detail", dnode);
-                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "Low Detail", dnode);
+                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.High, "高细节", dnode);
+                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.Med, "中细节", dnode);
+                    AddDrawableModelsTreeNodes(drawable.DrawableModels?.Low, "极低细节", dnode);
                     AddDrawableModelsTreeNodes(drawable.DrawableModels?.VLow, "Very Low Detail", dnode);
 
                     dnode.Expand();

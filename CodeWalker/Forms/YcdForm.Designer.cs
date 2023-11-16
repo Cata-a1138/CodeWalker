@@ -55,6 +55,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -64,8 +65,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.MainPropertyGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(751, 442);
+            this.splitContainer1.Size = new System.Drawing.Size(848, 480);
             this.splitContainer1.SplitterDistance = 254;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
             // MainListView
@@ -84,10 +86,11 @@
             listViewGroup1,
             listViewGroup2});
             this.MainListView.HideSelection = false;
-            this.MainListView.Location = new System.Drawing.Point(3, 3);
+            this.MainListView.Location = new System.Drawing.Point(4, 4);
+            this.MainListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainListView.MultiSelect = false;
             this.MainListView.Name = "MainListView";
-            this.MainListView.Size = new System.Drawing.Size(248, 436);
+            this.MainListView.Size = new System.Drawing.Size(247, 471);
             this.MainListView.TabIndex = 0;
             this.MainListView.UseCompatibleStateImageBehavior = false;
             this.MainListView.View = System.Windows.Forms.View.Details;
@@ -95,7 +98,7 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Text = "名称";
             this.columnHeader1.Width = 221;
             // 
             // MainPropertyGrid
@@ -104,10 +107,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPropertyGrid.HelpVisible = false;
-            this.MainPropertyGrid.Location = new System.Drawing.Point(3, 3);
+            this.MainPropertyGrid.Location = new System.Drawing.Point(4, 4);
+            this.MainPropertyGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainPropertyGrid.Name = "MainPropertyGrid";
             this.MainPropertyGrid.ReadOnly = false;
-            this.MainPropertyGrid.Size = new System.Drawing.Size(487, 436);
+            this.MainPropertyGrid.Size = new System.Drawing.Size(582, 472);
             this.MainPropertyGrid.TabIndex = 0;
             // 
             // MainTabControl
@@ -117,29 +121,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTabControl.Controls.Add(this.DetailsTabPage);
             this.MainTabControl.Controls.Add(this.XmlTabPage);
-            this.MainTabControl.Location = new System.Drawing.Point(2, 3);
+            this.MainTabControl.Location = new System.Drawing.Point(2, 4);
+            this.MainTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(759, 468);
+            this.MainTabControl.Size = new System.Drawing.Size(856, 510);
             this.MainTabControl.TabIndex = 2;
             this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.MainTabControl_SelectedIndexChanged);
             // 
             // DetailsTabPage
             // 
             this.DetailsTabPage.Controls.Add(this.splitContainer1);
-            this.DetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.DetailsTabPage.Location = new System.Drawing.Point(4, 26);
+            this.DetailsTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DetailsTabPage.Name = "DetailsTabPage";
-            this.DetailsTabPage.Size = new System.Drawing.Size(751, 442);
+            this.DetailsTabPage.Size = new System.Drawing.Size(848, 480);
             this.DetailsTabPage.TabIndex = 0;
-            this.DetailsTabPage.Text = "Details";
+            this.DetailsTabPage.Text = "详情";
             this.DetailsTabPage.UseVisualStyleBackColor = true;
             // 
             // XmlTabPage
             // 
             this.XmlTabPage.Controls.Add(this.XmlTextBox);
-            this.XmlTabPage.Location = new System.Drawing.Point(4, 22);
+            this.XmlTabPage.Location = new System.Drawing.Point(4, 26);
+            this.XmlTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.XmlTabPage.Name = "XmlTabPage";
-            this.XmlTabPage.Size = new System.Drawing.Size(751, 442);
+            this.XmlTabPage.Size = new System.Drawing.Size(848, 480);
             this.XmlTabPage.TabIndex = 1;
             this.XmlTabPage.Text = "XML";
             this.XmlTabPage.UseVisualStyleBackColor = true;
@@ -160,7 +167,7 @@
             this.XmlTextBox.AutoIndentChars = false;
             this.XmlTextBox.AutoIndentCharsPatterns = "";
             this.XmlTextBox.AutoIndentExistingLines = false;
-            this.XmlTextBox.AutoScrollMinSize = new System.Drawing.Size(2, 14);
+            this.XmlTextBox.AutoScrollMinSize = new System.Drawing.Size(27, 14);
             this.XmlTextBox.BackBrush = null;
             this.XmlTextBox.CharHeight = 14;
             this.XmlTextBox.CharWidth = 8;
@@ -169,18 +176,20 @@
             this.XmlTextBox.DelayedEventsInterval = 1;
             this.XmlTextBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.XmlTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.XmlTextBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.XmlTextBox.IsReplaceMode = false;
             this.XmlTextBox.Language = FastColoredTextBoxNS.Language.XML;
             this.XmlTextBox.LeftBracket = '<';
             this.XmlTextBox.LeftBracket2 = '(';
             this.XmlTextBox.Location = new System.Drawing.Point(0, 0);
+            this.XmlTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.XmlTextBox.Name = "XmlTextBox";
             this.XmlTextBox.Paddings = new System.Windows.Forms.Padding(0);
             this.XmlTextBox.RightBracket = '>';
             this.XmlTextBox.RightBracket2 = ')';
             this.XmlTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.XmlTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("XmlTextBox.ServiceColors")));
-            this.XmlTextBox.Size = new System.Drawing.Size(751, 442);
+            this.XmlTextBox.Size = new System.Drawing.Size(848, 480);
             this.XmlTextBox.TabIndex = 1;
             this.XmlTextBox.Zoom = 100;
             this.XmlTextBox.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.XmlTextBox_TextChanged);
@@ -188,13 +197,15 @@
             // 
             // YcdForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 474);
+            this.ClientSize = new System.Drawing.Size(860, 518);
             this.Controls.Add(this.MainTabControl);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "YcdForm";
-            this.Text = "Clip Dictionary Inspector - CodeWalker by dexyfex";
+            this.Text = "动画字典查看器 - CodeWalker by dexyfex";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

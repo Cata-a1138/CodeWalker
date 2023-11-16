@@ -1,8 +1,9 @@
-<div align="center">
-    <h1>CodeWalker by dexyfex</h1>
-    本程序可用于查看和编辑 GTAV RPF 文件内容<br>
-    本软件基于原版 <a href="https://github.com/dexyfex/CodeWalker/">CodeWalker</a> 修改，由 Akkariin 汉化
-</div>
+# CodeWalker
+一款用于查看和编辑 GTAV RPF 文件内容的软件
+
+本软件基于原版 [CodeWalker](https://github.com/dexyfex/CodeWalker/) 修改，由 Akkariin 汉化
+
+![CodeWalkerCN](https://github.com/ZeroDream-CN/CodeWalker/assets/34357771/602411a1-e1b6-442a-b4e9-d384925247ff)
 
 ## 系统需求
 - PC 版本的 GTA5；
